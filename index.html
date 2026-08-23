@@ -3,17 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marian Stancik — AI Agent Developer | Law | Drones</title>
-<meta name="description" content="AI agent developer who understands law and builds drones. Building autonomous systems @ ASCENTIA. Law student @ PF UK.">
-<meta property="og:title" content="Marian Stancik — AI Agent Developer | Law | Drones">
-<meta property="og:description" content="Building autonomous AI agents. Law student. Drone pilot.">
-<meta property="og:image" content="https://marianstancik.dev/og-image.png">
-<meta property="og:url" content="https://marianstancik.dev">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Marian Stancik">
-<meta name="twitter:description" content="AI Agent Developer | Law & AI | Drone Systems">
+<title>Marian Stancik — AI Agent Developer | Product Manager | Law | Drones</title>
+<meta name="description" content="Marian Stancik builds autonomous AI agents with Hermes, manages products at Delta Defence, studies law at PF UK, and builds drones. AI x Law x UAV.">
+<meta name="keywords" content="Marian Stancik, AI agent developer, Hermes Agent, autonomous systems, product manager, Delta Defence, law student, drones, UAV, ASCENTIA, AI compliance">
+<meta name="author" content="Marian Stancik">
 <link rel="canonical" href="https://marianstancik.dev">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%2308080F'/><text x='50' y='68' font-size='48' font-weight='700' text-anchor='middle' fill='%23CD7F32' font-family='serif'>MS</text></svg>">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Marian Stancik — AI Agent Developer | Product Manager | Law | Drones">
+<meta property="og:description" content="Building autonomous AI agents. Product Manager at Delta Defence. Law student at PF UK. Drone pilot.">
+<meta property="og:url" content="https://marianstancik.dev">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://marianstancik.dev/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Marian Stancik">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@abraka_d7">
+<meta name="twitter:creator" content="@abraka_d7">
+<meta name="twitter:title" content="Marian Stancik">
+<meta name="twitter:description" content="AI Agent Developer · Product Manager @ Delta Defence · Law @ PF UK · Drone Systems">
+
+<!-- JSON-LD Schema.org Person (AI agent accessible) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Marian Stancik",
+  "givenName": "Marian",
+  "familyName": "Stancik",
+  "url": "https://marianstancik.dev",
+  "sameAs": [
+    "https://x.com/abraka_d7",
+    "https://github.com/Abra7abra7",
+    "https://www.linkedin.com/in/marian-stancik-924b41298/",
+    "https://www.instagram.com/marian_stancik",
+    "https://marianstancik.dev"
+  ],
+  "jobTitle": ["AI Agent Developer", "Product Manager", "CEO"],
+  "worksFor": [
+    {"@type": "Organization", "name": "Delta Defence a.s.", "jobTitle": "Product Manager"},
+    {"@type": "Organization", "name": "ASCENTIA s.r.o.", "jobTitle": "CEO"}
+  ],
+  "knowsAbout": ["Artificial Intelligence", "Autonomous Agents", "Hermes Agent", "Law", "AI Act", "GDPR", "Drones", "UAV", "ArduPilot", "Python", "TypeScript", "Go", "Product Management", "Defense Industry"],
+  "alumniOf": [
+    {"@type": "CollegeOrUniversity", "name": "Comenius University, Faculty of Law"},
+    {"@type": "CollegeOrUniversity", "name": "Comenius University, Faculty of Physical Education and Sports"},
+    {"@type": "CollegeOrUniversity", "name": "University of Vienna"}
+  ],
+  "email": "marian_stancik@agentmail.to",
+  "address": {"@type": "PostalAddress", "addressLocality": "Bratislava", "addressCountry": "SK"},
+  "description": "AI agent developer who understands law, builds drones, and ships production systems. Product Manager at Delta Defence. Law student at PF UK.",
+  "image": "https://marianstancik.dev/profile.jpg",
+  "knowsLanguage": ["en", "sk"]
+}
+</script>
+
+<!-- JSON-LD WebSite for AI crawlers -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://marianstancik.dev",
+  "name": "Marian Stancik",
+  "description": "Personal brand website of Marian Stancik — AI Agent Developer, Product Manager, Law Student, Drone Builder",
+  "inLanguage": ["en", "sk"],
+  "about": {
+    "@type": "Thing",
+    "name": "AI Agents, Law, Drones, Product Management"
+  }
+}
+</script>
+
 <style>
 /* ===== RESET & BASE ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -64,6 +127,83 @@ section::before {
   position: relative;
 }
 
+/* ===== NAV ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 14px 24px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(8,8,15,0.6);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.nav-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ms-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #CD7F32, #E8B86D);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #08080F;
+  letter-spacing: 0.02em;
+}
+.nav-logo-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #F0F0F5;
+  letter-spacing: -0.01em;
+}
+.nav-logo-text span { color: #CD7F32; }
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a {
+  font-size: 0.78rem;
+  color: #8888A0;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+.nav-links a:hover { color: #CD7F32; }
+.nav-cta {
+  background: rgba(205,127,50,0.12);
+  border: 1px solid rgba(205,127,50,0.25);
+  color: #CD7F32 !important;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+}
+.nav-cta:hover {
+  background: rgba(205,127,50,0.2) !important;
+}
+
+/* ===== MOBILE NAV ===== */
+.mobile-toggle { display: none; background: none; border: none; color: #F0F0F5; font-size: 1.5rem; cursor: pointer; padding: 4px; }
+@media (max-width: 640px) {
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: rgba(8,8,15,0.97); padding: 20px 24px; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.06); align-items: flex-start; }
+  .nav-links.open { display: flex; }
+  .mobile-toggle { display: block; }
+}
+
 /* ===== HERO ===== */
 #hero { min-height: 100vh; padding-top: 0; }
 .hero-inner {
@@ -71,11 +211,11 @@ section::before {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 24px;
+  gap: 20px;
 }
 .profile-frame {
-  width: 140px;
-  height: 140px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   border: 2px solid rgba(205,127,50,0.4);
   overflow: hidden;
@@ -83,11 +223,7 @@ section::before {
   transition: box-shadow 0.4s;
 }
 .profile-frame:hover { box-shadow: 0 0 80px rgba(205,127,50,0.3); }
-.profile-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+.profile-frame img { width: 100%; height: 100%; object-fit: cover; }
 .badge {
   display: inline-block;
   font-size: 0.7rem;
@@ -101,7 +237,7 @@ section::before {
   border-radius: 100px;
 }
 h1 {
-  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  font-size: clamp(2rem, 5.5vw, 3.5rem);
   font-weight: 700;
   color: #F0F0F5;
   line-height: 1.1;
@@ -109,24 +245,39 @@ h1 {
 }
 h1 .highlight { color: #CD7F32; }
 .tagline {
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
   color: #A0A0B8;
   max-width: 580px;
   font-weight: 400;
 }
 .tagline span { color: #E8B86D; }
+.hero-roles {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4px;
+}
+.hero-roles span {
+  font-size: 0.72rem;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #8888A0;
+}
 .hero-links {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 8px;
 }
 .hero-links a {
   color: #8888A0;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   text-decoration: none;
-  padding: 8px 20px;
+  padding: 8px 18px;
   border: 1px solid rgba(136,136,160,0.2);
   border-radius: 100px;
   transition: all 0.3s;
@@ -139,26 +290,26 @@ h1 .highlight { color: #CD7F32; }
 }
 .scroll-indicator {
   position: absolute;
-  bottom: 32px;
+  bottom: 28px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   color: #555570;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   animation: float 2s ease-in-out infinite;
 }
 @keyframes float {
   0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
+  50% { transform: translateX(-50%) translateY(6px); }
 }
 .scroll-indicator .arrow {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-right: 1.5px solid #555570;
   border-bottom: 1.5px solid #555570;
   transform: rotate(45deg);
@@ -172,20 +323,20 @@ h1 .highlight { color: #CD7F32; }
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #CD7F32;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 h2 {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
   font-weight: 700;
   color: #F0F0F5;
   line-height: 1.2;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 .section-intro {
   color: #8888A0;
-  font-size: 1rem;
+  font-size: 0.95rem;
   max-width: 600px;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 
 /* ===== ABOUT ===== */
@@ -193,22 +344,22 @@ h2 {
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: 28px;
 }
 @media (max-width: 640px) { .about-grid { grid-template-columns: 1fr; } }
-.about-text { color: #B0B0C8; font-size: 0.95rem; }
-.about-text p + p { margin-top: 16px; }
+.about-text { color: #B0B0C8; font-size: 0.92rem; }
+.about-text p + p { margin-top: 14px; }
 .about-text strong { color: #F0F0F5; }
 .stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 14px;
 }
 .stat-card {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 12px;
-  padding: 20px;
+  padding: 18px 14px;
   text-align: center;
   transition: all 0.3s;
 }
@@ -217,13 +368,13 @@ h2 {
   border-color: rgba(205,127,50,0.2);
 }
 .stat-number {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #CD7F32;
   line-height: 1;
 }
 .stat-label {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: #8888A0;
   margin-top: 6px;
   text-transform: uppercase;
@@ -231,18 +382,18 @@ h2 {
 }
 
 /* ===== EXPERTISE ===== */
-#expertise { min-height: auto; padding: 120px 24px; }
+#expertise { min-height: auto; padding: 100px 24px; }
 .expertise-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 18px;
 }
 @media (max-width: 800px) { .expertise-grid { grid-template-columns: 1fr; } }
 .exp-card {
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 16px;
-  padding: 32px 24px;
+  padding: 28px 22px;
   transition: all 0.4s;
   position: relative;
   overflow: hidden;
@@ -256,37 +407,35 @@ h2 {
   height: 2px;
   opacity: 0;
   transition: opacity 0.4s;
+  background: linear-gradient(90deg, #CD7F32, #E8B86D);
 }
-.exp-card:nth-child(1)::before { background: linear-gradient(90deg, #CD7F32, #E8B86D); }
-.exp-card:nth-child(2)::before { background: linear-gradient(90deg, #CD7F32, #E8B86D); }
-.exp-card:nth-child(3)::before { background: linear-gradient(90deg, #CD7F32, #E8B86D); }
 .exp-card:hover {
   background: rgba(255,255,255,0.04);
   border-color: rgba(205,127,50,0.2);
   transform: translateY(-4px);
 }
 .exp-card:hover::before { opacity: 1; }
-.exp-icon { font-size: 2rem; margin-bottom: 16px; }
+.exp-icon { font-size: 1.8rem; margin-bottom: 14px; }
 .exp-card h3 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: #F0F0F5;
   margin-bottom: 8px;
 }
 .exp-card p {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: #8888A0;
   line-height: 1.6;
 }
 .exp-card .tech-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 16px;
+  gap: 5px;
+  margin-top: 14px;
 }
 .exp-card .tech-tags span {
-  font-size: 0.68rem;
-  padding: 4px 10px;
+  font-size: 0.65rem;
+  padding: 3px 9px;
   border-radius: 100px;
   background: rgba(205,127,50,0.08);
   color: #E8B86D;
@@ -294,18 +443,18 @@ h2 {
 }
 
 /* ===== PROJECTS ===== */
-#projects { min-height: auto; padding: 120px 24px; }
+#projects { min-height: auto; padding: 100px 24px; }
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 18px;
 }
 @media (max-width: 640px) { .projects-grid { grid-template-columns: 1fr; } }
 .project-card {
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 14px;
-  padding: 28px;
+  padding: 24px;
   transition: all 0.3s;
   text-decoration: none;
   display: block;
@@ -315,46 +464,105 @@ h2 {
   border-color: rgba(205,127,50,0.2);
   transform: translateY(-2px);
 }
-.project-card .proj-icon { font-size: 1.5rem; margin-bottom: 12px; }
+.project-card .proj-icon { font-size: 1.4rem; margin-bottom: 10px; }
 .project-card h3 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #F0F0F5;
   margin-bottom: 6px;
 }
 .project-card p {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: #8888A0;
   line-height: 1.5;
 }
 .project-card .proj-lang {
   display: inline-block;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   padding: 3px 8px;
   border-radius: 6px;
   background: rgba(255,255,255,0.04);
   color: #A0A0B8;
-  margin-top: 10px;
+  margin-top: 8px;
+}
+
+/* ===== BLOG PREVIEW ===== */
+#blog-preview { min-height: auto; padding: 100px 24px; }
+.blog-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+@media (max-width: 800px) { .blog-preview-grid { grid-template-columns: 1fr; } }
+.blog-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 24px;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: block;
+}
+.blog-card:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(205,127,50,0.2);
+  transform: translateY(-2px);
+}
+.blog-card .blog-date {
+  font-size: 0.62rem;
+  color: #555570;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.blog-card h3 {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #F0F0F5;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.blog-card p {
+  font-size: 0.8rem;
+  color: #8888A0;
+  line-height: 1.5;
+}
+.blog-all {
+  text-align: center;
+  margin-top: 32px;
+}
+.blog-all a {
+  color: #CD7F32;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border: 1px solid rgba(205,127,50,0.25);
+  padding: 10px 28px;
+  border-radius: 100px;
+  transition: all 0.3s;
+  display: inline-block;
+}
+.blog-all a:hover {
+  background: rgba(205,127,50,0.08);
 }
 
 /* ===== CONNECT ===== */
-#connect { min-height: auto; padding: 120px 24px 80px; text-align: center; }
+#connect { min-height: auto; padding: 100px 24px 80px; text-align: center; }
 .connect-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
   justify-content: center;
 }
 .connect-grid a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 24px;
+  padding: 10px 22px;
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 100px;
   color: #B0B0C8;
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   transition: all 0.3s;
 }
 .connect-grid a:hover {
@@ -362,121 +570,155 @@ h2 {
   border-color: rgba(205,127,50,0.4);
   background: rgba(205,127,50,0.05);
 }
-.connect-grid .social-icon { font-size: 1.1rem; }
+.connect-grid .social-icon { font-size: 1rem; }
+
+/* ===== LEAD CAPTURE ===== */
+#lead-capture { 
+  min-height: auto; 
+  padding: 80px 24px; 
+  text-align: center;
+  border-top: 1px solid rgba(205,127,50,0.08);
+}
+.lead-form {
+  display: flex;
+  gap: 10px;
+  max-width: 460px;
+  margin: 24px auto 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.lead-form input {
+  flex: 1;
+  min-width: 220px;
+  padding: 12px 18px;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: #F0F0F5;
+  font-size: 0.85rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.lead-form input:focus {
+  border-color: rgba(205,127,50,0.5);
+}
+.lead-form input::placeholder {
+  color: #555570;
+}
+.lead-form button {
+  padding: 12px 28px;
+  border-radius: 100px;
+  border: none;
+  background: linear-gradient(135deg, #CD7F32, #E8B86D);
+  color: #08080F;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  font-family: inherit;
+}
+.lead-form button:hover {
+  opacity: 0.9;
+}
+.lead-note {
+  font-size: 0.7rem;
+  color: #555570;
+  margin-top: 10px;
+}
 
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
-  padding: 32px 24px;
+  padding: 28px 24px;
   color: #555570;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   border-top: 1px solid rgba(255,255,255,0.04);
 }
 footer a { color: #8888A0; text-decoration: none; }
 footer a:hover { color: #CD7F32; }
-
-/* ===== NAV ===== */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  padding: 16px 24px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  background: rgba(8,8,15,0.6);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  transition: all 0.3s;
-}
-.nav-container {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.nav-logo {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #F0F0F5;
-  text-decoration: none;
-  letter-spacing: -0.01em;
-}
-.nav-logo span { color: #CD7F32; }
-.nav-links { display: flex; gap: 24px; }
-.nav-links a {
-  font-size: 0.78rem;
-  color: #8888A0;
-  text-decoration: none;
-  transition: color 0.3s;
-  font-weight: 500;
-}
-.nav-links a:hover { color: #CD7F32; }
-
-/* ===== RESPONSIVE NAV ===== */
-.mobile-toggle { display: none; background: none; border: none; color: #F0F0F5; font-size: 1.5rem; cursor: pointer; }
-@media (max-width: 600px) {
-  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: rgba(8,8,15,0.95); padding: 16px 24px; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .nav-links.open { display: flex; }
-  .mobile-toggle { display: block; }
-}
+footer .footer-links { display: flex; gap: 16px; justify-content: center; margin-top: 8px; flex-wrap: wrap; }
 
 /* ===== ANIMATIONS ===== */
 .fade-in {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
 /* ===== GLOW LINE ===== */
 .glow-line {
-  width: 60px;
+  width: 50px;
   height: 1.5px;
   background: linear-gradient(90deg, transparent, #CD7F32, transparent);
-  margin: 16px auto;
+  margin: 12px auto;
 }
+
+/* ===== ACCESSIBILITY ===== */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  padding: 8px 16px;
+  background: #CD7F32;
+  color: #08080F;
+  font-weight: 700;
+}
+.skip-link:focus { left: 16px; }
 </style>
 </head>
 <body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- Three.js Background -->
 <div id="three-canvas"></div>
 
 <!-- Navigation -->
-<nav>
+<nav aria-label="Main navigation">
   <div class="nav-container">
-    <a href="#" class="nav-logo">✦ <span>M</span>Stancik<span>AI</span></a>
-    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <a href="#" class="nav-logo" aria-label="Marian Stancik home">
+      <div class="ms-logo" aria-hidden="true">MS</div>
+      <span class="nav-logo-text">Marian <span>Stancik</span></span>
+    </a>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu" aria-expanded="false">☰</button>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#expertise">Expertise</a>
       <a href="#projects">Projects</a>
-      <a href="#connect">Connect</a>
+      <a href="#blog-preview">Blog</a>
+      <a href="mailto:marian_stancik@agentmail.to" class="nav-cta">✦ Contact</a>
     </div>
   </div>
 </nav>
 
 <!-- Content -->
-<div class="content">
+<div class="content" id="main-content">
 
 <!-- === HERO === -->
 <section id="hero">
   <div class="container hero-inner">
-    <div class="badge">✦ Autonomous Systems · AI · Law · UAV</div>
+    <div class="badge">✦ AI Agents · Product · Law · UAV</div>
     <div class="profile-frame">
-      <img src="profile.jpg" alt="Marian Stancik" width="200" height="200">
+      <img src="profile.jpg" alt="Marian Stancik" width="200" height="200" loading="eager">
     </div>
     <h1>Marian <span class="highlight">Stancik</span></h1>
     <p class="tagline">
       AI agent developer who understands <span>law</span>, builds <span>drones</span>, and ships production systems.
     </p>
+    <div class="hero-roles">
+      <span>🤖 Product Manager @ Delta Defence</span>
+      <span>⚖️ Law Student @ PF UK</span>
+      <span>🚁 Drone Pilot (A1/A3)</span>
+      <span>🏛️ CEO @ ASCENTIA</span>
+    </div>
     <div class="hero-links">
-      <a href="https://x.com/abraka_d7" target="_blank" rel="noopener">𝕏 @abraka_d7</a>
-      <a href="https://github.com/Abra7abra7" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/marian-stancik-924b41298/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://marianstancik.dev" target="_blank" rel="noopener">Blog</a>
+      <a href="https://x.com/abraka_d7" target="_blank" rel="noopener" aria-label="X/Twitter profile">𝕏 @abraka_d7</a>
+      <a href="https://github.com/Abra7abra7" target="_blank" rel="noopener" aria-label="GitHub profile">GitHub</a>
+      <a href="https://www.linkedin.com/in/marian-stancik-924b41298/" target="_blank" rel="noopener" aria-label="LinkedIn profile">LinkedIn</a>
+      <a href="mailto:marian_stancik@agentmail.to" aria-label="Send email">✉️ Email</a>
     </div>
     <div class="glow-line"></div>
     <div class="scroll-indicator">
@@ -487,26 +729,31 @@ nav {
 </section>
 
 <!-- === ABOUT === -->
-<section id="about">
+<section id="about" aria-label="About Marian Stancik">
   <div class="container">
     <div class="section-label fade-in">✦ About</div>
-    <h2 class="fade-in">Builder. Student. Pilot.</h2>
+    <h2 class="fade-in">Builder. Product Manager. Student. Pilot.</h2>
     <div class="about-grid">
       <div class="about-text fade-in">
         <p>
-          I build <strong>autonomous AI agents</strong> that ship — not demos, not toy projects.
-          Production systems running 24/7 on VPS, making decisions, posting content, managing workflows.
+          I build <strong>autonomous AI agents</strong> with Hermes that ship — production systems running 24/7 on VPS, 
+          making decisions, posting content, managing workflows. I combine <strong>software engineering</strong> 
+          with <strong>product management</strong> to deliver real results, not demos.
+        </p>
+        <p>
+          As <strong>Product Manager at Delta Defence</strong>, I drive product development in the defense industry — 
+          bridging technology, manufacturing, and strategic operations.
         </p>
         <p>
           I'm a <strong>law student at PF UK</strong> (3rd year), focusing on AI Act, GDPR, and the intersection
-          of regulation and technology. I believe <strong>legal-by-design</strong> is the only way to build AI that lasts.
+          of regulation and technology. <strong>Legal-by-design</strong> is the only way to build AI that lasts.
         </p>
         <p>
           I build <strong>drones</strong> — from 1500g ArduPilot quads to combat drone prototypes.
           Certified A1/A3 pilot, working toward STS and Specific category operations.
         </p>
         <p>
-          CEO of <strong>ASCENTIA s.r.o.</strong>, engineer at <strong>Delta Defence a.s.</strong>
+          <strong>CEO of ASCENTIA s.r.o.</strong>, Product Manager at <strong>Delta Defence a.s.</strong>
         </p>
       </div>
       <div class="stats fade-in">
@@ -519,12 +766,20 @@ nav {
           <div class="stat-label">Domains (AI · Law · UAV)</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">8</div>
+          <div class="stat-number">8+</div>
           <div class="stat-label">Years Building</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">€2.6M</div>
           <div class="stat-label">Drone Insurance</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Open Source Repos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">19</div>
+          <div class="stat-label">Active Cron Jobs</div>
         </div>
       </div>
     </div>
@@ -532,7 +787,7 @@ nav {
 </section>
 
 <!-- === EXPERTISE === -->
-<section id="expertise">
+<section id="expertise" aria-label="Marian Stancik's expertise areas">
   <div class="container">
     <div class="section-label fade-in">✦ Expertise</div>
     <h2 class="fade-in">Three pillars. One mission.</h2>
@@ -545,7 +800,7 @@ nav {
         <h3>AI & Autonomous Agents</h3>
         <p>
           Hermes Agent, Python, TypeScript, Go. Building autonomous agents with memory, context, and
-          decision logic. Cron-orchestrated systems that run 24/7 without human intervention.
+          decision logic. Cron-orchestrated systems running 24/7 without human intervention.
         </p>
         <div class="tech-tags">
           <span>Hermes Agent</span>
@@ -593,7 +848,7 @@ nav {
 </section>
 
 <!-- === PROJECTS === -->
-<section id="projects">
+<section id="projects" aria-label="Projects by Marian Stancik">
   <div class="container">
     <div class="section-label fade-in">✦ Projects</div>
     <h2 class="fade-in">What I'm building.</h2>
@@ -619,41 +874,90 @@ nav {
         <p>Production-ready Markov chain trading bot for prediction markets. Docker-deployable.</p>
         <span class="proj-lang">Python · Docker · Markov</span>
       </a>
-      <a href="https://tripo-mvp.onrender.com" target="_blank" rel="noopener" class="project-card fade-in">
-        <div class="proj-icon">🎨</div>
-        <h3>Tripo 3D MVP</h3>
-        <p>Text-to-3D model generation with Tripo API. Flask + Docker on Render.</p>
-        <span class="proj-lang">Python · Flask · Docker · Render</span>
+      <a href="https://github.com/Abra7abra7" target="_blank" rel="noopener" class="project-card fade-in">
+        <div class="proj-icon">⚡</div>
+        <h3>Hermes Digital Twin</h3>
+        <p>Autonomous AI agent running 9+ cron jobs — posting X, LinkedIn, blog daily without human touch.</p>
+        <span class="proj-lang">Hermes Agent · Python · Cron</span>
       </a>
     </div>
   </div>
 </section>
 
+<!-- === BLOG PREVIEW === -->
+<section id="blog-preview" aria-label="Latest blog posts">
+  <div class="container">
+    <div class="section-label fade-in">✦ Blog</div>
+    <h2 class="fade-in">Latest thoughts.</h2>
+    <p class="section-intro fade-in">
+      AI agents, autonomous systems, law & tech, and building in public.
+    </p>
+    <div class="blog-preview-grid">
+      <a href="https://marianstancik.dev/blog" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-date">August 2026</div>
+        <h3>Building a Digital Twin That Posts 9x Daily</h3>
+        <p>How I built an autonomous AI agent with Hermes that creates and publishes content across platforms without human intervention.</p>
+      </a>
+      <a href="https://marianstancik.dev/blog" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-date">August 2026</div>
+        <h3>AI Act Compliance for Small AI Companies</h3>
+        <p>Practical legal-by-design framework for startups building AI products in the EU. From risk assessment to documentation.</p>
+      </a>
+      <a href="https://marianstancik.dev/blog" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-date">August 2026</div>
+        <h3>Autonomous Drone Missions with ArduPilot</h3>
+        <p>Building a production-grade UAV system with Pixhawk, ArduPilot, and Python-based mission planning.</p>
+      </a>
+    </div>
+    <div class="blog-all">
+      <a href="https://marianstancik.dev/blog" target="_blank" rel="noopener">Read all posts →</a>
+    </div>
+  </div>
+</section>
+
+<!-- === LEAD CAPTURE === -->
+<section id="lead-capture" aria-label="Stay updated">
+  <div class="container">
+    <div class="section-label fade-in">✦ Stay in touch</div>
+    <h2 class="fade-in">Get updates from the build.</h2>
+    <p class="section-intro fade-in" style="margin-bottom: 0;">
+      AI agent insights, drone builds, law & tech notes — directly to your inbox.
+    </p>
+    <form class="lead-form fade-in" action="https://agentmail.to/send" method="POST">
+      <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
+      <input type="hidden" name="to" value="marian_stancik@agentmail.to">
+      <input type="hidden" name="subject" value="New subscriber from marianstancik.dev">
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="lead-note">No spam. Unsubscribe anytime. Built with AgentMail.</p>
+  </div>
+</section>
+
 <!-- === CONNECT === -->
-<section id="connect">
+<section id="connect" aria-label="Connect with Marian Stancik">
   <div class="container">
     <div class="section-label fade-in">✦ Connect</div>
     <h2 class="fade-in">Let's build something.</h2>
-    <p class="section-intro fade-in" style="margin-bottom: 32px;">
+    <p class="section-intro fade-in" style="margin-bottom: 28px;">
       Follow the build, read the blog, or reach out directly.
     </p>
     <div class="connect-grid fade-in">
-      <a href="https://x.com/abraka_d7" target="_blank" rel="noopener">
+      <a href="https://x.com/abraka_d7" target="_blank" rel="noopener" aria-label="X/Twitter">
         <span class="social-icon">𝕏</span> @abraka_d7
       </a>
-      <a href="https://github.com/Abra7abra7" target="_blank" rel="noopener">
+      <a href="https://github.com/Abra7abra7" target="_blank" rel="noopener" aria-label="GitHub">
         <span class="social-icon">⌘</span> Abra7abra7
       </a>
-      <a href="https://www.linkedin.com/in/marian-stancik-924b41298/" target="_blank" rel="noopener">
+      <a href="https://www.linkedin.com/in/marian-stancik-924b41298/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <span class="social-icon">💼</span> LinkedIn
       </a>
-      <a href="https://marianstancik.dev" target="_blank" rel="noopener">
+      <a href="https://marianstancik.dev" target="_blank" rel="noopener" aria-label="Blog">
         <span class="social-icon">✍️</span> Blog
       </a>
-      <a href="https://www.instagram.com/marian_stancik" target="_blank" rel="noopener">
+      <a href="https://www.instagram.com/marian_stancik" target="_blank" rel="noopener" aria-label="Instagram">
         <span class="social-icon">📷</span> Instagram
       </a>
-      <a href="mailto:marian_stancik@agentmail.to">
+      <a href="mailto:marian_stancik@agentmail.to" aria-label="Send email">
         <span class="social-icon">✉️</span> Email
       </a>
     </div>
@@ -665,7 +969,11 @@ nav {
   <div class="container">
     <p>✦ ✦ ✦</p>
     <p style="margin-top: 8px;">© 2026 <a href="https://ascentia.sk" target="_blank">ASCENTIA s.r.o.</a> — Build better. Stay legal.</p>
-    <p style="margin-top: 4px; color: #444460;">marianstancik.dev</p>
+    <div class="footer-links">
+      <a href="https://marianstancik.dev">marianstancik.dev</a>
+      <a href="mailto:marian_stancik@agentmail.to">marian_stancik@agentmail.to</a>
+      <a href="https://github.com/Abra7abra7/marian_stancik_2026">Source</a>
+    </div>
   </div>
 </footer>
 
@@ -689,8 +997,6 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 const count = 1800;
 const positions = new Float32Array(count * 3);
 const colors = new Float32Array(count * 3);
-const sizes = new Float32Array(count);
-
 for (let i = 0; i < count; i++) {
   const r = 30 + Math.random() * 40;
   const theta = Math.random() * Math.PI * 2;
@@ -698,111 +1004,72 @@ for (let i = 0; i < count; i++) {
   positions[i*3] = r * Math.sin(phi) * Math.cos(theta);
   positions[i*3+1] = r * Math.cos(phi) * Math.sin(theta * 0.5);
   positions[i*3+2] = r * Math.sin(phi) * Math.sin(theta);
-  
-  // Bronze color palette
   const bronze = new THREE.Color().setHSL(0.08, 0.4, 0.3 + Math.random() * 0.35);
-  colors[i*3] = bronze.r;
-  colors[i*3+1] = bronze.g;
-  colors[i*3+2] = bronze.b;
-  
-  sizes[i] = 1.5 + Math.random() * 3;
+  colors[i*3] = bronze.r; colors[i*3+1] = bronze.g; colors[i*3+2] = bronze.b;
 }
-
 const geometry = new THREE.BufferGeometry();
 geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
-
 const material = new THREE.PointsMaterial({
-  size: 0.12,
-  vertexColors: true,
-  transparent: true,
-  opacity: 0.6,
-  blending: THREE.AdditiveBlending,
-  depthWrite: false,
-  sizeAttenuation: true,
+  size: 0.12, vertexColors: true, transparent: true, opacity: 0.6,
+  blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true,
 });
 const particles = new THREE.Points(geometry, material);
 scene.add(particles);
 
-// Connection lines (neural network feel)
-const lineGeo = new THREE.BufferGeometry();
+// Connection lines
 const linePositions = [];
-const lineColors = [];
-const maxDist = 12;
-
 for (let i = 0; i < count; i++) {
   for (let j = i + 1; j < count; j++) {
     if (Math.random() > 0.997) {
       const dx = positions[i*3] - positions[j*3];
       const dy = positions[i*3+1] - positions[j*3+1];
       const dz = positions[i*3+2] - positions[j*3+2];
-      const dist = Math.sqrt(dx*dx + dy*dy + dz*dz);
-      if (dist < maxDist) {
+      if (Math.sqrt(dx*dx + dy*dy + dz*dz) < 12) {
         linePositions.push(positions[i*3], positions[i*3+1], positions[i*3+2]);
         linePositions.push(positions[j*3], positions[j*3+1], positions[j*3+2]);
-        const alpha = 1 - dist / maxDist;
-        lineColors.push(colors[i*3], colors[i*3+1], colors[i*3+2], alpha);
-        lineColors.push(colors[j*3], colors[j*3+1], colors[j*3+2], alpha);
       }
     }
   }
 }
-
-const lineGeoData = new THREE.BufferGeometry();
-lineGeoData.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
-const lineMat = new THREE.LineBasicMaterial({
-  color: 0xCD7F32,
-  transparent: true,
-  opacity: 0.08,
-});
-const lines = new THREE.LineSegments(lineGeoData, lineMat);
+const lineGeo = new THREE.BufferGeometry();
+lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+const lines = new THREE.LineSegments(lineGeo, new THREE.LineBasicMaterial({ color: 0xCD7F32, transparent: true, opacity: 0.06 }));
 scene.add(lines);
 
 camera.position.z = 45;
 
-// Add floating nodes
-const nodeMat = new THREE.MeshBasicMaterial({
-  color: 0xCD7F32,
-  transparent: true,
-  opacity: 0.15,
-});
+// Floating nodes
+const nodeMat = new THREE.MeshBasicMaterial({ color: 0xCD7F32, transparent: true, opacity: 0.12 });
 const nodeGeom = new THREE.SphereGeometry(0.3, 8, 8);
 const nodes = [];
 for (let i = 0; i < 40; i++) {
   const mesh = new THREE.Mesh(nodeGeom, nodeMat.clone());
   const idx = Math.floor(Math.random() * count);
   mesh.position.set(positions[idx*3], positions[idx*3+1], positions[idx*3+2]);
-  mesh.userData = { baseX: positions[idx*3], baseY: positions[idx*3+1], baseZ: positions[idx*3+2], speed: 0.2 + Math.random() * 0.5, idx };
+  mesh.userData = { baseX: positions[idx*3], baseY: positions[idx*3+1], baseZ: positions[idx*3+2], speed: 0.2 + Math.random() * 0.5 };
   scene.add(mesh);
   nodes.push(mesh);
 }
 
-// Mouse tracking
+// Mouse
 let mouseX = 0, mouseY = 0;
 document.addEventListener('mousemove', (e) => {
   mouseX = (e.clientX / window.innerWidth) * 2 - 1;
   mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
 });
-
-// Resize
 window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-// Animate
 let time = 0;
 function animate() {
   requestAnimationFrame(animate);
   time += 0.001;
-  
-  // Rotate particles slowly
   particles.rotation.y += 0.0003;
   lines.rotation.y += 0.0003;
-  
-  // Float nodes
   nodes.forEach((node, i) => {
     const d = node.userData;
     node.position.x = d.baseX + Math.sin(time * d.speed + i) * 1.5;
@@ -810,31 +1077,24 @@ function animate() {
     node.position.z = d.baseZ + Math.sin(time * d.speed * 0.5 + i * 0.3) * 1.5;
     node.material.opacity = 0.08 + Math.sin(time * 2 + i) * 0.06;
   });
-  
-  // Mouse parallax
   particles.rotation.x += (mouseY * 0.02 - particles.rotation.x) * 0.02;
   particles.rotation.y += (mouseX * 0.02 - particles.rotation.y) * 0.02;
   lines.rotation.x = particles.rotation.x;
   lines.rotation.y = particles.rotation.y;
-  
   renderer.render(scene, camera);
 }
 animate();
 </script>
 
-<!-- Scroll Animations -->
+<!-- Scroll + Mobile -->
 <script>
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
-}, { threshold: 0.15 });
-
+}, { threshold: 0.12 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-// Smooth scroll for nav
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -845,7 +1105,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
-</script>
 
+// Mobile toggle aria
+document.querySelector('.mobile-toggle')?.addEventListener('click', function() {
+  const expanded = this.getAttribute('aria-expanded') === 'true';
+  this.setAttribute('aria-expanded', !expanded);
+});
+</script>
 </body>
 </html>
