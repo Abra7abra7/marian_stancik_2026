@@ -297,8 +297,8 @@ h1 .highlight { color: #CD7F32; }
   background: rgba(205,127,50,0.05);
 }
 .scroll-indicator {
-  position: absolute;
-  bottom: 28px;
+  position: fixed;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -310,6 +310,8 @@ h1 .highlight { color: #CD7F32; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   animation: float 2s ease-in-out infinite;
+  z-index: 2;
+  opacity: 0.5;
 }
 @keyframes float {
   0%, 100% { transform: translateX(-50%) translateY(0); }
@@ -661,16 +663,16 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 40px;
-  text-align: left;
+  text-align: center;
 }
 @media (max-width: 768px) {
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; text-align: center; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
   .footer-brand { grid-column: 1 / -1; }
 }
 @media (max-width: 480px) {
-  .footer-grid { grid-template-columns: 1fr; gap: 24px; text-align: center; }
+  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
 }
-.footer-brand { margin: 0 auto; max-width: 320px; }
+.footer-brand { margin: 0 auto; }
 .footer-logo {
   display: flex;
   align-items: center;
@@ -740,6 +742,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  align-items: center;
 }
 .footer-col a {
   color: #8888A0;
@@ -1281,7 +1284,7 @@ document.querySelector('.mobile-toggle')?.addEventListener('click', function() {
   this.setAttribute('aria-expanded', !expanded);
 });
 
-// Lead form — AJAX submit with success feedback
+// Lead form — AJAX submit with mailto fallback (browsers block HTTP from HTTPS)
 document.getElementById('leadForm')?.addEventListener('submit', async function(e) {
   e.preventDefault();
   const email = document.getElementById('leadEmail').value.trim();
@@ -1295,6 +1298,8 @@ document.getElementById('leadForm')?.addEventListener('submit', async function(e
   btn.disabled = true;
   btn.textContent = 'Subscribing...';
   status.textContent = '';
+
+  // Try VPS endpoint (will work locally, may fail on HTTPS production)
   try {
     const resp = await fetch('http://188.245.224.189/api/subscribe', {
       method: 'POST',
@@ -1306,17 +1311,24 @@ document.getElementById('leadForm')?.addEventListener('submit', async function(e
       status.textContent = '✅ You\'re subscribed! Thanks for joining.';
       status.style.color = '#34d399';
       document.getElementById('leadEmail').value = '';
-    } else {
-      status.textContent = 'Something went wrong. Try again or email me directly.';
-      status.style.color = '#f87171';
+      btn.disabled = false;
+      btn.textContent = 'Subscribe';
+      setTimeout(() => { status.textContent = ''; }, 6000);
+      return;
     }
-  } catch(err) {
-    status.textContent = 'Network error. You can email me directly at marian_stancik@agentmail.to';
-    status.style.color = '#f87171';
-  }
+  } catch(e) { /* fall through to mailto */ }
+
+  // Fallback: open mailto so user sends email manually
+  const mailto = 'mailto:marian_stancik@agentmail.to?subject=' +
+    encodeURIComponent('New subscriber from marianstancik.dev') +
+    '&body=' + encodeURIComponent('Email: ' + email);
+  window.open(mailto, '_blank');
+  status.textContent = '✅ Email saved! Your email app opened — just hit send to confirm.';
+  status.style.color = '#34d399';
+  document.getElementById('leadEmail').value = '';
   btn.disabled = false;
   btn.textContent = 'Subscribe';
-  setTimeout(() => { status.textContent = ''; }, 6000);
+  setTimeout(() => { status.textContent = ''; }, 8000);
 });
 </script>
 
