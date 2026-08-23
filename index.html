@@ -10,7 +10,12 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 <link rel="canonical" href="https://marianstancik.dev">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%2308080F'/><text x='50' y='68' font-size='48' font-weight='700' text-anchor='middle' fill='%23CD7F32' font-family='serif'>MS</text></svg>">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="mask-icon" href="/favicon.svg" color="#CD7F32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.svg">
+<meta name="msapplication-TileColor" content="#08080F">
+<meta name="theme-color" content="#08080F">
+<meta name="msapplication-config" content="/browserconfig.xml">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Marian Stancik — AI Agent Developer | Product Manager | Law | Drones">
@@ -633,15 +638,132 @@ h2 {
 
 /* ===== FOOTER ===== */
 footer {
-  text-align: center;
-  padding: 28px 24px;
-  color: #555570;
-  font-size: 0.72rem;
-  border-top: 1px solid rgba(255,255,255,0.04);
+  position: relative;
+  padding: 60px 24px 32px;
+  color: #8888A0;
+  font-size: 0.82rem;
+  border-top: 1px solid rgba(255,255,255,0.03);
+  overflow: hidden;
 }
-footer a { color: #8888A0; text-decoration: none; }
-footer a:hover { color: #CD7F32; }
-footer .footer-links { display: flex; gap: 16px; justify-content: center; margin-top: 8px; flex-wrap: wrap; }
+.footer-bronze {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #CD7F32, transparent);
+}
+.footer-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+.footer-brand { max-width: 320px; }
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #F0F0F5;
+  margin-bottom: 12px;
+}
+.ms-logo-sm {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #CD7F32, #E8B86D);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #08080F;
+}
+.bronze { color: #CD7F32; }
+.footer-tagline {
+  font-size: 0.8rem;
+  color: #666680;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.footer-social {
+  display: flex;
+  gap: 8px;
+}
+.social-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: #8888A0;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.social-circle:hover {
+  background: rgba(205,127,50,0.12);
+  border-color: rgba(205,127,50,0.3);
+  color: #CD7F32;
+  transform: translateY(-2px);
+}
+.footer-col h4 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #555570;
+  margin-bottom: 14px;
+}
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-col a {
+  color: #8888A0;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: color 0.3s;
+}
+.footer-col a:hover { color: #CD7F32; }
+.footer-divider {
+  max-width: 900px;
+  margin: 32px auto 20px;
+  height: 1px;
+  background: rgba(255,255,255,0.04);
+}
+.footer-bottom {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.footer-bottom p {
+  font-size: 0.72rem;
+  color: #555570;
+}
+.footer-bottom a { color: #8888A0; text-decoration: none; }
+.footer-bottom a:hover { color: #CD7F32; }
+.footer-tag { font-size: 0.65rem !important; }
 
 /* ===== ANIMATIONS ===== */
 .fade-in {
@@ -897,24 +1019,24 @@ footer .footer-links { display: flex; gap: 16px; justify-content: center; margin
       AI agents, autonomous systems, law & tech, and building in public.
     </p>
     <div class="blog-preview-grid">
-      <a href="https://marianstancik.dev/blog" target="_blank" rel="noopener" class="blog-card fade-in">
-        <div class="blog-date">August 2026</div>
+      <a href="/blog/posts/2026-08-22-building-digital-twin.html" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-date">August 23, 2026</div>
         <h3>Building a Digital Twin That Posts 9x Daily</h3>
         <p>How I built an autonomous AI agent with Hermes that creates and publishes content across platforms without human intervention.</p>
       </a>
-      <a href="https://marianstancik.dev/blog" target="_blank" rel="noopener" class="blog-card fade-in">
-        <div class="blog-date">August 2026</div>
+      <a href="/blog/" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-date">August 20, 2026</div>
         <h3>AI Act Compliance for Small AI Companies</h3>
         <p>Practical legal-by-design framework for startups building AI products in the EU. From risk assessment to documentation.</p>
       </a>
-      <a href="https://marianstancik.dev/blog" target="_blank" rel="noopener" class="blog-card fade-in">
-        <div class="blog-date">August 2026</div>
+      <a href="/blog/" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-date">August 17, 2026</div>
         <h3>Autonomous Drone Missions with ArduPilot</h3>
         <p>Building a production-grade UAV system with Pixhawk, ArduPilot, and Python-based mission planning.</p>
       </a>
     </div>
     <div class="blog-all">
-      <a href="https://marianstancik.dev/blog" target="_blank" rel="noopener">Read all posts →</a>
+      <a href="/blog/" target="_blank" rel="noopener">Read all posts →</a>
     </div>
   </div>
 </section>
@@ -955,7 +1077,7 @@ footer .footer-links { display: flex; gap: 16px; justify-content: center; margin
       <a href="https://www.linkedin.com/in/marian-stancik-924b41298/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <span class="social-icon">💼</span> LinkedIn
       </a>
-      <a href="https://marianstancik.dev" target="_blank" rel="noopener" aria-label="Blog">
+      <a href="/blog/" target="_blank" rel="noopener" aria-label="Blog">
         <span class="social-icon">✍️</span> Blog
       </a>
       <a href="https://www.instagram.com/marian_stancik" target="_blank" rel="noopener" aria-label="Instagram">
@@ -970,13 +1092,47 @@ footer .footer-links { display: flex; gap: 16px; justify-content: center; margin
 
 <!-- Footer -->
 <footer>
+  <div class="footer-bronze"></div>
   <div class="container">
-    <p>✦ ✦ ✦</p>
-    <p style="margin-top: 8px;">© 2026 <a href="https://ascentia.sk" target="_blank">ASCENTIA s.r.o.</a> — Build better. Stay legal.</p>
-    <div class="footer-links">
-      <a href="https://marianstancik.dev">marianstancik.dev</a>
-      <a href="mailto:marian_stancik@agentmail.to">marian_stancik@agentmail.to</a>
-      <a href="https://github.com/Abra7abra7/marian_stancik_2026">Source</a>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="ms-logo-sm" aria-hidden="true">MS</div>
+          <span>Marian <span class="bronze">Stancik</span></span>
+        </div>
+        <p class="footer-tagline">AI agent developer who understands law, builds drones, and ships production systems.</p>
+        <div class="footer-social">
+          <a href="https://x.com/abraka_d7" target="_blank" rel="noopener" aria-label="X/Twitter" class="social-circle">𝕏</a>
+          <a href="https://github.com/Abra7abra7" target="_blank" rel="noopener" aria-label="GitHub" class="social-circle">⌘</a>
+          <a href="https://www.linkedin.com/in/marian-stancik-924b41298/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-circle">💼</a>
+          <a href="mailto:marian_stancik@agentmail.to" aria-label="Email" class="social-circle">✉️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#projects">Projects</a>
+        <a href="#connect">Connect</a>
+      </div>
+      <div class="footer-col">
+        <h4>Projects</h4>
+        <a href="https://marianstancik.dev" target="_blank" rel="noopener">Prime Agent Masterclass</a>
+        <a href="https://ascentia.sk" target="_blank" rel="noopener">ASCENTIA</a>
+        <a href="https://github.com/Abra7abra7" target="_blank" rel="noopener">Open Source</a>
+        <a href="https://marianstancik.dev/blog" target="_blank" rel="noopener">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:marian_stancik@agentmail.to">marian_stancik@agentmail.to</a>
+        <a href="https://github.com/Abra7abra7/marian_stancik_2026" target="_blank" rel="noopener">Website Source</a>
+        <a href="https://marianstancik.dev" target="_blank" rel="noopener">marianstancik.dev</a>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <p>© 2026 <a href="https://ascentia.sk" target="_blank">ASCENTIA s.r.o.</a> — Build better. Stay legal.</p>
+      <p class="footer-tag">Built with <span class="bronze">✦</span> by Hermes Agent</p>
     </div>
   </div>
 </footer>
