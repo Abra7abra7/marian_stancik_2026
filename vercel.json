@@ -1,7 +1,5 @@
 {
-  "name": "marian-stancik-2026",
-  "version": 2,
-  "public": true,
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
@@ -25,8 +23,5 @@
         { "key": "Cache-Control", "value": "public, max-age=86400, immutable" }
       ]
     }
-  ],
-  "rewrites": [
-    { "source": "/blog", "destination": "/blog/index.html" }
   ]
 }
