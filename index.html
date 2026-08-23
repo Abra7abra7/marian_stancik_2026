@@ -26,7 +26,7 @@
 <meta name="twitter:site" content="@abraka_d7">
 <meta name="twitter:creator" content="@abraka_d7">
 <meta name="twitter:title" content="Marian Stancik">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; font-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://cdn.jsdelivr.net; font-src 'self'">
 <meta name="twitter:description" content="AI Agent Developer · Product Manager @ Delta Defence · Law @ PF UK · Drone Systems">
 
 <!-- JSON-LD Schema.org Person (AI agent accessible) -->
@@ -624,6 +624,7 @@ h2 {
 .lead-form button:hover {
   opacity: 0.9;
 }
+.lead-status { font-size: 0.82rem; color: #E8B86D; margin-top: 8px; min-height: 24px; }
 .lead-note {
   font-size: 0.7rem;
   color: #555570;
@@ -926,12 +927,12 @@ footer .footer-links { display: flex; gap: 16px; justify-content: center; margin
     <p class="section-intro fade-in" style="margin-bottom: 0;">
       AI agent insights, drone builds, law & tech notes — directly to your inbox.
     </p>
-    <form class="lead-form fade-in" action="https://agentmail.to/send" method="POST">
-      <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
-      <input type="hidden" name="to" value="marian_stancik@agentmail.to">
-      <input type="hidden" name="subject" value="New subscriber from marianstancik.dev">
+    <form class="lead-form fade-in" id="leadForm" action="http://188.245.224.189/api/subscribe" method="POST" target="hidden_iframe">
+      <input type="email" name="email" id="leadEmail" placeholder="your@email.com" required aria-label="Email address">
       <button type="submit">Subscribe</button>
     </form>
+    <div id="leadStatus" class="lead-status" role="alert"></div>
+    <iframe name="hidden_iframe" style="display:none"></iframe>
     <p class="lead-note">No spam. Unsubscribe anytime. Built with AgentMail.</p>
   </div>
 </section>
@@ -1115,5 +1116,17 @@ document.querySelector('.mobile-toggle')?.addEventListener('click', function() {
   this.setAttribute('aria-expanded', !expanded);
 });
 </script>
+
+<script>
+// Lead form handler — sends to API + opens email as backup
+document.getElementById('leadForm')?.addEventListener('submit', function(e) {
+  const email = document.getElementById('leadEmail').value;
+  if (email) {
+    // Also open mailto as backup delivery
+    window.open('mailto:marian_stancik@agentmail.to?subject=New%20subscriber%20from%20marianstancik.dev&body=Email%3A%20' + encodeURIComponent(email), '_blank');
+  }
+});
+</script>
+
 </body>
 </html>
