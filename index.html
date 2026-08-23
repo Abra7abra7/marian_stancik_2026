@@ -31,7 +31,7 @@
 <meta name="twitter:site" content="@abraka_d7">
 <meta name="twitter:creator" content="@abraka_d7">
 <meta name="twitter:title" content="Marian Stancik">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://cdn.jsdelivr.net; font-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://cdn.jsdelivr.net http://188.245.224.189; font-src 'self'">
 <meta name="twitter:description" content="AI Agent Developer · Product Manager @ Delta Defence · Law @ PF UK · Drone Systems">
 
 <!-- JSON-LD Schema.org Person (AI agent accessible) -->
@@ -644,6 +644,7 @@ footer {
   font-size: 0.82rem;
   border-top: 1px solid rgba(255,255,255,0.03);
   overflow: hidden;
+  text-align: center;
 }
 .footer-bronze {
   position: absolute;
@@ -658,17 +659,18 @@ footer {
   max-width: 900px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 40px;
+  text-align: left;
 }
 @media (max-width: 768px) {
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; text-align: center; }
   .footer-brand { grid-column: 1 / -1; }
 }
 @media (max-width: 480px) {
-  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 24px; text-align: center; }
 }
-.footer-brand { max-width: 320px; }
+.footer-brand { margin: 0 auto; max-width: 320px; }
 .footer-logo {
   display: flex;
   align-items: center;
@@ -677,6 +679,7 @@ footer {
   font-weight: 600;
   color: #F0F0F5;
   margin-bottom: 12px;
+  justify-content: center;
 }
 .ms-logo-sm {
   width: 32px;
@@ -690,6 +693,7 @@ footer {
   font-weight: 700;
   font-size: 0.8rem;
   color: #08080F;
+  flex-shrink: 0;
 }
 .bronze { color: #CD7F32; }
 .footer-tagline {
@@ -697,10 +701,12 @@ footer {
   color: #666680;
   line-height: 1.6;
   margin-bottom: 16px;
+  text-align: center;
 }
 .footer-social {
   display: flex;
   gap: 8px;
+  justify-content: center;
 }
 .social-circle {
   width: 36px;
@@ -752,14 +758,15 @@ footer {
   max-width: 900px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px;
 }
 .footer-bottom p {
   font-size: 0.72rem;
   color: #555570;
+  margin: 0 4px;
 }
 .footer-bottom a { color: #8888A0; text-decoration: none; }
 .footer-bottom a:hover { color: #CD7F32; }
@@ -828,7 +835,10 @@ footer {
   <div class="container hero-inner">
     <div class="badge">✦ AI Agents · Product · Law · UAV</div>
     <div class="profile-frame">
-      <img src="profile.jpg" alt="Marian Stancik" width="200" height="200" loading="eager">
+      <picture>
+        <source srcset="profile.webp" type="image/webp">
+        <img src="profile.jpg" alt="Marian Stancik" width="200" height="200" loading="eager">
+      </picture>
     </div>
     <h1>Marian <span class="highlight">Stancik</span></h1>
     <p class="tagline">
@@ -1049,12 +1059,11 @@ footer {
     <p class="section-intro fade-in" style="margin-bottom: 0;">
       AI agent insights, drone builds, law & tech notes — directly to your inbox.
     </p>
-    <form class="lead-form fade-in" id="leadForm" action="http://188.245.224.189/api/subscribe" method="POST" target="hidden_iframe">
+    <form class="lead-form fade-in" id="leadForm">
       <input type="email" name="email" id="leadEmail" placeholder="your@email.com" required aria-label="Email address">
-      <button type="submit">Subscribe</button>
+      <button type="submit" id="subscribeBtn">Subscribe</button>
     </form>
     <div id="leadStatus" class="lead-status" role="alert"></div>
-    <iframe name="hidden_iframe" style="display:none"></iframe>
     <p class="lead-note">No spam. Unsubscribe anytime. Built with AgentMail.</p>
   </div>
 </section>
@@ -1271,18 +1280,47 @@ document.querySelector('.mobile-toggle')?.addEventListener('click', function() {
   const expanded = this.getAttribute('aria-expanded') === 'true';
   this.setAttribute('aria-expanded', !expanded);
 });
-</script>
 
-<script>
-// Lead form handler — sends to API + opens email as backup
-document.getElementById('leadForm')?.addEventListener('submit', function(e) {
-  const email = document.getElementById('leadEmail').value;
-  if (email) {
-    // Also open mailto as backup delivery
-    window.open('mailto:marian_stancik@agentmail.to?subject=New%20subscriber%20from%20marianstancik.dev&body=Email%3A%20' + encodeURIComponent(email), '_blank');
+// Lead form — AJAX submit with success feedback
+document.getElementById('leadForm')?.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const email = document.getElementById('leadEmail').value.trim();
+  const status = document.getElementById('leadStatus');
+  const btn = document.getElementById('subscribeBtn');
+  if (!email || !email.includes('@')) {
+    status.textContent = 'Please enter a valid email address.';
+    status.style.color = '#f87171';
+    return;
   }
+  btn.disabled = true;
+  btn.textContent = 'Subscribing...';
+  status.textContent = '';
+  try {
+    const resp = await fetch('http://188.245.224.189/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'email=' + encodeURIComponent(email)
+    });
+    const data = await resp.json();
+    if (data.status === 'ok') {
+      status.textContent = '✅ You\'re subscribed! Thanks for joining.';
+      status.style.color = '#34d399';
+      document.getElementById('leadEmail').value = '';
+    } else {
+      status.textContent = 'Something went wrong. Try again or email me directly.';
+      status.style.color = '#f87171';
+    }
+  } catch(err) {
+    status.textContent = 'Network error. You can email me directly at marian_stancik@agentmail.to';
+    status.style.color = '#f87171';
+  }
+  btn.disabled = false;
+  btn.textContent = 'Subscribe';
+  setTimeout(() => { status.textContent = ''; }, 6000);
 });
 </script>
+
+
 
 </body>
 </html>
