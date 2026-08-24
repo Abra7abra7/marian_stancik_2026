@@ -78,7 +78,46 @@ Vercel `cleanUrls: true` enables `/about` → `about.html` resolution.
 
 ---
 
-## 6. Footer Links Status
+## 6. Coding Agent — OpenCode
+
+**Preferovaný externý kódovací agent:** OpenCode (`/root/.local/bin/opencode`)
+
+| Property | Value |
+|:---------|:-------|
+| **CLI** | `/root/.local/bin/opencode` |
+| **Provider** | OpenRouter (kľúč v `/root/.hermes/auth.json`) |
+| **Model** | `openrouter/deepseek/deepseek-v4-flash` |
+| **Auth** | Export `OPENROUTER_API_KEY` z `auth.json` do env |
+| **Workdir** | `/root/marian-stancik-web` |
+| **Short tasks** | `terminal("opencode run --model ... 'prompt'")` |
+| **Long tasks** | `execute_code` s `subprocess.run` (vyhne sa quoting problémom) |
+| **Repo req** | Vyžaduje git repo |
+
+```python
+# Reliable pattern:
+import subprocess
+env = {'OPENROUTER_API_KEY': key, 'PATH': '/root/.local/bin:/usr/bin:/bin:/usr/local/bin:/root/.hermes/node/bin'}
+result = subprocess.run(['/root/.local/bin/opencode', 'run', '--model', 'openrouter/deepseek/deepseek-v4-flash', 'task'],
+    capture_output=True, text=True, timeout=120, env=env, cwd='/root/marian-stancik-web')
+```
+
+---
+
+## 7. i18n — Language Switching (EN/SK)
+
+**Architektúra:** Inline JS dictionary (`const translations = {en: {...}, sk: {...}}`) v každom HTML.
+
+**Kritický detail:** Každý element je individuálne null-safe:
+```javascript
+var _e = document.getElementById('X'); if(_e) _e.textContent = d.Y;
+```
+Ak element neexistuje (napr. `skipLinkText` na home page), je preskočený — ostatné preklady bežia ďalej.
+
+**Prepínanie:** `switchLanguage(lang)` → nastaví `currentLang`, uloží do `localStorage('ms_lang')`, zavolá `applyTranslations()` a `loadDynamicPostsHome()`.
+
+---
+
+## 8. Footer Links Status
 
 | Link | Status | Detail |
 |:-----|:-------|:-------|
@@ -90,7 +129,7 @@ Vercel `cleanUrls: true` enables `/about` → `about.html` resolution.
 
 ---
 
-## 7. About Text — Key Changes
+## 9. About Text — Key Changes
 
 - **"Since 2023"** — added to first paragraph (replaced old intro)
 - **University paragraph removed** — no "90 years" or "90-ročnou" anywhere
@@ -102,7 +141,7 @@ Vercel `cleanUrls: true` enables `/about` → `about.html` resolution.
 
 ---
 
-## 8. Drones Page — Complete Build Specs
+## 10. Drones Page — Complete Build Specs
 
 6 categories of build specifications + complete shopping list:
 
@@ -115,7 +154,7 @@ Vercel `cleanUrls: true` enables `/about` → `about.html` resolution.
 
 ---
 
-## 9. Lead CRM
+## 11. Lead CRM
 
 - **Database:** `/opt/hermes-vault/leads.db` (SQLite) — extended schema (name, phone, message, company, contact_status)
 - **Web form** → Python WSGI on VPS (`:8701`) → leads.db
@@ -125,7 +164,7 @@ Vercel `cleanUrls: true` enables `/about` → `about.html` resolution.
 
 ---
 
-## 10. Git & Deployment
+## 12. Git & Deployment
 
 ### Branches
 - **`main`** — Vercel production trigger
@@ -149,7 +188,7 @@ curl -X POST https://api.indexnow.org/indexnow \
 
 ---
 
-## 11. Test Matrix (MANDATORY before every push)
+## 13. Test Matrix (MANDATORY before every push)
 
 | Vrstva | Nástroj | Čo testuje | Rýchlosť |
 |:-------|:--------|:-----------|:---------|
@@ -177,11 +216,11 @@ python3 test_visual.py
 | section text | každá > 100 chars | Empty content |
 | Three.js | `<canvas>` exists | Blog page ✅ intentionally no canvas |
 | i18n ready | `translations` + `switchLanguage` | Broken JS object |
-| i18n works | SK text detected | "Vitajte" / "Kontakt" in DOM |
+| i18n works | SK text detected | "Kontakt" / "Spojenie" in DOM |
 | JS errors (console) | 0 | SyntaxError |
 | L0 syntax | `node --check` exit 0 | Missing comma, extra brace |
 
-## 12. Workflow (MANDATORY — every single change)
+## 14. Workflow (MANDATORY — every single change)
 
 ```bash
 # Step 1: Pull latest
