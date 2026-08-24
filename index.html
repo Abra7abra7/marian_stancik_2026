@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marian Stancik — AI Agent Developer | Product Manager | Law | Drones</title>
-<meta name="description" content="Marian Stancik builds autonomous AI agents with Hermes, manages products at Delta Defence, studies law at PF UK, and builds drones. AI x Law x UAV.">
-<meta name="keywords" content="Marian Stancik, AI agent developer, Hermes Agent, autonomous systems, product manager, Delta Defence, law student, drones, UAV, ASCENTIA, AI compliance">
+<title id="docTitle">Marian Stancik — AI Agent Developer | Product Manager | Law | Drones</title>
+<meta name="description" id="docDesc" content="Marian Stancik builds autonomous AI agents with Hermes, manages products at Delta Defence, studies law at PF UK, and builds drones. AI x Law x UAV.">
+<meta name="keywords" content="Marian Stancik, AI agent developer, Hermes Agent, autonomous systems, product manager, Delta Defence, law student, drones, UAV, ASCENTIA, AI compliance, AI Act, GDPR">
 <meta name="author" content="Marian Stancik">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 <link rel="canonical" href="https://marianstancik.dev">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="mask-icon" href="/favicon.svg" color="#CD7F32">
-<link rel="apple-touch-icon" href="/apple-touch-icon.svg">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="mask-icon" href="favicon.svg" color="#CD7F32">
+<link rel="apple-touch-icon" href="apple-touch-icon.svg">
 <meta name="msapplication-TileColor" content="#08080F">
 <meta name="theme-color" content="#08080F">
 <meta name="msapplication-config" content="/browserconfig.xml">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Marian Stancik — AI Agent Developer | Product Manager | Law | Drones">
-<meta property="og:description" content="Building autonomous AI agents. Product Manager at Delta Defence. Law student at PF UK. Drone pilot.">
+<meta property="og:title" id="ogTitle" content="Marian Stancik — AI Agent Developer | Product Manager | Law | Drones">
+<meta property="og:description" id="ogDesc" content="Building autonomous AI agents. Product Manager at Delta Defence. Law student at PF UK. Drone pilot.">
 <meta property="og:url" content="https://marianstancik.dev">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://marianstancik.dev/profile.jpg">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" id="ogLocale" content="en_US">
 <meta property="og:site_name" content="Marian Stancik">
 
 <!-- Twitter Card -->
@@ -34,12 +34,13 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://cdn.jsdelivr.net http://188.245.224.189; font-src 'self'">
 <meta name="twitter:description" content="AI Agent Developer · Product Manager @ Delta Defence · Law @ PF UK · Drone Systems">
 
-<!-- JSON-LD Schema.org Person (AI agent accessible) -->
+<!-- JSON-LD Schema.org Person with GEO and Authority Context -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Marian Stancik",
+  "alternateName": ["Marian Stančík", "Abraka_d7"],
   "givenName": "Marian",
   "familyName": "Stancik",
   "url": "https://marianstancik.dev",
@@ -48,39 +49,108 @@
     "https://github.com/Abra7abra7",
     "https://www.linkedin.com/in/marian-stancik-924b41298/",
     "https://www.instagram.com/marian_stancik",
-    "https://marianstancik.dev"
+    "https://ascentia.sk"
   ],
-  "jobTitle": ["AI Agent Developer", "Product Manager", "CEO"],
+  "jobTitle": ["AI Agent Developer", "Product Manager", "CEO", "UAV Drone Engineer"],
   "worksFor": [
-    {"@type": "Organization", "name": "Delta Defence a.s.", "jobTitle": "Product Manager"},
-    {"@type": "Organization", "name": "ASCENTIA s.r.o.", "jobTitle": "CEO"}
+    {
+      "@type": "Organization",
+      "name": "Delta Defence a.s.",
+      "jobTitle": "Product Manager",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bratislava",
+        "addressCountry": "SK"
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "ASCENTIA s.r.o.",
+      "jobTitle": "CEO & Founder",
+      "url": "https://ascentia.sk",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bratislava",
+        "addressCountry": "SK"
+      }
+    }
   ],
-  "knowsAbout": ["Artificial Intelligence", "Autonomous Agents", "Hermes Agent", "Law", "AI Act", "GDPR", "Drones", "UAV", "ArduPilot", "Python", "TypeScript", "Go", "Product Management", "Defense Industry"],
   "alumniOf": [
-    {"@type": "CollegeOrUniversity", "name": "Comenius University, Faculty of Law"},
-    {"@type": "CollegeOrUniversity", "name": "Comenius University, Faculty of Physical Education and Sports"},
-    {"@type": "CollegeOrUniversity", "name": "University of Vienna"}
+    {
+      "@type": "EducationalOrganization",
+      "name": "Právnická fakulta Univerzity Komenského v Bratislave (Faculty of Law, Comenius University in Bratislava)",
+      "url": "https://flaw.uniba.sk",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bratislava",
+        "addressCountry": "SK"
+      }
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "Fakulta telesnej výchovy a športu Univerzity Komenského v Bratislave",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bratislava",
+        "addressCountry": "SK"
+      }
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "Universität Wien (University of Vienna)",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vienna",
+        "addressCountry": "AT"
+      }
+    }
+  ],
+  "knowsAbout": [
+    "AI Engineering", "Hermes Agent", "Model Context Protocol (MCP)", "Autonomous Multi-Agent Systems",
+    "Python", "Cron Orchestration", "Hetzner Cloud VPS", "Telegram/WhatsApp C2 Agent Interfaces",
+    "Law", "EU AI Act", "GDPR", "NIS2 Directive", "Legal-by-Design Compliance",
+    "Drones", "UAV Engineering", "ArduPilot", "Pixhawk", "QGroundControl", "Mission Planner",
+    "Betaflight", "Raspberry Pi 5 Edge AI", "Hardware Assembly & Soldering", "A1/A3 Drone Pilot", "EASA SORA/PDRA"
   ],
   "email": "marian_stancik@agentmail.to",
-  "address": {"@type": "PostalAddress", "addressLocality": "Bratislava", "addressCountry": "SK"},
-  "description": "AI agent developer who understands law, builds drones, and ships production systems. Product Manager at Delta Defence. Law student at PF UK.",
+  "homeLocation": {
+    "@type": "Place",
+    "name": "Bratislava, Slovakia",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 48.1486,
+      "longitude": 17.1077
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bratislava",
+      "addressRegion": "Bratislavský kraj",
+      "addressCountry": "SK"
+    }
+  },
+  "description": "AI agent developer, Product Manager at Delta Defence, Law student at PF UK (Comenius University in Bratislava), and UAV engineer building custom ArduPilot drones with Raspberry Pi 5 AI companion computers.",
   "image": "https://marianstancik.dev/profile.jpg",
-  "knowsLanguage": ["en", "sk"]
+  "knowsLanguage": ["en", "sk", "de"]
 }
 </script>
 
-<!-- JSON-LD WebSite for AI crawlers -->
+<!-- JSON-LD WebSite for AI search engines & GEO discovery -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "url": "https://marianstancik.dev",
   "name": "Marian Stancik",
-  "description": "Personal brand website of Marian Stancik — AI Agent Developer, Product Manager, Law Student, Drone Builder",
+  "description": "Engineering platform and personal brand of Marian Stancik — AI Agent Developer, Product Manager at Delta Defence, Law Student at PF UK, UAV Builder, CEO of ASCENTIA s.r.o.",
   "inLanguage": ["en", "sk"],
-  "about": {
-    "@type": "Thing",
-    "name": "AI Agents, Law, Drones, Product Management"
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Bratislava, Slovakia, European Union",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 48.1486,
+      "longitude": 17.1077
+    }
   }
 }
 </script>
@@ -89,8 +159,9 @@
 /* ===== RESET & BASE ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { font-display: swap;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+body {
+  font-display: swap;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
   background: #08080F;
   color: #E8E8F0;
   line-height: 1.7;
@@ -119,19 +190,20 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 80px 24px;
+  padding: 90px 24px;
   position: relative;
 }
 section::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(8,8,15,0.85) 40%, rgba(8,8,15,0.95) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(8,8,15,0.85) 40%, rgba(8,8,15,0.96) 100%);
   pointer-events: none;
 }
 .container {
   max-width: 880px;
   width: 100%;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -141,15 +213,16 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 1000;
   padding: 14px 24px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  background: rgba(8,8,15,0.6);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(8,8,15,0.75);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.3s;
 }
 .nav-container {
-  max-width: 900px;
+  max-width: 920px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -174,23 +247,61 @@ nav {
   font-size: 0.9rem;
   color: #08080F;
   letter-spacing: 0.02em;
+  box-shadow: 0 0 15px rgba(205,127,50,0.2);
 }
 .nav-logo-text {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: #F0F0F5;
   letter-spacing: -0.01em;
 }
 .nav-logo-text span { color: #CD7F32; }
-.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.nav-links { display: flex; gap: 22px; align-items: center; }
 .nav-links a {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: #8888A0;
   text-decoration: none;
   transition: color 0.3s;
   font-weight: 500;
 }
 .nav-links a:hover { color: #CD7F32; }
+
+/* Language Switcher Pill */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 100px;
+  padding: 2px 4px;
+  gap: 2px;
+}
+.lang-btn {
+  background: none;
+  border: none;
+  color: #8888A0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.lang-btn.active {
+  background: rgba(205,127,50,0.18);
+  color: #E8B86D;
+  border: 1px solid rgba(205,127,50,0.3);
+  box-shadow: 0 0 10px rgba(205,127,50,0.15);
+}
+.lang-btn:hover:not(.active) {
+  color: #F0F0F5;
+}
+
 .nav-cta {
   background: rgba(205,127,50,0.12);
   border: 1px solid rgba(205,127,50,0.25);
@@ -201,19 +312,47 @@ nav {
   font-weight: 600 !important;
 }
 .nav-cta:hover {
-  background: rgba(205,127,50,0.2) !important;
+  background: rgba(205,127,50,0.22) !important;
 }
 
 /* ===== MOBILE NAV ===== */
-.mobile-toggle { display: none; background: none; border: none; color: #F0F0F5; font-size: 1.5rem; cursor: pointer; padding: 4px; }
-@media (max-width: 640px) {
-  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: rgba(8,8,15,0.97); padding: 20px 24px; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.06); align-items: flex-start; }
-  .nav-links.open { display: flex; }
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #F0F0F5;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 16px;
+    right: 16px;
+    flex-direction: column;
+    background: rgba(14,14,24,0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 24px 20px;
+    gap: 18px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    align-items: flex-start;
+  }
+  .nav-links.open { display: flex; animation: slideDown 0.25s ease-out; }
   .mobile-toggle { display: block; }
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ===== HERO ===== */
-#hero { min-height: 100vh; padding-top: 0; }
+#hero { min-height: 100vh; padding-top: 60px; }
 .hero-inner {
   display: flex;
   flex-direction: column;
@@ -227,10 +366,13 @@ nav {
   border-radius: 50%;
   border: 2px solid rgba(205,127,50,0.4);
   overflow: hidden;
-  box-shadow: 0 0 60px rgba(205,127,50,0.15);
-  transition: box-shadow 0.4s;
+  box-shadow: 0 0 60px rgba(205,127,50,0.2);
+  transition: box-shadow 0.4s, transform 0.4s;
 }
-.profile-frame:hover { box-shadow: 0 0 80px rgba(205,127,50,0.3); }
+.profile-frame:hover {
+  box-shadow: 0 0 80px rgba(205,127,50,0.35);
+  transform: scale(1.02);
+}
 .profile-frame img { width: 100%; height: 100%; object-fit: cover; }
 .badge {
   display: inline-block;
@@ -245,7 +387,7 @@ nav {
   border-radius: 100px;
 }
 h1 {
-  font-size: clamp(2rem, 5.5vw, 3.5rem);
+  font-size: clamp(2.2rem, 5.8vw, 3.6rem);
   font-weight: 700;
   color: #F0F0F5;
   line-height: 1.1;
@@ -253,12 +395,15 @@ h1 {
 }
 h1 .highlight { color: #CD7F32; }
 .tagline {
-  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  font-size: clamp(0.95rem, 1.8vw, 1.18rem);
   color: #A0A0B8;
-  max-width: 580px;
+  max-width: 600px;
   font-weight: 400;
+  line-height: 1.6;
 }
-.tagline span { color: #E8B86D; }
+.tagline span { color: #E8B86D; font-weight: 500; }
+
+/* Role Badges with SVGs */
 .hero-roles {
   display: flex;
   gap: 8px;
@@ -266,14 +411,29 @@ h1 .highlight { color: #CD7F32; }
   justify-content: center;
   margin-top: 4px;
 }
-.hero-roles span {
-  font-size: 0.72rem;
-  padding: 4px 12px;
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  padding: 5px 14px;
   border-radius: 100px;
   background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  color: #8888A0;
+  border: 1px solid rgba(255,255,255,0.07);
+  color: #B0B0C8;
+  transition: all 0.25s ease;
 }
+.role-badge:hover {
+  background: rgba(205,127,50,0.08);
+  border-color: rgba(205,127,50,0.25);
+  color: #E8B86D;
+}
+.role-badge svg {
+  color: #CD7F32;
+  flex-shrink: 0;
+}
+
+/* Hero Links with SVGs */
 .hero-links {
   display: flex;
   gap: 12px;
@@ -282,25 +442,37 @@ h1 .highlight { color: #CD7F32; }
   margin-top: 8px;
 }
 .hero-links a {
-  color: #8888A0;
-  font-size: 0.82rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #A0A0B8;
+  font-size: 0.84rem;
   text-decoration: none;
-  padding: 8px 18px;
+  padding: 8px 20px;
   border: 1px solid rgba(136,136,160,0.2);
   border-radius: 100px;
   transition: all 0.3s;
   font-weight: 500;
 }
 .hero-links a:hover {
-  color: #CD7F32;
+  color: #E8B86D;
   border-color: rgba(205,127,50,0.5);
-  background: rgba(205,127,50,0.05);
+  background: rgba(205,127,50,0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(205,127,50,0.15);
 }
+.hero-links a svg {
+  color: #CD7F32;
+  transition: transform 0.25s ease, color 0.25s ease;
+  flex-shrink: 0;
+}
+.hero-links a:hover svg {
+  transform: scale(1.15);
+  color: #E8B86D;
+}
+
+/* Scroll indicator - inside hero under links/glow-line */
 .scroll-indicator {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -310,16 +482,16 @@ h1 .highlight { color: #CD7F32; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   animation: float 2s ease-in-out infinite;
-  z-index: 2;
-  opacity: 0.5;
+  margin-top: 12px;
+  opacity: 0.7;
 }
 @keyframes float {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(6px); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }
 .scroll-indicator .arrow {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   border-right: 1.5px solid #555570;
   border-bottom: 1.5px solid #555570;
   transform: rotate(45deg);
@@ -328,7 +500,7 @@ h1 .highlight { color: #CD7F32; }
 /* ===== SECTION HEADERS ===== */
 .section-label {
   display: inline-block;
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -336,16 +508,17 @@ h1 .highlight { color: #CD7F32; }
   margin-bottom: 8px;
 }
 h2 {
-  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
   font-weight: 700;
   color: #F0F0F5;
   line-height: 1.2;
   margin-bottom: 12px;
+  letter-spacing: -0.01em;
 }
 .section-intro {
   color: #8888A0;
   font-size: 0.95rem;
-  max-width: 600px;
+  max-width: 620px;
   margin-bottom: 40px;
 }
 
@@ -354,41 +527,72 @@ h2 {
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  gap: 32px;
 }
-@media (max-width: 640px) { .about-grid { grid-template-columns: 1fr; } }
-.about-text { color: #B0B0C8; font-size: 0.92rem; }
+@media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
+.about-text { color: #B0B0C8; font-size: 0.94rem; }
 .about-text p + p { margin-top: 14px; }
 .about-text strong { color: #F0F0F5; }
 .stats {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 14px;
 }
 .stat-card {
-  background: rgba(255,255,255,0.03);
+  background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 12px;
-  padding: 18px 14px;
+  border-radius: 14px;
+  padding: 20px 14px;
   text-align: center;
   transition: all 0.3s;
 }
 .stat-card:hover {
   background: rgba(205,127,50,0.05);
-  border-color: rgba(205,127,50,0.2);
+  border-color: rgba(205,127,50,0.25);
+  transform: translateY(-2px);
 }
 .stat-number {
-  font-size: 1.6rem;
+  font-size: 1.65rem;
   font-weight: 700;
   color: #CD7F32;
   line-height: 1;
 }
 .stat-label {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: #8888A0;
-  margin-top: 6px;
+  margin-top: 8px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+/* ===== EXPERTISE & PROJECTS CARD ICONS ===== */
+.card-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(205,127,50,0.07);
+  border: 1px solid rgba(205,127,50,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 15px rgba(205,127,50,0.05);
+}
+.card-icon-wrap svg {
+  color: #E8B86D;
+  transition: transform 0.3s ease;
+}
+.exp-card:hover .card-icon-wrap,
+.project-card:hover .card-icon-wrap {
+  background: rgba(205,127,50,0.16);
+  border-color: rgba(205,127,50,0.45);
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 0 25px rgba(205,127,50,0.25);
+}
+.exp-card:hover .card-icon-wrap svg,
+.project-card:hover .card-icon-wrap svg {
+  transform: scale(1.1);
 }
 
 /* ===== EXPERTISE ===== */
@@ -396,15 +600,15 @@ h2 {
 .expertise-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 20px;
 }
-@media (max-width: 800px) { .expertise-grid { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { .expertise-grid { grid-template-columns: 1fr; } }
 .exp-card {
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 16px;
-  padding: 28px 22px;
-  transition: all 0.4s;
+  padding: 28px 24px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
 }
@@ -421,31 +625,30 @@ h2 {
 }
 .exp-card:hover {
   background: rgba(255,255,255,0.04);
-  border-color: rgba(205,127,50,0.2);
+  border-color: rgba(205,127,50,0.25);
   transform: translateY(-4px);
 }
 .exp-card:hover::before { opacity: 1; }
-.exp-icon { font-size: 1.8rem; margin-bottom: 14px; }
 .exp-card h3 {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #F0F0F5;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .exp-card p {
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   color: #8888A0;
   line-height: 1.6;
 }
 .exp-card .tech-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
-  margin-top: 14px;
+  gap: 6px;
+  margin-top: 16px;
 }
 .exp-card .tech-tags span {
   font-size: 0.65rem;
-  padding: 3px 9px;
+  padding: 3px 10px;
   border-radius: 100px;
   background: rgba(205,127,50,0.08);
   color: #E8B86D;
@@ -457,43 +660,42 @@ h2 {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  gap: 20px;
 }
-@media (max-width: 640px) { .projects-grid { grid-template-columns: 1fr; } }
+@media (max-width: 680px) { .projects-grid { grid-template-columns: 1fr; } }
 .project-card {
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 14px;
-  padding: 24px;
+  border-radius: 16px;
+  padding: 26px;
   transition: all 0.3s;
   text-decoration: none;
   display: block;
 }
 .project-card:hover {
   background: rgba(255,255,255,0.04);
-  border-color: rgba(205,127,50,0.2);
-  transform: translateY(-2px);
+  border-color: rgba(205,127,50,0.25);
+  transform: translateY(-3px);
 }
-.project-card .proj-icon { font-size: 1.4rem; margin-bottom: 10px; }
 .project-card h3 {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #F0F0F5;
   margin-bottom: 6px;
 }
 .project-card p {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   color: #8888A0;
   line-height: 1.5;
 }
 .project-card .proj-lang {
   display: inline-block;
-  font-size: 0.62rem;
-  padding: 3px 8px;
+  font-size: 0.64rem;
+  padding: 4px 10px;
   border-radius: 6px;
   background: rgba(255,255,255,0.04);
   color: #A0A0B8;
-  margin-top: 8px;
+  margin-top: 12px;
 }
 
 /* ===== BLOG PREVIEW ===== */
@@ -501,86 +703,63 @@ h2 {
 .blog-preview-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 20px;
 }
-@media (max-width: 800px) { .blog-preview-grid { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { .blog-preview-grid { grid-template-columns: 1fr; } }
 .blog-card {
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 14px;
-  padding: 24px;
-  transition: all 0.3s;
+  border-radius: 16px;
+  padding: 26px;
+  transition: all 0.35s;
   text-decoration: none;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 .blog-card:hover {
   background: rgba(255,255,255,0.04);
-  border-color: rgba(205,127,50,0.2);
-  transform: translateY(-2px);
+  border-color: rgba(205,127,50,0.25);
+  transform: translateY(-3px);
 }
 .blog-card .blog-date {
-  font-size: 0.62rem;
+  font-size: 0.65rem;
   color: #555570;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 8px;
+  font-weight: 600;
 }
 .blog-card h3 {
-  font-size: 0.92rem;
+  font-size: 0.96rem;
   font-weight: 600;
   color: #F0F0F5;
-  margin-bottom: 6px;
-  line-height: 1.3;
+  margin-bottom: 8px;
+  line-height: 1.35;
 }
 .blog-card p {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: #8888A0;
-  line-height: 1.5;
+  line-height: 1.55;
+  flex: 1;
 }
 .blog-all {
   text-align: center;
-  margin-top: 32px;
+  margin-top: 36px;
 }
 .blog-all a {
   color: #CD7F32;
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   text-decoration: none;
   border: 1px solid rgba(205,127,50,0.25);
-  padding: 10px 28px;
+  padding: 10px 30px;
   border-radius: 100px;
   transition: all 0.3s;
   display: inline-block;
+  font-weight: 600;
 }
 .blog-all a:hover {
-  background: rgba(205,127,50,0.08);
+  background: rgba(205,127,50,0.1);
 }
-
-/* ===== CONNECT ===== */
-#connect { min-height: auto; padding: 100px 24px 80px; text-align: center; }
-.connect-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-.connect-grid a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 22px;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 100px;
-  color: #B0B0C8;
-  text-decoration: none;
-  font-size: 0.85rem;
-  transition: all 0.3s;
-}
-.connect-grid a:hover {
-  color: #CD7F32;
-  border-color: rgba(205,127,50,0.4);
-  background: rgba(205,127,50,0.05);
-}
-.connect-grid .social-icon { font-size: 1rem; }
 
 /* ===== LEAD CAPTURE ===== */
 #lead-capture { 
@@ -592,7 +771,7 @@ h2 {
 .lead-form {
   display: flex;
   gap: 10px;
-  max-width: 460px;
+  max-width: 480px;
   margin: 24px auto 0;
   flex-wrap: wrap;
   justify-content: center;
@@ -600,7 +779,7 @@ h2 {
 .lead-form input {
   flex: 1;
   min-width: 220px;
-  padding: 12px 18px;
+  padding: 12px 20px;
   border-radius: 100px;
   border: 1px solid rgba(255,255,255,0.1);
   background: rgba(255,255,255,0.04);
@@ -613,9 +792,7 @@ h2 {
 .lead-form input:focus {
   border-color: rgba(205,127,50,0.5);
 }
-.lead-form input::placeholder {
-  color: #555570;
-}
+.lead-form input::placeholder { color: #555570; }
 .lead-form button {
   padding: 12px 28px;
   border-radius: 100px;
@@ -625,18 +802,50 @@ h2 {
   font-weight: 700;
   font-size: 0.85rem;
   cursor: pointer;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, transform 0.2s;
   font-family: inherit;
 }
-.lead-form button:hover {
-  opacity: 0.9;
+.lead-form button:hover { opacity: 0.9; transform: scale(1.02); }
+.lead-status { font-size: 0.82rem; color: #E8B86D; margin-top: 10px; min-height: 24px; }
+.lead-note { font-size: 0.72rem; color: #555570; margin-top: 8px; }
+
+/* ===== CONNECT ===== */
+#connect { min-height: auto; padding: 100px 24px 80px; text-align: center; }
+.connect-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
 }
-.lead-status { font-size: 0.82rem; color: #E8B86D; margin-top: 8px; min-height: 24px; }
-.lead-note {
-  font-size: 0.7rem;
-  color: #555570;
-  margin-top: 10px;
+.connect-grid a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 100px;
+  color: #B0B0C8;
+  text-decoration: none;
+  font-size: 0.86rem;
+  transition: all 0.3s;
 }
+.connect-grid a:hover {
+  color: #E8B86D;
+  border-color: rgba(205,127,50,0.4);
+  background: rgba(205,127,50,0.06);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(205,127,50,0.15);
+}
+.connect-grid a svg {
+  color: #CD7F32;
+  transition: transform 0.25s ease, color 0.25s ease;
+  flex-shrink: 0;
+}
+.connect-grid a:hover svg {
+  transform: scale(1.15);
+  color: #E8B86D;
+}
+.social-icon { display: inline-flex; align-items: center; }
 
 /* ===== FOOTER ===== */
 footer {
@@ -646,33 +855,31 @@ footer {
   font-size: 0.82rem;
   border-top: 1px solid rgba(255,255,255,0.03);
   overflow: hidden;
-  text-align: center;
+  width: 100%;
 }
 .footer-bronze {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 200px;
+  width: 220px;
   height: 1px;
   background: linear-gradient(90deg, transparent, #CD7F32, transparent);
 }
 .footer-grid {
-  max-width: 900px;
-  margin: 0 auto;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 40px;
-  text-align: center;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 36px;
+  text-align: left;
 }
 @media (max-width: 768px) {
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; text-align: center; }
   .footer-brand { grid-column: 1 / -1; }
 }
 @media (max-width: 480px) {
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
 }
-.footer-brand { margin: 0 auto; }
 .footer-logo {
   display: flex;
   align-items: center;
@@ -681,8 +888,8 @@ footer {
   font-weight: 600;
   color: #F0F0F5;
   margin-bottom: 12px;
-  justify-content: center;
 }
+@media (max-width: 768px) { .footer-logo { justify-content: center; } }
 .ms-logo-sm {
   width: 32px;
   height: 32px;
@@ -703,13 +910,12 @@ footer {
   color: #666680;
   line-height: 1.6;
   margin-bottom: 16px;
-  text-align: center;
 }
 .footer-social {
   display: flex;
   gap: 8px;
-  justify-content: center;
 }
+@media (max-width: 768px) { .footer-social { justify-content: center; } }
 .social-circle {
   width: 36px;
   height: 36px;
@@ -724,11 +930,19 @@ footer {
   text-decoration: none;
   transition: all 0.3s;
 }
+.social-circle svg {
+  color: #8888A0;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
 .social-circle:hover {
   background: rgba(205,127,50,0.12);
   border-color: rgba(205,127,50,0.3);
   color: #CD7F32;
   transform: translateY(-2px);
+}
+.social-circle:hover svg {
+  color: #E8B86D;
+  transform: scale(1.15);
 }
 .footer-col h4 {
   font-size: 0.72rem;
@@ -742,7 +956,6 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  align-items: center;
 }
 .footer-col a {
   color: #8888A0;
@@ -752,28 +965,27 @@ footer {
 }
 .footer-col a:hover { color: #CD7F32; }
 .footer-divider {
-  max-width: 900px;
-  margin: 32px auto 20px;
+  width: 100%;
+  margin: 36px auto 20px;
   height: 1px;
   background: rgba(255,255,255,0.04);
 }
 .footer-bottom {
-  max-width: 900px;
-  margin: 0 auto;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
 }
+@media (max-width: 640px) { .footer-bottom { justify-content: center; text-align: center; } }
 .footer-bottom p {
   font-size: 0.72rem;
   color: #555570;
-  margin: 0 4px;
 }
 .footer-bottom a { color: #8888A0; text-decoration: none; }
 .footer-bottom a:hover { color: #CD7F32; }
-.footer-tag { font-size: 0.65rem !important; }
+.footer-tag { font-size: 0.68rem !important; }
 
 /* ===== ANIMATIONS ===== */
 .fade-in {
@@ -796,18 +1008,28 @@ footer {
   position: absolute;
   left: -9999px;
   top: 0;
-  z-index: 1000;
+  z-index: 2000;
   padding: 8px 16px;
   background: #CD7F32;
   color: #08080F;
   font-weight: 700;
 }
-.skip-link:focus { left: 16px; }
+.skip-link:focus { left: 16px; top: 16px; }
 </style>
 </head>
 <body>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<!-- Hidden SVG Definitions for Gradients -->
+<svg width="0" height="0" style="position:absolute;visibility:hidden" aria-hidden="true">
+  <defs>
+    <linearGradient id="bronzeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8B86D" />
+      <stop offset="100%" stop-color="#CD7F32" />
+    </linearGradient>
+  </defs>
+</svg>
+
+<a href="#main-content" class="skip-link" id="skipLinkText">Skip to main content</a>
 
 <!-- Three.js Background -->
 <div id="three-canvas"></div>
@@ -819,13 +1041,22 @@ footer {
       <div class="ms-logo" aria-hidden="true">MS</div>
       <span class="nav-logo-text">Marian <span>Stancik</span></span>
     </a>
-    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#projects">Projects</a>
-      <a href="#blog-preview">Blog</a>
-      <a href="mailto:marian_stancik@agentmail.to" class="nav-cta">✦ Contact</a>
+    
+    <div class="nav-right">
+      <div class="lang-switcher" aria-label="Language selector">
+        <button class="lang-btn active" id="btnEn" onclick="switchLanguage('en')">EN</button>
+        <button class="lang-btn" id="btnSk" onclick="switchLanguage('sk')">SK</button>
+      </div>
+
+      <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu" aria-expanded="false">☰</button>
+
+      <div class="nav-links">
+        <a href="#about" id="navAbout">About</a>
+        <a href="#expertise" id="navExpertise">Expertise</a>
+        <a href="#projects" id="navProjects">Projects</a>
+        <a href="#blog-preview" id="navBlog">Blog</a>
+        <a href="mailto:marian_stancik@agentmail.to" class="nav-cta" id="navContact">✦ Contact</a>
+      </div>
     </div>
   </div>
 </nav>
@@ -836,7 +1067,7 @@ footer {
 <!-- === HERO === -->
 <section id="hero">
   <div class="container hero-inner">
-    <div class="badge">✦ AI Agents · Product · Law · UAV</div>
+    <div class="badge" id="heroBadge">✦ AI Agents · Product · Law · UAV</div>
     <div class="profile-frame">
       <picture>
         <source srcset="profile.webp" type="image/webp">
@@ -844,24 +1075,48 @@ footer {
       </picture>
     </div>
     <h1>Marian <span class="highlight">Stancik</span></h1>
-    <p class="tagline">
+    <p class="tagline" id="heroTagline">
       AI agent developer who understands <span>law</span>, builds <span>drones</span>, and ships production systems.
     </p>
     <div class="hero-roles">
-      <span>🤖 Product Manager @ Delta Defence</span>
-      <span>⚖️ Law Student @ PF UK</span>
-      <span>🚁 Drone Pilot (A1/A3)</span>
-      <span>🏛️ CEO @ ASCENTIA</span>
+      <span class="role-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
+        <span id="rolePm">Product Manager @ Delta Defence</span>
+      </span>
+      <span class="role-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-8 4v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V7l-8-4Z"/><path d="M9 12h6"/><path d="M12 9v6"/></svg>
+        <span id="roleLaw">Law Student @ PF UK</span>
+      </span>
+      <span class="role-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/><path d="m4.9 4.9 4.2 4.2"/><path d="m14.9 14.9 4.2 4.2"/><path d="m19.1 4.9-4.2 4.2"/><path d="m9.1 14.9-4.2 4.2"/><circle cx="4" cy="4" r="2.5"/><circle cx="20" cy="4" r="2.5"/><circle cx="4" cy="20" r="2.5"/><circle cx="20" cy="20" r="2.5"/></svg>
+        <span id="roleDrone">Drone Pilot (A1/A3)</span>
+      </span>
+      <span class="role-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span id="roleCeo">CEO @ ASCENTIA</span>
+      </span>
     </div>
     <div class="hero-links">
-      <a href="https://x.com/abraka_d7" target="_blank" rel="noopener" aria-label="X/Twitter profile">𝕏 @abraka_d7</a>
-      <a href="https://github.com/Abra7abra7" target="_blank" rel="noopener" aria-label="GitHub profile">GitHub</a>
-      <a href="https://www.linkedin.com/in/marian-stancik-924b41298/" target="_blank" rel="noopener" aria-label="LinkedIn profile">LinkedIn</a>
-      <a href="mailto:marian_stancik@agentmail.to" aria-label="Send email">✉️ Email</a>
+      <a href="https://x.com/abraka_d7" target="_blank" rel="noopener" aria-label="X/Twitter profile">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <span>@abraka_d7</span>
+      </a>
+      <a href="https://github.com/Abra7abra7" target="_blank" rel="noopener" aria-label="GitHub profile">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        <span>GitHub</span>
+      </a>
+      <a href="https://www.linkedin.com/in/marian-stancik-924b41298/" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        <span>LinkedIn</span>
+      </a>
+      <a href="mailto:marian_stancik@agentmail.to" aria-label="Send email">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <span id="heroEmailLink">Email</span>
+      </a>
     </div>
     <div class="glow-line"></div>
     <div class="scroll-indicator">
-      <span>Scroll</span>
+      <span id="scrollText">Scroll</span>
       <div class="arrow"></div>
     </div>
   </div>
@@ -870,55 +1125,52 @@ footer {
 <!-- === ABOUT === -->
 <section id="about" aria-label="About Marian Stancik">
   <div class="container">
-    <div class="section-label fade-in">✦ About</div>
-    <h2 class="fade-in">Builder. Product Manager. Student. Pilot.</h2>
+    <div class="section-label fade-in" id="aboutLabel">✦ About</div>
+    <h2 class="fade-in" id="aboutHeading">Builder. Product Manager. Student. Pilot.</h2>
     <div class="about-grid">
-      <div class="about-text fade-in">
+      <div class="about-text fade-in" id="aboutBody">
         <p>
-          I build <strong>autonomous AI agents</strong> with Hermes that ship — production systems running 24/7 on VPS, 
-          making decisions, posting content, managing workflows. I combine <strong>software engineering</strong> 
-          with <strong>product management</strong> to deliver real results, not demos.
+          I build <strong>production AI agents</strong> that ship into the real world. Powered by <strong>Hermes Agent</strong>, 
+          custom MCP servers, and 19+ cron orchestrations running 24/7 on European <strong>Hetzner Cloud VPS</strong>, 
+          I control multi-agent workflows directly via <strong>Telegram & WhatsApp</strong>.
         </p>
         <p>
-          As <strong>Product Manager at Delta Defence</strong>, I drive product development in the defense industry — 
-          bridging technology, manufacturing, and strategic operations.
+          As <strong>Product Manager at Delta Defence</strong>, I leverage AI agents to engineer and deliver tangible physical defense systems — bridging component analysis, supply chain precision, and autonomous flight hardware.
         </p>
         <p>
-          I'm a <strong>law student at PF UK</strong> (3rd year), focusing on AI Act, GDPR, and the intersection
-          of regulation and technology. <strong>Legal-by-design</strong> is the only way to build AI that lasts.
+          I study law at <strong>Právnická fakulta Univerzity Komenského v Bratislave (PF UK)</strong> — an institution with over 90 years of academic excellence and clinical legal education. I specialize in the <strong>EU AI Act, GDPR, and NIS2</strong>, architecting <strong>legal-by-design</strong> frameworks for AI products.
         </p>
         <p>
-          I build <strong>drones</strong> — from 1500g ArduPilot quads to combat drone prototypes.
-          Certified A1/A3 pilot, working toward STS and Specific category operations.
+          I build custom <strong>tactical UAVs</strong> from scratch — analyzing components, hand-soldering electronics, and transitioning from Betaflight manual tuning to <strong>Pixhawk & ArduPilot</strong> with QGroundControl and Mission Planner. Currently deploying <strong>Raspberry Pi 5 edge AI companion computers</strong> for onboard neural vision and guidance. Certified EASA A1/A3 pilot, Coverdrone €2.6M insured.
         </p>
         <p>
-          <strong>CEO of ASCENTIA s.r.o.</strong>, Product Manager at <strong>Delta Defence a.s.</strong>
+          <strong>CEO & Founder of ASCENTIA s.r.o.</strong> — building an autonomous enterprise Proof-of-Concept, fully steered by AI agents to manage client acquisition, compliance, and profitable operations.
         </p>
       </div>
       <div class="stats fade-in">
         <div class="stat-card">
-          <div class="stat-number">9+</div>
-          <div class="stat-label">AI Agents Running</div>
+          <div class="stat-number">19+</div>
+          <div class="stat-label" id="stat1Label">Active Cron Agents</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">3</div>
-          <div class="stat-label">Domains (AI · Law · UAV)</div>
+          <div class="stat-label" id="stat2Label">Domains (AI · Law · UAV)</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">8+</div>
-          <div class="stat-label">Years Building</div>
+          <div class="stat-label" id="stat3Label">Years Building</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">€2.6M</div>
-          <div class="stat-label">Drone Insurance</div>
+          <div class="stat-label" id="stat4Label">Drone Insurance</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">6</div>
-          <div class="stat-label">Open Source Repos</div>
+          <div class="stat-number">90+</div>
+          <div class="stat-label" id="stat5Label">Years PF UK Tradition</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">19</div>
-          <div class="stat-label">Active Cron Jobs</div>
+          <div class="stat-number">24/7</div>
+          <div class="stat-label" id="stat6Label">VPS Agent Runtime</div>
         </div>
       </div>
     </div>
@@ -928,58 +1180,81 @@ footer {
 <!-- === EXPERTISE === -->
 <section id="expertise" aria-label="Marian Stancik's expertise areas">
   <div class="container">
-    <div class="section-label fade-in">✦ Expertise</div>
-    <h2 class="fade-in">Three pillars. One mission.</h2>
-    <p class="section-intro fade-in">
+    <div class="section-label fade-in" id="expLabel">✦ Expertise</div>
+    <h2 class="fade-in" id="expHeading">Three pillars. One mission.</h2>
+    <p class="section-intro fade-in" id="expIntro">
       Most people specialize in one thing. I combine three — because the future is built at intersections.
     </p>
     <div class="expertise-grid">
       <div class="exp-card fade-in">
-        <div class="exp-icon">🤖</div>
-        <h3>AI & Autonomous Agents</h3>
-        <p>
-          Hermes Agent, Python, TypeScript, Go. Building autonomous agents with memory, context, and
-          decision logic. Cron-orchestrated systems running 24/7 without human intervention.
+        <div class="card-icon-wrap">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="url(#bronzeGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="4" width="16" height="16" rx="3"/>
+            <circle cx="9" cy="9" r="2"/>
+            <circle cx="15" cy="15" r="2"/>
+            <path d="M9 11v4h4"/>
+            <path d="M2 9h2M2 15h2M20 9h2M20 15h2M9 2v2M15 2v2M9 20v2M15 20v2"/>
+          </svg>
+        </div>
+        <h3 id="exp1Title">AI Engineering & Autonomous Agents</h3>
+        <p id="exp1Desc">
+          Hermes Agent, MCP servers, Python, and custom skills. 24/7 autonomous agents running on Hetzner VPS with Telegram & WhatsApp C2 interfaces, grounding models with data and evaluation-driven development.
         </p>
         <div class="tech-tags">
           <span>Hermes Agent</span>
+          <span>MCP Servers</span>
           <span>Python</span>
-          <span>TypeScript</span>
-          <span>Go</span>
-          <span>Next.js</span>
-          <span>HTMX</span>
+          <span>Hetzner VPS</span>
+          <span>Telegram/WhatsApp C2</span>
+          <span>Skills & Cron</span>
         </div>
       </div>
       <div class="exp-card fade-in">
-        <div class="exp-icon">⚖️</div>
-        <h3>Law & AI Compliance</h3>
-        <p>
-          PF UK law student specializing in AI Act, GDPR, NIS2. Legal-by-design approach to building
-          AI products. Automated compliance pipelines for real-world audit readiness.
+        <div class="card-icon-wrap">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="url(#bronzeGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m12 3-8 4v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V7l-8-4Z"/>
+            <path d="M9 12h6"/>
+            <path d="M12 9v6"/>
+          </svg>
+        </div>
+        <h3 id="exp2Title">Law & AI Compliance (PF UK)</h3>
+        <p id="exp2Desc">
+          Law scholar at Faculty of Law, Comenius University in Bratislava (PF UK). Practical legal-by-design architectures for the EU AI Act, GDPR, and NIS2 to make AI products auditable and legally resilient.
         </p>
         <div class="tech-tags">
-          <span>AI Act</span>
+          <span>PF UK Law</span>
+          <span>EU AI Act</span>
           <span>GDPR</span>
-          <span>NIS2</span>
-          <span>Compliance</span>
-          <span>Legal Research</span>
-          <span>SK/CZ/EU Law</span>
+          <span>NIS2 Directive</span>
+          <span>Legal-by-Design</span>
+          <span>EU / SK Law</span>
         </div>
       </div>
       <div class="exp-card fade-in">
-        <div class="exp-icon">🚁</div>
-        <h3>Drones & UAV Systems</h3>
-        <p>
-          1500g custom ArduPilot quad, A1/A3 certified, Coverdrone €2.6M insured. Building toward
-          STS license and combat drone applications with PX4 and acoustic guidance.
+        <div class="card-icon-wrap">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="url(#bronzeGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>
+            <path d="m4.9 4.9 4.2 4.2"/>
+            <path d="m14.9 14.9 4.2 4.2"/>
+            <path d="m19.1 4.9-4.2 4.2"/>
+            <path d="m9.1 14.9-4.2 4.2"/>
+            <circle cx="4" cy="4" r="2.5"/>
+            <circle cx="20" cy="4" r="2.5"/>
+            <circle cx="4" cy="20" r="2.5"/>
+            <circle cx="20" cy="20" r="2.5"/>
+          </svg>
+        </div>
+        <h3 id="exp3Title">UAV Systems & Edge AI (Delta Defence)</h3>
+        <p id="exp3Desc">
+          Hand-soldered 1500g tactical quads, Pixhawk, ArduPilot, QGroundControl, and Mission Planner. Deploying Raspberry Pi 5 companion computers for onboard AI target guidance. EASA A1/A3 certified, €2.6M insured.
         </p>
         <div class="tech-tags">
+          <span>Delta Defence</span>
           <span>ArduPilot</span>
-          <span>PX4</span>
           <span>Pixhawk</span>
-          <span>SORA/PDRA</span>
-          <span>A1/A3</span>
-          <span>EASA</span>
+          <span>Raspberry Pi 5</span>
+          <span>Mission Planner</span>
+          <span>A1/A3 UAV</span>
         </div>
       </div>
     </div>
@@ -989,34 +1264,50 @@ footer {
 <!-- === PROJECTS === -->
 <section id="projects" aria-label="Projects by Marian Stancik">
   <div class="container">
-    <div class="section-label fade-in">✦ Projects</div>
-    <h2 class="fade-in">What I'm building.</h2>
-    <p class="section-intro fade-in">
+    <div class="section-label fade-in" id="projLabel">✦ Projects</div>
+    <h2 class="fade-in" id="projHeading">What I'm building.</h2>
+    <p class="section-intro fade-in" id="projIntro">
       Production systems, open-source tools, and ambitious experiments.
     </p>
     <div class="projects-grid">
       <a href="https://marianstancik.dev" target="_blank" rel="noopener" class="project-card fade-in">
-        <div class="proj-icon">🧠</div>
-        <h3>Prime Agent Masterclass</h3>
-        <p>8-module video course teaching autonomous AI agents. Stripe-powered, EN/SK, Vercel-hosted.</p>
+        <div class="card-icon-wrap">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="url(#bronzeGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3 id="p1Title">Prime Agent Masterclass</h3>
+        <p id="p1Desc">8-module video course teaching autonomous AI agents. Stripe-powered, EN/SK, Vercel-hosted.</p>
         <span class="proj-lang">HTML · CSS · JS · Vercel</span>
       </a>
       <a href="https://github.com/Abra7abra7/ascentia-web-" target="_blank" rel="noopener" class="project-card fade-in">
-        <div class="proj-icon">🏛️</div>
-        <h3>ASCENTIA Corporate Web</h3>
-        <p>Company website for ASCENTIA s.r.o. — AI services, compliance, and autonomous systems.</p>
+        <div class="card-icon-wrap">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="url(#bronzeGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6M9 10h.01M15 10h.01"/>
+          </svg>
+        </div>
+        <h3 id="p2Title">ASCENTIA Corporate Web</h3>
+        <p id="p2Desc">Company website for ASCENTIA s.r.o. — AI services, compliance, and autonomous systems.</p>
         <span class="proj-lang">HTML · CSS · Static</span>
       </a>
       <a href="https://github.com/Abra7abra7/polymarket-traiding-amm" target="_blank" rel="noopener" class="project-card fade-in">
-        <div class="proj-icon">📈</div>
-        <h3>Polymarket Trading Bot</h3>
-        <p>Production-ready Markov chain trading bot for prediction markets. Docker-deployable.</p>
+        <div class="card-icon-wrap">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="url(#bronzeGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3v18h18"/><path d="m7 15 4-4 4 4 5-7"/><path d="M16 8h4v4"/>
+          </svg>
+        </div>
+        <h3 id="p3Title">Polymarket Trading Bot</h3>
+        <p id="p3Desc">Production-ready Markov chain trading bot for prediction markets. Docker-deployable.</p>
         <span class="proj-lang">Python · Docker · Markov</span>
       </a>
       <a href="https://github.com/Abra7abra7" target="_blank" rel="noopener" class="project-card fade-in">
-        <div class="proj-icon">⚡</div>
-        <h3>Hermes Digital Twin</h3>
-        <p>Autonomous AI agent running 9+ cron jobs — posting X, LinkedIn, blog daily without human touch.</p>
+        <div class="card-icon-wrap">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="url(#bronzeGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <h3 id="p4Title">Hermes Digital Twin</h3>
+        <p id="p4Desc">Autonomous AI agent running 9+ cron jobs — posting X, LinkedIn, blog daily without human touch.</p>
         <span class="proj-lang">Hermes Agent · Python · Cron</span>
       </a>
     </div>
@@ -1026,30 +1317,30 @@ footer {
 <!-- === BLOG PREVIEW === -->
 <section id="blog-preview" aria-label="Latest blog posts">
   <div class="container">
-    <div class="section-label fade-in">✦ Blog</div>
-    <h2 class="fade-in">Latest thoughts.</h2>
-    <p class="section-intro fade-in">
+    <div class="section-label fade-in" id="blogSecLabel">✦ Blog</div>
+    <h2 class="fade-in" id="blogSecHeading">Latest thoughts.</h2>
+    <p class="section-intro fade-in" id="blogSecIntro">
       AI agents, autonomous systems, law & tech, and building in public.
     </p>
-    <div class="blog-preview-grid">
-      <a href="/blog/posts/2026-08-22-building-digital-twin.html" target="_blank" rel="noopener" class="blog-card fade-in">
-        <div class="blog-date">August 23, 2026</div>
-        <h3>Building a Digital Twin That Posts 9x Daily</h3>
-        <p>How I built an autonomous AI agent with Hermes that creates and publishes content across platforms without human intervention.</p>
+    <div class="blog-preview-grid" id="homeBlogGrid">
+      <a href="blog/posts/2026-08-22-building-digital-twin.html" class="blog-card fade-in">
+        <div class="blog-date" id="b1Date">August 22, 2026</div>
+        <h3 id="b1Title">Building a Digital Twin That Posts 9x Daily</h3>
+        <p id="b1Desc">How I built an autonomous AI agent with Hermes that creates and publishes content across platforms without human intervention.</p>
       </a>
-      <a href="/blog/" target="_blank" rel="noopener" class="blog-card fade-in">
-        <div class="blog-date">August 20, 2026</div>
-        <h3>AI Act Compliance for Small AI Companies</h3>
-        <p>Practical legal-by-design framework for startups building AI products in the EU. From risk assessment to documentation.</p>
+      <a href="blog/posts/2026-08-20-ai-act-compliance.html" class="blog-card fade-in">
+        <div class="blog-date" id="b2Date">August 20, 2026</div>
+        <h3 id="b2Title">AI Act Compliance for Small AI Companies</h3>
+        <p id="b2Desc">Practical legal-by-design framework for startups building AI products in the EU. From risk assessment to documentation.</p>
       </a>
-      <a href="/blog/" target="_blank" rel="noopener" class="blog-card fade-in">
-        <div class="blog-date">August 17, 2026</div>
-        <h3>Autonomous Drone Missions with ArduPilot</h3>
-        <p>Building a production-grade UAV system with Pixhawk, ArduPilot, and Python-based mission planning.</p>
+      <a href="blog/posts/2026-08-17-autonomous-drone-missions.html" class="blog-card fade-in">
+        <div class="blog-date" id="b3Date">August 17, 2026</div>
+        <h3 id="b3Title">Autonomous Drone Missions with ArduPilot</h3>
+        <p id="b3Desc">Building a production-grade UAV system with Pixhawk, ArduPilot, and Python-based mission planning.</p>
       </a>
     </div>
     <div class="blog-all">
-      <a href="/blog/" target="_blank" rel="noopener">Read all posts →</a>
+      <a href="blog/index.html" id="blogAllBtn">Read all posts →</a>
     </div>
   </div>
 </section>
@@ -1057,9 +1348,9 @@ footer {
 <!-- === LEAD CAPTURE === -->
 <section id="lead-capture" aria-label="Stay updated">
   <div class="container">
-    <div class="section-label fade-in">✦ Stay in touch</div>
-    <h2 class="fade-in">Get updates from the build.</h2>
-    <p class="section-intro fade-in" style="margin-bottom: 0;">
+    <div class="section-label fade-in" id="leadLabel">✦ Stay in touch</div>
+    <h2 class="fade-in" id="leadHeading">Get updates from the build.</h2>
+    <p class="section-intro fade-in" id="leadIntro" style="margin-bottom: 0;">
       AI agent insights, drone builds, law & tech notes — directly to your inbox.
     </p>
     <form class="lead-form fade-in" id="leadForm">
@@ -1067,42 +1358,60 @@ footer {
       <button type="submit" id="subscribeBtn">Subscribe</button>
     </form>
     <div id="leadStatus" class="lead-status" role="alert"></div>
-    <p class="lead-note">No spam. Unsubscribe anytime. Built with AgentMail.</p>
+    <p class="lead-note" id="leadNote">No spam. Unsubscribe anytime. Built with AgentMail.</p>
   </div>
 </section>
 
 <!-- === CONNECT === -->
 <section id="connect" aria-label="Connect with Marian Stancik">
   <div class="container">
-    <div class="section-label fade-in">✦ Connect</div>
-    <h2 class="fade-in">Let's build something.</h2>
-    <p class="section-intro fade-in" style="margin-bottom: 28px;">
+    <div class="section-label fade-in" id="connLabel">✦ Connect</div>
+    <h2 class="fade-in" id="connHeading">Let's build something.</h2>
+    <p class="section-intro fade-in" id="connIntro" style="margin-bottom: 28px;">
       Follow the build, read the blog, or reach out directly.
     </p>
     <div class="connect-grid fade-in">
       <a href="https://x.com/abraka_d7" target="_blank" rel="noopener" aria-label="X/Twitter">
-        <span class="social-icon">𝕏</span> @abraka_d7
+        <span class="social-icon">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </span>
+        <span>@abraka_d7</span>
       </a>
       <a href="https://github.com/Abra7abra7" target="_blank" rel="noopener" aria-label="GitHub">
-        <span class="social-icon">⌘</span> Abra7abra7
+        <span class="social-icon">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </span>
+        <span>GitHub</span>
       </a>
       <a href="https://www.linkedin.com/in/marian-stancik-924b41298/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <span class="social-icon">💼</span> LinkedIn
+        <span class="social-icon">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </span>
+        <span>LinkedIn</span>
       </a>
-      <a href="/blog/" target="_blank" rel="noopener" aria-label="Blog">
-        <span class="social-icon">✍️</span> Blog
+      <a href="blog/index.html" aria-label="Blog">
+        <span class="social-icon">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+        </span>
+        <span id="connBlogText">Blog</span>
       </a>
       <a href="https://www.instagram.com/marian_stancik" target="_blank" rel="noopener" aria-label="Instagram">
-        <span class="social-icon">📷</span> Instagram
+        <span class="social-icon">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </span>
+        <span>Instagram</span>
       </a>
       <a href="mailto:marian_stancik@agentmail.to" aria-label="Send email">
-        <span class="social-icon">✉️</span> Email
+        <span class="social-icon">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </span>
+        <span>Email</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- Footer | v1.2-production | 2026-08-23 | vercel-fix -->
+<!-- Footer -->
 <footer>
   <div class="footer-bronze"></div>
   <div class="container">
@@ -1112,30 +1421,38 @@ footer {
           <div class="ms-logo-sm" aria-hidden="true">MS</div>
           <span>Marian <span class="bronze">Stancik</span></span>
         </div>
-        <p class="footer-tagline">AI agent developer who understands law, builds drones, and ships production systems.</p>
+        <p class="footer-tagline" id="footerTagline">AI agent developer who understands law, builds drones, and ships production systems.</p>
         <div class="footer-social">
-          <a href="https://x.com/abraka_d7" target="_blank" rel="noopener" aria-label="X/Twitter" class="social-circle">𝕏</a>
-          <a href="https://github.com/Abra7abra7" target="_blank" rel="noopener" aria-label="GitHub" class="social-circle">⌘</a>
-          <a href="https://www.linkedin.com/in/marian-stancik-924b41298/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-circle">💼</a>
-          <a href="mailto:marian_stancik@agentmail.to" aria-label="Email" class="social-circle">✉️</a>
+          <a href="https://x.com/abraka_d7" target="_blank" rel="noopener" aria-label="X/Twitter" class="social-circle">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://github.com/Abra7abra7" target="_blank" rel="noopener" aria-label="GitHub" class="social-circle">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/marian-stancik-924b41298/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-circle">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="mailto:marian_stancik@agentmail.to" aria-label="Email" class="social-circle">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
         </div>
       </div>
       <div class="footer-col">
-        <h4>Navigate</h4>
-        <a href="#about">About</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#projects">Projects</a>
-        <a href="#connect">Connect</a>
+        <h4 id="fCol1Title">Navigate</h4>
+        <a href="#about" id="fNavAbout">About</a>
+        <a href="#expertise" id="fNavExp">Expertise</a>
+        <a href="#projects" id="fNavProj">Projects</a>
+        <a href="#connect" id="fNavConn">Connect</a>
       </div>
       <div class="footer-col">
-        <h4>Projects</h4>
+        <h4 id="fCol2Title">Projects</h4>
         <a href="https://marianstancik.dev" target="_blank" rel="noopener">Prime Agent Masterclass</a>
         <a href="https://ascentia.sk" target="_blank" rel="noopener">ASCENTIA</a>
         <a href="https://github.com/Abra7abra7" target="_blank" rel="noopener">Open Source</a>
-        <a href="https://marianstancik.dev/blog" target="_blank" rel="noopener">Blog</a>
+        <a href="blog/index.html" id="fNavBlog">Blog</a>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4 id="fCol3Title">Contact</h4>
         <a href="mailto:marian_stancik@agentmail.to">marian_stancik@agentmail.to</a>
         <a href="https://github.com/Abra7abra7/marian_stancik_2026" target="_blank" rel="noopener">Website Source</a>
         <a href="https://marianstancik.dev" target="_blank" rel="noopener">marianstancik.dev</a>
@@ -1143,7 +1460,7 @@ footer {
     </div>
     <div class="footer-divider"></div>
     <div class="footer-bottom">
-      <p>© 2026 <a href="https://ascentia.sk" target="_blank">ASCENTIA s.r.o.</a> — Build better. Stay legal.</p>
+      <p>© 2026 <a href="https://ascentia.sk" target="_blank">ASCENTIA s.r.o.</a> — <span id="fMotto">Build better. Stay legal.</span></p>
       <p class="footer-tag">Built with <span class="bronze">✦</span> by Hermes Agent</p>
     </div>
   </div>
@@ -1151,7 +1468,7 @@ footer {
 
 </div>
 
-<!-- Three.js -->
+<!-- Three.js Engine -->
 <script type="importmap">
 { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
 </script>
@@ -1224,7 +1541,7 @@ for (let i = 0; i < 40; i++) {
   nodes.push(mesh);
 }
 
-// Mouse
+// Mouse interaction
 let mouseX = 0, mouseY = 0;
 document.addEventListener('mousemove', (e) => {
   mouseX = (e.clientX / window.innerWidth) * 2 - 1;
@@ -1258,48 +1575,379 @@ function animate() {
 animate();
 </script>
 
-<!-- Scroll + Mobile -->
+<!-- i18n Dictionary & Client Logic -->
 <script>
+const translations = {
+  en: {
+    docTitle: "Marian Stancik — AI Agent Developer | Product Manager @ Delta Defence | PF UK Law | UAV Systems",
+    docDesc: "Marian Stancik builds autonomous AI agents with Hermes, manages products at Delta Defence, studies law at Comenius University (PF UK), and builds custom UAVs with Raspberry Pi 5 AI.",
+    ogTitle: "Marian Stancik — AI Agent Developer | Product Manager | PF UK Law | UAV Systems",
+    ogDesc: "Building autonomous AI agents. Product Manager at Delta Defence. Law scholar at PF UK. Custom UAV drone engineer.",
+    skipLink: "Skip to main content",
+    navAbout: "About",
+    navExpertise: "Expertise",
+    navProjects: "Projects",
+    navBlog: "Blog",
+    navContact: "✦ Contact",
+    heroBadge: "✦ AI Agents · Product · Law · UAV",
+    heroTagline: "AI agent developer who understands <span>law</span>, builds <span>drones</span>, and ships production systems.",
+    rolePm: "Product Manager @ Delta Defence",
+    roleLaw: "Law Student @ PF UK",
+    roleDrone: "Drone Pilot (A1/A3)",
+    roleCeo: "CEO @ ASCENTIA",
+    heroEmail: "Email",
+    scrollText: "Scroll",
+    aboutLabel: "✦ About",
+    aboutHeading: "Builder. Product Manager. Law Scholar. UAV Engineer.",
+    aboutBody: `
+      <p>I build <strong>production AI agents</strong> that ship into the real world. Powered by <strong>Hermes Agent</strong>, custom MCP servers, and 19+ cron orchestrations running 24/7 on European <strong>Hetzner Cloud VPS</strong>, I control multi-agent workflows directly via <strong>Telegram & WhatsApp</strong>.</p>
+      <p>As <strong>Product Manager at Delta Defence</strong>, I leverage AI agents to engineer and deliver tangible physical defense systems — bridging component analysis, supply chain precision, and autonomous flight hardware.</p>
+      <p>I study law at <strong>Právnická fakulta Univerzity Komenského v Bratislave (PF UK)</strong> — an institution with over 90 years of academic excellence and clinical legal education. I specialize in the <strong>EU AI Act, GDPR, and NIS2</strong>, architecting <strong>legal-by-design</strong> frameworks for AI products.</p>
+      <p>I build custom <strong>tactical UAVs</strong> from scratch — analyzing components, hand-soldering electronics, and transitioning from Betaflight manual tuning to <strong>Pixhawk & ArduPilot</strong> with QGroundControl and Mission Planner. Currently deploying <strong>Raspberry Pi 5 edge AI companion computers</strong> for onboard neural vision and guidance. Certified EASA A1/A3 pilot, Coverdrone €2.6M insured.</p>
+      <p><strong>CEO & Founder of ASCENTIA s.r.o.</strong> — building an autonomous enterprise Proof-of-Concept, fully steered by AI agents to manage client acquisition, compliance, and profitable operations.</p>
+    `,
+    stat1: "Active Cron Agents",
+    stat2: "Domains (AI · Law · UAV)",
+    stat3: "Years Building",
+    stat4: "Drone Insurance",
+    stat5: "Years PF UK Tradition",
+    stat6: "VPS Agent Runtime",
+    expLabel: "✦ Expertise",
+    expHeading: "Three pillars. One mission.",
+    expIntro: "Most people specialize in one thing. I combine three — because the future is built at intersections.",
+    exp1Title: "AI Engineering & Autonomous Agents",
+    exp1Desc: "Hermes Agent, MCP servers, Python, and custom skills. 24/7 autonomous agents running on Hetzner VPS with Telegram & WhatsApp C2 interfaces, grounding models with data and evaluation-driven development.",
+    exp2Title: "Law & AI Compliance (PF UK)",
+    exp2Desc: "Law scholar at Faculty of Law, Comenius University in Bratislava (PF UK). Practical legal-by-design architectures for the EU AI Act, GDPR, and NIS2 to make AI products auditable and legally resilient.",
+    exp3Title: "UAV Systems & Edge AI (Delta Defence)",
+    exp3Desc: "Hand-soldered 1500g tactical quads, Pixhawk, ArduPilot, QGroundControl, and Mission Planner. Deploying Raspberry Pi 5 companion computers for onboard AI target guidance. EASA A1/A3 certified, €2.6M insured.",
+    projLabel: "✦ Projects",
+    projHeading: "What I'm building.",
+    projIntro: "Production systems, open-source tools, and ambitious experiments.",
+    p1Title: "Prime Agent Masterclass",
+    p1Desc: "8-module video course teaching autonomous AI agents. Stripe-powered, EN/SK, Vercel-hosted.",
+    p2Title: "ASCENTIA Corporate Web",
+    p2Desc: "Company website for ASCENTIA s.r.o. — AI services, compliance, and autonomous systems.",
+    p3Title: "Polymarket Trading Bot",
+    p3Desc: "Production-ready Markov chain trading bot for prediction markets. Docker-deployable.",
+    p4Title: "Hermes Digital Twin",
+    p4Desc: "Autonomous AI agent running 19+ cron jobs on Hetzner VPS — posting X, LinkedIn, blog daily without human touch.",
+    blogSecLabel: "✦ Blog",
+    blogSecHeading: "Latest thoughts.",
+    blogSecIntro: "AI agents, autonomous systems, law & tech, and building in public.",
+    b1Date: "August 22, 2026",
+    b1Title: "Building a Digital Twin That Posts 9x Daily",
+    b1Desc: "How I built an autonomous AI agent with Hermes that creates and publishes content across platforms without human intervention.",
+    b2Date: "August 20, 2026",
+    b2Title: "AI Act Compliance for Small AI Companies",
+    b2Desc: "Practical legal-by-design framework for startups building AI products in the EU. From risk assessment to documentation.",
+    b3Date: "August 17, 2026",
+    b3Title: "Autonomous Drone Missions with ArduPilot",
+    b3Desc: "Building a production-grade UAV system with Pixhawk, ArduPilot, and Python-based mission planning.",
+    blogAllBtn: "Read all posts →",
+    leadLabel: "✦ Stay in touch",
+    leadHeading: "Get updates from the build.",
+    leadIntro: "AI agent insights, drone builds, law & tech notes — directly to your inbox.",
+    subscribeBtn: "Subscribe",
+    leadNote: "No spam. Unsubscribe anytime. Built with AgentMail.",
+    connLabel: "✦ Connect",
+    connHeading: "Let's build something.",
+    connIntro: "Follow the build, read the blog, or reach out directly.",
+    connBlogText: "Blog",
+    footerTagline: "AI agent developer who understands law, builds drones, and ships production systems.",
+    fCol1Title: "Navigate",
+    fCol2Title: "Projects",
+    fCol3Title: "Contact",
+    fNavAbout: "About",
+    fNavExp: "Expertise",
+    fNavProj: "Projects",
+    fNavConn: "Connect",
+    fNavBlog: "Blog",
+    fMotto: "Build better. Stay legal."
+  },
+  sk: {
+    docTitle: "Marian Stančík — AI Agent Developer | Product Manager @ Delta Defence | Právo PF UK | Drony",
+    docDesc: "Marian Stančík vyvíja autonómnych AI agentov s Hermesom, riadi produkty v Delta Defence, študuje právo na PF UK a stavia taktické drony s Raspberry Pi 5 AI.",
+    ogTitle: "Marian Stančík — AI Agent Developer | Product Manager | Právo PF UK | Drony",
+    ogDesc: "Vývoj autonómnych AI agentov. Product Manager v Delta Defence. Študent práva na PF UK. Inžinier UAV systémov.",
+    skipLink: "Preskočiť na hlavný obsah",
+    navAbout: "O mne",
+    navExpertise: "Odbornosť",
+    navProjects: "Projekty",
+    navBlog: "Blog",
+    navContact: "✦ Kontakt",
+    heroBadge: "✦ AI Agenti · Produkt · Právo · UAV",
+    heroTagline: "AI agent developer, ktorý rozumie <span>právu</span>, stavia <span>drony</span> a nasadzuje produkčné systémy.",
+    rolePm: "Product Manager @ Delta Defence",
+    roleLaw: "Študent práva @ PF UK",
+    roleDrone: "Pilot dronov (A1/A3)",
+    roleCeo: "CEO @ ASCENTIA",
+    heroEmail: "E-mail",
+    scrollText: "Posunúť",
+    aboutLabel: "✦ O mne",
+    aboutHeading: "Staviteľ. Produktový manažér. Právnik v príprave. Inžinier UAV.",
+    aboutBody: `
+      <p>Vyvíjam <strong>produkčných AI agentov</strong> nasadzovaných do reálneho sveta. Postavených na <strong>Hermes Agentovi</strong>, vlastných MCP serveroch a 19+ cron orchestráciách bežiacich 24/7 na európskom <strong>Hetzner Cloud VPS</strong>, s priamym ovládaním cez <strong>Telegram a WhatsApp</strong>.</p>
+      <p>Ako <strong>Product Manager v Delta Defence</strong> využívam AI agentov na návrh a dodávanie fyzických obranných systémov — od analýzy komponentov, cez precízne dodávateľské reťazce až po autonómny letecký hardvér.</p>
+      <p>Študujem na <strong>Právnickej fakulte Univerzity Komenského v Bratislave (PF UK)</strong> — fakulte s vyše 90-ročnou tradíciou a klinickým právnym vzdelávaním. Špecializujem sa na <strong>AI Act, GDPR a smernicu NIS2</strong>, s dôrazom na <strong>legal-by-design</strong> architektúru AI riešení.</p>
+      <p>Staviam vlastné <strong>taktické drony</strong> od nuly — od analýzy a nákupu súčiastok, cez manuálne spájkovanie a prepojenie elektroniky, až po prechod z Betaflightu na <strong>Pixhawk & ArduPilot</strong> s QGroundControl a Mission Plannerom. Aktuálne integrujem <strong>Raspberry Pi 5 ako AI palubný počítač</strong> pre neurónové vizuálne navádzanie. Som certifikovaný pilot EASA A1/A3, s poistením Coverdrone na 2,6 mil. €.</p>
+      <p><strong>CEO a jediný spoločník ASCENTIA s.r.o.</strong> — budujem Proof-of-Concept plne autonómnej firmy riadenej AI agentmi, ktorá zabezpečuje akvizíciu klientov, compliance a ziskovú prevádzku.</p>
+    `,
+    stat1: "Aktívnych cron agentov",
+    stat2: "Domény (AI · Právo · UAV)",
+    stat3: "Rokov vývoja",
+    stat4: "Poistenie dronov",
+    stat5: "Rokov tradície PF UK",
+    stat6: "VPS Agent Runtime",
+    expLabel: "✦ Odbornosť",
+    expHeading: "Tri piliere. Jedna misia.",
+    expIntro: "Väčšina ľudí sa špecializuje na jednu vec. Ja kombinujem tri — pretože budúcnosť vzniká na ich priesečníku.",
+    exp1Title: "AI Inžinierstvo & Autonómni Agenti",
+    exp1Desc: "Hermes Agent, MCP servery, Python a vlastné skills. Agenti bežiaci 24/7 na Hetzner VPS s Telegram & WhatsApp C2 rozhraním, prepájanie modelov s dátami a evaluation-driven vývoj.",
+    exp2Title: "Právo & AI Compliance (PF UK)",
+    exp2Desc: "Právnická fakulta Univerzity Komenského v Bratislave (PF UK). Praktické legal-by-design rámce pre AI Act, GDPR a NIS2, pripravené na reálny regulačný audit.",
+    exp3Title: "UAV Systémy & Edge AI (Delta Defence)",
+    exp3Desc: "Vlastnoručne spájkované 1500g kvadrokoptéry, Pixhawk, ArduPilot, QGroundControl a Mission Planner. Integrácia Raspberry Pi 5 pre autonómne AI navádzanie. Certifikácia A1/A3, poistenie na 2,6 mil. €.",
+    projLabel: "✦ Projekty",
+    projHeading: "Čo vyvíjam.",
+    projIntro: "Produkčné systémy, open-source nástroje a technologické projekty.",
+    p1Title: "Prime Agent Masterclass",
+    p1Desc: "8-modulový video kurz vývoja autonómnych AI agentov. Platby cez Stripe, EN/SK verzia, Vercel hosting.",
+    p2Title: "ASCENTIA Firemný Web",
+    p2Desc: "Webová prezentácia spoločnosti ASCENTIA s.r.o. — AI služby, compliance a autonómne systémy.",
+    p3Title: "Polymarket Trading Bot",
+    p3Desc: "Produkčný Markov chain trading bot pre predikčné trhy pripravený pre Docker nasadenie.",
+    p4Title: "Hermes Digital Twin",
+    p4Desc: "Autonómny AI agent s 19+ cron jobmi na Hetzner VPS — denne publikuje na X, LinkedIn a blog úplne bez manuálneho zásahu.",
+    blogSecLabel: "✦ Blog",
+    blogSecHeading: "Najnovšie články.",
+    blogSecIntro: "AI agenti, autonómne systémy, právo & technológie a building in public.",
+    b1Date: "22. august 2026",
+    b1Title: "Ako postaviť Digital Twin, ktorý publikuje 9x denne",
+    b1Desc: "Ako som postavil autonómneho AI agenta cez Hermes, ktorý tvorí a publikuje obsah na X, LinkedIn a blog bez zásahu človeka.",
+    b2Date: "20. august 2026",
+    b2Title: "AI Act a compliance pre malé AI firmy a startupy",
+    b2Desc: "Praktický legal-by-design framework pre startupy budujúce AI v EÚ. Od klasifikácie rizík až po dokumentáciu.",
+    b3Date: "17. august 2026",
+    b3Title: "Autonómne misie dronov s ArduPilot a Pythonom",
+    b3Desc: "Stavba produkčného UAV systému s Pixhawk, ArduPilot a Python plánovaním misií pre automatizované lety.",
+    blogAllBtn: "Všetky články →",
+    leadLabel: "✦ Zostaňte v kontakte",
+    leadHeading: "Získajte novinky z vývoja.",
+    leadIntro: "Poznatky o AI agentoch, stavbe dronov a práve v tech sektore — priamo do vášho inboxu.",
+    subscribeBtn: "Odoberať",
+    leadNote: "Žiadny spam. Možnosť odhlásiť kedykoľvek. Beží na AgentMail.",
+    connLabel: "✦ Spojenie",
+    connHeading: "Vybudujme niečo výnimočné.",
+    connIntro: "Sledujte priebeh vývoja, prečítajte si blog alebo ma kontaktujte priamo.",
+    connBlogText: "Blog",
+    footerTagline: "AI agent developer, ktorý rozumie právu, stavia drony a nasadzuje produkčné systémy.",
+    fCol1Title: "Navigácia",
+    fCol2Title: "Projekty",
+    fCol3Title: "Kontakt",
+    fNavAbout: "O mne",
+    fNavExp: "Odbornosť",
+    fNavProj: "Projekty",
+    fNavConn: "Spojenie",
+    fNavBlog: "Blog",
+    fMotto: "Stavať lepšie. Zostať v súlade so zákonom."
+  }
+};
+
+let currentLang = localStorage.getItem('ms_lang') || 'en';
+
+function switchLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('ms_lang', lang);
+  applyTranslations();
+  loadDynamicPostsHome();
+}
+
+function applyTranslations() {
+  const d = translations[currentLang] || translations.en;
+  
+  document.getElementById('btnEn').classList.toggle('active', currentLang === 'en');
+  document.getElementById('btnSk').classList.toggle('active', currentLang === 'sk');
+  document.documentElement.lang = currentLang;
+
+  document.title = d.docTitle;
+  document.getElementById('docDesc')?.setAttribute('content', d.docDesc);
+  document.getElementById('ogTitle')?.setAttribute('content', d.ogTitle);
+  document.getElementById('ogDesc')?.setAttribute('content', d.ogDesc);
+  document.getElementById('ogLocale')?.setAttribute('content', currentLang === 'sk' ? 'sk_SK' : 'en_US');
+
+  document.getElementById('skipLinkText').textContent = d.skipLink;
+  document.getElementById('navAbout').textContent = d.navAbout;
+  document.getElementById('navExpertise').textContent = d.navExpertise;
+  document.getElementById('navProjects').textContent = d.navProjects;
+  document.getElementById('navBlog').textContent = d.navBlog;
+  document.getElementById('navContact').textContent = d.navContact;
+
+  document.getElementById('heroBadge').textContent = d.heroBadge;
+  document.getElementById('heroTagline').innerHTML = d.heroTagline;
+  document.getElementById('rolePm').textContent = d.rolePm;
+  document.getElementById('roleLaw').textContent = d.roleLaw;
+  document.getElementById('roleDrone').textContent = d.roleDrone;
+  document.getElementById('roleCeo').textContent = d.roleCeo;
+  document.getElementById('heroEmailLink').textContent = d.heroEmail;
+  document.getElementById('scrollText').textContent = d.scrollText;
+
+  document.getElementById('aboutLabel').textContent = d.aboutLabel;
+  document.getElementById('aboutHeading').textContent = d.aboutHeading;
+  document.getElementById('aboutBody').innerHTML = d.aboutBody;
+
+  document.getElementById('stat1Label').textContent = d.stat1;
+  document.getElementById('stat2Label').textContent = d.stat2;
+  document.getElementById('stat3Label').textContent = d.stat3;
+  document.getElementById('stat4Label').textContent = d.stat4;
+  document.getElementById('stat5Label').textContent = d.stat5;
+  document.getElementById('stat6Label').textContent = d.stat6;
+
+  document.getElementById('expLabel').textContent = d.expLabel;
+  document.getElementById('expHeading').textContent = d.expHeading;
+  document.getElementById('expIntro').textContent = d.expIntro;
+  document.getElementById('exp1Title').textContent = d.exp1Title;
+  document.getElementById('exp1Desc').textContent = d.exp1Desc;
+  document.getElementById('exp2Title').textContent = d.exp2Title;
+  document.getElementById('exp2Desc').textContent = d.exp2Desc;
+  document.getElementById('exp3Title').textContent = d.exp3Title;
+  document.getElementById('exp3Desc').textContent = d.exp3Desc;
+
+  document.getElementById('projLabel').textContent = d.projLabel;
+  document.getElementById('projHeading').textContent = d.projHeading;
+  document.getElementById('projIntro').textContent = d.projIntro;
+  document.getElementById('p1Title').textContent = d.p1Title;
+  document.getElementById('p1Desc').textContent = d.p1Desc;
+  document.getElementById('p2Title').textContent = d.p2Title;
+  document.getElementById('p2Desc').textContent = d.p2Desc;
+  document.getElementById('p3Title').textContent = d.p3Title;
+  document.getElementById('p3Desc').textContent = d.p3Desc;
+  document.getElementById('p4Title').textContent = d.p4Title;
+  document.getElementById('p4Desc').textContent = d.p4Desc;
+
+  document.getElementById('blogSecLabel').textContent = d.blogSecLabel;
+  document.getElementById('blogSecHeading').textContent = d.blogSecHeading;
+  document.getElementById('blogSecIntro').textContent = d.blogSecIntro;
+  document.getElementById('b1Date').textContent = d.b1Date;
+  document.getElementById('b1Title').textContent = d.b1Title;
+  document.getElementById('b1Desc').textContent = d.b1Desc;
+  document.getElementById('b2Date').textContent = d.b2Date;
+  document.getElementById('b2Title').textContent = d.b2Title;
+  document.getElementById('b2Desc').textContent = d.b2Desc;
+  document.getElementById('b3Date').textContent = d.b3Date;
+  document.getElementById('b3Title').textContent = d.b3Title;
+  document.getElementById('b3Desc').textContent = d.b3Desc;
+  document.getElementById('blogAllBtn').textContent = d.blogAllBtn;
+
+  document.getElementById('leadLabel').textContent = d.leadLabel;
+  document.getElementById('leadHeading').textContent = d.leadHeading;
+  document.getElementById('leadIntro').textContent = d.leadIntro;
+  document.getElementById('subscribeBtn').textContent = d.subscribeBtn;
+  document.getElementById('leadNote').textContent = d.leadNote;
+
+  document.getElementById('connLabel').textContent = d.connLabel;
+  document.getElementById('connHeading').textContent = d.connHeading;
+  document.getElementById('connIntro').textContent = d.connIntro;
+  document.getElementById('connBlogText').textContent = d.connBlogText;
+
+  document.getElementById('footerTagline').textContent = d.footerTagline;
+  document.getElementById('fCol1Title').textContent = d.fCol1Title;
+  document.getElementById('fCol2Title').textContent = d.fCol2Title;
+  document.getElementById('fCol3Title').textContent = d.fCol3Title;
+  document.getElementById('fNavAbout').textContent = d.fNavAbout;
+  document.getElementById('fNavExp').textContent = d.fNavExp;
+  document.getElementById('fNavProj').textContent = d.fNavProj;
+  document.getElementById('fNavConn').textContent = d.fNavConn;
+  document.getElementById('fNavBlog').textContent = d.fNavBlog;
+  document.getElementById('fMotto').textContent = d.fMotto;
+}
+
+// Dynamic Blog Hydration from posts.json
+async function loadDynamicPostsHome() {
+  try {
+    const res = await fetch('blog/posts.json');
+    if (!res.ok) return;
+    const posts = await res.json();
+    if (!Array.isArray(posts) || posts.length === 0) return;
+    
+    const container = document.getElementById('homeBlogGrid');
+    const isSk = currentLang === 'sk';
+    container.innerHTML = posts.slice(0, 3).map(p => {
+      const title = (isSk && p.titleSk) ? p.titleSk : p.title;
+      const excerpt = (isSk && p.excerptSk) ? p.excerptSk : p.excerpt;
+      const date = (isSk && p.displayDateSk) ? p.displayDateSk : p.displayDate;
+      const targetUrl = p.url;
+      return `
+        <a href="${targetUrl}" class="blog-card fade-in visible">
+          <div class="blog-date">${date}</div>
+          <h3>${title}</h3>
+          <p>${excerpt}</p>
+        </a>
+      `;
+    }).join('');
+  } catch(e) {
+    // Keep default static
+  }
+}
+
+// Scroll Observer
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add('visible');
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+// Smooth Scroll & Auto-Close Mobile Nav
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
+    const targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    const target = document.querySelector(targetId);
     if (target) {
+      e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth' });
       document.querySelector('.nav-links')?.classList.remove('open');
+      const toggle = document.querySelector('.mobile-toggle');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
     }
   });
 });
 
-// Mobile toggle aria
+// Mobile menu toggle
 document.querySelector('.mobile-toggle')?.addEventListener('click', function() {
-  const expanded = this.getAttribute('aria-expanded') === 'true';
-  this.setAttribute('aria-expanded', !expanded);
+  const nav = document.querySelector('.nav-links');
+  const isOpen = nav.classList.toggle('open');
+  this.setAttribute('aria-expanded', isOpen);
 });
 
-// Lead form — AJAX submit with mailto fallback (browsers block HTTP from HTTPS)
+// Close mobile menu on click outside
+document.addEventListener('click', function(e) {
+  const nav = document.querySelector('.nav-links');
+  const toggle = document.querySelector('.mobile-toggle');
+  if (nav && nav.classList.contains('open') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+    nav.classList.remove('open');
+    toggle?.setAttribute('aria-expanded', 'false');
+  }
+});
+
+// Lead form submit
 document.getElementById('leadForm')?.addEventListener('submit', async function(e) {
   e.preventDefault();
   const email = document.getElementById('leadEmail').value.trim();
   const status = document.getElementById('leadStatus');
   const btn = document.getElementById('subscribeBtn');
+  const isSk = currentLang === 'sk';
+
   if (!email || !email.includes('@')) {
-    status.textContent = 'Please enter a valid email address.';
+    status.textContent = isSk ? 'Prosím zadajte platnú e-mailovú adresu.' : 'Please enter a valid email address.';
     status.style.color = '#f87171';
     return;
   }
   btn.disabled = true;
-  btn.textContent = 'Subscribing...';
+  btn.textContent = isSk ? 'Odosielam...' : 'Subscribing...';
   status.textContent = '';
 
-  // Try VPS endpoint (will work locally, may fail on HTTPS production)
   try {
     const resp = await fetch('http://188.245.224.189/api/subscribe', {
       method: 'POST',
@@ -1308,31 +1956,34 @@ document.getElementById('leadForm')?.addEventListener('submit', async function(e
     });
     const data = await resp.json();
     if (data.status === 'ok') {
-      status.textContent = '✅ You\'re subscribed! Thanks for joining.';
+      status.textContent = isSk ? '✅ Boli ste úspešne prihlásený! Ďakujem.' : '✅ You\'re subscribed! Thanks for joining.';
       status.style.color = '#34d399';
       document.getElementById('leadEmail').value = '';
       btn.disabled = false;
-      btn.textContent = 'Subscribe';
+      btn.textContent = isSk ? 'Odoberať' : 'Subscribe';
       setTimeout(() => { status.textContent = ''; }, 6000);
       return;
     }
-  } catch(e) { /* fall through to mailto */ }
+  } catch(e) { /* Fallback */ }
 
-  // Fallback: open mailto so user sends email manually
   const mailto = 'mailto:marian_stancik@agentmail.to?subject=' +
     encodeURIComponent('New subscriber from marianstancik.dev') +
     '&body=' + encodeURIComponent('Email: ' + email);
   window.open(mailto, '_blank');
-  status.textContent = '✅ Email saved! Your email app opened — just hit send to confirm.';
+  status.textContent = isSk ? '✅ Váš e-mailový klient sa otvoril — stačí odoslať správu na potvrdenie.' : '✅ Email app opened — just hit send to confirm.';
   status.style.color = '#34d399';
   document.getElementById('leadEmail').value = '';
   btn.disabled = false;
-  btn.textContent = 'Subscribe';
+  btn.textContent = isSk ? 'Odoberať' : 'Subscribe';
   setTimeout(() => { status.textContent = ''; }, 8000);
 });
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+  applyTranslations();
+  loadDynamicPostsHome();
+});
 </script>
-
-
 
 </body>
 </html>

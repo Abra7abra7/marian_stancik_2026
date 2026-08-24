@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "2026-08-22-building-digital-twin",
+    "url": "blog/posts/2026-08-22-building-digital-twin.html",
+    "blogUrl": "posts/2026-08-22-building-digital-twin.html",
+    "date": "2026-08-22",
+    "displayDate": "August 22, 2026",
+    "displayDateSk": "22. august 2026",
+    "title": "Building a Digital Twin That Posts 9x Daily",
+    "titleSk": "Ako postaviť Digital Twin, ktorý publikuje 9x denne",
+    "excerpt": "How I built an autonomous AI agent with Hermes that creates and publishes content across X, LinkedIn, and blog without human intervention.",
+    "excerptSk": "Ako som postavil autonómneho AI agenta cez Hermes, ktorý tvorí a publikuje obsah na X, LinkedIn a blog 24/7 bez zásahu človeka.",
+    "tags": ["AI Agents", "Hermes", "Automation"],
+    "readTime": "4 min read",
+    "readTimeSk": "4 min čítania"
+  },
+  {
+    "slug": "2026-08-20-ai-act-compliance",
+    "url": "blog/posts/2026-08-20-ai-act-compliance.html",
+    "blogUrl": "posts/2026-08-20-ai-act-compliance.html",
+    "date": "2026-08-20",
+    "displayDate": "August 20, 2026",
+    "displayDateSk": "20. august 2026",
+    "title": "AI Act Compliance for Small AI Companies",
+    "titleSk": "AI Act a compliance pre malé AI firmy a startupy",
+    "excerpt": "Practical legal-by-design framework for startups building AI products in the EU. From risk assessment to automated audit-ready documentation.",
+    "excerptSk": "Praktický legal-by-design framework pre startupy budujúce AI v EÚ. Od klasifikácie rizík až po automatizovanú technickú dokumentáciu.",
+    "tags": ["AI Act", "GDPR", "Compliance", "Law"],
+    "readTime": "6 min read",
+    "readTimeSk": "6 min čítania"
+  },
+  {
+    "slug": "2026-08-17-autonomous-drone-missions",
+    "url": "blog/posts/2026-08-17-autonomous-drone-missions.html",
+    "blogUrl": "posts/2026-08-17-autonomous-drone-missions.html",
+    "date": "2026-08-17",
+    "displayDate": "August 17, 2026",
+    "displayDateSk": "17. august 2026",
+    "title": "Autonomous Drone Missions with ArduPilot & Python",
+    "titleSk": "Autonómne misie dronov s ArduPilot a Pythonom",
+    "excerpt": "Building a production-grade UAV system with Pixhawk, ArduPilot, and Python-based mission planning for automated multi-waypoint flights.",
+    "excerptSk": "Stavba produkčného UAV systému s Pixhawk, ArduPilot a Python plánovaním misií pre plne automatizované lety.",
+    "tags": ["Drones", "ArduPilot", "UAV", "PX4"],
+    "readTime": "5 min read",
+    "readTimeSk": "5 min čítania"
+  }
+]
