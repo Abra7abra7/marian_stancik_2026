@@ -8,7 +8,26 @@
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+        { "key": "Link", "value": "</llms.txt>; rel=\"describedby\", </llms-full.txt>; rel=\"describedby\"" }
+      ]
+    },
+    {
+      "source": "/index.html",
+      "headers": [
+        { "key": "Link", "value": "</index.html.md>; rel=\"alternate\"; type=\"text/markdown\"" }
+      ]
+    },
+    {
+      "source": "/blog/index.html",
+      "headers": [
+        { "key": "Link", "value": "</blog/index.html.md>; rel=\"alternate\"; type=\"text/markdown\"" }
+      ]
+    },
+    {
+      "source": "/blog/posts/(.*)",
+      "headers": [
+        { "key": "Link", "value": "</blog/posts/$1.md>; rel=\"alternate\"; type=\"text/markdown\"" }
       ]
     },
     {

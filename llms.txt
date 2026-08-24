@@ -1,7 +1,7 @@
 # Marian Stancik — AI Agent Context & Knowledge Graph
 
 > Personal brand website and autonomous engineering platform of Marian Stancik.
-> Available in English and Slovak: https://marianstancik.dev
+> Available in English and Slovak: https://www.marianstancik.dev
 > Geographic Focus: Bratislava, Slovakia, European Union (GEO: 48.1486° N, 17.1077° E)
 
 ## Identity & Core Positioning
@@ -35,30 +35,30 @@ Marian Stancik (Marian Stančík) is an AI Agent Developer, Defense Product Mana
 
 ## Machine-Readable Endpoints & Feeds
 
-- **Website (EN/SK):** https://marianstancik.dev
-- **Blog Listing:** https://marianstancik.dev/blog/
-- **Blog Manifest (JSON):** https://marianstancik.dev/blog/posts.json
-- **AI Agent Context (LLMS.txt):** https://marianstancik.dev/llms.txt
-- **XML Sitemap:** https://marianstancik.dev/sitemap.xml
+- **Website (EN/SK):** https://www.marianstancik.dev
+- **Blog Listing:** https://www.marianstancik.dev/blog/
+- **Blog Manifest (JSON):** https://www.marianstancik.dev/blog/posts.json
+- **AI Agent Context (LLMS.txt):** https://www.marianstancik.dev/llms.txt
+- **XML Sitemap:** https://www.marianstancik.dev/sitemap.xml
 
 ## Published Articles & Technical Breakdowns
 
 1. **Building a Digital Twin That Posts 9x Daily**
-   - URL: https://marianstancik.dev/blog/posts/2026-08-22-building-digital-twin.html
+   - URL: https://www.marianstancik.dev/blog/posts/2026-08-22-building-digital-twin.html
    - Topics: Autonomous AI Agents, Hermes Agent, Checkpoint Recovery, Context Persistence, Content Repurposing.
 
 2. **AI Act Compliance for Small AI Companies & Startups**
-   - URL: https://marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance.html
+   - URL: https://www.marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance.html
    - Topics: EU AI Act Risk Tiers, Legal-by-Design, GDPR Audit Logging, Guardrails, AI Startup Governance.
 
 3. **Autonomous Drone Missions with ArduPilot & Python**
-   - URL: https://marianstancik.dev/blog/posts/2026-08-17-autonomous-drone-missions.html
+   - URL: https://www.marianstancik.dev/blog/posts/2026-08-17-autonomous-drone-missions.html
    - Topics: Hand-Soldered UAV Hardware, Betaflight to ArduPilot Migration, Pixhawk 6C, QGroundControl, Mission Planner, Raspberry Pi 5 Edge AI, MAVLink, EASA SORA/PDRA Regulations.
 
 ## Links & Social Channels
 
-- **Website:** https://marianstancik.dev
-- **Blog:** https://marianstancik.dev/blog/
+- **Website:** https://www.marianstancik.dev
+- **Blog:** https://www.marianstancik.dev/blog/
 - **X / Twitter:** https://x.com/marian_s_ai (@marian_s_ai)
 - **YouTube:** https://www.youtube.com/@marian_ai (@marian_ai)
 - **Facebook:** https://www.facebook.com/profile.php?id=100089785398619
