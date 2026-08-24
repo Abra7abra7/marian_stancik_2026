@@ -1,174 +1,130 @@
-# marian-stancik-web — Personal Brand Website & Engineering Hub
+# marian-stancik-web — Personal Brand Website & Autonomous Engineering Hub
 
 **Owner:** Marian Stancik  
-**Domain:** https://marianstancik.dev (Vercel)  
-**Repo:** https://github.com/Abra7abra7/marian_stancik_2026  
-**VPS:** 188.245.224.189 (Hetzner — Caddy + subscriber API)  
+**Domain:** https://marianstancik.dev (Production on Vercel)  
+**Repo:** https://github.com/Abra7abra7/marian_stancik_dev_web  
+**VPS:** 188.245.224.189 (Hetzner Cloud — Caddy + Python WSGI + Hermes Agent)  
 
 ---
 
-## What is this?
+## 1. Executive Overview
 
-Personal brand and technical showcase website for Marian Stancik — AI Agent Developer, Product Manager at Delta Defence, Law student at PF UK, Drone pilot (A1/A3), and CEO of ASCENTIA s.r.o.
+Personal brand and technical showcase website for Marian Stancik — AI Agent Developer, Product Manager at Delta Defence a.s., Law student at PF UK, Drone pilot (EASA A1/A3, €2.6M insured), and CEO of ASCENTIA s.r.o.
 
-The website demonstrates the synthesis of three core pillars:
-1. **AI & Autonomous Agents** (Hermes Agent, cron-orchestrated 24/7 background agents, multi-agent systems).
-2. **Law & AI Compliance** (EU AI Act, GDPR, NIS2, legal-by-design engineering).
-3. **Drones & UAV Systems** (ArduPilot/PX4 custom UAVs, €2.6M insured, tactical mission planning).
-
-The site is built with zero framework overhead (pure HTML5/CSS3/Vanilla JS), fully bilingual (EN/SK), equipped with a JSON-driven automated blog feed, and optimized for both human users and AI crawlers (Perplexity, ChatGPT, Claude, Gemini).
+The website demonstrates the synergy of three core pillars:
+1. **AI & Autonomous Agents:** Hermes Agent, custom MCP servers, cron-orchestrated 24/7 background agents on European Hetzner Cloud VPS, Telegram & WhatsApp C2.
+2. **Law & AI Compliance:** Faculty of Law, Comenius University in Bratislava (PF UK — 90+ years tradition, clinical legal education). Specialized in EU AI Act, GDPR, NIS2, and Legal-by-Design software architectures.
+3. **Drones & UAV Systems:** Delta Defence tactical UAV engineering, custom hand-soldered 1500g carbon quads, Pixhawk 6C + ArduPilot, QGroundControl, Mission Planner, and onboard Raspberry Pi 5 edge AI neural companion guidance.
 
 ---
 
-## Tech Stack & Architecture
+## 2. Tech Stack & Architecture
 
 | Layer | Technology | Purpose |
 |-------|-----------|---------|
-| **Frontend** | Pure HTML5 / CSS3 / Vanilla JS | Zero build step, maximum speed, instant loads |
-| **3D Background** | Three.js v0.160.0 (CDN importmap) | Bronze neural network particle & node constellation |
-| **Localization (i18n)** | Pure JS reactive dictionary (`translations`) | Live bilingual toggle (EN / SK) with `localStorage` persistence |
-| **Blog System** | `blog/posts.json` manifest + standalone HTML | Hybrid SSG/Client hydration: static fallback + dynamic feed |
-| **Icons & Branding** | Custom inline SVG vectors + bronze gradients | Sharp, responsive icons with glow hover micro-interactions |
-| **Lead Capture** | Python WSGI (`leads.db` SQLite) + Caddy reverse proxy | Automated newsletter subscription endpoint (`:8701`) |
+| **Frontend** | Pure HTML5 / CSS3 / Vanilla JS | Zero build overhead, sub-second load, 100% responsive |
+| **3D Background** | Three.js v0.160.0 (CDN importmap) | Bronze neural constellation particle & node network |
+| **Localization (i18n)** | Reactive JS dictionary (`translations`) | Live bilingual toggle (EN / SK) with `localStorage` persistence |
+| **Blog System** | `blog/posts.json` manifest + HTML | Hybrid SSG/Client hydration: static fallback + dynamic feed |
+| **Branding & Icons** | Custom inline SVG vectors + bronze gradients | Sharp, scalable icons with glow hover micro-interactions |
+| **Lead Capture** | Python WSGI (`leads.db` SQLite) + Caddy reverse proxy | Automated newsletter & lead subscription endpoint (`:8701`) |
 | **Notifications** | AgentMail (`marian_stancik@agentmail.to`) | Direct inbox for leads and system notifications |
-| **AI / Search SEO** | `llms.txt` + JSON-LD (`Person`, `WebSite`, `BlogPosting`) + XML Sitemap | High-authority crawler indexing and AI agent discovery |
+| **AI & Search SEO** | `llms.txt` + JSON-LD (`Person`, `WebSite`, `BlogPosting`) + Sitemap | High-authority crawler indexing and AI agent discovery |
 
 ---
 
-## Project Structure
+## 3. Git & Deployment Architecture (GitOps)
 
+### Primary Branch Convention: `main`
+> [!IMPORTANT]
+> **Vercel production deployments are triggered from the `main` branch.**  
+> Always keep `main` and `master` in sync.
+
+```bash
+# Push directly to production:
+git push origin main
+git push origin main:master
 ```
-/marian-stancik-web/
-├── index.html                                    ← Main landing page (Bilingual, Three.js, Hero, About, Expertise, Projects, Blog Preview, Leads, Connect, Footer)
-├── profile.jpg                                   ← Profile photo (Optimized JPEG, 15 KB)
-├── favicon.svg                                   ← Bronze monogram SVG favicon
-├── apple-touch-icon.svg                          ← Apple touch icon
-├── llms.txt                                      ← AI crawler structured knowledge & direct article links
-├── robots.txt                                    ← Search crawler directives + sitemap location
-├── sitemap.xml                                   ← Full XML sitemap including all blog articles
-├── AGENTS.md                                     ← Project architecture, conventions & agent documentation
-├── AUDIT.md                                      ← Web quality, SEO & Lighthouse audit report
-│
-└── blog/
-    ├── index.html                                ← Blog listing page (Bilingual EN/SK, dynamic post hydration from posts.json)
-    ├── posts.json                                ← Single source of truth for all blog post metadata (EN & SK titles, excerpts, tags, URLs)
-    └── posts/
-        ├── 2026-08-22-building-digital-twin.html         ← Article 1: Autonomous Hermes agent posting 9x daily
-        ├── 2026-08-20-ai-act-compliance.html             ← Article 2: Legal-by-design EU AI Act compliance guide
-        └── 2026-08-17-autonomous-drone-missions.html     ← Article 3: Pixhawk, ArduPilot & Python UAV mission planning
+
+### Hetzner VPS Synchronization (Hermes Agent Working Tree)
+To ensure Hermes Agent on the Hetzner VPS never pushes outdated files:
+```bash
+cd /opt/hermes-vault/marian_stancik_dev_web   # (or VPS repo path)
+git fetch origin main
+git reset --hard origin/main
 ```
 
 ---
 
-## How the Bilingual Translation System (i18n) Works
+## 4. Automated Blog Publishing Pipeline (`scripts/publish_post.py`)
 
-1. **Client-Side Reactive Dictionary:**
-   - All translatable strings are organized in a `translations` JavaScript object inside `index.html` (and localized `i18n` object in `blog/index.html`).
-   - Supported languages: `en` (English - default) and `sk` (Slovak).
-2. **State & Persistence:**
-   - Selected language is persisted in the visitor's browser via `localStorage.getItem('ms_lang')`.
-   - On page load, `applyTranslations()` immediately hydrates all DOM elements with the saved language preference.
-3. **Instant DOM Updates (Zero Page Reload):**
-   - Headings, body paragraphs, role descriptions, stat labels, project cards, and meta tags (`document.title`, `meta[name="description"]`, Open Graph locale) update dynamically via `textContent` and `innerHTML`.
-   - Structural SVG icons inside buttons and badges remain preserved because translation target IDs are placed on specific inner text spans (e.g. `<span id="rolePm">...</span>`).
-4. **Blog Grid Re-hydration:**
-   - Calling `switchLanguage(lang)` immediately calls `loadDynamicPostsHome()`, which re-renders the blog cards with the appropriate language strings (`titleSk` / `excerptSk` / `displayDateSk` vs `title` / `excerpt` / `displayDate`).
+Hermes Agent publishes new articles autonomously using the CLI tool with built-in `git pull --rebase` protection:
+
+```bash
+python scripts/publish_post.py \
+  --title "Article Title in English" \
+  --title-sk "Názov článku v slovenčine" \
+  --excerpt "Short English summary for meta tags and feed." \
+  --excerpt-sk "Krátky slovenský popis pre meta tagy a feed." \
+  --tags "AI Agents, Drones, Compliance" \
+  --read-time "5 min read" \
+  --read-time-sk "5 min čítania" \
+  --content-file "path/to/content.html" \
+  --push
+```
+
+### What the Pipeline Does Automatically:
+1. **Pulls Latest Code:** Automatically executes `git pull origin main --rebase` before modifying files.
+2. **Generates HTML Article:** Creates `blog/posts/YYYY-MM-DD-slug.html` with full Open Graph, Twitter Cards, and `BlogPosting` JSON-LD schema.
+3. **Updates Manifest:** Prepends the new entry into `blog/posts.json`.
+4. **Updates AI Knowledge Graph:** Appends new article endpoint into `llms.txt`.
+5. **Git Commit & Push:** Pushes commit `📝 auto(blog): publish YYYY-MM-DD-slug` to `origin/main`.
+6. **Vercel Auto-Deploy:** Website rebuilds and publishes the article live within ~15 seconds.
 
 ---
 
-## How the Blog Engine & Dynamic Feed Works
-
-The blog uses a **hybrid architecture** combining instant static HTML rendering (for zero layout shift and offline indexing) with dynamic JSON hydration:
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                      blog/posts.json                         │
-│   (Single source of truth: URLs, dates, tags, EN/SK texts)   │
-└──────────────┬──────────────────────────────┬───────────────┘
-               │                              │
-               ▼                              ▼
-┌──────────────────────────────┐ ┌──────────────────────────────┐
-│          index.html          │ │       blog/index.html        │
-│   `loadDynamicPostsHome()`   │ │     `loadDynamicPosts()`     │
-│  Fetches JSON & renders top  │ │  Fetches JSON & renders all  │
-│  3 articles in active lang   │ │  articles with active lang   │
-└──────────────────────────────┘ └──────────────────────────────┘
-               │                              │
-               └──────────────┬───────────────┘
-                              ▼
-        ┌───────────────────────────────────────────┐
-        │        blog/posts/[slug].html             │
-        │   Standalone, SEO-optimized articles      │
-        │   with JSON-LD `BlogPosting` metadata     │
-        └───────────────────────────────────────────┘
-```
-
-### 1. `blog/posts.json` Schema
-Each entry in `posts.json` contains:
-```json
-{
-  "id": "building-digital-twin",
-  "url": "blog/posts/2026-08-22-building-digital-twin.html",
-  "urlFromBlog": "posts/2026-08-22-building-digital-twin.html",
-  "date": "2026-08-22",
-  "displayDate": "August 22, 2026",
-  "displayDateSk": "22. august 2026",
-  "readTime": "4 min read",
-  "readTimeSk": "4 min čítania",
-  "title": "Building a Digital Twin That Posts 9x Daily",
-  "titleSk": "Ako postaviť Digital Twin, ktorý publikuje 9x denne",
-  "excerpt": "How I built an autonomous AI agent with Hermes...",
-  "excerptSk": "Ako som postavil autonómneho AI agenta cez Hermes...",
-  "tags": ["AI Agents", "Hermes", "Automation"]
-}
-```
-
-### 2. Autonomous Publishing Pipeline (Hermes Agent)
-- To publish a new article automatically:
-  1. Generate the standalone article HTML file in `blog/posts/YYYY-MM-DD-slug.html` using the existing template structure with JSON-LD schema.
-  2. Prepend the new metadata entry into `blog/posts.json`.
-  3. Append the new URL into `sitemap.xml` and `llms.txt`.
-  4. Git commit and push to `master` (Vercel automatically builds and deploys within seconds).
-
----
-
-## Critical Convention: Relative Paths (`file:///` & Web Compatibility)
+## 5. Critical Convention: Explicit Relative Paths
 
 > [!IMPORTANT]
-> **Never use root-absolute paths starting with `/` (e.g. `/blog/` or `/blog/posts/...`) in internal links or fetch requests.**
+> **Never use directory-only links (e.g. `blog/`, `../`, `../../`) or root-absolute paths starting with `/` in internal links.**
 
-- **Why:** On Windows and local testing, opening HTML files directly from disk (`file:///C:/Users/mstancik/.../index.html`) causes root-absolute links `/blog/` to resolve to `file:///C:/blog/` (which fails).
-- **Rule:** Always use strictly relative paths:
-  - From `index.html` ➔ `blog/`, `blog/posts/slug.html`, `blog/posts.json`, `favicon.svg`
-  - From `blog/index.html` ➔ `../`, `posts/slug.html`, `posts.json`, `../favicon.svg`
-  - From `blog/posts/*.html` ➔ `../../`, `../`, `../../favicon.svg`
-
----
-
-## Design System & Iconography
-
-- **Theme:** Sleek dark-mode aesthetic (`#08080F`) with polished bronze metallic accents (`#CD7F32` and `#E8B86D`).
-- **Icons:** All emojis and generic icons have been replaced with sharp, inline SVG vectors:
-  - **Socials:** Official vector geometries for 𝕏 (@marian_s_ai), YouTube (@marian_ai), GitHub (@Abra7abra7), LinkedIn, Facebook, Threads, Instagram (@marian_stancik), Email, and Blog.
-  - **Role Badges:** Mini vector icons for defense radar, scales of justice, UAV drone, and corporate crest.
-  - **Expertise Cards:** Custom vector icons with linear bronze gradient strokes (`#bronzeGrad`).
-  - **Project Cards:** Dedicated branded iconography with `.card-icon-wrap` containers that feature glow transitions on hover.
+- **Why:** In browser disk mode (`file:///C:/Users/.../index.html`), clicking `blog/` or `../` opens Chrome's folder directory view instead of the HTML page.
+- **Rule:** Always use explicit `.html` relative paths:
+  - From `index.html` ➔ `blog/index.html`, `blog/posts/slug.html`, `blog/posts.json`, `favicon.svg`
+  - From `blog/index.html` ➔ `../index.html`, `posts/slug.html`, `posts.json`, `../favicon.svg`
+  - From `blog/posts/*.html` ➔ `../../index.html`, `../index.html`, `../../favicon.svg`
 
 ---
 
-## Lead Capture & Backend
+## 6. Official Social Media Channels
 
-- **Endpoint:** `http://188.245.224.189/api/subscribe` (Caddy reverse proxy on Hetzner VPS to Python WSGI daemon `:8701`).
-- **Database:** SQLite at `/opt/hermes-vault/leads.db`.
-- **Fallback:** If the API endpoint is unreachable or blocked by browser mixed-content restrictions, the form seamlessly opens a pre-filled `mailto:` client window to ensure no lead is ever lost.
+All social links are standardized across `index.html`, `llms.txt`, and metadata:
+- **𝕏 / Twitter:** [`https://x.com/marian_s_ai`](https://x.com/marian_s_ai) (`@marian_s_ai`)
+- **YouTube:** [`https://www.youtube.com/@marian_ai`](https://www.youtube.com/@marian_ai) (`@marian_ai`)
+- **Facebook:** [`https://www.facebook.com/profile.php?id=100089785398619`](https://www.facebook.com/profile.php?id=100089785398619)
+- **Threads:** [`https://www.threads.com/`](https://www.threads.com/)
+- **LinkedIn:** [`https://www.linkedin.com/in/marian-stancik-924b41298/`](https://www.linkedin.com/in/marian-stancik-924b41298/)
+- **Instagram:** [`https://www.instagram.com/marian_stancik`](https://www.instagram.com/marian_stancik)
+- **GitHub:** [`https://github.com/Abra7abra7`](https://github.com/Abra7abra7)
+- **Email:** `marian_stancik@agentmail.to`
+- **ASCENTIA:** [`https://ascentia.sk`](https://ascentia.sk)
 
 ---
 
-## Testing & Verification
+## 7. Lead Capture & CRM Workflow
 
-### Link & Integrity Verification Script
-Run the automated integrity verification script to ensure 100% relative path resolution:
+1. **Lead Submission:** Frontend submits `POST /api/subscribe` to Hetzner VPS (`http://188.245.224.189/api/subscribe`).
+2. **Reverse Proxy & WSGI:** Caddy proxies requests to Python daemon `:8701`.
+3. **Database:** Records stored in `/opt/hermes-vault/leads.db` (SQLite).
+4. **Hermes C2 Integration:** Hermes Agent monitors `leads.db`, alerts via Telegram/WhatsApp, and can trigger automated AgentMail sequences.
+5. **Zero-Loss Fallback:** If offline or blocked by browser mixed-content policy, form falls back to pre-filled `mailto:marian_stancik@agentmail.to`.
+
+---
+
+## 8. Verification & Quality Commands
+
 ```bash
+# Verify all relative links across the website:
 node -e "
 const fs = require('fs'), path = require('path');
 function check(file, dir) {
@@ -184,14 +140,9 @@ function check(file, dir) {
 check('index.html', '.');
 check('blog/index.html', 'blog');
 fs.readdirSync('blog/posts').forEach(p => check(path.join('blog/posts', p), 'blog/posts'));
-console.log('Link verification complete.');
+console.log('✅ Link verification passed.');
 "
-```
 
-### Git Deploy Command
-```bash
-git add .
-git commit -m "✨ feat: update website architecture, i18n, blog feed, and branding"
-git push origin master
-# Vercel deploys automatically to https://marianstancik.dev
+# Test blog publisher CLI dry run:
+python scripts/publish_post.py --title "Test Title" --title-sk "Test Názov" --excerpt "Test excerpt" --excerpt-sk "Test popis" --dry-run
 ```
