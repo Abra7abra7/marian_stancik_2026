@@ -1620,7 +1620,8 @@ function switchLanguage(lang) {
 }
 
 function applyTranslations() {
-  const d = translations[currentLang] || translations.en;
+  try {
+    const d = translations[currentLang] || translations.en;
   
   document.getElementById('btnEn').classList.toggle('active', currentLang === 'en');
   document.getElementById('btnSk').classList.toggle('active', currentLang === 'sk');
@@ -1739,6 +1740,9 @@ function applyTranslations() {
   document.getElementById('fNavConn').textContent = d.fNavConn;
   document.getElementById('fNavBlog').textContent = d.fNavBlog;
   document.getElementById('fMotto').textContent = d.fMotto;
+  } catch(ex) {
+    // Silently ignore null elements on pages without all sections
+  }
 }
 
 // Dynamic Blog Hydration from posts.json
