@@ -185,7 +185,7 @@ def run_l235(page, path, save_ss=False):
                 page.evaluate("switchLanguage('sk')")
                 page.wait_for_timeout(500)
                 body_txt = page.text_content("body") or ""
-                i18n_works = any(m in body_txt for m in ["Vitajte", "Spojte sa", "Kontakt", "Drony", "Zručnosti"])
+                i18n_works = any(m in body_txt for m in ["Domov", "O mne", "Kontakt", "Drony", "Zručnosti", "E-mail", "Spojenie", "Projekty"])
                 page.evaluate("switchLanguage('en')")
                 page.wait_for_timeout(300)
             except:
