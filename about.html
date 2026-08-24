@@ -1546,6 +1546,7 @@ let currentLang = localStorage.getItem('ms_lang') || 'en';
 function switchLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('ms_lang', lang);
+  applyTranslations();
   loadDynamicPostsHome();
 }
 
