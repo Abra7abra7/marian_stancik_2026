@@ -18,18 +18,38 @@ The website demonstrates the synergy of three core pillars:
 
 ---
 
-## 2. Tech Stack & Architecture
+## 2. Site Architecture — Multi-Page Structure
 
-| Layer | Technology | Purpose |
-|-------|-----------|---------|
-| **Frontend** | Pure HTML5 / CSS3 / Vanilla JS | Zero build overhead, sub-second load, 100% responsive |
-| **3D Background** | Three.js v0.160.0 (CDN importmap) | Bronze neural constellation particle & node network |
-| **Localization (i18n)** | Reactive JS dictionary (`translations`) | Live bilingual toggle (EN / SK) with `localStorage` persistence |
-| **Blog System** | `blog/posts.json` manifest + HTML | Hybrid SSG/Client hydration: static fallback + dynamic feed |
-| **Branding & Icons** | Custom inline SVG vectors + bronze gradients | Sharp, scalable icons with glow hover micro-interactions |
-| **Lead Capture** | Python WSGI (`leads.db` SQLite) + Caddy reverse proxy | Automated newsletter & lead subscription endpoint (`:8701`) |
-| **Notifications** | AgentMail (`marian_stancik@agentmail.to`) | Direct inbox for leads and system notifications |
-| **AI & Search SEO** | `llms.txt` + JSON-LD (`Person`, `WebSite`, `BlogPosting`) + Sitemap | High-authority crawler indexing and AI agent discovery |
+Website is split into clean subpages, each with own `<title>`, OG tags, canonical URL, and targeted content:
+
+| Page | URL | Content |
+|:-----|:----|:--------|
+| **Home** | `/` | Hero + stats + blog preview + lead capture + connect |
+| **About** | `/about` | Full bio: AI Eng, Defence PM, PF UK law (3rd yr), UAV builder |
+| **Expertise** | `/expertise` | Three pillars: AI Eng, Law & AI Compliance, UAV Systems |
+| **Skills** | `/skills` | AI Engineering Skills Map — 4 categories × 5 items |
+| **Drones** | `/drones` | Drone showcase — outdoor FPV video + build specs |
+| **Blog** | `/blog` | Blog listing (existing, stays as `/blog`) |
+| **Contact** | `/contact` | Connect section with social links + email |
+
+All pages share: Three.js, i18n EN/SK, footer, nav. Vercel `cleanUrls: true` enables `/about` → `about.html` resolution.
+
+### SEO & Discovery Config
+
+| Asset | Live URL | Status |
+|:------|:---------|:-------|
+| Sitemap | `/sitemap.xml` | ✅ 10 URLs (pages + blog posts) |
+| llms.txt | `/llms.txt` | ✅ GEO, all endpoints, pillars |
+| IndexNow | API | ✅ Submitted for all new pages |
+| Google GSC | meta tag | ✅ Verified |
+| Google Analytics | G-HJ4MZ66NEY | ✅ All pages |
+
+### Split Impact on Ranking
+
+- **LLM/indexovanie:** každá stránka má vlastný `<title>` a `<meta description>` → presnejšie výsledky pre špecifické dopyty ("AI Engineering skills", "UAV systems Slovakia")
+- **GEO (Google Entity Optim.):** `llms.txt` obsahuje GEO súradnice + entity + endpointy pre všetky stránky
+- **SEO:** samostatné URL → každá stránka vie mať vlastný rich snippet v Google, topic clustering (Pillar-Cluster model)
+- **IndexNow:** notifikácia odoslaná pre všetky 8 URL (HTTP 202)
 
 ---
 
