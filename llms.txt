@@ -6,7 +6,7 @@
 
 ## Identity & Core Positioning
 
-Marian Stancik is an AI Engineer building autonomous agent systems, production AI infrastructure, and UAV systems. Defence Product Manager. Law scholar at PF UK (3rd year). CEO of ASCENTIA s.r.o.
+Marian Stancik is an AI Engineer building autonomous agent systems, production AI infrastructure, and UAV systems. CEO @ ASCENTIA. AI Engineer. Drone pilot.
 
 **Tagline:** "AI Engineer building autonomous agents, UAV systems, and production AI infrastructure."
 
@@ -29,14 +29,14 @@ Marian Stancik is an AI Engineer building autonomous agent systems, production A
 - LLM foundations, RAG, evaluation-driven development
 - Multi-agent architectures & agent orchestration
 
-### 2. Defence Product Management
-- Product development bridging AI, manufacturing, and autonomous systems
-- Focus on delivering physical defense products
+### 2. AI Engineering & CEO @ ASCENTIA
+- Building autonomous AI agents and UAV systems
+- Production AI infrastructure, Hermes Agent ecosystem
 
-### 3. Law & AI Compliance (PF UK, 3rd year)
+### 3. AI Compliance & Legal-by-Design
 - EU AI Act, GDPR, NIS2
 - Legal-by-design frameworks for AI products
-- Právnická fakulta Univerzity Komenského v Bratislave
+- Certified compliance pipelines for audit readiness
 
 ### 4. UAV Systems & Drone Programming
 - 1500g custom carbon quad, hand-built

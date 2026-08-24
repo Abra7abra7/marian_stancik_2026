@@ -9,12 +9,11 @@
 
 ## 1. Executive Overview
 
-Personal brand and technical showcase website for Marian Stancik — AI Engineer, Defence Product Manager (confidential), Law scholar at PF UK, Drone pilot (EASA A1/A3, €2.6M insured), and CEO of ASCENTIA s.r.o.
+Personal brand and technical showcase website for Marian Stancik — AI Engineer, CEO @ ASCENTIA, Drone pilot (EASA A1/A3, €2.6M insured).
 
-Three core pillars:
+Two core pillars:
 1. **AI & Autonomous Agents:** Hermes Agent, MCP servers, cron-orchestrated 24/7 agents on Hetzner VPS
-2. **Law & AI Compliance:** PF UK law — EU AI Act, GDPR, NIS2, legal-by-design
-3. **UAV Systems:** Custom 1500g carbon quads, Pixhawk 6C + ArduPilot + Raspberry Pi 5 edge AI
+2. **UAV Systems:** Custom 1500g carbon quads, Pixhawk 6C + ArduPilot + Raspberry Pi 5 edge AI
 
 ---
 

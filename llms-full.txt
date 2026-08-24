@@ -2,12 +2,12 @@
 
 > Personal brand website and autonomous engineering platform of Marian Stancik.
 > Available in English and Slovak: https://www.marianstancik.dev
-> Role: AI Engineering | Defence Product Manager | Law Student @ PF UK | CEO @ ASCENTIA s.r.o.
+> Role: AI Engineering | CEO @ ASCENTIA | Drone Pilot
 > Geographic Focus: Bratislava, Slovakia, European Union (GEO: 48.1486° N, 17.1077° E)
 
 ## Identity & Core Positioning
 
-Marian Stancik (also Marian Stančík) is an AI Engineer building autonomous agent systems, production AI infrastructure, and UAV systems. Defence Product Manager in the defence industry. Law scholar at Faculty of Law, Comenius University in Bratislava (PF UK, 3rd year). Founder and CEO of ASCENTIA s.r.o. — an autonomous AI-first company proof-of-concept.
+Marian Stancik is an AI Engineer building autonomous agent systems, production AI infrastructure, and UAV systems. CEO @ ASCENTIA. Drone pilot (A1/A3).
 
 His core differentiation is the intersection of three domains: **Autonomous AI Systems**, **Law & AI Compliance (EU AI Act, GDPR, NIS2)**, and **UAV Engineering (ArduPilot, Pixhawk, Edge AI)**.
 
@@ -44,11 +44,11 @@ His core differentiation is the intersection of three domains: **Autonomous AI S
 - **Autonomous Company:** Proof-of-concept operating ASCENTIA s.r.o. via Hermes agents (client acquisition, compliance, content publishing)
 
 ### 2. Defence Product Management
-- Defence Product Manager bridging AI, manufacturing, and autonomous systems
-- Product development from concept through delivery of physical defence products
+- CEO @ ASCENTIA — building autonomous AI agents and UAV systems
+- Full-stack AI engineering from LLM foundations to production deployment
 
-### 3. Law & AI Compliance (PF UK, 3rd year)
-- Faculty of Law, Comenius University in Bratislava (PF UK) — 90+ years tradition
+### 3. AI Compliance & Legal-by-Design
+- AI Act, GDPR, NIS2 compliance frameworks for AI products
 - Specialization: EU AI Act risk tiers, GDPR, NIS2 cybersecurity directives
 - Legal-by-design: automated compliance pipelines for audit readiness
 
