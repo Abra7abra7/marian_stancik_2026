@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://marianstancik.dev/sitemap.xml
+Sitemap: https://www.marianstancik.dev/sitemap.xml

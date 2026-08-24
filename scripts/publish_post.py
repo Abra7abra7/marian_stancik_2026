@@ -36,16 +36,16 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title} — Marian Stancik</title>
 <meta name="description" content="{excerpt}">
-<link rel="canonical" href="https://marianstancik.dev/blog/posts/{slug}.html">
+<link rel="canonical" href="https://www.marianstancik.dev/blog/posts/{slug}.html">
 <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
 <meta name="theme-color" content="#08080F">
 
 <!-- Open Graph -->
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{excerpt}">
-<meta property="og:url" content="https://marianstancik.dev/blog/posts/{slug}.html">
+<meta property="og:url" content="https://www.marianstancik.dev/blog/posts/{slug}.html">
 <meta property="og:type" content="article">
-<meta property="og:image" content="https://marianstancik.dev/profile.jpg">
+<meta property="og:image" content="https://www.marianstancik.dev/profile.jpg">
 <meta property="article:published_time" content="{date}">
 <meta property="article:author" content="Marian Stancik">
 
@@ -61,13 +61,13 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   "author": {{
     "@type": "Person",
     "name": "Marian Stancik",
-    "url": "https://marianstancik.dev"
+    "url": "https://www.marianstancik.dev"
   }},
   "publisher": {{
     "@type": "Person",
     "name": "Marian Stancik"
   }},
-  "mainEntityOfPage": "https://marianstancik.dev/blog/posts/{slug}.html",
+  "mainEntityOfPage": "https://www.marianstancik.dev/blog/posts/{slug}.html",
   "keywords": {tags_json}
 }}
 </script>
@@ -151,7 +151,7 @@ footer a:hover {{ color: #CD7F32; }}
 </div>
 
 <footer>
-<p>© {year} <a href="https://ascentia.sk" target="_blank">ASCENTIA s.r.o.</a> — <a href="../../index.html">marianstancik.dev</a></p>
+<p>© {year} <a href="https://ascentia.sk" target="_blank">ASCENTIA s.r.o.</a> — <a href="../../index.html">www.marianstancik.dev</a></p>
 </footer>
 </body>
 </html>
@@ -288,7 +288,7 @@ def main():
         with open(LLMS_TXT, 'r', encoding='utf-8') as f:
             llms_content = f.read()
         
-        article_link = f"https://marianstancik.dev/{relative_url}"
+        article_link = f"https://www.marianstancik.dev/{relative_url}"
         if article_link not in llms_content:
             new_item = f"\n- **{args.title}:** {article_link} (Topics: {', '.join(tags)})\n"
             # Append before Links section or at end
@@ -307,7 +307,7 @@ def main():
         commit_msg = f"📝 auto(blog): publish {slug}"
         subprocess.run(["git", "commit", "-m", commit_msg], cwd=BASE_DIR, check=True)
         subprocess.run(["git", "push", "origin", "main"], cwd=BASE_DIR, check=True)
-        print(f"[✅] Published and deployed live to: https://marianstancik.dev/{relative_url}")
+        print(f"[✅] Published and deployed live to: https://www.marianstancik.dev/{relative_url}")
     else:
         print("[ℹ] Files written locally. Run 'git push origin main' when ready.")
 
