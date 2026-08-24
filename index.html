@@ -1794,6 +1794,15 @@ const translations = {
     `,
   },
 };
+
+let currentLang = localStorage.getItem('ms_lang') || 'en';
+
+function switchLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('ms_lang', lang);
+  loadDynamicPostsHome();
+}
+
 function applyTranslations() {
   const d = translations[currentLang] || translations.en;
   
@@ -1916,6 +1925,33 @@ function applyTranslations() {
   document.getElementById('fMotto').textContent = d.fMotto;
 }
 
+
+async function loadDynamicPostsHome() {
+  try {
+    const res = await fetch('blog/posts.json');
+    if (!res.ok) return;
+    const posts = await res.json();
+    if (!Array.isArray(posts) || posts.length === 0) return;
+    
+    const container = document.getElementById('homeBlogGrid');
+    const isSk = currentLang === 'sk';
+    container.innerHTML = posts.slice(0, 3).map(p => {
+      const title = (isSk && p.titleSk) ? p.titleSk : p.title;
+      const excerpt = (isSk && p.excerptSk) ? p.excerptSk : p.excerpt;
+      const date = (isSk && p.displayDateSk) ? p.displayDateSk : p.displayDate;
+      const targetUrl = p.url;
+      return `
+        <a href="${targetUrl}" class="blog-card fade-in visible">
+          <div class="blog-date">${date}</div>
+          <h3>${title}</h3>
+          <p>${excerpt}</p>
+        </a>
+      `;
+    }).join('');
+  } catch(e) {
+    // Keep default static
+  }
+}
 
 // Scroll Observer
 const observer = new IntersectionObserver((entries) => {
