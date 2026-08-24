@@ -1866,8 +1866,7 @@ function switchLanguage(lang) {
 }
 
 function applyTranslations() {
-  try {
-    const d = translations[currentLang] || translations.en;
+  const d = translations[currentLang] || translations.en;
   
   document.getElementById('btnEn').classList.toggle('active', currentLang === 'en');
   document.getElementById('btnSk').classList.toggle('active', currentLang === 'sk');
@@ -1879,117 +1878,115 @@ function applyTranslations() {
   document.getElementById('ogDesc')?.setAttribute('content', d.ogDesc);
   document.getElementById('ogLocale')?.setAttribute('content', currentLang === 'sk' ? 'sk_SK' : 'en_US');
 
-  document.getElementById('skipLinkText').textContent = d.skipLink;
-  document.getElementById('navHome').textContent = d.navHome;
-  document.getElementById('navAbout').textContent = d.navAbout;
-  document.getElementById('navSkills').textContent = d.navSkills;
-  document.getElementById('navDrones').textContent = d.navDrones;
-  document.getElementById('navExpertise').textContent = d.navExpertise;
-  document.getElementById('navProjects').textContent = d.navProjects;
-  document.getElementById('navBlog').textContent = d.navBlog;
-  document.getElementById('navContact').textContent = d.navContact;
+  var el = document.getElementById('skipLinkText'); if(el) el.textContent = d.skipLink;
+  var el = document.getElementById('navHome'); if(el) el.textContent = d.navHome;
+  var el = document.getElementById('navAbout'); if(el) el.textContent = d.navAbout;
+  var el = document.getElementById('navSkills'); if(el) el.textContent = d.navSkills;
+  var el = document.getElementById('navDrones'); if(el) el.textContent = d.navDrones;
+  var el = document.getElementById('navExpertise'); if(el) el.textContent = d.navExpertise;
+  var el = document.getElementById('navProjects'); if(el) el.textContent = d.navProjects;
+  var el = document.getElementById('navBlog'); if(el) el.textContent = d.navBlog;
+  var el = document.getElementById('navContact'); if(el) el.textContent = d.navContact;
 
-  document.getElementById('heroBadge').textContent = d.heroBadge;
-  document.getElementById('heroTagline').innerHTML = d.heroTagline;
-  document.getElementById('rolePm').textContent = d.rolePm;
-  document.getElementById('roleLaw').textContent = d.roleLaw;
-  document.getElementById('roleDrone').textContent = d.roleDrone;
-  document.getElementById('roleCeo').textContent = d.roleCeo;
-  document.getElementById('heroEmailLink').textContent = d.heroEmail;
-  document.getElementById('scrollText').textContent = d.scrollText;
+  var el = document.getElementById('heroBadge'); if(el) el.textContent = d.heroBadge;
+  var el = document.getElementById('heroTagline'); if(el) el.innerHTML = d.heroTagline;
+  var el = document.getElementById('rolePm'); if(el) el.textContent = d.rolePm;
+  var el = document.getElementById('roleLaw'); if(el) el.textContent = d.roleLaw;
+  var el = document.getElementById('roleDrone'); if(el) el.textContent = d.roleDrone;
+  var el = document.getElementById('roleCeo'); if(el) el.textContent = d.roleCeo;
+  var el = document.getElementById('heroEmailLink'); if(el) el.textContent = d.heroEmail;
+  var el = document.getElementById('scrollText'); if(el) el.textContent = d.scrollText;
 
-  document.getElementById('aboutLabel').textContent = d.aboutLabel;
-  document.getElementById('aboutHeading').textContent = d.aboutHeading;
-  document.getElementById('aboutBody').innerHTML = d.aboutBody;
+  var el = document.getElementById('aboutLabel'); if(el) el.textContent = d.aboutLabel;
+  var el = document.getElementById('aboutHeading'); if(el) el.textContent = d.aboutHeading;
+  var el = document.getElementById('aboutBody'); if(el) el.innerHTML = d.aboutBody;
 
-  document.getElementById('stat1Label').textContent = d.stat1;
-  document.getElementById('stat2Label').textContent = d.stat2;
-  document.getElementById('stat3Label').textContent = d.stat3;
-  document.getElementById('stat4Label').textContent = d.stat4;
-  document.getElementById('stat5Label').textContent = d.stat5;
-  document.getElementById('stat6Label').textContent = d.stat6;
+  var el = document.getElementById('stat1Label'); if(el) el.textContent = d.stat1;
+  var el = document.getElementById('stat2Label'); if(el) el.textContent = d.stat2;
+  var el = document.getElementById('stat3Label'); if(el) el.textContent = d.stat3;
+  var el = document.getElementById('stat4Label'); if(el) el.textContent = d.stat4;
+  var el = document.getElementById('stat5Label'); if(el) el.textContent = d.stat5;
+  var el = document.getElementById('stat6Label'); if(el) el.textContent = d.stat6;
 
-  document.getElementById('expLabel').textContent = d.expLabel;
-  document.getElementById('expHeading').textContent = d.expHeading;
-  document.getElementById('expIntro').textContent = d.expIntro;
-  document.getElementById('exp1Title').textContent = d.exp1Title;
-  document.getElementById('exp1Desc').textContent = d.exp1Desc;
-  document.getElementById('exp2Title').textContent = d.exp2Title;
-  document.getElementById('exp2Desc').textContent = d.exp2Desc;
-  document.getElementById('exp3Title').textContent = d.exp3Title;
-  document.getElementById('exp3Desc').textContent = d.exp3Desc;
-  document.getElementById('skillsLabel').textContent = d.skillsLabel;
-  document.getElementById('skillsHeading').textContent = d.skillsHeading;
-  document.getElementById('skillsIntro').textContent = d.skillsIntro;
-  document.getElementById('droneLabel').textContent = d.droneLabel;
-  document.getElementById('droneHeading').textContent = d.droneHeading;
-  document.getElementById('droneIntro').textContent = d.droneIntro;
-  document.getElementById('dCap1').textContent = d.dCap1;
-  document.getElementById('dCap2').textContent = d.dCap2;
-  document.getElementById('dCap3').textContent = d.dCap3;
+  var el = document.getElementById('expLabel'); if(el) el.textContent = d.expLabel;
+  var el = document.getElementById('expHeading'); if(el) el.textContent = d.expHeading;
+  var el = document.getElementById('expIntro'); if(el) el.textContent = d.expIntro;
+  var el = document.getElementById('exp1Title'); if(el) el.textContent = d.exp1Title;
+  var el = document.getElementById('exp1Desc'); if(el) el.textContent = d.exp1Desc;
+  var el = document.getElementById('exp2Title'); if(el) el.textContent = d.exp2Title;
+  var el = document.getElementById('exp2Desc'); if(el) el.textContent = d.exp2Desc;
+  var el = document.getElementById('exp3Title'); if(el) el.textContent = d.exp3Title;
+  var el = document.getElementById('exp3Desc'); if(el) el.textContent = d.exp3Desc;
+  var el = document.getElementById('skillsLabel'); if(el) el.textContent = d.skillsLabel;
+  var el = document.getElementById('skillsHeading'); if(el) el.textContent = d.skillsHeading;
+  var el = document.getElementById('skillsIntro'); if(el) el.textContent = d.skillsIntro;
+  var el = document.getElementById('droneLabel'); if(el) el.textContent = d.droneLabel;
+  var el = document.getElementById('droneHeading'); if(el) el.textContent = d.droneHeading;
+  var el = document.getElementById('droneIntro'); if(el) el.textContent = d.droneIntro;
+  var el = document.getElementById('dCap1'); if(el) el.textContent = d.dCap1;
+  var el = document.getElementById('dCap2'); if(el) el.textContent = d.dCap2;
+  var el = document.getElementById('dCap3'); if(el) el.textContent = d.dCap3;
 
-  document.getElementById('skillsLabel').textContent = d.skillsLabel;
-  document.getElementById('skillsHeading').textContent = d.skillsHeading;
-  document.getElementById('skillsIntro').textContent = d.skillsIntro;
-  document.getElementById('droneLabel').textContent = d.droneLabel;
-  document.getElementById('droneHeading').textContent = d.droneHeading;
-  document.getElementById('droneIntro').textContent = d.droneIntro;
-  document.getElementById('dCap1').textContent = d.dCap1;
-  document.getElementById('dCap2').textContent = d.dCap2;
-  document.getElementById('dCap3').textContent = d.dCap3;
+  var el = document.getElementById('skillsLabel'); if(el) el.textContent = d.skillsLabel;
+  var el = document.getElementById('skillsHeading'); if(el) el.textContent = d.skillsHeading;
+  var el = document.getElementById('skillsIntro'); if(el) el.textContent = d.skillsIntro;
+  var el = document.getElementById('droneLabel'); if(el) el.textContent = d.droneLabel;
+  var el = document.getElementById('droneHeading'); if(el) el.textContent = d.droneHeading;
+  var el = document.getElementById('droneIntro'); if(el) el.textContent = d.droneIntro;
+  var el = document.getElementById('dCap1'); if(el) el.textContent = d.dCap1;
+  var el = document.getElementById('dCap2'); if(el) el.textContent = d.dCap2;
+  var el = document.getElementById('dCap3'); if(el) el.textContent = d.dCap3;
 
 
-  document.getElementById('projLabel').textContent = d.projLabel;
-  document.getElementById('projHeading').textContent = d.projHeading;
-  document.getElementById('projIntro').textContent = d.projIntro;
-  document.getElementById('p1Title').textContent = d.p1Title;
-  document.getElementById('p1Desc').textContent = d.p1Desc;
-  document.getElementById('p2Title').textContent = d.p2Title;
-  document.getElementById('p2Desc').textContent = d.p2Desc;
-  document.getElementById('p3Title').textContent = d.p3Title;
-  document.getElementById('p3Desc').textContent = d.p3Desc;
-  document.getElementById('p4Title').textContent = d.p4Title;
-  document.getElementById('p4Desc').textContent = d.p4Desc;
+  var el = document.getElementById('projLabel'); if(el) el.textContent = d.projLabel;
+  var el = document.getElementById('projHeading'); if(el) el.textContent = d.projHeading;
+  var el = document.getElementById('projIntro'); if(el) el.textContent = d.projIntro;
+  var el = document.getElementById('p1Title'); if(el) el.textContent = d.p1Title;
+  var el = document.getElementById('p1Desc'); if(el) el.textContent = d.p1Desc;
+  var el = document.getElementById('p2Title'); if(el) el.textContent = d.p2Title;
+  var el = document.getElementById('p2Desc'); if(el) el.textContent = d.p2Desc;
+  var el = document.getElementById('p3Title'); if(el) el.textContent = d.p3Title;
+  var el = document.getElementById('p3Desc'); if(el) el.textContent = d.p3Desc;
+  var el = document.getElementById('p4Title'); if(el) el.textContent = d.p4Title;
+  var el = document.getElementById('p4Desc'); if(el) el.textContent = d.p4Desc;
 
-  document.getElementById('blogSecLabel').textContent = d.blogSecLabel;
-  document.getElementById('blogSecHeading').textContent = d.blogSecHeading;
-  document.getElementById('blogSecIntro').textContent = d.blogSecIntro;
-  document.getElementById('b1Date').textContent = d.b1Date;
-  document.getElementById('b1Title').textContent = d.b1Title;
-  document.getElementById('b1Desc').textContent = d.b1Desc;
-  document.getElementById('b2Date').textContent = d.b2Date;
-  document.getElementById('b2Title').textContent = d.b2Title;
-  document.getElementById('b2Desc').textContent = d.b2Desc;
-  document.getElementById('b3Date').textContent = d.b3Date;
-  document.getElementById('b3Title').textContent = d.b3Title;
-  document.getElementById('b3Desc').textContent = d.b3Desc;
-  document.getElementById('blogAllBtn').textContent = d.blogAllBtn;
+  var el = document.getElementById('blogSecLabel'); if(el) el.textContent = d.blogSecLabel;
+  var el = document.getElementById('blogSecHeading'); if(el) el.textContent = d.blogSecHeading;
+  var el = document.getElementById('blogSecIntro'); if(el) el.textContent = d.blogSecIntro;
+  var el = document.getElementById('b1Date'); if(el) el.textContent = d.b1Date;
+  var el = document.getElementById('b1Title'); if(el) el.textContent = d.b1Title;
+  var el = document.getElementById('b1Desc'); if(el) el.textContent = d.b1Desc;
+  var el = document.getElementById('b2Date'); if(el) el.textContent = d.b2Date;
+  var el = document.getElementById('b2Title'); if(el) el.textContent = d.b2Title;
+  var el = document.getElementById('b2Desc'); if(el) el.textContent = d.b2Desc;
+  var el = document.getElementById('b3Date'); if(el) el.textContent = d.b3Date;
+  var el = document.getElementById('b3Title'); if(el) el.textContent = d.b3Title;
+  var el = document.getElementById('b3Desc'); if(el) el.textContent = d.b3Desc;
+  var el = document.getElementById('blogAllBtn'); if(el) el.textContent = d.blogAllBtn;
 
-  document.getElementById('leadLabel').textContent = d.leadLabel;
-  document.getElementById('leadHeading').textContent = d.leadHeading;
-  document.getElementById('leadIntro').textContent = d.leadIntro;
-  document.getElementById('subscribeBtn').textContent = d.subscribeBtn;
-  document.getElementById('leadNote').textContent = d.leadNote;
+  var el = document.getElementById('leadLabel'); if(el) el.textContent = d.leadLabel;
+  var el = document.getElementById('leadHeading'); if(el) el.textContent = d.leadHeading;
+  var el = document.getElementById('leadIntro'); if(el) el.textContent = d.leadIntro;
+  var el = document.getElementById('subscribeBtn'); if(el) el.textContent = d.subscribeBtn;
+  var el = document.getElementById('leadNote'); if(el) el.textContent = d.leadNote;
 
-  document.getElementById('connLabel').textContent = d.connLabel;
-  document.getElementById('connHeading').textContent = d.connHeading;
-  document.getElementById('connIntro').textContent = d.connIntro;
-  document.getElementById('connBlogText').textContent = d.connBlogText;
+  var el = document.getElementById('connLabel'); if(el) el.textContent = d.connLabel;
+  var el = document.getElementById('connHeading'); if(el) el.textContent = d.connHeading;
+  var el = document.getElementById('connIntro'); if(el) el.textContent = d.connIntro;
+  var el = document.getElementById('connBlogText'); if(el) el.textContent = d.connBlogText;
 
-  document.getElementById('footerTagline').textContent = d.footerTagline;
-  document.getElementById('fCol1Title').textContent = d.fCol1Title;
-  document.getElementById('fCol2Title').textContent = d.fCol2Title;
-  document.getElementById('fCol3Title').textContent = d.fCol3Title;
-  document.getElementById('fNavAbout').textContent = d.fNavAbout;
-  document.getElementById('fNavExp').textContent = d.fNavExp;
-  document.getElementById('fNavProj').textContent = d.fNavProj;
-  document.getElementById('fNavConn').textContent = d.fNavConn;
-  document.getElementById('fNavBlog').textContent = d.fNavBlog;
-  document.getElementById('fMotto').textContent = d.fMotto;
-  } catch(ex) {
-    // Silently ignore null elements on pages without all sections
+  var el = document.getElementById('footerTagline'); if(el) el.textContent = d.footerTagline;
+  var el = document.getElementById('fCol1Title'); if(el) el.textContent = d.fCol1Title;
+  var el = document.getElementById('fCol2Title'); if(el) el.textContent = d.fCol2Title;
+  var el = document.getElementById('fCol3Title'); if(el) el.textContent = d.fCol3Title;
+  var el = document.getElementById('fNavAbout'); if(el) el.textContent = d.fNavAbout;
+  var el = document.getElementById('fNavExp'); if(el) el.textContent = d.fNavExp;
+  var el = document.getElementById('fNavProj'); if(el) el.textContent = d.fNavProj;
+  var el = document.getElementById('fNavConn'); if(el) el.textContent = d.fNavConn;
+  var el = document.getElementById('fNavBlog'); if(el) el.textContent = d.fNavBlog;
+  var el = document.getElementById('fMotto'); if(el) el.textContent = d.fMotto;
   }
-}
+
 
 async function loadDynamicPostsHome() {
   try {
