@@ -254,6 +254,13 @@ def main():
         print(f"JSON preview:\n{json.dumps(new_post_entry, indent=2, ensure_ascii=False)}")
         return
 
+    if args.push and not args.dry_run:
+        print("[*] Pulling latest changes from origin/main before publishing...")
+        try:
+            subprocess.run(["git", "pull", "origin", "main", "--rebase"], cwd=BASE_DIR, check=True)
+        except Exception as e:
+            print(f"[!] Warning: git pull failed: {e}")
+
     # 1. Write HTML article file
     with open(html_filepath, 'w', encoding='utf-8') as f:
         f.write(html_out)
