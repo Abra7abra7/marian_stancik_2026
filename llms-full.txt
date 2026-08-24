@@ -1,128 +1,74 @@
-# Marian Stancik — Full Profile & Knowledge Base
+# Marian Stancik — Full AI Agent Context & Knowledge Graph (llms-full.txt)
 
-> **Name:** Marian Stancik (Marian Stančík)
-> **Role:** AI Agent Developer | Product Manager @ Delta Defence a.s. | Law Student @ PF UK | CEO @ ASCENTIA s.r.o.
-> **Location:** Bratislava, Slovakia, European Union
-> **Languages:** Slovak (native), English (fluent), German (conversational), Czech (passive)
-> **Website:** https://www.marianstancik.dev | **Email:** marian_stancik@agentmail.to
+> Personal brand website and autonomous engineering platform of Marian Stancik.
+> Available in English and Slovak: https://www.marianstancik.dev
+> Role: AI Engineering | Defence Product Manager | Law Student @ PF UK | CEO @ ASCENTIA s.r.o.
+> Geographic Focus: Bratislava, Slovakia, European Union (GEO: 48.1486° N, 17.1077° E)
 
----
+## Identity & Core Positioning
 
-## 🏛️ Professional Roles
+Marian Stancik (also Marian Stančík) is an AI Engineer building autonomous agent systems, production AI infrastructure, and UAV systems. Defence Product Manager in the defence industry. Law scholar at Faculty of Law, Comenius University in Bratislava (PF UK, 3rd year). Founder and CEO of ASCENTIA s.r.o. — an autonomous AI-first company proof-of-concept.
 
-### CEO & Founder — ASCENTIA s.r.o.
-Autonomous AI company operating with Hermes agents. Services: AI Agent Development (€7,500–15,000), Voice CRM (€4,500+/mo), Drone Compliance Documentation (€3,500–6,000), AI Readiness Audit (€1,900), AI Marketing Agent (€500/mo).
+His core differentiation is the intersection of three domains: **Autonomous AI Systems**, **Law & AI Compliance (EU AI Act, GDPR, NIS2)**, and **UAV Engineering (ArduPilot, Pixhawk, Edge AI)**.
 
-### Product Manager — Delta Defence a.s.
-Defense industry product management. Bridge between software intelligence, autonomous AI workflows, component sourcing, precision manufacturing, and tactical flight hardware.
+## Pages
 
-### Law Student — Faculty of Law, Comenius University (PF UK)
-3rd year Bc. student specializing in EU AI Act, GDPR, NIS2. Legal-by-Design approach to AI systems.
+- **Home:** https://www.marianstancik.dev
+- **About:** https://www.marianstancik.dev/about
+- **Expertise:** https://www.marianstancik.dev/expertise
+- **AI Engineering Skills:** https://www.marianstancik.dev/skills
+- **UAV & Drones:** https://www.marianstancik.dev/drones
+- **Blog:** https://www.marianstancik.dev/blog
+- **Contact:** https://www.marianstancik.dev/contact
 
----
-
-## 🛠️ Technical Stack
-
-### Languages & Frameworks
-Python (Hermes Agent, FastAPI, Playwright), TypeScript (Next.js), Go (infrastructure), HTML5/CSS3/JS (vanilla)
-
-### Infrastructure
-- **VPS:** Hetzner Cloud (188.245.224.189) — 24/7 operation
-- **CDN + Hosting:** Cloudflare R2, Vercel (marianstancik.dev), Caddy
-- **Backups:** Syncthing vault (VPS ↔ MacBook ↔ PC ↔ iPhone)
-- **CI/CD:** Git push → Vercel auto-deploy
-
-### Autonomous Systems
-- **Hermes Agent** (Nous Research) — primary AI agent runtime
-- **19+ cron jobs** — daily content publishing, monitoring, analytics
-- **Telegram & WhatsApp C2** — direct agent management
-- **MCP servers** — custom Model Context Protocol integrations
-
----
-
-## 🚁 Drone Operations
-
-### Current Platform
-- **Frame:** 1500g custom carbon quad (hand-soldered power distribution)
-- **Flight Controller:** Pixhawk 6C running ArduPilot Copter 4.5
-- **Edge AI:** Raspberry Pi 5 companion computer
-- **Telemetry:** QGroundControl, Mission Planner
-- **Certification:** EASA A1/A3 (progressing toward STS)
-- **Insurance:** Coverdrone €2.6M liability (until 5/2027)
-
-### Services Offered
-- Aerial monitoring & inspection (€180/2h, €280/3h, €450/day, €500-1500/mo)
-- IBV (building inspection)
-- Orthomosaic mapping
-- Combat drone R&D
-
----
-
-## ⚖️ Legal Specialization
-
-### Focus Areas
-- **EU AI Act:** Risk tier classification, conformity assessments, documentation
-- **GDPR:** Data protection audits, privacy-by-design, DPIA
-- **NIS2:** Cybersecurity directives compliance
-- **Legal-by-Design:** Automated compliance pipelines, audit-ready infrastructure
-
-### Academic Background
-- **2024–present:** Právnická fakulta Univerzity Komenského (PF UK), 3rd year Bc.
-- **Previous:** Mgr. from Faculty of Physical Education and Sport, Comenius University
-- **Location:** Wien (based), Bratislava (work, study)
-
----
-
-## 🌐 Online Presence
+## Machine-Readable Endpoints
 
 - **Website:** https://www.marianstancik.dev
-- **Blog:** https://www.marianstancik.dev/blog/
-- **X / Twitter:** https://x.com/marian_s_ai (@marian_s_ai)
-- **YouTube:** https://www.youtube.com/@marian_ai
+- **About:** https://www.marianstancik.dev/about
+- **Expertise:** https://www.marianstancik.dev/expertise
+- **Skills:** https://www.marianstancik.dev/skills
+- **Drones:** https://www.marianstancik.dev/drones
+- **Contact:** https://www.marianstancik.dev/contact
+- **Blog:** https://www.marianstancik.dev/blog
+- **Blog Feed:** https://www.marianstancik.dev/blog/posts.json
+- **Sitemap:** https://www.marianstancik.dev/sitemap.xml
+- **RSS:** https://www.marianstancik.dev/rss.xml
+
+## Core Pillars & Technical Architecture
+
+### 1. AI Engineering & Autonomous Systems
+- **Agent Frameworks:** Hermes Agent (Nous Research), custom MCP servers, Python agent skills
+- **Production Infrastructure:** European Hetzner Cloud VPS, 19+ cron-orchestrated agents running 24/7
+- **Command & Control:** Real-time management via Telegram & WhatsApp interfaces
+- **LLM Foundations:** Model grounding, RAG, evaluation-driven development, multi-agent architectures
+- **Autonomous Company:** Proof-of-concept operating ASCENTIA s.r.o. via Hermes agents (client acquisition, compliance, content publishing)
+
+### 2. Defence Product Management
+- Defence Product Manager bridging AI, manufacturing, and autonomous systems
+- Product development from concept through delivery of physical defence products
+
+### 3. Law & AI Compliance (PF UK, 3rd year)
+- Faculty of Law, Comenius University in Bratislava (PF UK) — 90+ years tradition
+- Specialization: EU AI Act risk tiers, GDPR, NIS2 cybersecurity directives
+- Legal-by-design: automated compliance pipelines for audit readiness
+
+### 4. UAV Systems & Drone Programming
+- **Hardware:** 1500g custom carbon quad, hand-soldered, Pixhawk 6C flight controller
+- **Software:** ArduPilot Copter 4.5, QGroundControl telemetry, Mission Planner waypoints
+- **Edge AI:** Raspberry Pi 5 companion computer — neural vision, MAVLink guidance
+- **Certification:** EASA A1/A3, Coverdrone €2.6M insured
+
+## Social & Contact
+
+- **X/Twitter:** https://x.com/marian_s_ai (@marian_s_ai)
+- **YouTube:** https://www.youtube.com/@marian_ai (@marian_ai)
 - **GitHub:** https://github.com/Abra7abra7
 - **LinkedIn:** https://www.linkedin.com/in/marian-stancik-924b41298/
-- **Facebook:** https://www.facebook.com/profile.php?id=100089785398619
-- **Instagram:** https://www.instagram.com/marian_stancik
-- **ASCENTIA:** https://ascentia.sk
+- **Email:** marian_stancik@agentmail.to
+- **Company:** https://ascentia.sk
 
----
+## Languages
 
-## 📝 Published Articles
-
-### Building a Digital Twin That Posts 9x Daily
-Autonomous AI agents with Hermes Agent, checkpoint recovery, context persistence, and cross-platform content repurposing.
-URL: https://www.marianstancik.dev/blog/posts/2026-08-22-building-digital-twin.html
-
-### AI Act Compliance for Small AI Companies & Startups
-EU AI Act risk tiers explained, Legal-by-Design principles, GDPR audit logging, and practical guardrails for AI startups.
-URL: https://www.marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance.html
-
-### Autonomous Drone Missions with ArduPilot & Python
-From Betaflight to ArduPilot migration, Pixhawk 6C setup, QGroundControl waypoint planning, Raspberry Pi 5 edge AI, and EASA SORA compliance.
-URL: https://www.marianstancik.dev/blog/posts/2026-08-17-autonomous-drone-missions.html
-
----
-
-## 🔑 Key Differentiators
-
-1. **Triple-domain integration** — AI + Law + Drones in one profile
-2. **Production-grade autonomous agents** — not demos, 24/7 running systems
-3. **Legal-by-Design** — regulatory compliance built into AI architecture
-4. **Autonomous company PoC** — ASCENTIA s.r.o. operated via AI agents
-5. **€2.6M insured drone operator** — certified, insured, combat-capable
-6. **European infrastructure** — Hetzner VPS, GDPR-compliant, EU-hosted
-
----
-
-## 📡 System Status (Live)
-
-- **AI Agents Running:** 9+
-- **Active Cron Jobs:** 19
-- **Open Source Repos:** 6
-- **Domains Operated:** 3 (AI · Law · UAV)
-- **Drone Insurance:** €2.6M
-- **Years Building:** 8+
-
----
-
-*Generated for AI agent consumption. For the concise version, see https://www.marianstancik.dev/llms.txt*
+- English (primary)
+- Slovak
+- German
