@@ -6,65 +6,69 @@
 
 ## Identity & Core Positioning
 
-Marian Stancik (Marian Stančík) is an AI Agent Developer, Defense Product Manager at Delta Defence a.s., Law Scholar at the Faculty of Law, Comenius University in Bratislava (PF UK), and UAV Drone Systems Engineer. He is the CEO and sole owner of ASCENTIA s.r.o.
+Marian Stancik is an AI Engineer building autonomous agent systems, production AI infrastructure, and UAV systems. Defence Product Manager. Law scholar at PF UK (3rd year). CEO of ASCENTIA s.r.o.
 
-**Tagline:** "AI agent developer who understands law, builds drones, and ships production systems."
+**Tagline:** "AI Engineer building autonomous agents, UAV systems, and production AI infrastructure."
 
-## Core Pillars & Technical Architecture
+## Pages
 
-### 1. AI Engineering & Autonomous Multi-Agent Systems
-- **Agent Frameworks & Core Runtime:** Hermes Agent (Nous Research), custom Model Context Protocol (MCP) servers, and modular Python agent skills.
-- **Production Infrastructure:** Hosted on European Hetzner Cloud VPS running 24/7 with 19+ cron background orchestrations.
-- **Command & Control (C2):** Direct operational management through interactive Telegram and WhatsApp interfaces.
-- **Autonomous Company PoC:** Proof-of-concept operating ASCENTIA s.r.o. via autonomous Hermes agents handling client acquisition, regulatory compliance, content publishing, and operational pipelines.
-- **AI Engineering Competencies:** LLM foundations, grounding models with data, building multi-agent architectures, evaluation-driven development, and operating in mission-critical production environments.
+- **Home:** https://www.marianstancik.dev
+- **About:** https://www.marianstancik.dev/about
+- **Expertise:** https://www.marianstancik.dev/expertise
+- **AI Engineering Skills:** https://www.marianstancik.dev/skills
+- **UAV & Drones:** https://www.marianstancik.dev/drones
+- **Blog:** https://www.marianstancik.dev/blog
+- **Contact:** https://www.marianstancik.dev/contact
 
-### 2. Product Management & Defense Industry (Delta Defence a.s.)
-- **Role:** Product Manager at Delta Defence a.s.
-- **Focus:** Bridging software intelligence, autonomous AI workflows, component sourcing, precision manufacturing, and tactical flight hardware to ship tangible products into the physical defense sector.
+## Core Pillars
 
-### 3. Law & AI Compliance (PF UK)
-- **Academic Affiliation:** Právnická fakulta Univerzity Komenského v Bratislave (Faculty of Law, Comenius University in Bratislava) — established with 90+ years of legal tradition, clinical legal education, and international research.
-- **Specialization:** EU AI Act risk tiers and conformity assessments, GDPR data protection & privacy-by-design, NIS2 cybersecurity directives, and automated audit-ready compliance pipelines ("Legal-by-Design").
+### 1. AI Engineering & Autonomous Systems
+- Hermes Agent, MCP servers, Python skills
+- 24/7 production on Hetzner VPS, 19+ cron orchestrations
+- Telegram & WhatsApp C2 interfaces
+- LLM foundations, RAG, evaluation-driven development
+- Multi-agent architectures & agent orchestration
 
-### 4. UAV Systems, Hardware Assembly & Edge AI
-- **Hardware Engineering:** End-to-end custom build of 1500g tactical quads — component analysis, hand-soldering of high-gauge power wiring and high-current ESCs, structural carbon-fiber assembly, and power distribution.
-- **Flight Software Stack:** Evolution from Betaflight (manual dynamic tuning and PID calibration) to Pixhawk 6C running ArduPilot Copter, supported by QGroundControl (telemetry) and Mission Planner (waypoint grid planning & geofencing).
-- **Edge AI Guidance:** Onboard Raspberry Pi 5 companion computer executing lightweight neural vision models for automated target tracking and dynamic MAVLink flight correction.
-- **Certifications & Safety:** Certified EASA A1/A3 drone pilot (progressing toward STS), insured via Coverdrone (€2.6M liability).
+### 2. Defence Product Management
+- Product development bridging AI, manufacturing, and autonomous systems
+- Focus on delivering physical defense products
 
-## Machine-Readable Endpoints & Feeds
+### 3. Law & AI Compliance (PF UK, 3rd year)
+- EU AI Act, GDPR, NIS2
+- Legal-by-design frameworks for AI products
+- Právnická fakulta Univerzity Komenského v Bratislave
 
-- **Website (EN/SK):** https://www.marianstancik.dev
-- **Blog Listing:** https://www.marianstancik.dev/blog/
-- **Blog Manifest (JSON):** https://www.marianstancik.dev/blog/posts.json
-- **AI Agent Context (LLMS.txt):** https://www.marianstancik.dev/llms.txt
-- **XML Sitemap:** https://www.marianstancik.dev/sitemap.xml
+### 4. UAV Systems & Drone Programming
+- 1500g custom carbon quad, hand-built
+- Pixhawk 6C + ArduPilot Copter 4.5
+- Raspberry Pi 5 edge AI companion computer
+- QGroundControl, Mission Planner, MAVLink
+- EASA A1/A3, €2.6M insured
 
-## Published Articles & Technical Breakdowns
-
-1. **Building a Digital Twin That Posts 9x Daily**
-   - URL: https://www.marianstancik.dev/blog/posts/2026-08-22-building-digital-twin.html
-   - Topics: Autonomous AI Agents, Hermes Agent, Checkpoint Recovery, Context Persistence, Content Repurposing.
-
-2. **AI Act Compliance for Small AI Companies & Startups**
-   - URL: https://www.marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance.html
-   - Topics: EU AI Act Risk Tiers, Legal-by-Design, GDPR Audit Logging, Guardrails, AI Startup Governance.
-
-3. **Autonomous Drone Missions with ArduPilot & Python**
-   - URL: https://www.marianstancik.dev/blog/posts/2026-08-17-autonomous-drone-missions.html
-   - Topics: Hand-Soldered UAV Hardware, Betaflight to ArduPilot Migration, Pixhawk 6C, QGroundControl, Mission Planner, Raspberry Pi 5 Edge AI, MAVLink, EASA SORA/PDRA Regulations.
-
-## Links & Social Channels
+## Machine-Readable Endpoints
 
 - **Website:** https://www.marianstancik.dev
-- **Blog:** https://www.marianstancik.dev/blog/
-- **X / Twitter:** https://x.com/marian_s_ai (@marian_s_ai)
-- **YouTube:** https://www.youtube.com/@marian_ai (@marian_ai)
-- **Facebook:** https://www.facebook.com/profile.php?id=100089785398619
-- **Threads:** https://www.threads.com/
+- **About:** https://www.marianstancik.dev/about
+- **Expertise:** https://www.marianstancik.dev/expertise
+- **Skills:** https://www.marianstancik.dev/skills
+- **Drones:** https://www.marianstancik.dev/drones
+- **Contact:** https://www.marianstancik.dev/contact
+- **Blog:** https://www.marianstancik.dev/blog
+- **Blog Feed:** https://www.marianstancik.dev/blog/posts.json
+- **Sitemap:** https://www.marianstancik.dev/sitemap.xml
+- **RSS:** https://www.marianstancik.dev/rss.xml
+
+## Social & Contact
+
+- **X/Twitter:** https://x.com/marian_s_ai
+- **YouTube:** https://www.youtube.com/@marian_ai
 - **GitHub:** https://github.com/Abra7abra7
 - **LinkedIn:** https://www.linkedin.com/in/marian-stancik-924b41298/
-- **Instagram:** https://www.instagram.com/marian_stancik
 - **Email:** marian_stancik@agentmail.to
-- **Company Website (ASCENTIA):** https://ascentia.sk
+- **Company:** https://ascentia.sk
+
+## Languages
+
+- English (primary)
+- Slovak
+- German
