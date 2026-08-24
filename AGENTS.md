@@ -9,175 +9,160 @@
 
 ## 1. Executive Overview
 
-Personal brand and technical showcase website for Marian Stancik — AI Engineer, Defence Product Manager (confidential), Law student at PF UK, Drone pilot (EASA A1/A3, €2.6M insured), and CEO of ASCENTIA s.r.o.
+Personal brand and technical showcase website for Marian Stancik — AI Engineer, Defence Product Manager (confidential), Law scholar at PF UK, Drone pilot (EASA A1/A3, €2.6M insured), and CEO of ASCENTIA s.r.o.
 
-The website demonstrates the synergy of three core pillars:
-1. **AI & Autonomous Agents:** Hermes Agent, custom MCP servers, cron-orchestrated 24/7 background agents on European Hetzner Cloud VPS, Telegram & WhatsApp C2.
-2. **Law & AI Compliance:** Faculty of Law, Comenius University in Bratislava (PF UK — 90+ years tradition, clinical legal education). Specialized in EU AI Act, GDPR, NIS2, and Legal-by-Design software architectures.
-3. **Drones & UAV Systems:** Defence industry UAV engineering, custom hand-soldered 1500g carbon quads, Pixhawk 6C + ArduPilot, QGroundControl, Mission Planner, and onboard Raspberry Pi 5 edge AI neural companion guidance.
+Three core pillars:
+1. **AI & Autonomous Agents:** Hermes Agent, MCP servers, cron-orchestrated 24/7 agents on Hetzner VPS
+2. **Law & AI Compliance:** PF UK law — EU AI Act, GDPR, NIS2, legal-by-design
+3. **UAV Systems:** Custom 1500g carbon quads, Pixhawk 6C + ArduPilot + Raspberry Pi 5 edge AI
 
 ---
 
 ## 2. ANONYMIZATION RULE (CRITICAL)
 
 **Delta Defence is NEVER mentioned by name anywhere on the web.**  
-This is a strict security requirement. Only generic "Defence Product Manager" and "Defence Industry" are used.
+Strict security requirement. Only "Defence Product Manager" and "Defence Industry" are used.
 
-- ✅ Hero: "Defence Product Manager" (NOT "Product Manager @ Delta Defence")
-- ✅ About: "Defence Product Manager" (NOT "Product Manager at Delta Defence")
-- ✅ JSON-LD: `"name": "Defence Industry (confidential)"` (NOT "Delta Defence")
-- ✅ SK: "Defence Product Manager" (NOT "Product Manager v Delta Defence")
-- ✅ llms.txt: No company name
-
-Always use `Defence Product Manager` in English and `Defence Product Manager` in Slovak. Never use the actual employer name in any public-facing content.
+- ✅ Hero: "Defence Product Manager"
+- ✅ About: "Defence Product Manager"  
+- ✅ JSON-LD: `"name": "Defence Industry (confidential)"`
+- ✅ SK: "Defence Product Manager"
+- ✅ llms.txt, blog, all pages: no company name
 
 ---
 
-## 2. Site Architecture — Multi-Page Structure
-
-Website is split into clean subpages, each with own `<title>`, OG tags, canonical URL, and targeted content:
+## 3. Site Architecture — 6 podstránok
 
 | Page | URL | Content |
 |:-----|:----|:--------|
-| **Home** | `/` | Hero + stats + blog preview + lead capture + connect |
-| **About** | `/about` | Full bio: AI Eng, Defence PM, PF UK law (3rd yr), UAV builder |
-| **Expertise** | `/expertise` | Three pillars: AI Eng, Law & AI Compliance, UAV Systems |
+| **Home** | `/` | Hero + stats (19+ cron, 3 domains, 3+ yrs, €2.6M, 6 repos, 24/7) + blog preview + lead + connect |
+| **About** | `/about` | Full bio — AI Eng, Defence PM, PF UK law, UAV builder — "Since 2023" |
+| **Expertise** | `/expertise` | Three pillars with bronze SVG icons (gradient defs in all pages) |
 | **Skills** | `/skills` | AI Engineering Skills Map — 4 categories × 5 items |
-| **Drones** | `/drones` | Drone showcase — outdoor FPV video + build specs |
-| **Blog** | `/blog` | Blog listing (existing, stays as `/blog`) |
+| **Drones** | `/drones` | FPV video + complete build specs (6 categories) + shopping list |
 | **Contact** | `/contact` | Connect section with social links + email |
+| **Blog** | `/blog` | Blog listing |
 
-All pages share: Three.js, i18n EN/SK, footer, nav. Vercel `cleanUrls: true` enables `/about` → `about.html` resolution.
-
-### SEO & Discovery Config
-
-| Asset | Live URL | Status |
-|:------|:---------|:-------|
-| Sitemap | `/sitemap.xml` | ✅ 10 URLs (pages + blog posts) |
-| llms.txt | `/llms.txt` | ✅ GEO, all endpoints, pillars |
-| IndexNow | API | ✅ Submitted for all new pages |
-| Google GSC | meta tag | ✅ Verified |
-| Google Analytics | G-HJ4MZ66NEY | ✅ All pages |
-
-### Split Impact on Ranking
-
-- **LLM/indexovanie:** každá stránka má vlastný `<title>` a `<meta description>` → presnejšie výsledky pre špecifické dopyty ("AI Engineering skills", "UAV systems Slovakia")
-- **GEO (Google Entity Optim.):** `llms.txt` obsahuje GEO súradnice + entity + endpointy pre všetky stránky
-- **SEO:** samostatné URL → každá stránka vie mať vlastný rich snippet v Google, topic clustering (Pillar-Cluster model)
-- **IndexNow:** notifikácia odoslaná pre všetky 8 URL (HTTP 202)
+Vercel `cleanUrls: true` enables `/about` → `about.html` resolution.
 
 ---
 
-## 3. Git & Deployment Architecture (GitOps)
+## 4. SEO & Discovery
 
-### Primary Branch Convention: `main`
-> [!IMPORTANT]
-> **Vercel production deployments are triggered from the `main` branch.**  
-> Always keep `main` and `master` in sync.
+| Asset | URL | Status |
+|:------|:----|:-------|
+| Sitemap | `/sitemap.xml` | ✅ 11 URLs (pages + posts + rss) |
+| RSS | `/rss.xml` | ✅ Created (3 posts) |
+| llms.txt | `/llms.txt` | ✅ GEO, endpoints, pillars |
+| llms-full.txt | `/llms-full.txt` | ✅ Full AI agent knowledge graph |
+| IndexNow | API | ✅ Submitted for all pages |
+| Google GSC | meta tag | ✅ G-HJ4MZ66NEY |
+| JSON-LD | All pages | ✅ Person + WebPage schema |
+| SVG gradient | All pages | ✅ bronzeGrad defs fix (expertise icons) |
 
+---
+
+## 5. Tech Stack & Services
+
+| Layer | Technology |
+|:------|:-----------|
+| **Frontend** | HTML5 / CSS3 / Vanilla JS — zero build, responsive |
+| **3D Background** | Three.js v0.160.0 (CDN importmap) — bronze neural constellation |
+| **i18n** | Reactive JS dictionary (EN/SK) — localStorage persistence |
+| **Blog** | Static HTML + `blog/posts.json` manifest |
+| **Lead Capture** | Python WSGI (`leads.db` SQLite) + Caddy reverse proxy (`:8701`) |
+| **Hosting** | Vercel (auto-deploy from `main` branch) |
+| **Media** | Cloudflare R2 (`marian-stancik-media` bucket) |
+| **Email** | AgentMail (`marian_stancik@agentmail.to`) |
+| **Sync** | Syncthing → iPhone/Mac/PC |
+
+---
+
+## 6. Footer Links Status
+
+| Link | Status | Detail |
+|:-----|:-------|:-------|
+| Prime Agent Masterclass | ⏳ | "(coming soon)" — no link |
+| ASCENTIA s.r.o. | ⏳ | "(coming soon)" — no link (domain not purchased) |
+| Open Source | ✅ | GitHub profile |
+| Blog | ✅ | `/blog` |
+| Social (X, YT, GH, LI) | ✅ | All working |
+
+---
+
+## 7. About Text — Key Changes
+
+- **"Since 2023"** — added to first paragraph (replaced old intro)
+- **University paragraph removed** — no "90 years" or "90-ročnou" anywhere
+- **Defence Product Manager** — now includes legal-by-design under EU AI Act/GDPR/NIS2
+- **Drone paragraph** — concise (1500g, Pixhawk, RPi 5, €2.6M)
+- **CEO paragraph** — concise ("AI-first company running 24/7")
+- **Stats** — Open Source Repos (6) + 24/7 Agent Runtime (replaced PF UK tradition)
+- All changes synced to both inline HTML and i18n EN/SK dictionaries
+
+---
+
+## 8. Drones Page — Complete Build Specs
+
+6 categories of build specifications + complete shopping list:
+
+1. **Frame & Motors** — GEPRC Mark4-8, iFlight XING2 2809, HQprop, GNB battery
+2. **Electronics & FC** — Skystars H7 Dual Gyro, Radiomaster XR1, FlyfishRC GPS
+3. **AI & Autopilot** — Raspberry Pi 5 8GB, Camera 3, BEC, servo release mechanism
+4. **FPV System** — Caddx Ratel 2, Axisflying Smurfs VTX, Skyzone Cobra X
+5. **Ground Control** — RadioMaster Pocket, Samsung 35E, iSDT charger
+6. **Tools & Assembly** — 19 items (soldering station, wire, flux, multimeter, etc.)
+
+---
+
+## 9. Lead CRM
+
+- **Database:** `/opt/hermes-vault/leads.db` (SQLite) — extended schema (name, phone, message, company, contact_status)
+- **Web form** → Python WSGI on VPS (`:8701`) → leads.db
+- **Vault mirror:** `/opt/hermes-vault/05_INBOX/leads/` — per-lead .md files with BOM
+- **Status taxonomy:** new → contacted → meeting → proposal → negotiation → won | lost
+- **Auto-monitor:** `lead-monitor.py` — checks DB → creates vault lead files
+
+---
+
+## 10. Git & Deployment
+
+### Branches
+- **`main`** — Vercel production trigger
+- **`master`** — synced to `main` on every push
+
+### Workflow
 ```bash
-# Push directly to production:
-git push origin main
-git push origin main:master
+git pull --rebase origin main   # Always before work
+git add -A && git commit -m "..."
+git push origin main            # Triggers Vercel deploy
+git push origin main:master     # Sync branches
 ```
 
-### Hetzner VPS Synchronization (Hermes Agent Working Tree)
-To ensure Hermes Agent on the Hetzner VPS never pushes outdated files:
+### IndexNow
 ```bash
-cd /opt/hermes-vault/marian_stancik_dev_web   # (or VPS repo path)
-git fetch origin main
-git reset --hard origin/main
+# After URL changes:
+curl -X POST https://api.indexnow.org/indexnow \
+  -H "Content-Type: application/json" \
+  -d '{"host":"www.marianstancik.dev","key":"60f8a34d7b694a3d8eacc8642d372787","urlList":["https://www.marianstancik.dev/","https://www.marianstancik.dev/about",...]}'
 ```
 
 ---
 
-## 4. Automated Blog Publishing Pipeline (`scripts/publish_post.py`)
-
-Hermes Agent publishes new articles autonomously using the CLI tool with built-in `git pull --rebase` protection:
+## 11. Verification Commands
 
 ```bash
-python scripts/publish_post.py \
-  --title "Article Title in English" \
-  --title-sk "Názov článku v slovenčine" \
-  --excerpt "Short English summary for meta tags and feed." \
-  --excerpt-sk "Krátky slovenský popis pre meta tagy a feed." \
-  --tags "AI Agents, Drones, Compliance" \
-  --read-time "5 min read" \
-  --read-time-sk "5 min čítania" \
-  --content-file "path/to/content.html" \
-  --push
-```
+# HTTP 200 check for all pages
+for url in / /about /expertise /skills /drones /contact /blog; do
+  curl -s -o /dev/null -w "%{http_code}" "https://www.marianstancik.dev${url}"
+done
 
-### What the Pipeline Does Automatically:
-1. **Pulls Latest Code:** Automatically executes `git pull origin main --rebase` before modifying files.
-2. **Generates HTML Article:** Creates `blog/posts/YYYY-MM-DD-slug.html` with full Open Graph, Twitter Cards, and `BlogPosting` JSON-LD schema.
-3. **Updates Manifest:** Prepends the new entry into `blog/posts.json`.
-4. **Updates AI Knowledge Graph:** Appends new article endpoint into `llms.txt`.
-5. **Git Commit & Push:** Pushes commit `📝 auto(blog): publish YYYY-MM-DD-slug` to `origin/main`.
-6. **Vercel Auto-Deploy:** Website rebuilds and publishes the article live within ~15 seconds.
+# Delta Defence sweep
+grep -rn 'Delta Defence' . --include="*.html" --include="*.md" --include="*.txt" 2>/dev/null
 
----
+# 90 years sweep
+grep -rn '90 years\|90-ročn' . --include="*.html" 2>/dev/null
 
-## 5. Critical Convention: Explicit Relative Paths
-
-> [!IMPORTANT]
-> **Never use directory-only links (e.g. `blog/`, `../`, `../../`) or root-absolute paths starting with `/` in internal links.**
-
-- **Why:** In browser disk mode (`file:///C:/Users/.../index.html`), clicking `blog/` or `../` opens Chrome's folder directory view instead of the HTML page.
-- **Rule:** Always use explicit `.html` relative paths:
-  - From `index.html` ➔ `blog/index.html`, `blog/posts/slug.html`, `blog/posts.json`, `favicon.svg`
-  - From `blog/index.html` ➔ `../index.html`, `posts/slug.html`, `posts.json`, `../favicon.svg`
-  - From `blog/posts/*.html` ➔ `../../index.html`, `../index.html`, `../../favicon.svg`
-
----
-
-## 6. Official Social Media Channels
-
-All social links are standardized across `index.html`, `llms.txt`, and metadata:
-- **𝕏 / Twitter:** [`https://x.com/marian_s_ai`](https://x.com/marian_s_ai) (`@marian_s_ai`)
-- **YouTube:** [`https://www.youtube.com/@marian_ai`](https://www.youtube.com/@marian_ai) (`@marian_ai`)
-- **Facebook:** [`https://www.facebook.com/profile.php?id=100089785398619`](https://www.facebook.com/profile.php?id=100089785398619)
-- **Threads:** [`https://www.threads.com/`](https://www.threads.com/)
-- **LinkedIn:** [`https://www.linkedin.com/in/marian-stancik-924b41298/`](https://www.linkedin.com/in/marian-stancik-924b41298/)
-- **Instagram:** [`https://www.instagram.com/marian_stancik`](https://www.instagram.com/marian_stancik)
-- **GitHub:** [`https://github.com/Abra7abra7`](https://github.com/Abra7abra7)
-- **Email:** `marian_stancik@agentmail.to`
-- **ASCENTIA:** [`https://ascentia.sk`](https://ascentia.sk)
-
----
-
-## 7. Lead Capture & CRM Workflow
-
-1. **Lead Submission:** Frontend submits `POST /api/subscribe` to Hetzner VPS (`http://188.245.224.189/api/subscribe`).
-2. **Reverse Proxy & WSGI:** Caddy proxies requests to Python daemon `:8701`.
-3. **Database:** Records stored in `/opt/hermes-vault/leads.db` (SQLite).
-4. **Hermes C2 Integration:** Hermes Agent monitors `leads.db`, alerts via Telegram/WhatsApp, and can trigger automated AgentMail sequences.
-5. **Zero-Loss Fallback:** If offline or blocked by browser mixed-content policy, form falls back to pre-filled `mailto:marian_stancik@agentmail.to`.
-
----
-
-## 8. Verification & Quality Commands
-
-```bash
-# Verify all relative links across the website:
-node -e "
-const fs = require('fs'), path = require('path');
-function check(file, dir) {
-  const c = fs.readFileSync(file, 'utf8');
-  for (const m of c.matchAll(/href=\"([^\"]+)\"/g)) {
-    const h = m[1];
-    if (h.startsWith('http') || h.startsWith('#') || h.startsWith('mailto:')) continue;
-    const target = h.endsWith('/') ? h + 'index.html' : h;
-    const exists = fs.existsSync(path.resolve(dir, target));
-    if (!exists && !h.includes('${')) console.error('Broken link:', file, '->', h);
-  }
-}
-check('index.html', '.');
-check('blog/index.html', 'blog');
-fs.readdirSync('blog/posts').forEach(p => check(path.join('blog/posts', p), 'blog/posts'));
-console.log('✅ Link verification passed.');
-"
-
-# Test blog publisher CLI dry run:
-python scripts/publish_post.py --title "Test Title" --title-sk "Test Názov" --excerpt "Test excerpt" --excerpt-sk "Test popis" --dry-run
+# SEO meta
+curl -s https://www.marianstancik.dev/about | grep -E '<title>|<meta name="description"|<link rel="canonical"|<script type="application/ld\+json"'
 ```

@@ -1005,7 +1005,19 @@ footer {
 }
 @media (max-width: 500px) { }
 
-</style>
+
+.drone-category {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #CD7F32;
+  margin: 20px 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(205,127,50,0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.drone-category:first-of-type { margin-top: 0; }
+.drone-category + .drone-build-list { margin-bottom: 0; }</style>
 
 <script type="application/ld+json">
 {
@@ -1074,7 +1086,7 @@ footer {
     <p class="section-intro fade-in" id="droneIntro">
       1500g custom carbon quad with ArduPilot, Pixhawk 6C, Raspberry Pi 5 edge AI. EASA A1/A3 certified, €2.6M insured.
     </p>
-    <div class="drone-showcase-grid fade-in">
+        <div class="drone-showcase-grid fade-in">
       <div class="drone-video-card">
         <video controls preload="metadata" poster="https://ff00597494cd9f2b2347c45a18b823ff.r2.cloudflarestorage.com/marian-stancik-media/drone/web/drone_outdoor_poster.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=fd57023d063e38915f0607865e064f57%2F20260824%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260824T141027Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=80f689dbb3956c95943701a1577d300a0f07c5dba3a418a7741a47bbac4266f7" width="100%" height="auto">
           <source src="https://ff00597494cd9f2b2347c45a18b823ff.r2.cloudflarestorage.com/marian-stancik-media/drone/web/drone_outdoor_showcase.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=fd57023d063e38915f0607865e064f57%2F20260824%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260824T141026Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=aaf27e9891e0339d44bbed3d7588530a2aa4872afbfdf678c40c237ff8f1cad6" type="video/mp4">
@@ -1082,19 +1094,75 @@ footer {
         <p class="drone-video-caption" id="dCap1">20s outdoor compilation &mdash; field flight, waypoints &mdash; no audio</p>
       </div>
       <div class="drone-details">
-        <h3 id="droneBuildTitle">Build &amp; programming specs</h3>
+        <h3 id="droneBuildTitle">Build &amp; specifications</h3>
+
+        <h4 class="drone-category" id="dSpec1">Frame &amp; Motors</h4>
         <ul class="drone-build-list">
-          <li><strong>Frame:</strong> 1500g custom carbon quad — hand-soldered power distribution, high-gauge ESCs</li>
-          <li><strong>Flight Controller:</strong> Pixhawk 6C running ArduPilot Copter 4.5</li>
-          <li><strong>Edge AI:</strong> Raspberry Pi 5 companion computer — neural vision &amp; MAVLink guidance</li>
-          <li><strong>Software:</strong> QGroundControl telemetry, Mission Planner waypoint planning, MAVLink protocol</li>
-          <li><strong>Certification:</strong> EASA A1/A3, Coverdrone €2.6M insured</li>
-          <li><strong>Evolution:</strong> Betaflight → Pixhawk → ArduPilot → Python autonomous missions</li>
+          <li><strong>Frame:</strong> GEPRC Mark4-8 (Rotorama)</li>
+          <li><strong>Motors:</strong> iFlight XING2 2809 1250Kv × 6 (Rotorama)</li>
+          <li><strong>Props:</strong> HQprop LR8X4.2X3 × 8 (Rotorama)</li>
+          <li><strong>Battery:</strong> GNB 5500mAh 6S 70C XT60 (Rotorama)</li>
+        </ul>
+
+        <h4 class="drone-category" id="dSpec2">Electronics &amp; Flight Controller</h4>
+        <ul class="drone-build-list">
+          <li><strong>FC+ESC:</strong> Skystars H7 Dual Gyro + AM60 AM32 (Rotorama)</li>
+          <li><strong>Receiver:</strong> Radiomaster XR1 Nano ELRS 868MHz/2.4GHz (Rotorama)</li>
+          <li><strong>GPS+Compass:</strong> FlyfishRC M10QMC-5883L (Rotorama)</li>
+          <li><strong>Capacitor:</strong> 1000μF 50V (SvetSúčiastok)</li>
+        </ul>
+
+        <h4 class="drone-category" id="dSpec3">AI &amp; Autopilot</h4>
+        <ul class="drone-build-list">
+          <li><strong>AI Computer:</strong> Raspberry Pi 5 — 8GB RAM (RPishop)</li>
+          <li><strong>BEC:</strong> 2-13S 5V 5A for RPi (Rotorama)</li>
+          <li><strong>Camera:</strong> Raspberry Pi Camera 3 (RPishop)</li>
+          <li><strong>SD Card:</strong> Raspberry Pi 64GB Class A2 (RPishop)</li>
+          <li><strong>Cooler:</strong> Raspberry Pi 5 Active Cooler (RPishop)</li>
+          <li><strong>Servo:</strong> Micro Servo MG90S — release mechanism (RCHobby)</li>
+          <li><strong>USB-C pigtail:</strong> JOY-IT USB-C power cable 1m (Alza)</li>
+        </ul>
+
+        <h4 class="drone-category" id="dSpec4">FPV System</h4>
+        <ul class="drone-build-list">
+          <li><strong>FPV Camera:</strong> Caddx Ratel 2 Micro (Rotorama)</li>
+          <li><strong>VTX:</strong> Axisflying Smurfs 25-1600mW (Rotorama)</li>
+          <li><strong>VTX Antenna:</strong> Foxeer Lollipop 4 Plus × 2 (Rotorama)</li>
+          <li><strong>Goggles:</strong> Skyzone Cobra X V4 (Rotorama)</li>
+        </ul>
+
+        <h4 class="drone-category" id="dSpec5">Ground Control</h4>
+        <ul class="drone-build-list">
+          <li><strong>Radio:</strong> RadioMaster Pocket ELRS 2.4GHz (Rotorama)</li>
+          <li><strong>Radio Batt:</strong> Samsung 35E 18650 3500mAh × 2 (Rotorama)</li>
+          <li><strong>Charger:</strong> iSDT 608AC 50/200W (Rotorama)</li>
+          <li><strong>Lipo Bag:</strong> Rotorama Lipo Safe bag (Rotorama)</li>
+        </ul>
+
+        <h4 class="drone-category" id="dSpec6">Tools &amp; Assembly</h4>
+        <ul class="drone-build-list">
+          <li><strong>Soldering:</strong> Sequre SI012 Pro 65W Kit (Rotorama)</li>
+          <li><strong>Screwdrivers:</strong> Readytosky hex set (Rotorama)</li>
+          <li><strong>Standoffs M3:</strong> Aluminium round 10pc (Rotorama)</li>
+          <li><strong>Standoffs M2.5:</strong> Nylon 180pc for RPi (Fyft)</li>
+          <li><strong>Standoffs M3:</strong> Nylon 200pc (Fyft)</li>
+          <li><strong>Wire 24AWG:</strong> Silicone 10×5m set (Rotorama)</li>
+          <li><strong>Wire 18AWG:</strong> Silicone red+black (Rotorama)</li>
+          <li><strong>Solder:</strong> Sn60/Pb40 1.0mm 100g (ProfiGaráž)</li>
+          <li><strong>Flux:</strong> TBS flux (Rotorama)</li>
+          <li><strong>Heat shrink:</strong> 530pc set (Rotorama)</li>
+          <li><strong>Battery strap:</strong> Kevlar 20×450mm × 4 (Rotorama)</li>
+          <li><strong>Short protector:</strong> VIFLY ShortSaver V2 (Rotorama)</li>
+          <li><strong>Buzzer:</strong> VIFLY Finder V2 (Rotorama)</li>
+          <li><strong>Multimeter:</strong> Digital (SvetSúčiastok)</li>
+          <li><strong>Mat:</strong> Silicone 45×30cm (Rotorama)</li>
+          <li><strong>Pliers:</strong> Cutting 170mm (Rotorama)</li>
+          <li><strong>Thread locker:</strong> Medium strength (Rotorama)</li>
+          <li><strong>Double tape:</strong> 3M foam (Rotorama)</li>
+          <li><strong>Tip:</strong> Sequre TS-K spare (Rotorama)</li>
         </ul>
       </div>
-    </div>
-  </div>
-</section>
+    </div>ion>
 
 
 
@@ -1328,6 +1396,12 @@ const translations = {
     dCap1: "FPV flight — autonomous waypoint navigation testing",
     dCap2: "Hand-built 1500g carbon quad — maiden flight",
     dCap3: "ArduPilot mission planning — automated multi-waypoint",
+    dSpec1: "Frame &amp; Motors",
+    dSpec2: "Electronics &amp; FC",
+    dSpec3: "AI &amp; Autopilot",
+    dSpec4: "FPV System",
+    dSpec5: "Ground Control",
+    dSpec6: "Tools &amp; Assembly",
         scrollText: "Scroll",
     aboutLabel: "✦ About",
     aboutHeading: "Builder. Product Manager. Law Scholar. UAV Engineer.",
@@ -1430,7 +1504,13 @@ const translations = {
     droneIntro: "1500g custom carbon quad s ArduPilot, Pixhawk 6C, Raspberry Pi 5 edge AI. EASA A1/A3, €2,6M poistené.",
     dCap1: "FPV let — test autonómneho navigovania",
     dCap2: "Ručne postavený 1500g carbon quad — prvý let",
-    dCap3: "ArduPilot plánovanie misií — automatické waypointy",
+    dCap3: "ArduPilot plánovanie misií — automatické waypointy",,
+    dSpec1: "Rám & Motory",
+    dSpec2: "Elektronika & FC",
+    dSpec3: "AI & Autopilot",
+    dSpec4: "FPV Systém",
+    dSpec5: "Pozemné ovládanie",
+    dSpec6: "Náradie & Montáž"
         skillsLabel: "✦ AI Engineering Skills",
     skillsHeading: "Zručnosti &amp; schopnosti.",
     skillsIntro: "Full-stack AI inžinierstvo — od LLM základov po produkčné nasadenie autonómnych agentov.",
@@ -1443,7 +1523,13 @@ const translations = {
     droneIntro: "1500g custom carbon quad s ArduPilot, Pixhawk 6C, Raspberry Pi 5 edge AI. EASA A1/A3, €2,6M poistené.",
     dCap1: "FPV let — test autonómneho navigovania",
     dCap2: "Ručne postavený 1500g carbon quad — prvý let",
-    dCap3: "ArduPilot plánovanie misií — automatické waypointy",
+    dCap3: "ArduPilot plánovanie misií — automatické waypointy",,
+    dSpec1: "Rám & Motory",
+    dSpec2: "Elektronika & FC",
+    dSpec3: "AI & Autopilot",
+    dSpec4: "FPV Systém",
+    dSpec5: "Pozemné ovládanie",
+    dSpec6: "Náradie & Montáž"
         scrollText: "Posunúť",
     aboutLabel: "✦ O mne",
     aboutHeading: "Staviteľ. Produktový manažér. Právnik v príprave. Inžinier UAV.",

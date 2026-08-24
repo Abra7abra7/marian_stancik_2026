@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Marian Stancik — AI Engineering, Drones &amp; Law Blog</title>
+    <link>https://www.marianstancik.dev</link>
+    <description>AI agents, autonomous systems, UAV builds, law &amp; tech — Marian Stancik builds in public.</description>
+    <language>en</language>
+    <atom:link href="https://www.marianstancik.dev/rss.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Mon, 24 Aug 2026 18:00:00 +0200</lastBuildDate>
+
+    <item>
+      <title>Building a Digital Twin That Posts 9x Daily</title>
+      <link>https://www.marianstancik.dev/blog/posts/2026-08-22-building-digital-twin</link>
+      <description>How I built an autonomous AI agent with Hermes that creates and publishes content across platforms without human intervention.</description>
+      <pubDate>Sat, 22 Aug 2026 08:00:00 +0200</pubDate>
+      <guid>https://www.marianstancik.dev/blog/posts/2026-08-22-building-digital-twin</guid>
+    </item>
+
+    <item>
+      <title>AI Act Compliance for Small AI Companies</title>
+      <link>https://www.marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance</link>
+      <description>Practical legal-by-design framework for startups building AI products in the EU.</description>
+      <pubDate>Thu, 20 Aug 2026 08:00:00 +0200</pubDate>
+      <guid>https://www.marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance</guid>
+    </item>
+
+    <item>
+      <title>Autonomous Drone Missions with ArduPilot</title>
+      <link>https://www.marianstancik.dev/blog/posts/2026-08-17-autonomous-drone-missions</link>
+      <description>Building a production-grade UAV system with Pixhawk, ArduPilot, and Python-based mission planning.</description>
+      <pubDate>Mon, 17 Aug 2026 08:00:00 +0200</pubDate>
+      <guid>https://www.marianstancik.dev/blog/posts/2026-08-17-autonomous-drone-missions</guid>
+    </item>
+  </channel>
+</rss>
