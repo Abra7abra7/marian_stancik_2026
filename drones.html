@@ -1052,6 +1052,15 @@ footer {
 </script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute;visibility:hidden">
+  <defs>
+    <linearGradient id="bronzeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#CD7F32"/>
+      <stop offset="100%" stop-color="#E8B86D"/>
+    </linearGradient>
+  </defs>
+</svg>
+
 <canvas id="three-canvas"></canvas>
 <div class="content" id="main-content">
 <nav aria-label="Main navigation">
@@ -1606,11 +1615,9 @@ let currentLang = localStorage.getItem('ms_lang') || 'en';
 function switchLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('ms_lang', lang);
-  applyTranslations();
   loadDynamicPostsHome();
 }
 
-function applyTranslations() {
   const d = translations[currentLang] || translations.en;
   
   document.getElementById('btnEn').classList.toggle('active', currentLang === 'en');
@@ -1805,5 +1812,7 @@ document.addEventListener('click', function(e) {
 
 
 </script>
-</body>
-</html>
+applyTranslations();
+// Init i18n
+
+</html></body>
