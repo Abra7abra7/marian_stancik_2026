@@ -9,12 +9,27 @@
 
 ## 1. Executive Overview
 
-Personal brand and technical showcase website for Marian Stancik — AI Agent Developer, Product Manager at Delta Defence a.s., Law student at PF UK, Drone pilot (EASA A1/A3, €2.6M insured), and CEO of ASCENTIA s.r.o.
+Personal brand and technical showcase website for Marian Stancik — AI Engineer, Defence Product Manager (confidential), Law student at PF UK, Drone pilot (EASA A1/A3, €2.6M insured), and CEO of ASCENTIA s.r.o.
 
 The website demonstrates the synergy of three core pillars:
 1. **AI & Autonomous Agents:** Hermes Agent, custom MCP servers, cron-orchestrated 24/7 background agents on European Hetzner Cloud VPS, Telegram & WhatsApp C2.
 2. **Law & AI Compliance:** Faculty of Law, Comenius University in Bratislava (PF UK — 90+ years tradition, clinical legal education). Specialized in EU AI Act, GDPR, NIS2, and Legal-by-Design software architectures.
-3. **Drones & UAV Systems:** Delta Defence tactical UAV engineering, custom hand-soldered 1500g carbon quads, Pixhawk 6C + ArduPilot, QGroundControl, Mission Planner, and onboard Raspberry Pi 5 edge AI neural companion guidance.
+3. **Drones & UAV Systems:** Defence industry UAV engineering, custom hand-soldered 1500g carbon quads, Pixhawk 6C + ArduPilot, QGroundControl, Mission Planner, and onboard Raspberry Pi 5 edge AI neural companion guidance.
+
+---
+
+## 2. ANONYMIZATION RULE (CRITICAL)
+
+**Delta Defence is NEVER mentioned by name anywhere on the web.**  
+This is a strict security requirement. Only generic "Defence Product Manager" and "Defence Industry" are used.
+
+- ✅ Hero: "Defence Product Manager" (NOT "Product Manager @ Delta Defence")
+- ✅ About: "Defence Product Manager" (NOT "Product Manager at Delta Defence")
+- ✅ JSON-LD: `"name": "Defence Industry (confidential)"` (NOT "Delta Defence")
+- ✅ SK: "Defence Product Manager" (NOT "Product Manager v Delta Defence")
+- ✅ llms.txt: No company name
+
+Always use `Defence Product Manager` in English and `Defence Product Manager` in Slovak. Never use the actual employer name in any public-facing content.
 
 ---
 
