@@ -149,20 +149,73 @@ curl -X POST https://api.indexnow.org/indexnow \
 
 ---
 
-## 11. Verification Commands
+## 11. Test Matrix (MANDATORY before every push)
+
+| Vrstva | Nástroj | Čo testuje | Rýchlosť |
+|:-------|:--------|:-----------|:---------|
+| **L0 — Syntax** | `node --check` | JS syntax v inline scriptoch | <1s |
+| **L1 — HTTP** | `curl` | HTTP 200, hlavičky, SEO meta | ~2s |
+| **L2 — DOM** | Playwright | Počet sekcií, výška, Three.js, i18n | ~30s |
+| **L3 — Screenshot** | Playwright | Full-page vizuálna kontrola | ~10s |
+| **L4 — Security** | `grep` | Delta Defence, secrets v HTML | ~1s |
+| **L5 — i18n** | Playwright | SK prepnutie, kľúče nie sú prázdne | ~5s |
+| **L6 — Links** | Playwright | Všetky `<a href>` vracajú 200 | ~15s |
+| **L7 — Mobile** | Playwright 375px | Responzívny layout, menu | ~15s |
+
+**One command to run all:**
+```bash
+python3 test_visual.py
+```
+
+### Per-page thresholds
+
+| Check | Threshold | Fail example |
+|:------|:----------|:-------------|
+| bodyHeight | > 500px (subpages), > 2000px (/) | Prázdna = ~100px |
+| sectionCount | > 2 (subpages), > 5 (/) | Iba 1 sekcia |
+| section height | každá > 50px | Empty section |
+| section text | každá > 100 chars | Empty content |
+| Three.js | `<canvas>` exists | Blog page ✅ intentionally no canvas |
+| i18n ready | `translations` + `switchLanguage` | Broken JS object |
+| i18n works | SK text detected | "Vitajte" / "Kontakt" in DOM |
+| JS errors (console) | 0 | SyntaxError |
+| L0 syntax | `node --check` exit 0 | Missing comma, extra brace |
+
+## 12. Workflow (MANDATORY — every single change)
 
 ```bash
-# HTTP 200 check for all pages
-for url in / /about /expertise /skills /drones /contact /blog; do
-  curl -s -o /dev/null -w "%{http_code}" "https://www.marianstancik.dev${url}"
-done
+# Step 1: Pull latest
+git pull --rebase origin main
 
-# Delta Defence sweep
-grep -rn 'Delta Defence' . --include="*.html" --include="*.md" --include="*.txt" 2>/dev/null
+# Step 2: Make changes (patch tool ONLY — never cat write_file on HTML)
 
-# 90 years sweep
-grep -rn '90 years\|90-ročn' . --include="*.html" 2>/dev/null
+# Step 3: L0 — JS syntax validation
+python3 -c "
+import subprocess
+pages = ['index.html','about.html','expertise.html','skills.html','drones.html','contact.html']
+for p in pages:
+    c = open(p).read()
+    s = c.find('<script>\\nconst translations = {')
+    if s>-1:
+        e = c.find('</script>', s)
+        js = c[s+len('<script>'):e]
+        open('/tmp/v.js','w').write(js)
+        r = subprocess.run(['node','--check','/tmp/v.js'], capture_output=True, text=True, timeout=10)
+        print(f\"{'✅' if r.returncode==0 else '❌'} {p}: {'ok' if r.returncode==0 else r.stderr[:80]}\")
+"
 
-# SEO meta
-curl -s https://www.marianstancik.dev/about | grep -E '<title>|<meta name="description"|<link rel="canonical"|<script type="application/ld\+json"'
+# Step 4: L4 — Security sweep
+grep -rn 'Delta Defence' . --include="*.html" 2>/dev/null && echo "❌ FAIL" || echo "✅ Delta Defence not found"
+
+# Step 5: L1+L2+L5+L6+L7 — Browser test (30s)
+python3 test_visual.py
+
+# Step 6: Only if ALL pass — deploy
+git add -A
+git commit -m "..."
+git push origin main
+git push origin main:master
+
+# Step 7: Verify live
+sleep 20 && python3 test_visual.py
 ```

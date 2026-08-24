@@ -1513,14 +1513,14 @@ const translations = {
     droneIntro: "1500g custom carbon quad s ArduPilot, Pixhawk 6C, Raspberry Pi 5 edge AI. EASA A1/A3, €2,6M poistené.",
     dCap1: "FPV let — test autonómneho navigovania",
     dCap2: "Ručne postavený 1500g carbon quad — prvý let",
-    dCap3: "ArduPilot plánovanie misií — automatické waypointy",,
+    dCap3: "ArduPilot plánovanie misií — automatické waypointy",
     dSpec1: "Rám & Motory",
     dSpec2: "Elektronika & FC",
     dSpec3: "AI & Autopilot",
     dSpec4: "FPV Systém",
     dSpec5: "Pozemné ovládanie",
-    dSpec6: "Náradie & Montáž"
-        skillsLabel: "✦ AI Engineering Skills",
+    dSpec6: "Náradie & Montáž",
+    skillsLabel: "✦ AI Engineering Skills",
     skillsHeading: "Zručnosti &amp; schopnosti.",
     skillsIntro: "Full-stack AI inžinierstvo — od LLM základov po produkčné nasadenie autonómnych agentov.",
     sk1Title: "Build &amp; Deploy AI aplikácie",
@@ -1532,13 +1532,13 @@ const translations = {
     droneIntro: "1500g custom carbon quad s ArduPilot, Pixhawk 6C, Raspberry Pi 5 edge AI. EASA A1/A3, €2,6M poistené.",
     dCap1: "FPV let — test autonómneho navigovania",
     dCap2: "Ručne postavený 1500g carbon quad — prvý let",
-    dCap3: "ArduPilot plánovanie misií — automatické waypointy",,
+    dCap3: "ArduPilot plánovanie misií — automatické waypointy",
     dSpec1: "Rám & Motory",
     dSpec2: "Elektronika & FC",
     dSpec3: "AI & Autopilot",
     dSpec4: "FPV Systém",
     dSpec5: "Pozemné ovládanie",
-    dSpec6: "Náradie & Montáž"
+    dSpec6: "Náradie & Montáž",
         scrollText: "Posunúť",
     aboutLabel: "✦ O mne",
     aboutHeading: "Staviteľ. Produktový manažér. Právnik v príprave. Inžinier UAV.",
@@ -1618,6 +1618,7 @@ function switchLanguage(lang) {
   loadDynamicPostsHome();
 }
 
+function applyTranslations() {
   const d = translations[currentLang] || translations.en;
   
   document.getElementById('btnEn').classList.toggle('active', currentLang === 'en');

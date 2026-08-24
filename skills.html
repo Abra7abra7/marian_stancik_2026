@@ -1558,6 +1558,7 @@ function switchLanguage(lang) {
   loadDynamicPostsHome();
 }
 
+function applyTranslations() {
   const d = translations[currentLang] || translations.en;
   
   document.getElementById('btnEn').classList.toggle('active', currentLang === 'en');
