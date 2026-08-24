@@ -149,7 +149,7 @@ Each entry in `posts.json` contains:
 
 - **Theme:** Sleek dark-mode aesthetic (`#08080F`) with polished bronze metallic accents (`#CD7F32` and `#E8B86D`).
 - **Icons:** All emojis and generic icons have been replaced with sharp, inline SVG vectors:
-  - **Socials:** Official vector geometries for 𝕏, GitHub, LinkedIn, Instagram, Email, and Blog.
+  - **Socials:** Official vector geometries for 𝕏 (@marian_s_ai), YouTube (@marian_ai), GitHub (@Abra7abra7), LinkedIn, Facebook, Threads, Instagram (@marian_stancik), Email, and Blog.
   - **Role Badges:** Mini vector icons for defense radar, scales of justice, UAV drone, and corporate crest.
   - **Expertise Cards:** Custom vector icons with linear bronze gradient strokes (`#bronzeGrad`).
   - **Project Cards:** Dedicated branded iconography with `.card-icon-wrap` containers that feature glow transitions on hover.
