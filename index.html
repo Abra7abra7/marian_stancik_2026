@@ -31,7 +31,7 @@
 <meta name="twitter:site" content="@marian_s_ai">
 <meta name="twitter:creator" content="@marian_s_ai">
 <meta name="twitter:title" content="Marian Stancik">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://cdn.jsdelivr.net http://188.245.224.189; font-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' https://*.r2.cloudflarestorage.com; connect-src 'self' https://cdn.jsdelivr.net http://188.245.224.189; font-src 'self'">
 <meta name="twitter:description" content="AI Agent Developer · Product Manager @ Delta Defence · Law @ PF UK · Drone Systems">
 
 <!-- JSON-LD Schema.org Person with GEO and Authority Context -->
@@ -1063,17 +1063,84 @@ footer {
 .skill-category li::before { content: ""; position: absolute; left: 0; top: 11px; width: 5px; height: 5px; border-radius: 50%; background: #CD7F32; opacity: 0.5; }
 
 /* DRONE SHOWCASE */
-.drone-videos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
-.drone-video-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; overflow: hidden; transition: all 0.3s; }
-.drone-video-card:hover { border-color: rgba(205,127,50,0.3); transform: translateY(-3px); }
-.drone-video-card video { display: block; width: 100%; height: auto; }
-.drone-video-caption { font-size: 0.78rem; color: #8888A0; padding: 12px 16px 14px; text-align: center; }
-.drone-specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px; }
-.spec-item { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; padding: 14px 16px; text-align: center; }
-.spec-key { display: block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #CD7F32; margin-bottom: 6px; }
-.spec-val { display: block; font-size: 0.82rem; color: #C8C8D4; }
-@media (max-width: 800px) { .skills-grid { grid-template-columns: 1fr; } .drone-videos { grid-template-columns: 1fr; } .drone-specs { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 500px) { .drone-specs { grid-template-columns: 1fr; } }
+
+
+
+
+
+
+
+
+
+@media (max-width: 800px) { .skills-grid { grid-template-columns: 1fr; } }
+
+
+
+/* DRONE SHOWCASE - updated */
+.drone-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 36px;
+  align-items: start;
+}
+.drone-video-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.drone-video-card:hover {
+  border-color: rgba(205,127,50,0.3);
+  transform: translateY(-3px);
+}
+.drone-video-card video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px 14px 0 0;
+}
+.drone-video-caption {
+  font-size: 0.78rem;
+  color: #8888A0;
+  padding: 12px 16px 14px;
+  text-align: center;
+}
+.drone-details {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 24px 24px 18px;
+}
+.drone-details h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #F0F0F5;
+  margin-bottom: 16px;
+}
+.drone-build-list {
+  list-style: none;
+  padding: 0;
+}
+.drone-build-list li {
+  font-size: 0.85rem;
+  color: #A8A8B8;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  line-height: 1.5;
+}
+.drone-build-list li:last-child { border-bottom: none; }
+.drone-build-list li strong {
+  color: #CD7F32;
+  font-weight: 600;
+  min-width: 100px;
+  display: inline-block;
+}
+@media (max-width: 800px) {
+  .drone-showcase-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 500px) { }
 
 </style>
 </head>
@@ -1340,39 +1407,43 @@ footer {
         <h3 id="sk1Title">Build &amp; Deploy AI Applications</h3>
         <ul id="sk1List">
           <li>Autonomous multi-agent systems (Hermes Agent)</li>
-          <li>Model Context Protocol (MCP) servers</li>
-          <li>Production 24/7 agent runtime on VPS</li>
-          <li>Telegram / WhatsApp command &amp; control</li>
+          <li>Model Context Protocol (MCP) server architecture</li>
+          <li>Production 24/7 agent runtime on Hetzner VPS</li>
+          <li>Telegram / WhatsApp command &amp; control interfaces</li>
+          <li>Agent skill development &amp; modular toolchains</li>
         </ul>
       </div>
       <div class="skill-category">
         <div class="skill-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#CD7F32" stroke-width="1.8"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg></div>
         <h3 id="sk2Title">Software Engineering</h3>
         <ul id="sk2List">
-          <li>Python, TypeScript, Go</li>
-          <li>HTML5 / CSS3 / Vanilla JS (zero framework)</li>
-          <li>CI/CD, GitOps, Vercel deploy</li>
-          <li>Infrastructure: Hetzner, Caddy, Syncthing</li>
+          <li>Python (Hermes Agent, FastAPI, Playwright)</li>
+          <li>TypeScript (Next.js) &amp; Go (infrastructure)</li>
+          <li>HTML5 / CSS3 / Vanilla JS — zero framework, sub-second load</li>
+          <li>CI/CD, GitOps, Vercel auto-deploy pipeline</li>
+          <li>Infrastructure: Hetzner, Caddy, Syncthing, SQLite</li>
         </ul>
       </div>
       <div class="skill-category">
         <div class="skill-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#CD7F32" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><circle cx="12" cy="12" r="3"/></svg></div>
         <h3 id="sk3Title">LLM &amp; Agentive Systems</h3>
         <ul id="sk3List">
-          <li>LLM foundations &amp; model grounding</li>
-          <li>Multi-agent architectures</li>
-          <li>Evaluation-driven development</li>
-          <li>Context persistence &amp; checkpoint recovery</li>
+          <li>LLM foundations — prompt engineering, RAG, structured output</li>
+          <li>Grounding models with data &amp; evaluation-driven development</li>
+          <li>Multi-agent architectures &amp; agent orchestration patterns</li>
+          <li>Context persistence, checkpoint recovery &amp; session management</li>
+          <li>OpenRouter, MCP, function calling &amp; tool-use patterns</li>
         </ul>
       </div>
       <div class="skill-category">
         <div class="skill-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#CD7F32" stroke-width="1.8"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
         <h3 id="sk4Title">Production Operations</h3>
         <ul id="sk4List">
-          <li>19+ cron-orchestrated background agents</li>
-          <li>AgentMail automation &amp; lead capture</li>
-          <li>System monitoring &amp; watchdogs</li>
-          <li>Secure-by-design infrastructure</li>
+          <li>19+ cron-orchestrated background agents (24/7, no human touch)</li>
+          <li>AgentMail automation, lead capture &amp; email pipelines</li>
+          <li>System monitoring, watchdogs &amp; autonomous recovery</li>
+          <li>Secure-by-design: .env secrets, CSP headers, no hardcoded tokens</li>
+          <li>Cross-platform: Telegram, WhatsApp, X, LinkedIn, Blog, YouTube</li>
         </ul>
       </div>
     </div>
@@ -1387,127 +1458,24 @@ footer {
     <p class="section-intro fade-in" id="droneIntro">
       1500g custom carbon quad with ArduPilot, Pixhawk 6C, Raspberry Pi 5 edge AI. EASA A1/A3 certified, €2.6M insured.
     </p>
-    <div class="drone-videos fade-in">
+    <div class="drone-showcase-grid fade-in">
       <div class="drone-video-card">
         <video controls preload="metadata" poster width="100%" height="auto">
-          <source src="https://ff00597494cd9f2b2347c45a18b823ff.r2.cloudflarestorage.com/marian-stancik-media/drone/web/2026-08-24_fpv-okuliare-10.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=fd57023d063e38915f0607865e064f57%2F20260824%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260824T131713Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=0b2067959a5f7eb41ae3cc4227cbbd695d4040f5c7ef3944cb99fbc075846c46" type="video/mp4">
+          <source src="https://ff00597494cd9f2b2347c45a18b823ff.r2.cloudflarestorage.com/marian-stancik-media/drone/web/2026-08-24_fpv-okuliare-10.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=fd57023d063e38915f0607865e064f57%2F20260824%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260824T133912Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=e85f271d4e7de6c93bf579eeddc7c1aeda27d8666cd4f2d31a34933a6ac7b419" type="video/mp4">
         </video>
         <p class="drone-video-caption" id="dCap1">FPV flight &mdash; autonomous waypoint navigation testing</p>
       </div>
-      <div class="drone-video-card">
-        <video controls preload="metadata" poster width="100%" height="auto">
-          <source src="https://ff00597494cd9f2b2347c45a18b823ff.r2.cloudflarestorage.com/marian-stancik-media/drone/web/2026-08-24_fpv-okuliare-11.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=fd57023d063e38915f0607865e064f57%2F20260824%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260824T131714Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=62ae5d70dd1b0e9886d1b3b80ab9c3720f3007804d7ebd21c6b57f02d9794ad2" type="video/mp4">
-        </video>
-        <p class="drone-video-caption" id="dCap2">Hand-built 1500g carbon quad &mdash; maiden flight</p>
-      </div>
-      <div class="drone-video-card">
-        <video controls preload="metadata" poster width="100%" height="auto">
-          <source src="https://ff00597494cd9f2b2347c45a18b823ff.r2.cloudflarestorage.com/marian-stancik-media/drone/web/2026-08-24_fpv-okuliare-21.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=fd57023d063e38915f0607865e064f57%2F20260824%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260824T131715Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=4de35b9d16888d42b76d34b5a46f9d4d490f0eca13ba89345fd2ead6c7687a5f" type="video/mp4">
-        </video>
-        <p class="drone-video-caption" id="dCap3">ArduPilot mission planning &mdash; automated multi-waypoint</p>
-      </div>
-    </div>
-    <div class="drone-specs fade-in">
-      <div class="spec-item"><span class="spec-key">Frame</span><span class="spec-val">1500g custom carbon quad</span></div>
-      <div class="spec-item"><span class="spec-key">Flight Controller</span><span class="spec-val">Pixhawk 6C + ArduPilot Copter</span></div>
-      <div class="spec-item"><span class="spec-key">Edge AI</span><span class="spec-val">Raspberry Pi 5 onboard computer</span></div>
-      <div class="spec-item"><span class="spec-key">Software</span><span class="spec-val">QGroundControl, Mission Planner, MAVLink</span></div>
-      <div class="spec-item"><span class="spec-key">Certification</span><span class="spec-val">EASA A1/A3, Coverdrone €2.6M insured</span></div>
-      <div class="spec-item"><span class="spec-key">Goal</span><span class="spec-val">Program &amp; operate autonomous UAV systems</span></div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- === AI ENGINEERING SKILLS === -->
-<section id="ai-skills" aria-label="AI Engineering skills map">
-  <div class="container">
-    <div class="section-label fade-in" id="skillsLabel">✦ AI Engineering Skills</div>
-    <h2 class="fade-in" id="skillsHeading">Skills &amp; capabilities.</h2>
-    <p class="section-intro fade-in" id="skillsIntro">
-      Full-stack AI engineering — from LLM foundations to production deployment of autonomous agent systems.
-    </p>
-    <div class="skills-grid fade-in">
-      <div class="skill-category">
-        <div class="skill-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#CD7F32" stroke-width="1.8"><path d="M12 3v12M5 10l7-7 7 7M5 21h14"/></svg></div>
-        <h3 id="sk1Title">Build &amp; Deploy AI Applications</h3>
-        <ul id="sk1List">
-          <li>Autonomous multi-agent systems (Hermes Agent)</li>
-          <li>Model Context Protocol (MCP) servers</li>
-          <li>Production 24/7 agent runtime on VPS</li>
-          <li>Telegram / WhatsApp command &amp; control</li>
+      <div class="drone-details">
+        <h3 id="droneBuildTitle">Build &amp; programming specs</h3>
+        <ul class="drone-build-list">
+          <li><strong>Frame:</strong> 1500g custom carbon quad — hand-soldered power distribution, high-gauge ESCs</li>
+          <li><strong>Flight Controller:</strong> Pixhawk 6C running ArduPilot Copter 4.5</li>
+          <li><strong>Edge AI:</strong> Raspberry Pi 5 companion computer — neural vision &amp; MAVLink guidance</li>
+          <li><strong>Software:</strong> QGroundControl telemetry, Mission Planner waypoint planning, MAVLink protocol</li>
+          <li><strong>Certification:</strong> EASA A1/A3, Coverdrone €2.6M insured</li>
+          <li><strong>Evolution:</strong> Betaflight → Pixhawk → ArduPilot → Python autonomous missions</li>
         </ul>
       </div>
-      <div class="skill-category">
-        <div class="skill-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#CD7F32" stroke-width="1.8"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg></div>
-        <h3 id="sk2Title">Software Engineering</h3>
-        <ul id="sk2List">
-          <li>Python, TypeScript, Go</li>
-          <li>HTML5 / CSS3 / Vanilla JS (zero framework)</li>
-          <li>CI/CD, GitOps, Vercel deploy</li>
-          <li>Infrastructure: Hetzner, Caddy, Syncthing</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <div class="skill-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#CD7F32" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <h3 id="sk3Title">LLM &amp; Agentive Systems</h3>
-        <ul id="sk3List">
-          <li>LLM foundations &amp; model grounding</li>
-          <li>Multi-agent architectures</li>
-          <li>Evaluation-driven development</li>
-          <li>Context persistence &amp; checkpoint recovery</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <div class="skill-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#CD7F32" stroke-width="1.8"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
-        <h3 id="sk4Title">Production Operations</h3>
-        <ul id="sk4List">
-          <li>19+ cron-orchestrated background agents</li>
-          <li>AgentMail automation &amp; lead capture</li>
-          <li>System monitoring &amp; watchdogs</li>
-          <li>Secure-by-design infrastructure</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- === DRONE SHOWCASE === -->
-<section id="drone-showcase" aria-label="Drone build and UAV video showcase">
-  <div class="container">
-    <div class="section-label fade-in" id="droneLabel">✦ UAV Systems</div>
-    <h2 class="fade-in" id="droneHeading">Built. Flown. Programmed.</h2>
-    <p class="section-intro fade-in" id="droneIntro">
-      1500g custom carbon quad with ArduPilot, Pixhawk 6C, Raspberry Pi 5 edge AI. EASA A1/A3 certified, €2.6M insured.
-    </p>
-    <div class="drone-videos fade-in">
-      <div class="drone-video-card">
-        <video controls preload="metadata" poster width="100%" height="auto">
-          <source src="https://ff00597494cd9f2b2347c45a18b823ff.r2.cloudflarestorage.com/marian-stancik-media/drone/web/2026-08-24_fpv-okuliare-10.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=fd57023d063e38915f0607865e064f57%2F20260824%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260824T131713Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=0b2067959a5f7eb41ae3cc4227cbbd695d4040f5c7ef3944cb99fbc075846c46" type="video/mp4">
-        </video>
-        <p class="drone-video-caption" id="dCap1">FPV flight &mdash; autonomous waypoint navigation testing</p>
-      </div>
-      <div class="drone-video-card">
-        <video controls preload="metadata" poster width="100%" height="auto">
-          <source src="https://ff00597494cd9f2b2347c45a18b823ff.r2.cloudflarestorage.com/marian-stancik-media/drone/web/2026-08-24_fpv-okuliare-11.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=fd57023d063e38915f0607865e064f57%2F20260824%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260824T131714Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=62ae5d70dd1b0e9886d1b3b80ab9c3720f3007804d7ebd21c6b57f02d9794ad2" type="video/mp4">
-        </video>
-        <p class="drone-video-caption" id="dCap2">Hand-built 1500g carbon quad &mdash; maiden flight</p>
-      </div>
-      <div class="drone-video-card">
-        <video controls preload="metadata" poster width="100%" height="auto">
-          <source src="https://ff00597494cd9f2b2347c45a18b823ff.r2.cloudflarestorage.com/marian-stancik-media/drone/web/2026-08-24_fpv-okuliare-21.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=fd57023d063e38915f0607865e064f57%2F20260824%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260824T131715Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=4de35b9d16888d42b76d34b5a46f9d4d490f0eca13ba89345fd2ead6c7687a5f" type="video/mp4">
-        </video>
-        <p class="drone-video-caption" id="dCap3">ArduPilot mission planning &mdash; automated multi-waypoint</p>
-      </div>
-    </div>
-    <div class="drone-specs fade-in">
-      <div class="spec-item"><span class="spec-key">Frame</span><span class="spec-val">1500g custom carbon quad</span></div>
-      <div class="spec-item"><span class="spec-key">Flight Controller</span><span class="spec-val">Pixhawk 6C + ArduPilot Copter</span></div>
-      <div class="spec-item"><span class="spec-key">Edge AI</span><span class="spec-val">Raspberry Pi 5 onboard computer</span></div>
-      <div class="spec-item"><span class="spec-key">Software</span><span class="spec-val">QGroundControl, Mission Planner, MAVLink</span></div>
-      <div class="spec-item"><span class="spec-key">Certification</span><span class="spec-val">EASA A1/A3, Coverdrone €2.6M insured</span></div>
-      <div class="spec-item"><span class="spec-key">Goal</span><span class="spec-val">Program &amp; operate autonomous UAV systems</span></div>
     </div>
   </div>
 </section>
