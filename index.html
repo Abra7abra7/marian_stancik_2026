@@ -1808,8 +1808,7 @@ function switchLanguage(lang) {
 }
 
 function applyTranslations() {
-  try {
-    const d = translations[currentLang] || translations.en;
+  const d = translations[currentLang] || translations.en;
   
   document.getElementById('btnEn').classList.toggle('active', currentLang === 'en');
   document.getElementById('btnSk').classList.toggle('active', currentLang === 'sk');
@@ -1928,10 +1927,8 @@ function applyTranslations() {
   document.getElementById('fNavConn').textContent = d.fNavConn;
   document.getElementById('fNavBlog').textContent = d.fNavBlog;
   document.getElementById('fMotto').textContent = d.fMotto;
-  } catch(ex) {
-    // Ignore null elements — some pages don't have all elements
-  }
 }
+
 
 async function loadDynamicPostsHome() {
   try {
