@@ -170,7 +170,6 @@ node --check js/three-bg.js
 git add -A
 git commit -m "feat: [describe change]"
 git push origin main
-git push origin main:master
 
 # Step 6: Verify production deployment on https://marianstancik.dev
 ```
