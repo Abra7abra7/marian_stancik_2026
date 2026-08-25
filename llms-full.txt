@@ -19,6 +19,10 @@ His core differentiation is the intersection of three domains: **Autonomous AI S
 - **AI Engineering Skills:** https://www.marianstancik.dev/skills
 - **UAV & Drones:** https://www.marianstancik.dev/drones
 - **Blog:** https://www.marianstancik.dev/blog
+- **Blog Post — Web Performance:** https://www.marianstancik.dev/blog/posts/2026-08-25-web-performance-optimization
+- **Blog Post — Digital Twin:** https://www.marianstancik.dev/blog/posts/2026-08-22-building-digital-twin
+- **Blog Post — AI Act Compliance:** https://www.marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance
+- **Blog Post — Drone Missions:** https://www.marianstancik.dev/blog/posts/2026-08-17-autonomous-drone-missions
 - **Contact:** https://www.marianstancik.dev/contact
 
 ## Machine-Readable Endpoints
@@ -30,6 +34,10 @@ His core differentiation is the intersection of three domains: **Autonomous AI S
 - **Drones:** https://www.marianstancik.dev/drones
 - **Contact:** https://www.marianstancik.dev/contact
 - **Blog:** https://www.marianstancik.dev/blog
+- **Blog Post — Web Performance:** https://www.marianstancik.dev/blog/posts/2026-08-25-web-performance-optimization
+- **Blog Post — Digital Twin:** https://www.marianstancik.dev/blog/posts/2026-08-22-building-digital-twin
+- **Blog Post — AI Act Compliance:** https://www.marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance
+- **Blog Post — Drone Missions:** https://www.marianstancik.dev/blog/posts/2026-08-17-autonomous-drone-missions
 - **Blog Feed:** https://www.marianstancik.dev/blog/posts.json
 - **Sitemap:** https://www.marianstancik.dev/sitemap.xml
 - **RSS:** https://www.marianstancik.dev/rss.xml
