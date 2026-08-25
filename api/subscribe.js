@@ -51,7 +51,7 @@ export default async function handler(req, res) {
 async function sendLeadToAgentMail(apiKey, email, name, source, subject, text) {
   const INBOX = 'marian-hermes-agent@agentmail.to';
   const url = 'https://mcp.agentmail.to/mcp';
-  const headers = { 'x-api-key': apiKey, 'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0 (compatible; HermesCRM/1.0)' };
+  const headers = { 'x-api-key': apiKey, 'Content-Type': 'application/json', 'Accept': 'application/json, text/event-stream', 'User-Agent': 'Mozilla/5.0 (compatible; HermesCRM/1.0)' };
 
   // 1. Initialize session
   const initRes = await fetch(url, {
@@ -68,7 +68,7 @@ async function sendLeadToAgentMail(apiKey, email, name, source, subject, text) {
   // 2. Send message
   const msgRes = await fetch(url, {
     method: 'POST',
-    headers: { ...headers, 'Accept': 'application/json', ...(sessionId ? { 'Mcp-Session-Id': sessionId } : {}) },
+    headers: { ...headers, ...(sessionId ? { 'Mcp-Session-Id': sessionId } : {}) },
     body: JSON.stringify({
       jsonrpc: '2.0', id: '2', method: 'tools/call',
       params: { name: 'send_message', arguments: { inboxId: INBOX, to: [INBOX], subject, text } }
