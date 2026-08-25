@@ -6,7 +6,15 @@
     <description>AI agents, autonomous systems, UAV builds, law &amp; tech — Marian Stancik builds in public.</description>
     <language>en</language>
     <atom:link href="https://www.marianstancik.dev/rss.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 24 Aug 2026 18:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 08:00:00 +0200</lastBuildDate>
+
+    <item>
+      <title>Web Performance Optimization: How I Cut Page Size by 61%</title>
+      <link>https://www.marianstancik.dev/blog/posts/2026-08-25-web-performance-optimization</link>
+      <description>A technical walkthrough of reducing HTML page weight from 86KB to 34KB by externalizing CSS, JS, and images.</description>
+      <pubDate>Tue, 25 Aug 2026 08:00:00 +0200</pubDate>
+      <guid>https://www.marianstancik.dev/blog/posts/2026-08-25-web-performance-optimization</guid>
+    </item>
 
     <item>
       <title>Building a Digital Twin That Posts 9x Daily</title>

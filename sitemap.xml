@@ -7,6 +7,7 @@
   <url><loc>https://www.marianstancik.dev/drones</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.marianstancik.dev/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.marianstancik.dev/contact</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.marianstancik.dev/blog/posts/2026-08-25-web-performance-optimization</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.marianstancik.dev/blog/posts/2026-08-22-building-digital-twin</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.marianstancik.dev/blog/posts/2026-08-17-autonomous-drone-missions</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
