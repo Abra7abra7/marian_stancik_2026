@@ -66,6 +66,11 @@ Vercel `cleanUrls: true` enables `/about` → `about.html` resolution.
 | Layer | Technology |
 |:------|:-----------|
 | **Frontend** | HTML5 / CSS3 / Vanilla JS — zero build, responsive |
+| **CSS** | External `/css/main.css` — shared, cached across all pages |
+| **JS (i18n)** | External `/js/i18n.js` — translations + helpers, loaded at body bottom |
+| **JS (Three.js)** | External `/js/three-bg.js` — deferred ES module |
+| **Images** | WebP primary (`profile.webp`) with JPEG fallback, `fetchpriority="high"` on LCP |
+| **CDN Preconnect** | `css/main.css`, `js/i18n.js`, `js/three-bg.js` are on Vercel origin; Three.js CDN and Google Fonts have `<link rel="preconnect">` hints |
 | **3D Background** | Three.js v0.160.0 (CDN importmap) — bronze neural constellation |
 | **i18n** | Reactive JS dictionary (EN/SK) — localStorage persistence |
 | **Blog** | Static HTML + `blog/posts.json` manifest |
