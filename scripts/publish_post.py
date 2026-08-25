@@ -37,16 +37,19 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <title>{title} — Marian Stancik</title>
 <meta name="description" content="{excerpt}">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<link rel="canonical" href="https://www.marianstancik.dev/blog/posts/{slug}.html">
+<link rel="canonical" href="https://www.marianstancik.dev/blog/posts/{slug}">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Knowledge Graph">
-<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
-<link rel="apple-touch-icon" href="../../apple-touch-icon.svg">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#08080F">
 
 <!-- Open Graph -->
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{excerpt}">
-<meta property="og:url" content="https://www.marianstancik.dev/blog/posts/{slug}.html">
+<meta property="og:url" content="https://www.marianstancik.dev/blog/posts/{slug}">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://www.marianstancik.dev/profile.webp">
 <meta property="og:image:width" content="800">
@@ -62,26 +65,53 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <meta property="article:published_time" content="{date}">
 <meta property="article:author" content="Marian Stancik">
 
-<!-- JSON-LD BlogPosting -->
+<!-- JSON-LD Structured Data with BreadcrumbList -->
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "{title}",
-  "description": "{excerpt}",
-  "datePublished": "{date}",
-  "dateModified": "{date}",
-  "author": {{
-    "@type": "Person",
-    "name": "Marian Stancik",
-    "url": "https://www.marianstancik.dev"
-  }},
-  "publisher": {{
-    "@type": "Person",
-    "name": "Marian Stancik"
-  }},
-  "mainEntityOfPage": "https://www.marianstancik.dev/blog/posts/{slug}.html",
-  "keywords": {tags_json}
+  "@graph": [
+    {{
+      "@type": "BlogPosting",
+      "headline": "{title}",
+      "description": "{excerpt}",
+      "datePublished": "{date}",
+      "dateModified": "{date}",
+      "author": {{
+        "@type": "Person",
+        "name": "Marian Stancik",
+        "url": "https://www.marianstancik.dev"
+      }},
+      "publisher": {{
+        "@type": "Person",
+        "name": "Marian Stancik"
+      }},
+      "mainEntityOfPage": "https://www.marianstancik.dev/blog/posts/{slug}",
+      "keywords": {tags_json}
+    }},
+    {{
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.marianstancik.dev/"
+        }},
+        {{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.marianstancik.dev/blog"
+        }},
+        {{
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{title}",
+          "item": "https://www.marianstancik.dev/blog/posts/{slug}"
+        }}
+      ]
+    }}
+  ]
 }}
 </script>
 
