@@ -89,12 +89,13 @@ All visual interfaces adhere strictly to the design system tokens defined in [`c
 
 To guarantee instant, authoritative discovery and citations across AI engines (**Perplexity, ChatGPT Search, Claude, Google SGE, Grok**), the website implements a 6-layer GEO architecture:
 
-### 1. `llms.txt` & `llms-full.txt` Knowledge Graphs
-* **Standard:** Root files following the official `llms.txt` specification.
-* **Content:** Concise markdown summary (`/llms.txt`) and comprehensive deep-context graph (`/llms-full.txt`) containing:
-  * Exact biographical facts, skills, hardware specs, and legal frameworks.
-  * Direct Q&A FAQ section answering anticipated agent search queries.
-  * All canonical endpoint URLs and machine-readable feeds (`/blog/posts.json`, `/rss.xml`, `/sitemap.xml`).
+### 1. `llms.txt` & `llms-full.txt` Knowledge Graphs (llmstxt.org v2 Standard)
+* **Standard:** Root files following the official [llmstxt.org](https://llmstxt.org/) specification:
+  * **H1 Title:** Single `# Marian Stancik` project title at the top.
+  * **Blockquote Summary:** `> Description` immediately following H1.
+  * **Markdown Link Syntax:** Every single resource MUST be a valid Markdown link: `- [Title](https://domain/path): Optional description`. Never use plain text URLs.
+  * **`## Optional` Section:** Standard convention for secondary information (RSS, JSON feeds, sitemaps, social channels).
+  * **Markdown Alternates:** Every key HTML page provides a clean markdown version (`index.html.md`, `blog/index.html.md`, etc.) advertised via HTTP Link header `Link: </path.md>; rel="alternate"; type="text/markdown"` and `Link: </llms.txt>; rel="describedby"`.
 * **Autodiscovery Tag:** Included in `<head>` of all HTML pages:
   ```html
   <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Knowledge Graph">
