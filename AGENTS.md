@@ -293,3 +293,85 @@ To guarantee a **100/100 Google PageSpeed Insights** rating on both Mobile and D
   ```
 - All JSON-LD schemas must be interconnected via `@graph` containing `Person`, `WebSite`, `WebPage`/`AboutPage`/`CollectionPage`, and `FAQPage`.
 - Strict adherence to `llmstxt.org` v2 markdown links (`- [Title](URL): Description`) guaranteeing 3/3 Lighthouse Agentic Browsing rating.
+
+---
+
+## 11. Autonomous Content Generation & Digital Twin Pipeline (End-to-End Architecture)
+
+This section documents the end-to-end autonomous pipeline that creates, processes, translates, syndicates, and indexes technical stories, blog posts, and social updates.
+
+```mermaid
+flowchart TD
+    subgraph DataSources [1. Data Ingestion & Second Brain]
+        ObsidianVault[Obsidian Vault - Daily Notes & Research]
+        GitTelemetry[Git Commit Diffs & Code Changes]
+        UAVLogs[MAVLink Flight Logs & Hardware Specs]
+        RSSFeeds[Tech & EU AI Act Regulatory Feeds]
+    end
+
+    subgraph ProcessingEngine [2. Hermes Agent & Multi-LLM Processing]
+        HermesCron[Hermes Autonomous Cron Engine - Hetzner VPS]
+        Router[OpenRouter Dynamic LLM Routing]
+        Synthesizer[DeepSeek R1 / Claude 3.5 Sonnet - Technical Drafting]
+        Localizer[GPT-4o - Dual EN/SK Translation & JSON-LD]
+        SafetyFilter[L1 Anonymization & Code Validation Sweep]
+        
+        HermesCron --> Router
+        Router --> Synthesizer --> Localizer --> SafetyFilter
+    end
+
+    subgraph PublishingPipeline [3. Zero-Build Dual-Language Generation]
+        PublisherScript[scripts/publish_post.py]
+        ENPost[blog/posts/{slug}.html]
+        SKPost[blog/posts/sk/{slug}.html]
+        Manifests[posts.json · llms.txt · llms-full.txt]
+        SitemapXML[sitemap.xml + hreflang + lastmod]
+        
+        SafetyFilter --> PublisherScript
+        PublisherScript --> ENPost
+        PublisherScript --> SKPost
+        PublisherScript --> Manifests
+        PublisherScript --> SitemapXML
+    end
+
+    subgraph DistributionAndIndexing [4. Instant Indexing & Multi-Channel Syndication]
+        IndexNowPing[IndexNow API - Bing, Perplexity, Seznam, Yandex]
+        GooglePing[Googlebot Sitemap Ping API]
+        GitOps[Git Auto-Push to origin main -> Vercel Edge]
+        SocialTwin[Digital Twin Social Syndication: X & LinkedIn]
+        
+        SitemapXML --> IndexNowPing
+        SitemapXML --> GooglePing
+        PublisherScript --> GitOps
+        HermesCron --> SocialTwin
+    end
+
+    DataSources --> HermesCron
+```
+
+### 1. Data Ingestion (Where the data comes from)
+- **Obsidian Second Brain Vault:** Daily logs of engineering breakthroughs, drone hardware build logs, code snippets, and legal analyses of EU AI Act and GDPR frameworks.
+- **Git Telemetry & Code Diffs:** Live commit logs tracking performance improvements (e.g. PageSpeed 100, Three.js optimizations, zero-build multi-page refactoring).
+- **MAVLink Flight & Telemetry Logs:** Data extracted directly from Pixhawk 6C flight controllers and Raspberry Pi 5 companion computers.
+- **Regulatory & Tech Aggregators:** Automated RSS and API feeds tracking EU AI Board guidelines, EASA drone regulatory updates, and AI framework releases.
+
+### 2. Processing & Synthesis Engine (Who and how it is processed)
+- **Host & Orchestrator:** **Hermes Agent (Nous Research)** running 24/7 on an enterprise Hetzner Cloud VPS in Nuremberg/Helsinki.
+- **Context Persistence:** SQLite session memory and structured Obsidian Markdown files ensure the agent retains long-term memory of past publications, tone of voice, and audience feedback.
+- **Multi-LLM Dynamic Routing via OpenRouter:**
+  1. **Technical Synthesis & Deep Dives (DeepSeek R1 / Claude 3.5 Sonnet):** Synthesizes raw technical inputs into structured, pedagogical technical articles with clean code snippets and hardware diagrams.
+  2. **Dual-Language Localization (GPT-4o):** Generates synchronized English and Slovak versions with native technical terminology, accurate grammar, and cultural relevance.
+  3. **Structured Data & SEO Extraction:** Generates Schema.org `BlogPosting` and `BreadcrumbList` JSON-LD graphs, OpenGraph tags, and keywords.
+- **L1 Anonymization & Security Guard:** Mandatory regex validation confirming **zero mentions** of confidential company names (enforcing the Defence Product Manager / Defence Industry standard).
+
+### 3. Dual-Language Zero-Build Publishing Pipeline (`scripts/publish_post.py`)
+- **Synchronized Artifact Creation:** Creates `/blog/posts/{slug}.html` (EN) and `/blog/posts/sk/{slug}.html` (SK) with identical layout and styling.
+- **Bidirectional SEO Linking:** Embeds `<link rel="alternate" hreflang="en/sk/x-default">` and canonical tags.
+- **Interactive UX Switcher:** Injects a lightweight header pill allowing visitors to toggle between languages.
+- **Manifest Updates:** Appends entries to `blog/posts.json`, `llms.txt`, and `llms-full.txt` using the `llmstxt.org` v2 link format.
+
+### 4. Instant Search Engine Indexing & Social Syndication
+- **IndexNow Protocol (`api.indexnow.org`):** Immediately pushes new URLs to Bing, Perplexity, Seznam, and Yandex, ensuring indexation in minutes rather than weeks.
+- **Googlebot Sitemap Ping:** Notifies Google of sitemap changes with updated `<lastmod>`.
+- **Trunk GitOps Deployment:** Commits and pushes to `main`, triggering Vercel Edge instant worldwide deployment.
+- **Digital Twin Social Syndication:** Adapts the long-form article into structured X threads and LinkedIn posts distributed via automated cron schedules.
