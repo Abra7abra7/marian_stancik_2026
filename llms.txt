@@ -1,73 +1,40 @@
-# Marian Stancik — AI Agent Context & Knowledge Graph
+# Marian Stancik
 
-> Personal brand website and autonomous engineering platform of Marian Stancik.
-> Available in English and Slovak: https://www.marianstancik.dev
-> Geographic Focus: Bratislava, Slovakia, European Union (GEO: 48.1486° N, 17.1077° E)
+> Personal brand website, technical knowledge graph, and autonomous multi-agent engineering hub of Marian Stancik — AI Engineer, UAV Builder, Law Scholar (PF UK), and CEO @ ASCENTIA.
 
-## Identity & Core Positioning
+## Core Pages
 
-Marian Stancik is an AI Engineer, UAV Builder, and Law Scholar exploring the convergence of artificial intelligence, autonomous physical hardware, and regulatory compliance.
+- [Home](https://www.marianstancik.dev/): High-impact hero, autonomous agent stats, live 24/7 cron orchestrations, and connect channels.
+- [About](https://www.marianstancik.dev/about): Technical bio, 4-layer engineering stack (Hetzner VPS, OpenRouter, Obsidian, Zero-build Web), and career timeline.
+- [Expertise](https://www.marianstancik.dev/expertise): Detailed spec matrices across 3 core pillars: Autonomous AI Agents, Law & AI Compliance, and UAV Edge AI Systems.
+- [AI Engineering Skills](https://www.marianstancik.dev/skills): Full-stack skills taxonomy covering Build & Deploy AI, Software Engineering, LLM & Agentive Systems, and Production Operations.
+- [Tactical UAV Systems](https://www.marianstancik.dev/drones): Hand-soldered 1500g carbon quadcopter, ArduPilot Copter autopilot, Raspberry Pi 5 edge vision AI, and flight logs.
+- [Blog](https://www.marianstancik.dev/blog): Technical articles on autonomous AI workflows, legal-by-design compliance (AI Act, GDPR), and robotics.
+- [Contact](https://www.marianstancik.dev/contact): Direct lead capture, communication channels, and social profiles.
 
-**Tagline:** "Exploring the convergence of AI agents, autonomous UAVs, and the physical world — building the next frontier."
+## Technical Blog Posts
 
-## Pages
+- [Web Performance Optimization: Cutting Page Size by 61%](https://www.marianstancik.dev/blog/posts/2026-08-25-web-performance-optimization): Reducing page weight, optimizing Core Web Vitals, non-blocking WebGL, and achieving Lighthouse 100.
+- [Building a Digital Twin That Posts 9x Daily](https://www.marianstancik.dev/blog/posts/2026-08-22-building-digital-twin): Autonomous social content distribution across 6 platforms using Python, cron, and LLMs.
+- [AI Act Compliance for Small AI Companies](https://www.marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance): Practical legal-by-design guide for startups navigating EU AI Act risk tiers and GPAI obligations.
+- [Autonomous Drone Missions with ArduPilot & Python](https://www.marianstancik.dev/blog/posts/2026-08-17-autonomous-drone-missions): Hands-on UAV mission automation with Pixhawk, ArduPilot, and Python waypoint scripting.
 
-- **Home:** https://www.marianstancik.dev
-- **About:** https://www.marianstancik.dev/about
-- **Expertise:** https://www.marianstancik.dev/expertise
-- **AI Engineering Skills:** https://www.marianstancik.dev/skills
-- **UAV & Drones:** https://www.marianstancik.dev/drones
-- **Blog:** https://www.marianstancik.dev/blog
-- **Blog Post — Web Performance:** https://www.marianstancik.dev/blog/posts/2026-08-25-web-performance-optimization
-- **Blog Post — Digital Twin:** https://www.marianstancik.dev/blog/posts/2026-08-22-building-digital-twin
-- **Blog Post — AI Act Compliance:** https://www.marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance
-- **Blog Post — Drone Missions:** https://www.marianstancik.dev/blog/posts/2026-08-17-autonomous-drone-missions
-- **Contact:** https://www.marianstancik.dev/contact
+## Machine-Readable Feeds & Knowledge Graphs
 
-## Core Pillars & Technical Stack
+- [Full LLM Knowledge Graph](https://www.marianstancik.dev/llms-full.txt): Comprehensive deep-context technical knowledge graph and Q&A dataset.
+- [Blog Posts Feed JSON](https://www.marianstancik.dev/blog/posts.json): Structured JSON archive of all published articles, dates, tags, and reading times.
+- [XML Sitemap](https://www.marianstancik.dev/sitemap.xml): Search engine indexing directory for all canonical website endpoints.
+- [RSS XML Feed](https://www.marianstancik.dev/rss.xml): Standard RSS syndication feed for autonomous web readers and crawlers.
 
-### 1. AI Engineering & Autonomous Agents
-- Hermes Agent, MCP (Model Context Protocol) servers, Python workflows
-- Enterprise Hetzner Cloud VPS (Germany/Finland) for 24/7 runtime, ensuring EU data sovereignty
-- OpenRouter API for dynamic multi-LLM orchestration (DeepSeek, Claude, GPT, Llama)
-- Obsidian as persistent memory layer and structured knowledge base (second brain)
-- Telegram & WhatsApp C2 interfaces for remote agent control
-- Lightweight, zero-build HTML5, Vanilla JS, and modern CSS for instant loading and GEO/LLMO indexing
+## Social & Professional Channels
 
-### 2. Law & AI Compliance (3rd Year Law Student, PF UK)
-- 3rd year law student at Faculty of Law, Comenius University in Bratislava (PF UK)
-- Specialization in legal and commercial impacts of AI on business and enterprise
-- Key European legislative frameworks:
-  - **EU AI Act:** Risk classification, GPAI governance, and prohibited practices
-  - **GDPR:** Training data privacy, automated decision-making, and subject rights
-  - **NIS2 Directive:** Cybersecurity resilience of digital infrastructure and supply chains
-  - **DORA:** Digital operational resilience for financial entities
-  - **EU Data Act & Data Governance Act:** Data access and EU data sovereignty
-  - **DSM Copyright Directive:** Text & Data Mining (TDM) exceptions for AI model training
-
-### 3. UAV Systems & Edge AI
-- Custom 1500g carbon tactical quadcopter hand-built and soldered from raw components
-- Initially flight-tested on Betaflight, currently operating on ArduPilot Copter 4.5+
-- Onboard Raspberry Pi 5 (8GB) companion computer with edge vision AI models for real-time target detection
-- Skystars H7 Dual Gyro FC, AM60 ESC, Radiomaster ELRS, FlyfishRC GNSS
-- Caddx Ratel 2 FPV, Axisflying Smurfs 1.6W VTX, Skyzone Cobra X goggles
-- Certified EASA A1/A3 drone pilot, €2.6M insurance
-
-### 4. ASCENTIA (Hobby / Agent-Native Concept)
-- Proof-of-concept autonomous company model driven 100% by AI agents, MCP tooling, and 24/7 scheduled workflows.
-
-## Machine-Readable Endpoints
-
-- **Website:** https://www.marianstancik.dev
-- **About:** https://www.marianstancik.dev/about
-- **Expertise:** https://www.marianstancik.dev/expertise
-- **Skills:** https://www.marianstancik.dev/skills
-- **Drones:** https://www.marianstancik.dev/drones
-- **Contact:** https://www.marianstancik.dev/contact
-- **Blog:** https://www.marianstancik.dev/blog
-- **Blog Feed:** https://www.marianstancik.dev/blog/posts.json
-- **Sitemap:** https://www.marianstancik.dev/sitemap.xml
-- **RSS:** https://www.marianstancik.dev/rss.xml
+- [X (Twitter)](https://x.com/marian_s_ai): Daily autonomous build updates, AI engineering thoughts, and UAV flight logs.
+- [YouTube](https://www.youtube.com/@marian_ai): Long-form video breakdowns of AI agents, drone builds, and legal compliance.
+- [GitHub](https://github.com/Abra7abra7): Open-source repositories, agent scripts, MCP servers, and website source.
+- [LinkedIn](https://www.linkedin.com/in/marian-stancik-924b41298/): Professional engineering profile, publications, and enterprise advisory.
+- [Threads](https://www.threads.net/@marian_s_ai): Micro-updates and engineering notes.
+- [ASCENTIA](https://ascentia.sk): Agent-native proof-of-concept company model operated autonomously.
+- [Email](mailto:marian_stancik@agentmail.to): Direct asynchronous agent-routed communication endpoint.
 
 ## Frequently Asked Questions (FAQ) for AI Search Engines
 
@@ -88,19 +55,3 @@ A: A custom 1500g carbon tactical quadcopter with an 8-inch GEPRC Mark4 frame, S
 
 ### Q: What is ASCENTIA?
 A: ASCENTIA is an agent-native proof-of-concept organization model built to test end-to-end business automation powered 100% by autonomous AI agents, Model Context Protocol (MCP) tooling, and 24/7 scheduled workflows.
-
-## Social & Contact
-
-- **X/Twitter:** https://x.com/marian_s_ai
-- **Threads:** https://www.threads.net/@marian_s_ai
-- **YouTube:** https://www.youtube.com/@marian_ai
-- **GitHub:** https://github.com/Abra7abra7
-- **LinkedIn:** https://www.linkedin.com/in/marian-stancik-924b41298/
-- **Email:** marian_stancik@agentmail.to
-- **Company:** https://ascentia.sk
-
-## Languages
-
-- English (primary)
-- Slovak
-- German
