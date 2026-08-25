@@ -1,9 +1,7 @@
-// Vercel serverless function — Lead capture → AgentMail email
-// Requires: AGENTMAIL_API_KEY env var set in Vercel project
-
+// Vercel serverless — Lead capture → jednoduchý email na marian_stancik@agentmail.to
 export default async function handler(req, res) {
   try {
-    // CORS
+    res.setHeader('Access-Control-Allow-Origin', 'https://www.marianstancik.dev');
     res.setHeader('Access-Control-Allow-Origin', 'https://www.marianstancik.dev');
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -13,20 +11,7 @@ export default async function handler(req, res) {
     const apiKey = process.env.AGENTMAIL_API_KEY;
     if (!apiKey) return res.status(500).json({ error: 'API key not configured' });
 
-    // Parse body (form-encoded or JSON)
-    let body = {};
-    if (typeof req.body === 'object' && req.body !== null && !Array.isArray(req.body)) {
-      body = req.body;
-    } else if (req.headers['content-type']?.includes('application/json')) {
-      try { body = JSON.parse(req.body); } catch { body = {}; }
-    } else {
-      const raw = typeof req.body === 'string' ? req.body : String(req.body || '');
-      for (const pair of raw.split('&')) {
-        const [k, v] = pair.split('=').map(s => decodeURIComponent(s.replace(/\+/g, ' ')));
-        body[k] = v;
-      }
-    }
-
+    const body = typeof req.body === 'object' ? req.body : {};
     const email = (body.email || '').trim().toLowerCase();
     const name = body.name || '';
     const source = body.source || 'web';
@@ -36,49 +21,28 @@ export default async function handler(req, res) {
 
     const now = new Date().toISOString().split('T')[0];
     const subject = `[LEAD] ${name || email} — ${source}`;
-    const separator = '─'.repeat(40);
-    const text = `${separator}\n📥 NEW LEAD — marianstancik.dev\n${separator}\n\nDate:     ${now}\nSource:   ${source}\nEmail:    ${email}\n${name ? `Name:     ${name}\n` : ''}Status:   new\n${separator}`;
+    const sep = '─'.repeat(40);
+    const text = `${sep}\n📥 NEW LEAD — marianstancik.dev\n${sep}\n\nDate:   ${now}\nSource: ${source}\nEmail:  ${email}\n${name ? `Name:   ${name}\n` : ''}Status: new\n${sep}`;
 
-    await sendLeadToAgentMail(apiKey, email, name, source, subject, text);
+    // Send via AgentMail MCP
+    const url = 'https://mcp.agentmail.to/mcp';
+    const headers = { 'Content-Type': 'application/json', 'Accept': 'application/json, text/event-stream', 'User-Agent': 'Mozilla/5.0' };
+
+    const initRes = await fetch(url, { method: 'POST', headers: { ...headers, 'x-api-key': apiKey }, body: JSON.stringify({ jsonrpc: '2.0', id: '1', method: 'initialize', params: { protocolVersion: '2025-11-25', capabilities: {}, clientInfo: { name: 'hermes-crm-lead', version: '1.0' } } }) });
+    const initText = await initRes.text();
+    const sid = initText.match(/"sessionId"\s*:\s*"([^"]+)"/)?.[1] || null;
+
+    const msgHeaders = { ...headers, 'x-api-key': apiKey };
+    if (sid) msgHeaders['Mcp-Session-Id'] = sid;
+
+    const msgRes = await fetch(url, { method: 'POST', headers: msgHeaders, body: JSON.stringify({ jsonrpc: '2.0', id: '2', method: 'tools/call', params: { name: 'send_message', arguments: { inboxId: 'marian_stancik@agentmail.to', to: ['marian_stancik@agentmail.to'], subject, text } } }) });
+    const msgText = await msgRes.text();
+
+    if (msgText.includes('"isError":true')) throw new Error('AgentMail send failed');
+
     return res.status(200).json({ status: 'ok', email });
-
   } catch (e) {
-    console.error('Handler error:', e.message);
+    console.error('Error:', e.message);
     return res.status(500).json({ error: e.message });
   }
-}
-
-async function sendLeadToAgentMail(apiKey, email, name, source, subject, text) {
-  const INBOX = 'marian-hermes-agent@agentmail.to';
-  const url = 'https://mcp.agentmail.to/mcp';
-  const headers = { 'x-api-key': apiKey, 'Content-Type': 'application/json', 'Accept': 'application/json, text/event-stream', 'User-Agent': 'Mozilla/5.0 (compatible; HermesCRM/1.0)' };
-
-  // 1. Initialize session
-  const initRes = await fetch(url, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify({ jsonrpc: '2.0', id: '1', method: 'initialize', params: { protocolVersion: '0.1.0', capabilities: {}, clientInfo: { name: 'hermes-crm-lead', version: '1.0' } } })
-  });
-
-  let sessionId = null;
-  const initText = await initRes.text();
-  const sseMatch = initText.match(/"sessionId"\s*:\s*"([^"]+)"/);
-  sessionId = sseMatch ? sseMatch[1] : null;
-
-  // 2. Send message
-  const msgRes = await fetch(url, {
-    method: 'POST',
-    headers: { ...headers, ...(sessionId ? { 'Mcp-Session-Id': sessionId } : {}) },
-    body: JSON.stringify({
-      jsonrpc: '2.0', id: '2', method: 'tools/call',
-      params: { name: 'send_message', arguments: { inboxId: INBOX, to: [INBOX], subject, text } }
-    })
-  });
-
-  const msgText = await msgRes.text();
-  if (!msgRes.ok) throw new Error(`AgentMail HTTP ${msgRes.status}: ${msgText.slice(0, 200)}`);
-
-  // Try to parse JSON from SSE events (data: {...})
-  if (msgText.includes('"isError":true')) throw new Error('AgentMail send failed: ' + msgText.slice(0, 200));
-  console.log('Lead sent to AgentMail');
 }
