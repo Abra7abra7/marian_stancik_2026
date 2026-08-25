@@ -187,19 +187,33 @@ function initThreeBackground() {
   });
 }
 
-// Non-blocking initialization after main thread is idle
-if (document.readyState === 'complete') {
+// User-interaction or deferred idle initialization (0ms TBT during critical load)
+let initialized = false;
+function triggerInit() {
+  if (initialized) return;
+  initialized = true;
+  cleanupListeners();
   if ('requestIdleCallback' in window) {
     requestIdleCallback(initThreeBackground);
   } else {
-    setTimeout(initThreeBackground, 60);
+    setTimeout(initThreeBackground, 50);
   }
-} else {
-  window.addEventListener('load', () => {
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(initThreeBackground);
-    } else {
-      setTimeout(initThreeBackground, 60);
-    }
-  }, { once: true });
 }
+
+function cleanupListeners() {
+  window.removeEventListener('scroll', triggerInit, { passive: true });
+  window.removeEventListener('mousemove', triggerInit, { passive: true });
+  window.removeEventListener('touchstart', triggerInit, { passive: true });
+  window.removeEventListener('pointerdown', triggerInit, { passive: true });
+  window.removeEventListener('keydown', triggerInit, { passive: true });
+}
+
+window.addEventListener('scroll', triggerInit, { passive: true, once: true });
+window.addEventListener('mousemove', triggerInit, { passive: true, once: true });
+window.addEventListener('touchstart', triggerInit, { passive: true, once: true });
+window.addEventListener('pointerdown', triggerInit, { passive: true, once: true });
+window.addEventListener('keydown', triggerInit, { passive: true, once: true });
+
+// Fallback idle timeout if no interaction occurs
+setTimeout(triggerInit, 2500);
+

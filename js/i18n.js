@@ -35,13 +35,13 @@ sk1List: `
   <li><strong>Obsidian Memory Layer:</strong> Bi-directional markdown vault for agent memory persistence</li>
   <li><strong>C2 Interfaces:</strong> Interactive command & control via Telegram & WhatsApp bots</li>
 `,
-sk2Title: "Software & Cloud Infrastructure",
+sk2Title: "Software, High-Perf Web & Cloud",
 sk2List: `
-  <li><strong>Python 3 Ecosystem:</strong> FastAPI, Asyncio, Playwright, toolchain scripting</li>
-  <li><strong>Zero-Build Web:</strong> Vanilla HTML5, CSS design tokens, modern JS (Lighthouse 100)</li>
-  <li><strong>Linux VPS Administration:</strong> Ubuntu Server on Hetzner Cloud (DE/FI), Caddy reverse proxy</li>
-  <li><strong>Production Operations:</strong> 19+ 24/7 cron orchestrations, SQLite persistence & watchdogs</li>
-  <li><strong>GitOps & Quality:</strong> Automated testing (verify_site.py), single-branch Vercel CI/CD</li>
+  <li><strong>Python 3 Ecosystem:</strong> FastAPI, Asyncio, Playwright, toolchain automation</li>
+  <li><strong>Zero-Build High-Perf Web:</strong> 100% Vanilla HTML5/CSS3/JS, zero framework bloat, PageSpeed 100 & 0ms TBT</li>
+  <li><strong>GEO & 3/3 Agentic Browsing:</strong> llmstxt.org v2 standard, Schema.org @graph, optimized for Perplexity & LLM crawlers</li>
+  <li><strong>Linux VPS Administration:</strong> Ubuntu Server on Hetzner Cloud (DE/FI), Caddy reverse proxy & SSL</li>
+  <li><strong>Production Operations:</strong> 19+ 24/7 cron orchestrations, SQLite persistence & watchdog monitoring</li>
 `,
 sk3Title: "Law & AI Compliance (3rd Year Law, PF UK)",
 sk3List: `
@@ -173,13 +173,13 @@ sk1List: `
   <li><strong>Obsidian Memory Layer:</strong> Obojsmerný markdown vault ako perzistentná pamäť agentov</li>
   <li><strong>C2 Rozhrania:</strong> Interaktívne riadenie a kontrola cez Telegram & WhatsApp botov</li>
 `,
-sk2Title: "Softvér & Cloudová infraštruktúra",
+sk2Title: "Softvér, High-Perf Web & Cloud",
 sk2List: `
-  <li><strong>Python 3 Ekosystém:</strong> FastAPI, Asyncio, Playwright, skriptovanie nástrojov</li>
-  <li><strong>Zero-Build Web:</strong> Vanilla HTML5, CSS tokeny, moderný JS (Lighthouse 100)</li>
-  <li><strong>Správa Linux VPS:</strong> Ubuntu Server na Hetzner Cloud (DE/FI), reverzná proxy Caddy</li>
+  <li><strong>Python 3 Ekosystém:</strong> FastAPI, Asyncio, Playwright, automatizácia nástrojov</li>
+  <li><strong>Zero-Build High-Perf Web:</strong> 100% Vanilla HTML5/CSS3/JS, nula frameworkového bloatu, PageSpeed 100 & 0ms TBT</li>
+  <li><strong>GEO & 3/3 Agentské prehliadanie:</strong> llmstxt.org v2 štandard, Schema.org @graph, optimalizácia pre Perplexity a LLM agentov</li>
+  <li><strong>Správa Linux VPS:</strong> Ubuntu Server na Hetzner Cloud (DE/FI), reverzná proxy Caddy & SSL</li>
   <li><strong>Produkčná prevádzka:</strong> 19+ 24/7 cron orchestrácií, SQLite perzistencia & watchdog monitoring</li>
-  <li><strong>GitOps & Kontrola kvality:</strong> Automatizované testy (verify_site.py), Vercel CI/CD nasadenie</li>
 `,
 sk3Title: "Právo & AI Compliance (3. ročník PraF UK)",
 sk3List: `
@@ -449,5 +449,16 @@ nav.classList.remove('open');
 toggle?.setAttribute('aria-expanded', 'false');
 }
 });
-applyTranslations();
-loadDynamicPostsHome();
+if (currentLang === 'sk') {
+  applyTranslations();
+} else {
+  document.getElementById('btnEn')?.classList.add('active');
+  document.getElementById('btnSk')?.classList.remove('active');
+}
+
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(loadDynamicPostsHome);
+} else {
+  setTimeout(loadDynamicPostsHome, 300);
+}
+

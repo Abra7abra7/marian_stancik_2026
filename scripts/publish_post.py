@@ -133,7 +133,7 @@ h1 {{ font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; color: #F0F0F5; l
 .post-content pre {{ background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 20px; overflow-x: auto; margin: 20px 0; }}
 .post-content pre code {{ font-family: monospace; font-size: 0.85rem; color: #E8B86D; }}
 .callout {{ background: rgba(205,127,50,0.06); border-left: 3px solid #CD7F32; border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 24px 0; color: #E8E8F0; }}
-footer {{ text-align: center; padding: 36px 24px; color: #555570; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.04); margin-top: 60px; }}
+footer {{ text-align: center; padding: 36px 24px; color: #9090A8; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.04); margin-top: 60px; }}
 footer a {{ color: #8888A0; text-decoration: none; }}
 footer a:hover {{ color: #CD7F32; }}
 </style>

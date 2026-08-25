@@ -9,7 +9,7 @@
   --color-accent: #E8B86D;
   --color-text: #E8E8F0;
   --color-text-muted: #8888A0;
-  --color-text-dim: #555570;
+  --color-text-dim: #9090A8;
   --color-border: rgba(255, 255, 255, 0.06);
   --color-border-hover: rgba(205, 127, 50, 0.35);
   --color-glow: rgba(205, 127, 50, 0.2);
@@ -410,7 +410,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 gap: 6px;
-color: #555570;
+color: #9090A8;
 font-size: 0.65rem;
 letter-spacing: 0.1em;
 text-transform: uppercase;
@@ -425,8 +425,8 @@ opacity: 0.7;
 .scroll-indicator .arrow {
 width: 14px;
 height: 14px;
-border-right: 1.5px solid #555570;
-border-bottom: 1.5px solid #555570;
+border-right: 1.5px solid #9090A8;
+border-bottom: 1.5px solid #9090A8;
 transform: rotate(45deg);
 }
 .section-label {
@@ -644,7 +644,7 @@ transform: translateY(-3px);
 }
 .blog-card .blog-date {
 font-size: 0.65rem;
-color: #555570;
+color: #9090A8;
 text-transform: uppercase;
 letter-spacing: 0.08em;
 margin-bottom: 8px;
@@ -711,7 +711,7 @@ transition: border-color 0.3s;
 .lead-form input:focus {
 border-color: rgba(205,127,50,0.5);
 }
-.lead-form input::placeholder { color: #555570; }
+.lead-form input::placeholder { color: #9090A8; }
 .lead-form button {
 padding: 12px 28px;
 border-radius: 100px;
@@ -726,7 +726,7 @@ font-family: inherit;
 }
 .lead-form button:hover { opacity: 0.9; transform: scale(1.02); }
 .lead-status { font-size: 0.82rem; color: #E8B86D; margin-top: 10px; min-height: 24px; }
-.lead-note { font-size: 0.72rem; color: #555570; margin-top: 8px; }
+.lead-note { font-size: 0.72rem; color: #9090A8; margin-top: 8px; }
 #connect { min-height: auto; padding: 100px 24px 80px; text-align: center; }
 .connect-grid {
 display: flex;
@@ -864,7 +864,7 @@ font-size: 0.72rem;
 font-weight: 700;
 text-transform: uppercase;
 letter-spacing: 0.15em;
-color: #555570;
+color: #9090A8;
 margin-bottom: 14px;
 }
 .footer-col {
@@ -896,7 +896,7 @@ gap: 12px;
 @media (max-width: 640px) { .footer-bottom { justify-content: center; text-align: center; } }
 .footer-bottom p {
 font-size: 0.72rem;
-color: #555570;
+color: #9090A8;
 }
 .footer-bottom a { color: #8888A0; text-decoration: none; }
 .footer-bottom a:hover { color: #CD7F32; }
