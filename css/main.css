@@ -1291,4 +1291,39 @@ padding: 0;
 margin-bottom: 6px;
 }
 
-
+/* ===== DRONE PHOTO GALLERY ===== */
+.drone-gallery-section {
+margin-top: 20px;
+width: 100%;
+}
+.drone-photo-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 10px;
+margin-top: 16px;
+}
+.gallery-item {
+display: block;
+border-radius: 12px;
+overflow: hidden;
+border: 1px solid rgba(255,255,255,0.06);
+transition: all 0.3s ease;
+aspect-ratio: 4/3;
+}
+.gallery-item:hover {
+border-color: rgba(205,127,50,0.4);
+transform: scale(1.02);
+box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+.gallery-item img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+@media (max-width: 700px) {
+.drone-photo-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 400px) {
+.drone-photo-grid { grid-template-columns: 1fr; }
+}

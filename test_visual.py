@@ -46,29 +46,20 @@ PAGE_NO_I18N = {"/blog"}
 # L0 — JS Syntax Validation
 # ============================================================
 def run_l0():
-    """Check JS syntax in all inline translations scripts using node --check."""
+    """Check JS syntax in all external JS files using node --check."""
     results = {}
     all_pass = True
     print("  ── L0: JS Syntax ──")
     
-    for fname in HTML_FILES:
+    for fname in ['js/i18n.js', 'js/three-bg.js']:
         path = os.path.join(LOCAL_DIR, fname)
-        with open(path) as f:
-            content = f.read()
-        
-        s = content.find('<script>\nconst translations = {')
-        if s == -1:
-            results[fname] = {"passed": False, "error": "translations script not found"}
+        if not os.path.exists(path):
+            results[fname] = {"passed": False, "error": "file not found"}
             all_pass = False
+            print(f"    ❌ {fname} — file not found")
             continue
         
-        e = content.find('</script>', s)
-        js = content[s + len('<script>'):e]
-        
-        with open('/tmp/v_l0.js', 'w') as f:
-            f.write(js)
-        
-        r = subprocess.run(['node', '--check', '/tmp/v_l0.js'],
+        r = subprocess.run(['node', '--check', path],
                            capture_output=True, text=True, timeout=10)
         ok = r.returncode == 0
         if not ok:
