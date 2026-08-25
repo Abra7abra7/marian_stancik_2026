@@ -15,8 +15,10 @@ export default async function handler(req, res) {
 
     // Parse body (form-encoded or JSON)
     let body = {};
-    if (req.headers['content-type']?.includes('application/json')) {
-      body = typeof req.body === 'object' ? req.body : JSON.parse(req.body || '{}');
+    if (typeof req.body === 'object' && req.body !== null && !Array.isArray(req.body)) {
+      body = req.body;
+    } else if (req.headers['content-type']?.includes('application/json')) {
+      try { body = JSON.parse(req.body); } catch { body = {}; }
     } else {
       const raw = typeof req.body === 'string' ? req.body : String(req.body || '');
       for (const pair of raw.split('&')) {
