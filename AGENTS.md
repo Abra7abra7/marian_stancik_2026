@@ -47,7 +47,8 @@ The website uses a clean zero-build multi-page structure with root-relative rout
 | **Drones** | `/drones` (`drones.html`) | Cinematic 16:9 drone compilation video + 5 hardware build spec cards (Frame, Electronics, Edge AI, FPV, Ground Control) |
 | **Contact** | `/contact` (`contact.html`) | Connect channels (X, Threads, YouTube, GitHub, LinkedIn, Facebook) + direct `marian_stancik@agentmail.to` lead capture |
 | **Blog Listing** | `/blog` (`blog/index.html`) | Static blog archive + dynamic JSON client fetching (`blog/posts.json`) + language switcher |
-| **Blog Posts** | `/blog/posts/*` | Standalone technical articles with deep code snippets, legal frameworks, and drone logs |
+| **Blog Posts (EN)** | `/blog/posts/*` | Standalone technical articles with deep code snippets, legal frameworks, and drone logs |
+| **Blog Posts (SK)** | `/blog/posts/sk/*` | Synchronized Slovak technical articles with bidirectional `hreflang` pre-rendering and breadcrumbs |
 
 ---
 
@@ -213,6 +214,19 @@ flowchart TD
   ```
 - **Language State:** Persisted across sessions in `localStorage.getItem('ms_lang')`.
 - **Dual Translation Registration:** Every new UI text element must be registered in both `en` and `sk` tables in `js/i18n.js`.
+
+### Dual-Language Blog Architecture (`scripts/publish_post.py`)
+- **Synchronized Generation:** Every new blog post creates both `/blog/posts/{slug}.html` (English) and `/blog/posts/sk/{slug}.html` (Slovak) with identical code blocks, structures, and CSS.
+- **Bidirectional SEO Pre-Rendering (`hreflang`):**
+  ```html
+  <link rel="alternate" hreflang="en" href="https://www.marianstancik.dev/blog/posts/{slug}">
+  <link rel="alternate" hreflang="sk" href="https://www.marianstancik.dev/blog/posts/sk/{slug}">
+  <link rel="alternate" hreflang="x-default" href="https://www.marianstancik.dev/blog/posts/{slug}">
+  ```
+- **Instant Search Engine Indexing (IndexNow & Sitemap Ping):**
+  - Skript automatically appends new endpoints to `sitemap.xml` with `<lastmod>`.
+  - Pings `https://api.indexnow.org/indexnow` for instant crawl across Bing, Perplexity, Seznam, and Yandex.
+  - Pings Googlebot via `https://www.google.com/ping?sitemap=https://www.marianstancik.dev/sitemap.xml`.
 
 ---
 

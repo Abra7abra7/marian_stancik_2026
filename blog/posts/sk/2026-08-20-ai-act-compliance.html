@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Súlad s EU AI Act pre malé AI firmy a startupy — Marian Stancik</title>
+<meta name="description" content="Praktický právno-technický (Legal-by-Design) rámec pre firmy vyvíjajúce AI v EÚ. Klasifikácia rizík, technická dokumentácia a GDPR súlad.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://www.marianstancik.dev/blog/posts/sk/2026-08-20-ai-act-compliance">
+<link rel="alternate" hreflang="en" href="https://www.marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance">
+<link rel="alternate" hreflang="sk" href="https://www.marianstancik.dev/blog/posts/sk/2026-08-20-ai-act-compliance">
+<link rel="alternate" hreflang="x-default" href="https://www.marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Knowledge Graph">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#08080F">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Súlad s EU AI Act pre malé AI firmy a startupy — Marian Stancik">
+<meta property="og:description" content="Praktický Legal-by-Design sprievodca kategorizáciou rizík podľa EU AI Act a GDPR.">
+<meta property="og:url" content="https://www.marianstancik.dev/blog/posts/sk/2026-08-20-ai-act-compliance">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://www.marianstancik.dev/profile.webp">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="AI Act Compliance — Marian Stancik">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Marian Stancik">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@marian_s_ai">
+<meta name="twitter:creator" content="@marian_s_ai">
+<meta name="twitter:image" content="https://www.marianstancik.dev/profile.webp">
+
+<!-- JSON-LD Structured Data with BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Súlad s EU AI Act pre malé AI firmy a startupy",
+      "description": "Praktický právno-technický (Legal-by-Design) rámec pre firmy vyvíjajúce AI v EÚ. Klasifikácia rizík, technická dokumentácia a GDPR súlad.",
+      "datePublished": "2026-08-20",
+      "dateModified": "2026-08-20",
+      "author": {
+        "@type": "Person",
+        "name": "Marian Stancik",
+        "url": "https://www.marianstancik.dev"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Marian Stancik"
+      },
+      "mainEntityOfPage": "https://www.marianstancik.dev/blog/posts/sk/2026-08-20-ai-act-compliance",
+      "keywords": ["EU AI Act", "AI Compliance", "GDPR", "Európska regulácia", "Legal by Design"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Domov",
+          "item": "https://www.marianstancik.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.marianstancik.dev/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Súlad s EU AI Act pre malé AI firmy a startupy",
+          "item": "https://www.marianstancik.dev/blog/posts/sk/2026-08-20-ai-act-compliance"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:#08080F;color:#E8E8F0;line-height:1.8;-webkit-font-smoothing:antialiased}
+.container{max-width:740px;margin:0 auto;padding:0 24px}
+nav{padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(8,8,15,0.85);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:740px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.nav-inner a{color:#8888A0;text-decoration:none;font-size:0.85rem;transition:color 0.3s}
+.nav-inner a:hover{color:#CD7F32}
+.post-header{padding:60px 0 24px}
+.badge{display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#CD7F32;background:rgba(205,127,50,0.1);border:1px solid rgba(205,127,50,0.25);padding:4px 12px;border-radius:100px;margin-bottom:16px}
+.post-header h1{font-size:clamp(1.7rem,3.8vw,2.4rem);font-weight:700;color:#F0F0F5;line-height:1.3;margin-bottom:14px;letter-spacing:-0.02em}
+.post-meta{font-size:0.8rem;color:#9090A8;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post-content{padding-bottom:60px;font-size:1.02rem;color:#C8C8D4}
+.post-content h2{font-size:1.35rem;font-weight:600;color:#F0F0F5;margin:40px 0 14px}
+.post-content h3{font-size:1.1rem;font-weight:600;color:#E8B86D;margin:26px 0 10px}
+.post-content p{margin-bottom:18px}
+.post-content ul, .post-content ol{margin:0 0 20px 24px}
+.post-content li{margin-bottom:8px}
+.post-content strong{color:#F0F0F5}
+.callout{background:rgba(205,127,50,0.06);border-left:3px solid #CD7F32;border-radius:0 8px 8px 0;padding:16px 20px;margin:24px 0;color:#E8E8F0}
+.callout strong{color:#E8B86D}
+footer{text-align:center;padding:36px 24px;color:#9090A8;font-size:0.75rem;border-top:1px solid rgba(255,255,255,0.04)}
+footer a{color:#8888A0;text-decoration:none}
+footer a:hover{color:#CD7F32}
+</style>
+</head>
+<body>
+
+<nav aria-label="Navigácia blogu">
+  <div class="nav-inner">
+    <a href="/" aria-label="Marian Stancik domov"><span style="font-size:1.1rem">←</span> Domov</a>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <a href="/blog">Blog</a>
+      <div style="display:flex;gap:4px;background:rgba(255,255,255,0.06);padding:2px 4px;border-radius:100px;font-size:0.72rem;font-weight:600;">
+        <a href="/blog/posts/2026-08-20-ai-act-compliance" style="padding:2px 8px;border-radius:100px;color:#8888A0;text-decoration:none;">EN</a>
+        <a href="/blog/posts/sk/2026-08-20-ai-act-compliance" style="padding:2px 8px;border-radius:100px;color:#CD7F32;background:rgba(205,127,50,0.15);text-decoration:none;">SK</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+<article class="post-header">
+<div class="badge">Právo &amp; AI Compliance</div>
+<h1>Súlad s EU AI Act pre malé AI firmy a startupy</h1>
+<div class="post-meta">
+<span>20. august 2026</span>
+<span>·</span>
+<span>6 min čítania</span>
+<span>·</span>
+<span>Marian Stancik</span>
+</div>
+</article>
+
+<div class="post-content">
+<p><strong>Nariadenie EÚ o umelej inteligencii (EU AI Act) vstúpilo do platnosti. Pre technologických gigantov to znamená najatie drahých poradenských firiem. Pre startupy a malé vývojárske tímy to často vyzerá ako neprekonateľná byrokratická prekážka. Nemusí to tak byť.</strong></p>
+
+<p>Ako študent práva na Právnickej fakulte Univerzity Komenského (PraF UK) so zameraním na technologickú reguláciu a zároveň aktívny vývojár AI agentov pristupujem ku compliance podľa jediného pravidla: <strong>Legal-by-Design</strong>. Ak právne požiadavky integrujete priamo do softvérovej architektúry od prvého dňa, compliance sa stane automatickým procesom bez zbytočného trenia.</p>
+
+<h2>1. Štyri kategórie rizika podľa EU AI Act</h2>
+
+<p>Predtým, ako sa dotknete kódu alebo začnete písať obchodné podmienky, musíte svoj systém zaradiť do hierarchie podľa AI Actu:</p>
+
+<ul>
+<li><strong>Neprijateľné riziko (Zakázané systémy):</strong> Biometrická identifikácia v reálnom čase na verejnosti, sociálne bodovanie (social scoring), manipulatívne systémy ovplyvňujúce správanie. Absolútny zákaz.</li>
+<li><strong>Vysoko rizikové systémy (Príloha III):</strong> AI v kritickej infraštruktúre, náborových procesoch, scoringu úverov, hodnotení vzdelávania. Vyžaduje posúdenie zhody, prísne logovanie a manažment kvality.</li>
+<li><strong>Špecifické riziko transparentnosti:</strong> Chatboti, avatari, generované deepfakes, syntetické médiá. Vyžaduje jednoznačné označenie a informovanie používateľa.</li>
+<li><strong>Minimálne / Nízke riziko:</strong> Spam filtre, odporúčacie nástroje, kódovací asistenti, interné workflow orchestrácie agentov. Minimálne povinnosti.</li>
+</ul>
+
+<div class="callout">
+<strong>Kľúčový poznatok pre startupy:</strong> Viac ako 85 % bežných SaaS aplikácií a agentových nástrojov spadá do kategórie <em>Špecifického rizika transparentnosti</em> alebo <em>Minimálneho rizika</em>. Neklaďte si zbytočné prekážky tam, kde postačuje transparentné označenie výstupu a jasný súhlas používateľa!
+</div>
+
+<h2>2. Architektúra Legal-by-Design pre autonómne systémy</h2>
+
+<p>Pri stavbe autonómnych agentov interagujúcich s API, databázami alebo používateľmi implementujte tieto štyri kľúčové zábrany:</p>
+
+<h3>A. Deterministické auditné logovanie</h3>
+<p>Každá autonómna akcia — spustenie nástroja, odchádzajúce volanie API, vetvenie rozhodnutia — musí byť zapísaná do nemenného logu s UTC časovou pečiatkou, verziou promptu a kontextom používateľa. V prípade sporu viete matematicky preukázať stav systému.</p>
+
+<h3>B. Kontrola vstupov a výstupov (Guardrails)</h3>
+<p>Implementujte filtre pred odoslaním dát do modelov. Zabezpečte anonymizáciu osobných údajov (PII) v súlade s čl. 6 a 9 GDPR.</p>
+
+<h3>C. Schvaľovanie človekom (Human-in-the-Loop)</h3>
+<p>Pri vysoko rizikových operáciách (finančné transakcie, generovanie zmlúv, hromadná komunikácia) nastavte povinné manuálne schválenie pred vykonaním akcie. Tým splníte požiadavky na ľudský dohľad.</p>
+
+<h2>3. Automatizovaný kontrolný zoznam</h2>
+
+<ol>
+<li><strong>Správa dát (Data Governance):</strong> Dokumentujte tréningové a fine-tuning datasety, licenčné podmienky a súlad s autorským právom (TDM výnimky).</li>
+<li><strong>Oznámenie o transparentnosti:</strong> Jasne informujte používateľa v rozhraní, že komunikuje s AI systémom.</li>
+<li><strong>Kybernetická bezpečnosť (NIS2):</strong> Ochrana pred prompt injection útokmi, rate limiting API a šifrované úložisko tajných kľúčov.</li>
+<li><strong>Monitoring po uvedení na trh:</strong> Zavedenie mechanizmu spätnej väzby na zachytenie halucinácií a driftu modelu.</li>
+</ol>
+
+<h2>Záver: Compliance ako konkurenčná výhoda</h2>
+
+<p>Spoločnosti, ktoré berú compliance ako príťaž, stratia drahocenný čas pri prvom právnom audite. Firmy, ktoré majú compliance zakomponovanú priamo v kóde, získavajú okamžitú dôveru enterprise klientov.</p>
+
+<p>V <a href="https://ascentia.sk" target="_blank" style="color:#CD7F32;text-decoration:none">ASCENTIA s.r.o.</a> pomáhame startupom a technologickým tímom prepojiť európsku reguláciu s reálnou softvérovou architektúrou.</p>
+</div>
+</div>
+
+<footer>
+<p>© 2026 <a href="https://ascentia.sk" target="_blank">ASCENTIA s.r.o.</a> — <a href="/">marianstancik.dev</a></p>
+</footer>
+</body>
+</html>

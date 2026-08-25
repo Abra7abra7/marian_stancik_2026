@@ -1,15 +1,17 @@
 [
   {
     "slug": "2026-08-25-web-performance-optimization",
-    "url": "blog/posts/2026-08-25-web-performance-optimization.html",
-    "blogUrl": "posts/2026-08-25-web-performance-optimization.html",
+    "url": "blog/posts/2026-08-25-web-performance-optimization",
+    "urlSk": "blog/posts/sk/2026-08-25-web-performance-optimization",
+    "blogUrl": "posts/2026-08-25-web-performance-optimization",
+    "blogUrlSk": "posts/sk/2026-08-25-web-performance-optimization",
     "date": "2026-08-25",
     "displayDate": "August 25, 2026",
     "displayDateSk": "25. august 2026",
     "title": "Web Performance Optimization: How I Cut Page Size by 61%",
-    "titleSk": "Optimaliz\u00e1cia v\u00fdkonu webu: Ako som zn\u00ed\u017eil ve\u013ekos\u0165 str\u00e1nky o 61%",
-    "excerpt": "A technical walkthrough of reducing HTML page weight from 86KB to 34KB by externalizing CSS, JS, and images for better Lighthouse scores.",
-    "excerptSk": "Technick\u00fd postup zni\u017eovania hmotnosti HTML str\u00e1nky z 86KB na 34KB externaliz\u00e1ciou CSS, JS a obr\u00e1zkov pre lep\u0161ie Lighthouse sk\u00f3re.",
+    "titleSk": "Optimalizácia výkonu webu: Ako som znížil veľkosť stránok o 61 %",
+    "excerpt": "A technical walkthrough of reducing HTML page weight from 86KB to 34KB and achieving 100 PageSpeed with external CSS, JS, WebP, and non-blocking WebGL.",
+    "excerptSk": "Technický postup zníženia veľkosti HTML z 86 KB na 34 KB a dosiahnutie PageSpeed 100 cez externé CSS, JS, WebP a neblokujúci WebGL.",
     "tags": [
       "Web Performance",
       "Lighthouse",
@@ -18,38 +20,42 @@
       "HTML Optimization"
     ],
     "readTime": "5 min read",
-    "readTimeSk": "5 min \u010d\u00edtania"
+    "readTimeSk": "5 min čítania"
   },
   {
     "slug": "2026-08-22-building-digital-twin",
-    "url": "blog/posts/2026-08-22-building-digital-twin.html",
-    "blogUrl": "posts/2026-08-22-building-digital-twin.html",
+    "url": "blog/posts/2026-08-22-building-digital-twin",
+    "urlSk": "blog/posts/sk/2026-08-22-building-digital-twin",
+    "blogUrl": "posts/2026-08-22-building-digital-twin",
+    "blogUrlSk": "posts/sk/2026-08-22-building-digital-twin",
     "date": "2026-08-22",
     "displayDate": "August 22, 2026",
     "displayDateSk": "22. august 2026",
     "title": "Building a Digital Twin That Posts 9x Daily",
-    "titleSk": "Ako postavi\u0165 Digital Twin, ktor\u00fd publikuje 9x denne",
+    "titleSk": "Stavba digitálneho dvojčaťa, ktoré publikuje 9× denne",
     "excerpt": "How I built an autonomous AI agent with Hermes that creates and publishes content across X, LinkedIn, and blog without human intervention.",
-    "excerptSk": "Ako som postavil auton\u00f3mneho AI agenta cez Hermes, ktor\u00fd tvor\u00ed a publikuje obsah na X, LinkedIn a blog 24/7 bez z\u00e1sahu \u010dloveka.",
+    "excerptSk": "Ako som postavil autonómneho AI agenta cez Hermes, ktorý tvorí a publikuje obsah na X, LinkedIn a blog 24/7 bez zásahu človeka.",
     "tags": [
       "AI Agents",
       "Hermes",
       "Automation"
     ],
     "readTime": "4 min read",
-    "readTimeSk": "4 min \u010d\u00edtania"
+    "readTimeSk": "4 min čítania"
   },
   {
     "slug": "2026-08-20-ai-act-compliance",
-    "url": "blog/posts/2026-08-20-ai-act-compliance.html",
-    "blogUrl": "posts/2026-08-20-ai-act-compliance.html",
+    "url": "blog/posts/2026-08-20-ai-act-compliance",
+    "urlSk": "blog/posts/sk/2026-08-20-ai-act-compliance",
+    "blogUrl": "posts/2026-08-20-ai-act-compliance",
+    "blogUrlSk": "posts/sk/2026-08-20-ai-act-compliance",
     "date": "2026-08-20",
     "displayDate": "August 20, 2026",
     "displayDateSk": "20. august 2026",
     "title": "AI Act Compliance for Small AI Companies",
-    "titleSk": "AI Act a compliance pre mal\u00e9 AI firmy a startupy",
+    "titleSk": "Súlad s EU AI Act pre malé AI firmy a startupy",
     "excerpt": "Practical legal-by-design framework for startups building AI products in the EU. From risk assessment to automated audit-ready documentation.",
-    "excerptSk": "Praktick\u00fd legal-by-design framework pre startupy buduj\u00face AI v E\u00da. Od klasifik\u00e1cie riz\u00edk a\u017e po automatizovan\u00fa technick\u00fa dokument\u00e1ciu.",
+    "excerptSk": "Praktický legal-by-design framework pre startupy budujúce AI v EÚ. Od klasifikácie rizík až po automatizovanú technickú dokumentáciu.",
     "tags": [
       "AI Act",
       "GDPR",
@@ -57,19 +63,21 @@
       "Law"
     ],
     "readTime": "6 min read",
-    "readTimeSk": "6 min \u010d\u00edtania"
+    "readTimeSk": "6 min čítania"
   },
   {
     "slug": "2026-08-17-autonomous-drone-missions",
-    "url": "blog/posts/2026-08-17-autonomous-drone-missions.html",
-    "blogUrl": "posts/2026-08-17-autonomous-drone-missions.html",
+    "url": "blog/posts/2026-08-17-autonomous-drone-missions",
+    "urlSk": "blog/posts/sk/2026-08-17-autonomous-drone-missions",
+    "blogUrl": "posts/2026-08-17-autonomous-drone-missions",
+    "blogUrlSk": "posts/sk/2026-08-17-autonomous-drone-missions",
     "date": "2026-08-17",
     "displayDate": "August 17, 2026",
     "displayDateSk": "17. august 2026",
     "title": "Autonomous Drone Missions with ArduPilot & Python",
-    "titleSk": "Auton\u00f3mne misie dronov s ArduPilot a Pythonom",
+    "titleSk": "Autonómne misie dronov s ArduPilotom a Pythonom",
     "excerpt": "Building a production-grade UAV system with Pixhawk, ArduPilot, and Python-based mission planning for automated multi-waypoint flights.",
-    "excerptSk": "Stavba produk\u010dn\u00e9ho UAV syst\u00e9mu s Pixhawk, ArduPilot a Python pl\u00e1novan\u00edm misi\u00ed pre plne automatizovan\u00e9 lety.",
+    "excerptSk": "Stavba taktického UAV systému s ArduPilotom, Pixhawkom a Pythonom pre autonómne lety a palubné neurónové počítačové videnie.",
     "tags": [
       "Drones",
       "ArduPilot",
@@ -77,6 +85,6 @@
       "PX4"
     ],
     "readTime": "5 min read",
-    "readTimeSk": "5 min \u010d\u00edtania"
+    "readTimeSk": "5 min čítania"
   }
 ]

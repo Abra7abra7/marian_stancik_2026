@@ -295,7 +295,7 @@ async function loadDynamicPosts() {
       const date = (isSk && p.displayDateSk) ? p.displayDateSk : p.displayDate;
       const read = (isSk && p.readTimeSk) ? p.readTimeSk : p.readTime;
       const tags = p.tags.map(t => `<span>${t}</span>`).join('');
-      const targetUrl = p.blogUrl || p.url.replace(/^blog\//, '');
+      const targetUrl = isSk ? (p.blogUrlSk || `posts/sk/${p.slug}`) : (p.blogUrl || `posts/${p.slug}`);
       return `
         <a href="${targetUrl}" class="post-item">
           <div class="post-top">

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Optimalizácia výkonu webu: Ako som znížil veľkosť stránok o 61 % — Marian Stancik</title>
+<meta name="description" content="Technický postup zníženia veľkosti HTML z 86 KB na 34 KB a dosiahnutie PageSpeed 100 cez externé CSS, JS, WebP a neblokujúci WebGL.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://www.marianstancik.dev/blog/posts/sk/2026-08-25-web-performance-optimization">
+<link rel="alternate" hreflang="en" href="https://www.marianstancik.dev/blog/posts/2026-08-25-web-performance-optimization">
+<link rel="alternate" hreflang="sk" href="https://www.marianstancik.dev/blog/posts/sk/2026-08-25-web-performance-optimization">
+<link rel="alternate" hreflang="x-default" href="https://www.marianstancik.dev/blog/posts/2026-08-25-web-performance-optimization">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Knowledge Graph">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#08080F">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Optimalizácia výkonu webu: Ako som znížil veľkosť stránok o 61 % — Marian Stancik">
+<meta property="og:description" content="Zníženie veľkosti HTML z 86 KB na 34 KB, WebP kompresia, externé CSS/JS a dosiahnutie PageSpeed 100.">
+<meta property="og:url" content="https://www.marianstancik.dev/blog/posts/sk/2026-08-25-web-performance-optimization">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://www.marianstancik.dev/profile.webp">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Optimalizácia výkonu webu — Marian Stancik">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Marian Stancik">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@marian_s_ai">
+<meta name="twitter:creator" content="@marian_s_ai">
+<meta name="twitter:image" content="https://www.marianstancik.dev/profile.webp">
+
+<!-- JSON-LD Structured Data with BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Optimalizácia výkonu webu: Ako som znížil veľkosť stránok o 61 %",
+      "description": "Technický postup zníženia veľkosti HTML z 86 KB na 34 KB a dosiahnutie PageSpeed 100 cez externé CSS, JS, WebP a neblokujúci WebGL.",
+      "datePublished": "2026-08-25",
+      "dateModified": "2026-08-25",
+      "author": {
+        "@type": "Person",
+        "name": "Marian Stancik",
+        "url": "https://www.marianstancik.dev"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Marian Stancik"
+      },
+      "mainEntityOfPage": "https://www.marianstancik.dev/blog/posts/sk/2026-08-25-web-performance-optimization",
+      "keywords": ["Výkonnosť webu", "Lighthouse", "Core Web Vitals", "Optimalizácia CSS", "Rýchlosť webu"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Domov",
+          "item": "https://www.marianstancik.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.marianstancik.dev/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Optimalizácia výkonu webu: Ako som znížil veľkosť stránok o 61 %",
+          "item": "https://www.marianstancik.dev/blog/posts/sk/2026-08-25-web-performance-optimization"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:#08080F;color:#E8E8F0;line-height:1.8;-webkit-font-smoothing:antialiased}
+.container{max-width:740px;margin:0 auto;padding:0 24px}
+nav{padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(8,8,15,0.85);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:740px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.nav-inner a{color:#8888A0;text-decoration:none;font-size:0.85rem;transition:color 0.3s}
+.nav-inner a:hover{color:#CD7F32}
+article{padding:48px 0 80px}
+.post-meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:32px;font-size:0.78rem;color:#9090A8}
+.post-meta .tag{background:rgba(205,127,50,0.08);color:#E8B86D;padding:3px 10px;border-radius:100px;font-size:0.65rem;border:1px solid rgba(205,127,50,0.15)}
+h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;color:#F0F0F5;line-height:1.25;letter-spacing:-0.02em;margin-bottom:8px}
+h2{font-size:1.3rem;font-weight:600;color:#F0F0F5;margin:36px 0 12px;line-height:1.35}
+h3{font-size:1.05rem;font-weight:600;color:#D0D0E0;margin:24px 0 8px}
+p{color:#B0B0C8;margin-bottom:16px;font-size:0.95rem}
+a{color:#E8B86D;transition:color 0.3s}
+a:hover{color:#CD7F32}
+ul,ol{padding-left:20px;margin-bottom:16px;color:#B0B0C8;font-size:0.95rem}
+li{margin-bottom:6px}
+code{background:rgba(255,255,255,0.04);padding:2px 6px;border-radius:4px;font-size:0.85rem;color:#E8B86D;font-family:'Fira Code','Cascadia Code','JetBrains Mono',monospace}
+pre{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:20px;overflow-x:auto;margin-bottom:20px;font-size:0.82rem;line-height:1.5}
+pre code{background:none;padding:0;color:#C8C8D8}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin:24px 0}
+.stat{border:1px solid rgba(205,127,50,0.15);border-radius:12px;padding:20px;text-align:center;background:rgba(205,127,50,0.04)}
+.stat .num{font-size:1.8rem;font-weight:700;color:#E8B86D;display:block}
+.stat .label{font-size:0.72rem;color:#8888A0;text-transform:uppercase;letter-spacing:0.08em;margin-top:4px;display:block}
+blockquote{border-left:3px solid #CD7F32;padding:12px 20px;margin:20px 0;color:#B0B0C8;font-style:italic;background:rgba(205,127,50,0.03);border-radius:0 12px 12px 0}
+.divider{border:none;border-top:1px solid rgba(255,255,255,0.06);margin:40px 0}
+footer{padding:36px 24px;text-align:center;color:#9090A8;font-size:0.75rem;border-top:1px solid rgba(255,255,255,0.04)}
+footer a{color:#8888A0;text-decoration:none}
+footer a:hover{color:#CD7F32}
+@media(max-width:600px){article{padding:32px 0 60px}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Navigácia blogu">
+  <div class="nav-inner">
+    <a href="/" aria-label="Marian Stancik domov"><span style="font-size:1.1rem">←</span> Domov</a>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <a href="/blog">Blog</a>
+      <div style="display:flex;gap:4px;background:rgba(255,255,255,0.06);padding:2px 4px;border-radius:100px;font-size:0.72rem;font-weight:600;">
+        <a href="/blog/posts/2026-08-25-web-performance-optimization" style="padding:2px 8px;border-radius:100px;color:#8888A0;text-decoration:none;">EN</a>
+        <a href="/blog/posts/sk/2026-08-25-web-performance-optimization" style="padding:2px 8px;border-radius:100px;color:#CD7F32;background:rgba(205,127,50,0.15);text-decoration:none;">SK</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+<article>
+<div class="post-meta">
+  <span>25. august 2026</span>
+  <span class="tag">Výkonnosť webu</span>
+  <span class="tag">Lighthouse 100</span>
+  <span class="tag">Optimalizácia</span>
+  <span>5 min čítania</span>
+</div>
+
+<h1>Optimalizácia výkonu webu: Ako som znížil veľkosť stránok o 61 %</h1>
+
+<p>Ešte včera bolo skóre Lighthouse priemerné. Každá stránka prenášala 86 KB inline kódu. Po jednom popoludní systematickej optimalizácie — externalizácii CSS a JS, prechode na WebP, neblokujúcej WebGL architektúre a preconnect hlavičkách — veľkosť stránok klesla na 13–34 KB a skóre dosiahlo 100. Tu je presný návod, ako som to spravil pre marianstancik.dev.</p>
+
+<h2>Predtým: Problém s inline monolitom</h2>
+
+<p>Každá podstránka niesla vlastnú kópiu celého CSS (~22 KB), Three.js neurónového pozadia (~5 KB modul) a kompletného i18n prekladového slovníka (~25 KB). Každý prechod medzi stránkami znamenal sťahovanie toho istého kódu nanovo. Ide o najčastejšiu chybu pri statických weboch.</p>
+
+<div class="stats-grid">
+  <div class="stat"><span class="num">86 KB</span><span class="label">Pôvodná veľkosť</span></div>
+  <div class="stat"><span class="num">34 KB</span><span class="label">Nová veľkosť</span></div>
+  <div class="stat"><span class="num">−61 %</span><span class="label">Zníženie dát</span></div>
+  <div class="stat"><span class="num">6×</span><span class="label">Rýchlejšia cache</span></div>
+</div>
+
+<h2>Optimalizačná stratégia</h2>
+
+<h3>1. Extrakcia CSS do externého súboru</h3>
+
+<p>Najväčší posun. 22 KB CSS sa presunulo z inline blokov do jediného <code>/css/main.css</code>. Prehliadač ho stiahne len raz, nacachuje a každá ďalšia podstránka sa načíta okamžite. HTML kleslo z 86 KB na 34 KB na hlavnej stránke a na ~13 KB na podstránkach.</p>
+
+<pre><code>&lt;!-- Predtým: 22 KB inline v každom HTML --&gt;
+&lt;style&gt;
+/* 22 KB CSS opakovaných na každej podstránke */
+&lt;/style&gt;
+
+&lt;!-- Potom: externé, cachované raz --&gt;
+&lt;link rel="stylesheet" href="/css/main.css"&gt;</code></pre>
+
+<h3>2. Externalizácia JavaScriptu (Three.js + i18n)</h3>
+
+<p>Dva kľúčové JS bloky boli oddelené: Three.js WebGL modul (odložený cez <code>requestIdleCallback</code> a interakčné triggery) a i18n preklady (načítané na konci <code>&lt;body&gt;</code>). Tým sme dosiahli <strong>0 ms Total Blocking Time (TBT)</strong>.</p>
+
+<pre><code>&lt;!-- Three.js — inicializované neblokujúco pri interakcii --&gt;
+&lt;script type="module" src="/js/three-bg.js"&gt;&lt;/script&gt;
+
+&lt;!-- i18n — načítané na konci body bez blokovania vykresľovania --&gt;
+&lt;script src="/js/i18n.js"&gt;&lt;/script&gt;</code></pre>
+
+<h3>3. Moderný formát WebP pre obrázky</h3>
+
+<p>Profilová fotografia prešla z JPEG (15 KB) na WebP (9.9 KB) — úspora 34 % pri identickej vizuálnej kvalite. HTML využíva element <code>&lt;picture&gt;</code> s explicitným <code>aspect-ratio: 1 / 1</code>, čo zaručuje nulový Cumulative Layout Shift (CLS = 0).</p>
+
+<h3>4. Preconnect a DNS-Prefetch pre CDN</h3>
+
+<p>Pridali sme <code>&lt;link rel="preconnect"&gt;</code> pre jsDelivr CDN. Prehliadač vopred nadviaže DNS a TLS spojenie, čím ušetrí ~100–200 ms pri prvotnom načítaní.</p>
+
+<h3>5. Priorita načítania LCP (Largest Contentful Paint)</h3>
+
+<p>Profilový obrázok v hero sekcii je kľúčový LCP element. Pomocou <code>fetchpriority="high"</code> a <code>loading="eager"</code> má prednosť pred ostatnými zdrojmi.</p>
+
+<pre><code>&lt;img src="/profile.webp" alt="Marian Stancik"
+     width="200" height="200"
+     loading="eager" fetchpriority="high"&gt;</code></pre>
+
+<hr class="divider">
+
+<h2>Výsledky</h2>
+
+<p>Po implementácii:</p>
+<ul>
+  <li><strong>Veľkosť stránok:</strong> 86 KB → 34 KB (hlavná stránka), ~68 KB → ~13–17 KB (podstránky).</li>
+  <li><strong>Úspora dát:</strong> ~320 KB naprieč webom pri prvej návšteve, okamžité načítanie pri ďalších.</li>
+  <li><strong>Cachovacia stratégia:</strong> CSS, JS a obrázky sú označené ako `immutable` na 1 rok.</li>
+  <li><strong>Blokovanie vlákna odstránené:</strong> TBT je 0 ms.</li>
+  <li><strong>PageSpeed skóre:</strong> 100/100 na mobile aj desktope.</li>
+</ul>
+
+<p>Optimalizácia ukazuje silu Zero-Build architektúry (Vanilla HTML5, CSS3, moderný JS). Žiadne frameworkové balíky, žiadny runtime overhead — len čistý a ultra-rýchly web.</p>
+</article>
+</div>
+
+<footer>
+  <p>© 2026 <a href="https://ascentia.sk" target="_blank">ASCENTIA s.r.o.</a> — <a href="/">www.marianstancik.dev</a></p>
+</footer>
+</body>
+</html>
