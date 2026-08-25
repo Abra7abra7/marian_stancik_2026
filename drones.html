@@ -106,87 +106,101 @@
 <section id="drone-showcase" aria-label="Drone build and UAV video showcase">
   <div class="container">
     <div class="section-label fade-in" id="droneLabel">✦ UAV Systems</div>
-    <h2 class="fade-in" id="droneHeading">Built. Flown. Programmed.</h2>
+    <h2 class="fade-in" id="droneHeading">Hand-Built. Flight-Tested. AI-Augmented.</h2>
     <p class="section-intro fade-in" id="droneIntro">
-      1500g custom carbon quad with ArduPilot, Pixhawk 6C, Raspberry Pi 5 edge AI. EASA A1/A3 certified, €2.6M insured.
+      Custom 1500g carbon quadcopter hand-soldered from bare components. Initially flown on Betaflight, powered by ArduPilot, with onboard Raspberry Pi 5 edge vision AI in development. EASA A1/A3 certified, €2.6M insured.
     </p>
-        <div class="drone-showcase-grid fade-in">
+
+    <div class="drone-showcase-container fade-in">
+      <!-- Dominant Video Showcase -->
       <div class="drone-video-card">
         <video controls preload="metadata" poster="https://ff00597494cd9f2b2347c45a18b823ff.r2.cloudflarestorage.com/marian-stancik-media/drone/web/drone_outdoor_poster.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=fd57023d063e38915f0607865e064f57%2F20260824%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260824T141027Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=80f689dbb3956c95943701a1577d300a0f07c5dba3a418a7741a47bbac4266f7" width="100%" height="auto">
           <source src="https://ff00597494cd9f2b2347c45a18b823ff.r2.cloudflarestorage.com/marian-stancik-media/drone/web/drone_outdoor_showcase.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=fd57023d063e38915f0607865e064f57%2F20260824%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260824T141026Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=aaf27e9891e0339d44bbed3d7588530a2aa4872afbfdf678c40c237ff8f1cad6" type="video/mp4">
         </video>
-        <p class="drone-video-caption" id="dCap1">20s outdoor compilation &mdash; field flight, waypoints &mdash; no audio</p>
+        <p class="drone-video-caption" id="dCap1">20s outdoor compilation &mdash; flight testing & autonomous waypoint navigation</p>
       </div>
-      <div class="drone-details">
-        <h3 id="droneBuildTitle">Build &amp; specifications</h3>
 
-        <h4 class="drone-category" id="dSpec1">Frame &amp; Motors</h4>
-        <ul class="drone-build-list">
-          <li><strong>Frame:</strong> GEPRC Mark4-8 (Rotorama)</li>
-          <li><strong>Motors:</strong> iFlight XING2 2809 1250Kv × 6 (Rotorama)</li>
-          <li><strong>Props:</strong> HQprop LR8X4.2X3 × 8 (Rotorama)</li>
-          <li><strong>Battery:</strong> GNB 5500mAh 6S 70C XT60 (Rotorama)</li>
-        </ul>
+      <!-- Specifications Grid -->
+      <div class="drone-specs-wrapper">
+        <h3 id="droneBuildTitle" style="font-size: 1.25rem; font-weight: 700; color: #F0F0F5; margin-bottom: 20px;">Hardware Specifications &amp; Build Components</h3>
 
-        <h4 class="drone-category" id="dSpec2">Electronics &amp; Flight Controller</h4>
-        <ul class="drone-build-list">
-          <li><strong>FC+ESC:</strong> Skystars H7 Dual Gyro + AM60 AM32 (Rotorama)</li>
-          <li><strong>Receiver:</strong> Radiomaster XR1 Nano ELRS 868MHz/2.4GHz (Rotorama)</li>
-          <li><strong>GPS+Compass:</strong> FlyfishRC M10QMC-5883L (Rotorama)</li>
-          <li><strong>Capacitor:</strong> 1000μF 50V (SvetSúčiastok)</li>
-        </ul>
+        <div class="drone-specs-grid">
+          <!-- 1. Frame & Motors -->
+          <div class="drone-spec-card">
+            <h4 id="dSpec1">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#CD7F32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              Frame &amp; Propulsion
+            </h4>
+            <ul class="drone-build-list">
+              <li><strong>Frame</strong> <span>GEPRC Mark4-8 8" Carbon</span></li>
+              <li><strong>Motors</strong> <span>iFlight XING2 2809 1250Kv × 6</span></li>
+              <li><strong>Propellers</strong> <span>HQprop LR8X4.2X3 Triblade × 8</span></li>
+              <li><strong>Main Battery</strong> <span>GNB 5500mAh 6S 70C XT60 LiPo</span></li>
+            </ul>
+          </div>
 
-        <h4 class="drone-category" id="dSpec3">AI &amp; Autopilot</h4>
-        <ul class="drone-build-list">
-          <li><strong>AI Computer:</strong> Raspberry Pi 5 — 8GB RAM (RPishop)</li>
-          <li><strong>BEC:</strong> 2-13S 5V 5A for RPi (Rotorama)</li>
-          <li><strong>Camera:</strong> Raspberry Pi Camera 3 (RPishop)</li>
-          <li><strong>SD Card:</strong> Raspberry Pi 64GB Class A2 (RPishop)</li>
-          <li><strong>Cooler:</strong> Raspberry Pi 5 Active Cooler (RPishop)</li>
-          <li><strong>Servo:</strong> Micro Servo MG90S — release mechanism (RCHobby)</li>
-          <li><strong>USB-C pigtail:</strong> JOY-IT USB-C power cable 1m (Alza)</li>
-        </ul>
+          <!-- 2. Electronics & Autopilot -->
+          <div class="drone-spec-card">
+            <h4 id="dSpec2">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#CD7F32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
+              Electronics &amp; Flight Controller
+            </h4>
+            <ul class="drone-build-list">
+              <li><strong>FC &amp; ESC Stack</strong> <span>Skystars H7 Dual Gyro + AM60 AM32 60A</span></li>
+              <li><strong>Autopilot Firmware</strong> <span>ArduPilot Copter (Betaflight tested)</span></li>
+              <li><strong>Receiver</strong> <span>RadioMaster XR1 Nano ELRS</span></li>
+              <li><strong>GPS &amp; Compass</strong> <span>FlyfishRC M10QMC-5883L GNSS</span></li>
+              <li><strong>Power Filter</strong> <span>1000μF 50V Low-ESR Capacitor</span></li>
+            </ul>
+          </div>
 
-        <h4 class="drone-category" id="dSpec4">FPV System</h4>
-        <ul class="drone-build-list">
-          <li><strong>FPV Camera:</strong> Caddx Ratel 2 Micro (Rotorama)</li>
-          <li><strong>VTX:</strong> Axisflying Smurfs 25-1600mW (Rotorama)</li>
-          <li><strong>VTX Antenna:</strong> Foxeer Lollipop 4 Plus × 2 (Rotorama)</li>
-          <li><strong>Goggles:</strong> Skyzone Cobra X V4 (Rotorama)</li>
-        </ul>
+          <!-- 3. Edge AI & Companion Computer -->
+          <div class="drone-spec-card">
+            <h4 id="dSpec3">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#CD7F32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 7h.01"/><path d="M17 7h.01"/><path d="M7 17h.01"/><path d="M17 17h.01"/></svg>
+              Onboard Edge AI &amp; Vision
+            </h4>
+            <ul class="drone-build-list">
+              <li><strong>AI Companion Computer</strong> <span>Raspberry Pi 5 (8GB RAM)</span></li>
+              <li><strong>Dedicated BEC</strong> <span>2-13S 5V 5A Step-Down Module</span></li>
+              <li><strong>Vision Sensor</strong> <span>Raspberry Pi Camera Module 3</span></li>
+              <li><strong>Storage</strong> <span>High-Endurance 64GB Class A2 MicroSD</span></li>
+              <li><strong>Cooling &amp; Servo</strong> <span>Active Cooler + MG90S Payload Servo</span></li>
+            </ul>
+          </div>
 
-        <h4 class="drone-category" id="dSpec5">Ground Control</h4>
-        <ul class="drone-build-list">
-          <li><strong>Radio:</strong> RadioMaster Pocket ELRS 2.4GHz (Rotorama)</li>
-          <li><strong>Radio Batt:</strong> Samsung 35E 18650 3500mAh × 2 (Rotorama)</li>
-          <li><strong>Charger:</strong> iSDT 608AC 50/200W (Rotorama)</li>
-          <li><strong>Lipo Bag:</strong> Rotorama Lipo Safe bag (Rotorama)</li>
-        </ul>
+          <!-- 4. FPV Video System -->
+          <div class="drone-spec-card">
+            <h4 id="dSpec4">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#CD7F32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7 16 12 23 17V7z"/><rect width="14" height="14" x="1" y="5" rx="2"/></svg>
+              FPV Video &amp; Transmission
+            </h4>
+            <ul class="drone-build-list">
+              <li><strong>FPV Camera</strong> <span>Caddx Ratel 2 Micro Starlight</span></li>
+              <li><strong>Video Transmitter (VTX)</strong> <span>Axisflying Smurfs 25-1600mW 5.8GHz</span></li>
+              <li><strong>Antennas</strong> <span>Foxeer Lollipop 4 Plus High-Gain × 2</span></li>
+              <li><strong>FPV Goggles</strong> <span>Skyzone Cobra X V4 Diversity</span></li>
+            </ul>
+          </div>
 
-        <h4 class="drone-category" id="dSpec6">Tools &amp; Assembly</h4>
-        <ul class="drone-build-list">
-          <li><strong>Soldering:</strong> Sequre SI012 Pro 65W Kit (Rotorama)</li>
-          <li><strong>Screwdrivers:</strong> Readytosky hex set (Rotorama)</li>
-          <li><strong>Standoffs M3:</strong> Aluminium round 10pc (Rotorama)</li>
-          <li><strong>Standoffs M2.5:</strong> Nylon 180pc for RPi (Fyft)</li>
-          <li><strong>Standoffs M3:</strong> Nylon 200pc (Fyft)</li>
-          <li><strong>Wire 24AWG:</strong> Silicone 10×5m set (Rotorama)</li>
-          <li><strong>Wire 18AWG:</strong> Silicone red+black (Rotorama)</li>
-          <li><strong>Solder:</strong> Sn60/Pb40 1.0mm 100g (ProfiGaráž)</li>
-          <li><strong>Flux:</strong> TBS flux (Rotorama)</li>
-          <li><strong>Heat shrink:</strong> 530pc set (Rotorama)</li>
-          <li><strong>Battery strap:</strong> Kevlar 20×450mm × 4 (Rotorama)</li>
-          <li><strong>Short protector:</strong> VIFLY ShortSaver V2 (Rotorama)</li>
-          <li><strong>Buzzer:</strong> VIFLY Finder V2 (Rotorama)</li>
-          <li><strong>Multimeter:</strong> Digital (SvetSúčiastok)</li>
-          <li><strong>Mat:</strong> Silicone 45×30cm (Rotorama)</li>
-          <li><strong>Pliers:</strong> Cutting 170mm (Rotorama)</li>
-          <li><strong>Thread locker:</strong> Medium strength (Rotorama)</li>
-          <li><strong>Double tape:</strong> 3M foam (Rotorama)</li>
-          <li><strong>Tip:</strong> Sequre TS-K spare (Rotorama)</li>
-        </ul>
+          <!-- 5. Ground Control & Power -->
+          <div class="drone-spec-card" style="grid-column: span 2;">
+            <h4 id="dSpec5">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#CD7F32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/><path d="m4.9 4.9 4.2 4.2"/><path d="m14.9 14.9 4.2 4.2"/><path d="m19.1 4.9-4.2 4.2"/><path d="m9.1 14.9-4.2 4.2"/><circle cx="4" cy="4" r="2.5"/><circle cx="20" cy="4" r="2.5"/><circle cx="4" cy="20" r="2.5"/><circle cx="20" cy="20" r="2.5"/></svg>
+              Ground Control &amp; Power Infrastructure
+            </h4>
+            <ul class="drone-build-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 8px 24px;">
+              <li><strong>Radio Controller</strong> <span>RadioMaster Pocket ELRS (EdgeTX)</span></li>
+              <li><strong>Radio Power</strong> <span>Samsung 35E 18650 3500mAh × 2</span></li>
+              <li><strong>Multi-Chemistry Charger</strong> <span>iSDT 608AC 50W AC / 200W DC</span></li>
+              <li><strong>Safety &amp; Telemetry</strong> <span>Fireproof LiPo Safe Bag &amp; Kevlar Straps</span></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>ion>
+    </div>
+  </div>
+</section>
 
 
 

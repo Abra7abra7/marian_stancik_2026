@@ -6,9 +6,9 @@
 
 ## Identity & Core Positioning
 
-Marian Stancik is an AI Engineer building autonomous agent systems, production AI infrastructure, and UAV systems. CEO @ ASCENTIA. AI Engineer. Drone pilot.
+Marian Stancik is an AI Engineer, UAV Builder, and Law Scholar exploring the convergence of artificial intelligence, autonomous physical hardware, and regulatory compliance.
 
-**Tagline:** "AI Engineer building autonomous agents, UAV systems, and production AI infrastructure."
+**Tagline:** "Exploring the convergence of AI agents, autonomous UAVs, and the physical world — building the next frontier."
 
 ## Pages
 
@@ -24,30 +24,37 @@ Marian Stancik is an AI Engineer building autonomous agent systems, production A
 - **Blog Post — Drone Missions:** https://www.marianstancik.dev/blog/posts/2026-08-17-autonomous-drone-missions
 - **Contact:** https://www.marianstancik.dev/contact
 
-## Core Pillars
+## Core Pillars & Technical Stack
 
-### 1. AI Engineering & Autonomous Systems
-- Hermes Agent, MCP servers, Python skills
-- 24/7 production on Hetzner VPS, 19+ cron orchestrations
-- Telegram & WhatsApp C2 interfaces
-- LLM foundations, RAG, evaluation-driven development
-- Multi-agent architectures & agent orchestration
+### 1. AI Engineering & Autonomous Agents
+- Hermes Agent, MCP (Model Context Protocol) servers, Python workflows
+- Enterprise Hetzner Cloud VPS (Germany/Finland) for 24/7 runtime, ensuring EU data sovereignty
+- OpenRouter API for dynamic multi-LLM orchestration (DeepSeek, Claude, GPT, Llama)
+- Obsidian as persistent memory layer and structured knowledge base (second brain)
+- Telegram & WhatsApp C2 interfaces for remote agent control
+- Lightweight, zero-build HTML5, Vanilla JS, and modern CSS for instant loading and GEO/LLMO indexing
 
-### 2. AI Engineering & CEO @ ASCENTIA
-- Building autonomous AI agents and UAV systems
-- Production AI infrastructure, Hermes Agent ecosystem
+### 2. Law & AI Compliance (3rd Year Law Student, PF UK)
+- 3rd year law student at Faculty of Law, Comenius University in Bratislava (PF UK)
+- Specialization in legal and commercial impacts of AI on business and enterprise
+- Key European legislative frameworks:
+  - **EU AI Act:** Risk classification, GPAI governance, and prohibited practices
+  - **GDPR:** Training data privacy, automated decision-making, and subject rights
+  - **NIS2 Directive:** Cybersecurity resilience of digital infrastructure and supply chains
+  - **DORA:** Digital operational resilience for financial entities
+  - **EU Data Act & Data Governance Act:** Data access and EU data sovereignty
+  - **DSM Copyright Directive:** Text & Data Mining (TDM) exceptions for AI model training
 
-### 3. AI Compliance & Legal-by-Design
-- EU AI Act, GDPR, NIS2
-- Legal-by-design frameworks for AI products
-- Certified compliance pipelines for audit readiness
+### 3. UAV Systems & Edge AI
+- Custom 1500g carbon tactical quadcopter hand-built and soldered from raw components
+- Initially flight-tested on Betaflight, currently operating on ArduPilot Copter 4.5+
+- Onboard Raspberry Pi 5 (8GB) companion computer with edge vision AI models for real-time target detection
+- Skystars H7 Dual Gyro FC, AM60 ESC, Radiomaster ELRS, FlyfishRC GNSS
+- Caddx Ratel 2 FPV, Axisflying Smurfs 1.6W VTX, Skyzone Cobra X goggles
+- Certified EASA A1/A3 drone pilot, €2.6M insurance
 
-### 4. UAV Systems & Drone Programming
-- 1500g custom carbon quad, hand-built
-- Pixhawk 6C + ArduPilot Copter 4.5
-- Raspberry Pi 5 edge AI companion computer
-- QGroundControl, Mission Planner, MAVLink
-- EASA A1/A3, €2.6M insured
+### 4. ASCENTIA (Hobby / Agent-Native Concept)
+- Proof-of-concept autonomous company model driven 100% by AI agents, MCP tooling, and 24/7 scheduled workflows.
 
 ## Machine-Readable Endpoints
 
