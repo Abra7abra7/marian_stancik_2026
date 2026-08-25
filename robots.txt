@@ -1,7 +1,35 @@
 User-agent: *
 Allow: /
 
+# AI Crawlers & LLM Indexers (GEO / LLMO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 User-agent: Bravebot
 Allow: /
 
+# Discovery Endpoints
 Sitemap: https://www.marianstancik.dev/sitemap.xml
+# LLM Context: https://www.marianstancik.dev/llms.txt
+# LLM Full Graph: https://www.marianstancik.dev/llms-full.txt

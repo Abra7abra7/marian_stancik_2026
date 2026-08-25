@@ -1,14 +1,76 @@
 
+:root {
+  /* Color Palette - Bronze Neural Theme */
+  --color-bg: #08080F;
+  --color-bg-secondary: #0D0D18;
+  --color-bg-card: rgba(18, 18, 30, 0.65);
+  --color-bg-card-hover: rgba(26, 26, 42, 0.85);
+  --color-primary: #CD7F32;
+  --color-accent: #E8B86D;
+  --color-text: #E8E8F0;
+  --color-text-muted: #8888A0;
+  --color-text-dim: #555570;
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-hover: rgba(205, 127, 50, 0.35);
+  --color-glow: rgba(205, 127, 50, 0.2);
+
+  /* Typography Scale */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
+  --font-serif: 'Georgia', serif;
+
+  /* Spacing Scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 48px;
+  --space-2xl: 90px;
+
+  /* Layout & Radii */
+  --max-width: 880px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+  --min-tap-target: 44px;
+
+  /* Transitions */
+  --ease-spring: cubic-bezier(0.2, 0, 0, 1);
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
 font-display: swap;
-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
-background: #08080F;
-color: #E8E8F0;
+font-family: var(--font-body);
+background: var(--color-bg);
+color: var(--color-text);
 line-height: 1.7;
 overflow-x: hidden;
 -webkit-font-smoothing: antialiased;
+}
+
+/* Accessibility: Skip to main content link */
+.skip-link {
+position: absolute;
+top: -100px;
+left: 16px;
+background: var(--color-primary);
+color: var(--color-bg);
+padding: 10px 16px;
+border-radius: var(--radius-sm);
+font-weight: 700;
+font-size: 0.85rem;
+z-index: 9999;
+text-decoration: none;
+transition: top var(--transition-fast);
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+.skip-link:focus {
+top: 16px;
+outline: 2px solid var(--color-accent);
 }
 #three-canvas {
 position: fixed;
@@ -103,7 +165,8 @@ text-decoration: none;
 transition: color 0.3s;
 font-weight: 500;
 }
-.nav-links a:hover { color: #CD7F32; }
+.nav-links a:hover, .nav-links a.active { color: var(--color-accent); }
+.nav-links a.active { font-weight: 600; text-shadow: 0 0 12px var(--color-glow); }
 .lang-switcher {
 display: flex;
 align-items: center;

@@ -35,7 +35,7 @@
 ### B. SEO & GEO Search Optimization (Score: 100/100)
 - **Structured Data (Schema.org JSON-LD):**
   - `Person` schema with rich professional affiliations:
-    - **Delta Defence a.s.** (Product Manager)
+    - **Defence Industry (confidential)** (Product Manager)
     - **Právnická fakulta Univerzity Komenského v Bratislave (PF UK)** (`https://flaw.uniba.sk`)
     - **ASCENTIA s.r.o.** (CEO & Founder)
   - **GEO Localization:** Coordinates (`48.1486° N, 17.1077° E`), Bratislava, Slovakia, European Union.
