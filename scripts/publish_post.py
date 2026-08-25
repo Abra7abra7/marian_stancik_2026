@@ -36,8 +36,11 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title} — Marian Stancik</title>
 <meta name="description" content="{excerpt}">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://www.marianstancik.dev/blog/posts/{slug}.html">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Knowledge Graph">
 <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.svg">
 <meta name="theme-color" content="#08080F">
 
 <!-- Open Graph -->
@@ -45,7 +48,17 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <meta property="og:description" content="{excerpt}">
 <meta property="og:url" content="https://www.marianstancik.dev/blog/posts/{slug}.html">
 <meta property="og:type" content="article">
-<meta property="og:image" content="https://www.marianstancik.dev/profile.jpg">
+<meta property="og:image" content="https://www.marianstancik.dev/profile.webp">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="{title}">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="sk_SK">
+<meta property="og:site_name" content="Marian Stancik">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@marian_s_ai">
+<meta name="twitter:creator" content="@marian_s_ai">
+<meta name="twitter:image" content="https://www.marianstancik.dev/profile.webp">
 <meta property="article:published_time" content="{date}">
 <meta property="article:author" content="Marian Stancik">
 

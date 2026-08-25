@@ -20,8 +20,34 @@
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
         { "key": "Link", "value": "</llms.txt>; rel=\"describedby\", </llms-full.txt>; rel=\"describedby\"" }
+      ]
+    },
+    {
+      "source": "/css/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(webp|jpg|jpeg|png|svg|ico|mp4|webm|woff2|woff)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(llms\\.txt|llms-full\\.txt|robots\\.txt|sitemap\\.xml|rss\\.xml|blog/posts\\.json)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" }
       ]
     },
     {
@@ -40,18 +66,6 @@
       "source": "/blog/posts/(.*)",
       "headers": [
         { "key": "Link", "value": "</blog/posts/$1.md>; rel=\"alternate\"; type=\"text/markdown\"" }
-      ]
-    },
-    {
-      "source": "/profile.webp",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400, immutable" }
-      ]
-    },
-    {
-      "source": "/profile.jpg",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400, immutable" }
       ]
     }
   ]

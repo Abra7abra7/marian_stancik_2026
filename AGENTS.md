@@ -248,3 +248,31 @@ To replicate this exact architecture on a new project or client site:
    - Configure `robots.txt` allowing all 14+ AI crawlers.
 5. **Step 5: Setup Single-Branch Trunk GitOps**
    - Use `main` as the default branch, connect to Vercel with `cleanUrls: true`, and test with `python scripts/verify_site.py`.
+
+---
+
+## 10. PageSpeed 100 & Core Web Vitals (CWV) Standard
+
+To guarantee a **100/100 Google PageSpeed Insights** rating on both Mobile and Desktop:
+
+### 1. Non-Blocking WebGL Architecture (`js/three-bg.js`)
+- **Idle Deferred Initialization:** Three.js is dynamically imported only on `requestIdleCallback` (or post-load idle), achieving **0ms Total Blocking Time (TBT)**.
+- **Linear $O(N)$ Connection Sampling:** Never use $O(N^2)$ brute-force distance loops. Always sample adjacent candidate indices.
+- **Mobile-Adaptive Geometry:** Scale down particle counts dynamically (220 on mobile <768px, 650 on desktop).
+- **Lifecycle & Motion:** Pause render loop on `document.hidden` (`visibilitychange`) and respect `prefers-reduced-motion` with a static single frame.
+
+### 2. Immutable Asset Caching (`vercel.json`)
+- Static assets (`/css/*`, `/js/*`, `*.webp`, `*.svg`, `*.mp4`) must be served with `public, max-age=31536000, immutable`.
+- AI discovery endpoints (`llms.txt`, `robots.txt`, `sitemap.xml`, `rss.xml`, `posts.json`) use `public, max-age=3600, stale-while-revalidate=86400`.
+- HTML pages use `public, max-age=0, must-revalidate`.
+
+### 3. Hero LCP & Layout Stability (CLS = 0)
+- Hero images must use `<picture>` with `.webp` as primary format, explicit `width="200" height="200"`, `fetchpriority="high"`, and CSS `aspect-ratio: 1 / 1`.
+- Never open unused `<link rel="preconnect">` connections (e.g. Google Fonts) when using system font stacks.
+
+### 4. GEO / LLMO Robots & Schema Standard
+- All HTML pages must include:
+  ```html
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  ```
+- All JSON-LD schemas must be interconnected via `@graph` containing `Person`, `WebSite`, `WebPage`/`AboutPage`/`CollectionPage`, and `FAQPage`.
