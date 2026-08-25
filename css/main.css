@@ -1293,38 +1293,57 @@ margin-bottom: 6px;
 
 /* ===== DRONE PHOTO GALLERY ===== */
 .drone-gallery-section {
-margin-top: 20px;
+margin-bottom: 32px;
 width: 100%;
 }
 .drone-photo-grid {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-gap: 6px;
-margin-top: 12px;
-max-width: 480px;
+gap: 10px;
+margin-top: 16px;
 }
-.gallery-item {
+.drone-photo-card {
+background: var(--color-bg-card);
+border: 1px solid var(--color-border);
+border-radius: var(--radius-md);
+padding: 12px;
+transition: var(--transition-fast);
+}
+.drone-photo-card:hover {
+border-color: var(--color-border-hover);
+background: var(--color-bg-card-hover);
+}
+.drone-photo-card h4 {
+font-size: 0.85rem;
+font-weight: 700;
+color: var(--color-accent);
+margin-bottom: 8px;
+display: flex;
+align-items: center;
+border-bottom: 1px solid var(--color-border);
+padding-bottom: 6px;
+}
+.drone-photo-card a {
 display: block;
-border-radius: 8px;
+border-radius: 6px;
 overflow: hidden;
-border: 1px solid rgba(255,255,255,0.08);
-transition: all 0.25s ease;
-aspect-ratio: 4/3;
 }
-.gallery-item:hover {
-border-color: rgba(205,127,50,0.4);
-transform: scale(1.03);
-box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-}
-.gallery-item img {
+.drone-photo-card img {
 width: 100%;
-height: 100%;
+height: 140px;
 object-fit: cover;
 display: block;
+border-radius: 6px;
+transition: transform 0.25s ease;
+}
+.drone-photo-card:hover img {
+transform: scale(1.03);
 }
 @media (max-width: 700px) {
-.drone-photo-grid { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
+.drone-photo-grid { grid-template-columns: repeat(2, 1fr); }
+.drone-photo-card img { height: 120px; }
 }
 @media (max-width: 400px) {
-.drone-photo-grid { grid-template-columns: repeat(2, 1fr); gap: 4px; }
+.drone-photo-grid { grid-template-columns: 1fr; }
+.drone-photo-card img { height: 160px; }
 }
