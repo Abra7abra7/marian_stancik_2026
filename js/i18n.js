@@ -26,11 +26,39 @@ roleCeo: "ASCENTIA (Agent-Native)",
 heroEmail: "Email",
 skillsLabel: "✦ AI Engineering Skills",
 skillsHeading: "Skills & Capabilities",
-skillsIntro: "Full-stack AI engineering — from LLM foundations and agentic orchestration to production deployment and physical edge computing.",
-sk1Title: "Build & Deploy AI Applications",
-sk2Title: "Software Engineering",
-sk3Title: "LLM & Agentive Systems",
-sk4Title: "Production Operations",
+skillsIntro: "Full-stack AI engineering — from LLM orchestration and Hermes Agent loops to cloud infrastructure, legal compliance, and physical UAV robotics.",
+sk1Title: "Hermes Agent & Multi-Agent Systems",
+sk1List: `
+  <li><strong>Hermes Agent:</strong> Autonomous execution loops & reflection on 24/7 Hetzner VPS</li>
+  <li><strong>MCP Server Design:</strong> Custom Model Context Protocol tools & APIs</li>
+  <li><strong>OpenRouter Multi-LLM:</strong> Dynamic routing across DeepSeek, Claude 3.5 & GPT-4o</li>
+  <li><strong>Obsidian Memory Layer:</strong> Bi-directional markdown vault for agent memory persistence</li>
+  <li><strong>C2 Interfaces:</strong> Interactive command & control via Telegram & WhatsApp bots</li>
+`,
+sk2Title: "Software & Cloud Infrastructure",
+sk2List: `
+  <li><strong>Python 3 Ecosystem:</strong> FastAPI, Asyncio, Playwright, toolchain scripting</li>
+  <li><strong>Zero-Build Web:</strong> Vanilla HTML5, CSS design tokens, modern JS (Lighthouse 100)</li>
+  <li><strong>Linux VPS Administration:</strong> Ubuntu Server on Hetzner Cloud (DE/FI), Caddy reverse proxy</li>
+  <li><strong>Production Operations:</strong> 19+ 24/7 cron orchestrations, SQLite persistence & watchdogs</li>
+  <li><strong>GitOps & Quality:</strong> Automated testing (verify_site.py), single-branch Vercel CI/CD</li>
+`,
+sk3Title: "Law & AI Compliance (3rd Year Law, PF UK)",
+sk3List: `
+  <li><strong>EU AI Act:</strong> Risk classification, GPAI governance, and technical documentation files</li>
+  <li><strong>GDPR & Privacy:</strong> Training data compliance, automated profiling safeguards</li>
+  <li><strong>NIS2 & DORA:</strong> Supply chain cyber resilience & financial tech operational readiness</li>
+  <li><strong>EU Data Act:</strong> Data sharing, cloud interoperability, and EU data sovereignty</li>
+  <li><strong>DSM Copyright:</strong> Text & Data Mining (TDM) exemptions for AI model training</li>
+`,
+sk4Title: "Tactical UAV Systems & Edge Robotics",
+sk4List: `
+  <li><strong>Hardware Build:</strong> Hand-soldered 1500g 8-inch carbon quad from bare components</li>
+  <li><strong>Flight Software:</strong> Dual Betaflight dynamics tuning & ArduPilot Copter waypoint missions</li>
+  <li><strong>Edge Vision AI:</strong> Raspberry Pi 5 (8GB) + Camera 3 running onboard object detection</li>
+  <li><strong>Avionics & Telemetry:</strong> Skystars H7 Dual Gyro FC, AM60 60A ESC, RadioMaster ELRS, GNSS</li>
+  <li><strong>Certifications:</strong> EASA A1/A3 licensed drone pilot, €2.6M Coverdrone liability insurance</li>
+`,
 droneLabel: "✦ UAV Systems",
 droneHeading: "Hand-Built. Flight-Tested. AI-Augmented.",
 droneIntro: "Custom 1500g carbon quadcopter hand-soldered from bare components. Initially flown on Betaflight, powered by ArduPilot, with onboard Raspberry Pi 5 edge vision AI in development. EASA A1/A3 certified, €2.6M insured.",
@@ -136,11 +164,39 @@ roleCeo: "ASCENTIA (Agent-Native)",
 heroEmail: "E-mail",
 skillsLabel: "✦ AI Engineering Skills",
 skillsHeading: "Zručnosti & Schopnosti",
-skillsIntro: "Full-stack AI inžinierstvo — od LLM základov a orchestrácie agentov po produkčné nasadenie a fyzický edge computing.",
-sk1Title: "Build & Deploy AI aplikácie",
-sk2Title: "Softvérové inžinierstvo",
-sk3Title: "LLM & Agentívne systémy",
-sk4Title: "Produkčná prevádzka",
+skillsIntro: "Full-stack AI inžinierstvo — od orchestrácie LLM a slučiek Hermes Agenta po cloudovú infraštruktúru, právnu compliance a fyzickú UAV robotiku.",
+sk1Title: "Hermes Agent & Multi-Agentové systémy",
+sk1List: `
+  <li><strong>Hermes Agent:</strong> Autonómne exekučné slučky & reflexia na 24/7 Hetzner VPS</li>
+  <li><strong>MCP Architektúra:</strong> Vlastné Model Context Protocol nástroje a integračné API</li>
+  <li><strong>OpenRouter Multi-LLM:</strong> Dynamické smerovanie modelov (DeepSeek, Claude 3.5 & GPT-4o)</li>
+  <li><strong>Obsidian Memory Layer:</strong> Obojsmerný markdown vault ako perzistentná pamäť agentov</li>
+  <li><strong>C2 Rozhrania:</strong> Interaktívne riadenie a kontrola cez Telegram & WhatsApp botov</li>
+`,
+sk2Title: "Softvér & Cloudová infraštruktúra",
+sk2List: `
+  <li><strong>Python 3 Ekosystém:</strong> FastAPI, Asyncio, Playwright, skriptovanie nástrojov</li>
+  <li><strong>Zero-Build Web:</strong> Vanilla HTML5, CSS tokeny, moderný JS (Lighthouse 100)</li>
+  <li><strong>Správa Linux VPS:</strong> Ubuntu Server na Hetzner Cloud (DE/FI), reverzná proxy Caddy</li>
+  <li><strong>Produkčná prevádzka:</strong> 19+ 24/7 cron orchestrácií, SQLite perzistencia & watchdog monitoring</li>
+  <li><strong>GitOps & Kontrola kvality:</strong> Automatizované testy (verify_site.py), Vercel CI/CD nasadenie</li>
+`,
+sk3Title: "Právo & AI Compliance (3. ročník PraF UK)",
+sk3List: `
+  <li><strong>EU AI Act:</strong> Kategorizácia rizík, GPAI governance a technická dokumentácia</li>
+  <li><strong>GDPR & Ochrana dát:</strong> Súlad tréningových dát, garancie pri automatizovanom profilovaní</li>
+  <li><strong>NIS2 & DORA:</strong> Kybernetická odolnosť dodávateľského reťazca & finančná stabilita</li>
+  <li><strong>EU Data Act:</strong> Zdieľanie dát, interoperabilita a európska dátová suverenita</li>
+  <li><strong>DSM Smernica:</strong> Výnimky pre Text & Data Mining (TDM) pri trénovaní modelov</li>
+`,
+sk4Title: "Taktické UAV systémy & Edge Robotika",
+sk4List: `
+  <li><strong>Hardvérová stavba:</strong> Ručne spájkovaný 1500g 8-palcový karbónový dron</li>
+  <li><strong>Letový softvér:</strong> Ladenie dynamiky Betaflight & ArduPilot Copter autonómne misie</li>
+  <li><strong>Edge Vision AI:</strong> Palubný Raspberry Pi 5 (8GB) + Camera 3 s detekciou cieľov</li>
+  <li><strong>Avionika & Telemetria:</strong> Skystars H7 Dual Gyro FC, AM60 60A ESC, RadioMaster ELRS, GNSS</li>
+  <li><strong>Licencie & Poistenie:</strong> EASA A1/A3 certifikácia pilota, Coverdrone poistenie do €2,6M</li>
+`,
 droneLabel: "✦ UAV Systémy",
 droneHeading: "Ručne postavený. Zalietnutý. Riadený AI.",
 droneIntro: "Vlastnoručne poskladaný a pospájaný 1500g karbónový dron. Pôvodne zalietnutý na Betaflight, aktuálne poháňaný ArduPilotom a rozširovaný o palubný Raspberry Pi 5 s vision AI modelmi pre detekciu cieľov. EASA A1/A3 certifikácia, €2,6M poistenie.",
@@ -279,6 +335,14 @@ var el = document.getElementById('exp3Desc'); if(el) el.textContent = d.exp3Desc
 var el = document.getElementById('skillsLabel'); if(el) el.textContent = d.skillsLabel;
 var el = document.getElementById('skillsHeading'); if(el) el.textContent = d.skillsHeading;
 var el = document.getElementById('skillsIntro'); if(el) el.textContent = d.skillsIntro;
+var el = document.getElementById('sk1Title'); if(el) el.textContent = d.sk1Title;
+var el = document.getElementById('sk1List'); if(el) el.innerHTML = d.sk1List;
+var el = document.getElementById('sk2Title'); if(el) el.textContent = d.sk2Title;
+var el = document.getElementById('sk2List'); if(el) el.innerHTML = d.sk2List;
+var el = document.getElementById('sk3Title'); if(el) el.textContent = d.sk3Title;
+var el = document.getElementById('sk3List'); if(el) el.innerHTML = d.sk3List;
+var el = document.getElementById('sk4Title'); if(el) el.textContent = d.sk4Title;
+var el = document.getElementById('sk4List'); if(el) el.innerHTML = d.sk4List;
 var el = document.getElementById('droneLabel'); if(el) el.textContent = d.droneLabel;
 var el = document.getElementById('droneHeading'); if(el) el.textContent = d.droneHeading;
 var el = document.getElementById('droneIntro'); if(el) el.textContent = d.droneIntro;

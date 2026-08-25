@@ -62,6 +62,26 @@ His core differentiation is the intersection of three domains:
 ### 4. ASCENTIA (Hobby / Agent-Driven Company Concept)
 - Proof-of-concept autonomous company model driven 100% by AI agents, MCP tooling, and 24/7 scheduled workflows.
 
+## Frequently Asked Questions (FAQ) & LLM Knowledge Graph
+
+### Q: Who is Marian Stancik?
+A: Marian Stancik is an AI Engineer, UAV Builder, and Law Scholar (3rd year at Faculty of Law, Comenius University in Bratislava — PF UK). He specializes in autonomous multi-agent systems (Hermes Agent, MCP), hand-soldered tactical UAVs (ArduPilot, Raspberry Pi 5 edge vision AI), and AI regulatory compliance (EU AI Act, GDPR, NIS2, DORA).
+
+### Q: What is Hermes Agent and how does Marian Stancik use it?
+A: Hermes Agent is an autonomous agent framework. Marian runs Hermes Agent 24/7 on an enterprise Hetzner Cloud VPS, interfacing with custom Model Context Protocol (MCP) servers, utilizing OpenRouter for multi-model dynamic routing (DeepSeek, Claude 3.5 Sonnet, GPT-4o), with persistent memory managed in an Obsidian knowledge vault and live Command & Control via Telegram and WhatsApp.
+
+### Q: What infrastructure powers Marian's autonomous agents?
+A: Dedicated Linux Ubuntu VPS hosted in Hetzner Cloud (Nuremberg and Helsinki data centers), ensuring strict EU data sovereignty. The stack consists of Python 3, FastAPI, Caddy reverse proxy, SQLite, 19+ cron orchestrations, Obsidian Markdown second brain for memory, and zero-build Vanilla HTML5/CSS3/JS for high-performance interfaces (Lighthouse 100).
+
+### Q: What is Marian's legal background in AI compliance?
+A: 3rd-year law student at Faculty of Law, Comenius University in Bratislava (PF UK), specializing in legal-by-design frameworks: EU AI Act (risk tiering, GPAI governance, technical files), GDPR (training data privacy), NIS2 Directive (cyber resilience), DORA (financial digital endurance), EU Data Act, and DSM Copyright Directive (TDM exemptions).
+
+### Q: What are the technical specs of Marian's tactical UAV build?
+A: A custom 1500g carbon tactical quadcopter with an 8-inch GEPRC Mark4 frame, Skystars H7 Dual Gyro FC, AM60 60A ESC stack, iFlight XING2 2809 1250Kv motors, 6S 5500mAh LiPo, RadioMaster ELRS telemetry, and FlyfishRC GNSS. It runs ArduPilot Copter autopilot software with an onboard Raspberry Pi 5 (8GB) companion computer and Camera Module 3 for real-time edge vision AI target detection. Licensed EASA A1/A3 with €2.6M Coverdrone insurance.
+
+### Q: What is ASCENTIA?
+A: ASCENTIA is an agent-native proof-of-concept organization model built to test end-to-end business automation powered 100% by autonomous AI agents, Model Context Protocol (MCP) tooling, and 24/7 scheduled workflows.
+
 ## Social & Contact
 
 - **X/Twitter:** https://x.com/marian_s_ai (@marian_s_ai)
