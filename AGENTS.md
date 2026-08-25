@@ -4,172 +4,247 @@
 **Domain:** https://marianstancik.dev (Production on Vercel)  
 **Repo:** https://github.com/Abra7abra7/marian_stancik_dev_web  
 **VPS:** 188.245.224.189 (Hetzner Cloud — Caddy + Python WSGI + Hermes Agent)  
+**Default Branch:** `main` (Single-branch trunk-based GitOps)
 
 ---
 
-## 1. Executive Overview
+## 1. Executive Overview & Mission
 
-Personal brand and technical showcase website for Marian Stancik — AI Engineer, CEO @ ASCENTIA, Drone pilot (EASA A1/A3, €2.6M insured).
+This repository represents the official personal brand website, technical knowledge graph, and autonomous agent hub for **Marian Stancik** — AI Engineer, UAV Builder, Law Scholar (3rd year at Faculty of Law, Comenius University in Bratislava — PF UK), and CEO @ ASCENTIA.
 
-Two core pillars:
-1. **AI & Autonomous Agents:** Hermes Agent, MCP servers, cron-orchestrated 24/7 agents on Hetzner VPS
-2. **UAV Systems:** Custom 1500g carbon quads, Pixhawk 6C + ArduPilot + Raspberry Pi 5 edge AI
+The platform is engineered at the convergence of three foundational pillars:
+1. **AI Engineering & Autonomous Multi-Agent Systems:** 24/7 Hermes Agent orchestration, custom Model Context Protocol (MCP) servers, OpenRouter multi-LLM dynamic routing, and an Obsidian persistent memory layer running on dedicated European Hetzner Cloud infrastructure.
+2. **Law, EU AI Act & Regulatory Governance (Legal-by-Design):** Practical compliance architectures covering the EU AI Act (risk tiering, GPAI, technical files), GDPR, NIS2 Directive, DORA, EU Data Act, and DSM Copyright Directive (TDM exemptions).
+3. **Tactical UAV Systems & Edge Robotics:** Hand-soldered 1500g carbon quadcopter, ArduPilot Copter autopilot, Raspberry Pi 5 onboard companion computer with real-time edge vision AI, certified EASA A1/A3 with €2.6M Coverdrone insurance.
 
 ---
 
 ## 2. ANONYMIZATION RULE (CRITICAL — ZERO TOLERANCE)
 
-**Delta Defence is NEVER mentioned by name anywhere on the web.**  
-Strict security requirement. Only "Defence Product Manager" and "Defence Industry" are used.
+> [!CAUTION]
+> **Delta Defence is NEVER mentioned by name anywhere on the web, code, blog, schema, or LLM graphs.**  
+> Strict security and confidentiality requirement. Only `"Defence Product Manager"` and `"Defence Industry"` are permitted.
 
-- ✅ Hero: "Defence Product Manager"
-- ✅ About: "Defence Product Manager"  
+- ✅ Hero: `"Defence Product Manager"` / `"AI Engineer"`
+- ✅ About: `"Defence Product Manager"`
 - ✅ JSON-LD: `"name": "Defence Industry (confidential)"`
-- ✅ SK: "Defence Product Manager"
-- ✅ `llms.txt`, `llms-full.txt`, blog, AUDIT.md, all pages: **ZERO** company name references
+- ✅ Slovak: `"Defence Product Manager"`
+- ✅ `llms.txt`, `llms-full.txt`, blog articles, AUDIT.md, and all HTML files: **ZERO occurrences** of the company name.
+- 🛡️ Verified automatically via **L1 Security Sweep** in `scripts/verify_site.py`.
 
 ---
 
-## 3. Site Architecture — 6 Podstránok + Blog
+## 3. Site Architecture & Page Topology
 
-| Page | URL | Content & Purpose |
-|:-----|:----|:------------------|
-| **Home** | `/` | Hero + stats (19+ cron, 3 domains, 3+ yrs, €2.6M, 6 repos, 24/7) + blog preview + lead + connect |
-| **About** | `/about` | Full bio — AI Eng, Defence PM, PF UK law, UAV builder — "Since 2023" |
-| **Expertise** | `/expertise` | Three pillars with bronze SVG icons (`#bronzeGrad` defs in all pages) |
-| **Skills** | `/skills` | Full-stack AI Engineering Skills Map — 4 categories × 5 items |
-| **Drones** | `/drones` | FPV video + complete build specs (6 categories) + shopping list |
-| **Contact** | `/contact` | Connect section with social links + AgentMail direct inbox |
-| **Blog** | `/blog` | Static blog listing + standalone articles in `/blog/posts/` |
+The website uses a clean zero-build multi-page structure with root-relative routing (`cleanUrls: true` in Vercel):
 
-Vercel `cleanUrls: true` enables `/about` → `about.html` resolution.
+| Page | URL | Purpose & Core Content |
+|:-----|:----|:-----------------------|
+| **Home** | `/` (`index.html`) | High-impact hero + live stats (19+ cron, 3 domains, 3+ yrs, €2.6M, 6 repos, 24/7) + 4-pillar skills + dynamic blog preview + FAQ accordion + lead capture + connect |
+| **About** | `/about` (`about.html`) | Full technical bio + 4-layer engineering stack Bento Grid (VPS, OpenRouter, Obsidian, Zero-build Web) + 2023–2026 milestone timeline + stats |
+| **Expertise** | `/expertise` (`expertise.html`) | Deep-dive technical cards for all 3 pillars (AI Agents, Law & Compliance, UAV Edge AI) with 3-column hardware/software/legal spec matrices |
+| **Skills** | `/skills` (`skills.html`) | Full-stack AI Engineering Skills Map (4 categories × 5 items) + interactive FAQ Accordion for GEO/LLMO indexing |
+| **Drones** | `/drones` (`drones.html`) | Cinematic 16:9 drone compilation video + 5 hardware build spec cards (Frame, Electronics, Edge AI, FPV, Ground Control) |
+| **Contact** | `/contact` (`contact.html`) | Connect channels (X, Threads, YouTube, GitHub, LinkedIn, Facebook) + direct `marian_stancik@agentmail.to` lead capture |
+| **Blog Listing** | `/blog` (`blog/index.html`) | Static blog archive + dynamic JSON client fetching (`blog/posts.json`) + language switcher |
+| **Blog Posts** | `/blog/posts/*` | Standalone technical articles with deep code snippets, legal frameworks, and drone logs |
 
 ---
 
 ## 4. Design System & Tokens (`html-generator` Standards)
 
-All pages adhere to the **`html-generator`** skill & design system token conventions defined in [`css/main.css`](file:///css/main.css):
+All visual interfaces adhere strictly to the design system tokens defined in [`css/main.css`](file:///css/main.css):
 
 ### Color Tokens (Bronze Neural Theme)
-- `--color-bg: #08080F;` (Deep dark canvas)
-- `--color-bg-secondary: #0D0D18;` (Elevated surface)
-- `--color-bg-card: rgba(18, 18, 30, 0.65);` (Glassmorphic card)
-- `--color-primary: #CD7F32;` (Metallic Bronze)
-- `--color-accent: #E8B86D;` (Gold / Amber Accent)
-- `--color-glow: rgba(205, 127, 50, 0.2);` (Ambient glow)
-- `--color-border: rgba(255, 255, 255, 0.06);`
-- `--color-border-hover: rgba(205, 127, 50, 0.35);`
+```css
+:root {
+  --color-bg: #08080F;              /* Deep dark canvas */
+  --color-bg-secondary: #0D0D18;    /* Elevated surface */
+  --color-bg-card: rgba(18, 18, 30, 0.65); /* Glassmorphic card */
+  --color-bg-card-hover: rgba(26, 26, 42, 0.85);
+  --color-primary: #CD7F32;         /* Metallic Bronze */
+  --color-accent: #E8B86D;          /* Warm Gold / Amber Accent */
+  --color-glow: rgba(205, 127, 50, 0.2); /* Ambient glow */
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-hover: rgba(205, 127, 50, 0.35);
+  --color-text: #F0F0F5;            /* High contrast text */
+  --color-text-muted: #8888A0;      /* Secondary reading text */
+}
+```
 
 ### Spacing & Layout Tokens
-- `--space-xs: 4px;` | `--space-sm: 8px;` | `--space-md: 16px;` | `--space-lg: 24px;` | `--space-xl: 48px;` | `--space-2xl: 90px;`
-- `--radius-sm: 6px;` | `--radius-md: 12px;` | `--radius-lg: 18px;` | `--radius-full: 9999px;`
-- `--min-tap-target: 44px;` (Touch accessibility)
+- Spacing: `--space-xs: 4px;` | `--space-sm: 8px;` | `--space-md: 16px;` | `--space-lg: 24px;` | `--space-xl: 48px;` | `--space-2xl: 90px;`
+- Radius: `--radius-sm: 6px;` | `--radius-md: 12px;` | `--radius-lg: 18px;` | `--radius-full: 9999px;`
+- Accessibility: `--min-tap-target: 44px;` for all mobile buttons and interactive anchors.
 
-### Rules for HTML & CSS
-1. **No external CSS frameworks:** No Tailwind, Bootstrap, or Foundation. Pure Vanilla CSS only.
-2. **Root-relative paths:** Always use `/about`, `/expertise`, `/skills`, `/drones`, `/contact`, `/blog` (never relative `blog/index.html` on subpages).
-3. **Accessibility (WCAG AA):**
-   - Every page MUST contain `<a href="#main-content" class="skip-link">Skip to main content</a>`.
-   - Single `<h1>` per page, hierarchical `<h2>` and `<h3>`.
-   - Descriptive `aria-label` on all icon links and buttons.
-4. **Active Nav State:** The current page's navigation link must have class `active` (e.g. `<a href="/about" class="nav-link active">`).
+### Brand Mark & Typography Standard
+- **Brand Signet:** Minimalist bronze glyph `<div class="brand-mark">✦</div>` paired with clean logotype `<span class="nav-logo-text">marian<span class="highlight">stancik</span><span class="tld">.dev</span></span>`.
+- **No external CSS frameworks:** Zero Tailwind, zero Bootstrap. 100% Vanilla CSS for sub-millisecond parsing.
+- **Root-relative paths:** All internal anchors must use `/about`, `/expertise`, `/skills`, `/drones`, `/contact`, `/blog`.
+- **WCAG AA Accessibility:** Mandatory `<a href="#main-content" class="skip-link">`, semantic `<main>`, `<nav>`, `<footer>`, hierarchical `<h1>`–`<h3>`, and explicit `aria-label` tags on icon links.
 
 ---
 
-## 5. SEO & AI Agent Discovery (GEO / LLMO)
+## 5. Generative Engine Optimization (GEO) & LLMO Blueprint
 
-| Asset | URL / Target | Function & Status |
-|:------|:-------------|:-------------------|
-| **llms.txt** | `/llms.txt` | ✅ Machine-readable knowledge graph for Perplexity, ChatGPT, Claude |
-| **llms-full.txt** | `/llms-full.txt` | ✅ Full deep-context graph of agent architectures & UAV specs |
-| **Autodiscovery Tag** | `<link rel="alternate" type="text/plain" href="/llms.txt">` | ✅ Included in `<head>` of all HTML pages |
-| **robots.txt** | `/robots.txt` | ✅ Explicitly allows `GPTBot`, `ClaudeBot`, `PerplexityBot`, `anthropic-ai`, `CCBot`, `Google-Extended`, `Applebot-Extended` |
-| **Sitemap** | `/sitemap.xml` | ✅ Synchronized URLs (11 endpoints) |
-| **RSS Feed** | `/rss.xml` | ✅ Valid XML RSS feed |
-| **JSON-LD Schema** | All pages | ✅ Schema.org `Person`, `WebSite`, `AboutPage`, `CollectionPage`, `ContactPage` |
-| **Google GSC** | meta tag | ✅ `G-HJ4MZ66NEY` |
+To guarantee instant, authoritative discovery and citations across AI engines (**Perplexity, ChatGPT Search, Claude, Google SGE, Grok**), the website implements a 6-layer GEO architecture:
+
+### 1. `llms.txt` & `llms-full.txt` Knowledge Graphs
+* **Standard:** Root files following the official `llms.txt` specification.
+* **Content:** Concise markdown summary (`/llms.txt`) and comprehensive deep-context graph (`/llms-full.txt`) containing:
+  * Exact biographical facts, skills, hardware specs, and legal frameworks.
+  * Direct Q&A FAQ section answering anticipated agent search queries.
+  * All canonical endpoint URLs and machine-readable feeds (`/blog/posts.json`, `/rss.xml`, `/sitemap.xml`).
+* **Autodiscovery Tag:** Included in `<head>` of all HTML pages:
+  ```html
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Knowledge Graph">
+  ```
+
+### 2. Comprehensive AI Crawler Access in `robots.txt`
+Explicitly white-lists all production and experimental AI search spiders:
+```text
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: Bravebot
+Allow: /
+User-agent: Meta-ExternalAgent
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: Cohere-ai
+Allow: /
+User-agent: Diffbot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://www.marianstancik.dev/sitemap.xml
+```
+
+### 3. Schema.org JSON-LD Hierarchy
+* **`Person` Schema:** Contains full `sameAs` array (X, Threads, YouTube, GitHub, LinkedIn), `knowsAbout`, `jobTitle`, and `alumniOf`.
+* **`FAQPage` Schema:** Structured Question/Answer pairs embedded directly on `index.html`, `about.html`, and `skills.html`.
+* **`WebSite`, `AboutPage`, `CollectionPage` Schemas:** Canonical page definitions.
+
+### 4. Interactive Semantic FAQ Accordion
+* Native HTML `<details class="faq-item">` and `<summary class="faq-question">` elements.
+* High information density, fully accessible without JavaScript, zero layout shifts, immediately parseable by DOM parsers.
 
 ---
 
-## 6. Tech Stack & Architecture
+## 6. Technical Stack & Multi-Agent Infrastructure
 
-| Layer | Technology | Details |
-|:------|:-----------|:--------|
-| **Frontend** | HTML5 / CSS3 / Vanilla JS | Zero-build, instant load, Lighthouse 100 target |
-| **CSS** | `/css/main.css` | Centralized styles, `:root` design tokens, cached across pages |
-| **JS (i18n)** | `/js/i18n.js` | Reactive EN/SK switcher, localStorage persistence, null-safe DOM binding |
-| **JS (Three.js)** | `/js/three-bg.js` | Bronze neural constellation (deferred ES module) |
-| **3D Background** | Three.js v0.160.0 | Importmap CDN: `https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js` |
-| **Lead Capture** | Python WSGI | VPS `:8701` → SQLite `leads.db` + fallback `mailto:` |
-| **Hosting** | Vercel | Auto-deploy on push to `main` branch (`cleanUrls: true`) |
-| **Media CDN** | Cloudflare R2 | `marian-stancik-media` bucket |
+```mermaid
+flowchart TD
+    User([User / Client / Web Visitor]) -->|HTTPS / Clean URLs| VercelEdge[Vercel Edge Network - Frontend HTML5/CSS/JS]
+    AICrawler([AI Search Bots: Perplexity, GPTBot, Claude]) -->|Read Context| LLMsTxt[llms.txt & llms-full.txt]
+    
+    subgraph Hetzner Cloud VPS [Enterprise VPS - Nuremberg & Helsinki]
+        HermesAgent[Hermes Agent Autonomous Loops]
+        CronEngine[19+ Background Cron Orchestrations]
+        MCP[Custom Model Context Protocol Servers]
+        CaddyProxy[Caddy Reverse Proxy + SSL]
+        WSGI[Python WSGI / FastAPI Lead Capture]
+        SQLite[(SQLite DB - Leads & State)]
+        
+        HermesAgent <--> MCP
+        CronEngine --> HermesAgent
+        CaddyProxy --> WSGI --> SQLite
+    end
+    
+    subgraph AI Intelligence Layer
+        OpenRouter[OpenRouter API Multi-LLM Dynamic Routing]
+        Models[DeepSeek R1/V3 · Claude 3.5 Sonnet · GPT-4o · Llama 3.3]
+        OpenRouter <--> Models
+    end
+    
+    subgraph Memory & C2 Channels
+        Obsidian[Obsidian Vault - Persistent Second Brain]
+        TelegramBot[Telegram C2 Interactive Bridge]
+        WhatsAppBot[WhatsApp C2 Alerts & Trigger Channel]
+    end
+    
+    subgraph Tactical UAV Edge
+        DroneHW[1500g Carbon Quadcopter + Skystars H7 + AM60]
+        ArduPilot[ArduPilot Copter 4.5+ Autopilot]
+        RPi5[Raspberry Pi 5 Edge Companion Computer]
+        Camera[Camera Module 3 - Real-Time Vision AI]
+        
+        ArduPilot <--> RPi5 <--> Camera
+    end
+    
+    HermesAgent <--> OpenRouter
+    HermesAgent <--> Obsidian
+    HermesAgent <--> TelegramBot
+    HermesAgent <--> WhatsAppBot
+    VercelEdge -.->|API Lead Submissions| WSGI
+```
 
 ---
 
-## 7. i18n — Language Switching Protocol (EN/SK)
+## 7. i18n — Zero-Framework Language Switching Protocol (EN/SK)
 
 - **Storage:** Inline dictionary in `js/i18n.js` (`const translations = {en: {...}, sk: {...}}`).
-- **Null-Safety Requirement:** All DOM updates MUST be null-safe:
+- **Null-Safe DOM Binding Pattern:** All updates must check element existence before modifying text or HTML:
   ```javascript
-  var _e = document.getElementById('X'); if(_e) _e.textContent = d.Y;
+  var el = document.getElementById('elementId');
+  if (el) el.textContent = d.translatedKey; // Use textContent for clean strings
+  if (el) el.innerHTML = d.htmlContent;    // Use innerHTML only for structured HTML
   ```
-- **Switching mechanism:** `switchLanguage(lang)` saves to `localStorage('ms_lang')` and triggers `applyTranslations()`.
-- **New elements:** When adding new text to any HTML page, define an ID and register keys in both `en` and `sk` in `js/i18n.js`.
+- **Language State:** Persisted across sessions in `localStorage.getItem('ms_lang')`.
+- **Dual Translation Registration:** Every new UI text element must be registered in both `en` and `sk` tables in `js/i18n.js`.
 
 ---
 
-## 8. Test Matrix & Automated Verification
+## 8. Automated Verification Matrix (`verify_site.py`)
 
-### Test Layers
-
-| Layer | Tool | Scope | Speed |
-|:------|:-----|:------|:------|
-| **L0 — Syntax** | `node --check` | JS syntax in `js/i18n.js` and `js/three-bg.js` | <1s |
-| **L1 — Security** | `re.findall` | Anonymization sweep (Delta Defence 0 occurrences) | <1s |
-| **L2 — HTML Integrity** | Python script | No malformed `OG_` tags, valid JSON-LD URLs, root-relative links | <1s |
-| **L3 — Design Tokens** | Python script | `:root` custom properties validated in `css/main.css` | <1s |
-| **L4 — AI Discovery** | Python script | `llms.txt` tags in `<head>`, AI bot rules in `robots.txt` | <1s |
-| **L5 — Browser & DOM** | Playwright (`test_visual.py`) | Mobile 375px viewport, Three.js `<canvas>`, visual screenshots | ~30s |
-
-### Single Command Local Verification
-Run the cross-platform test script before every commit:
+Always run the multi-tier automated test script before pushing commits:
 ```bash
 python scripts/verify_site.py
 ```
 
----
-
-## 9. Rules for Future Work (MANDATORY)
-
-1. **🔒 Strict Anonymization:** Never mention confidential defense companies by name anywhere.
-2. **⚡ Zero Build / Vanilla Only:** Do not introduce bundlers (Webpack, Vite, Tailwind CLI) into production runtime unless explicitly requested.
-3. **🎨 Design Token Usage:** All colors and spacing must use `var(--color-...)` and `var(--space-...)` from `css/main.css`.
-4. **🔗 Root-Relative Links:** Internal links must start with `/` (e.g. `/about`, `/blog`, `/contact`), never relative `blog/index.html` on subpages.
-5. **♿ Accessibility First:** Keep `.skip-link`, semantic landmarks (`<main>`, `<nav>`, `<footer>`), and valid `aria-label` tags.
-6. **🤖 Keep AI Metadata Synced:** When adding pages or updating capabilities, update `llms.txt`, `llms-full.txt`, `sitemap.xml`, and JSON-LD schemas.
-7. **🌍 Dual i18n Keys:** Every new text element must have translations for both English and Slovak.
+### Test Tiers
+1. **L0 — Syntax & Modules:** `node --check js/i18n.js` and `node --check js/three-bg.js`.
+2. **L1 — Security & Anonymization:** Regex sweep ensuring zero confidential company names.
+3. **L2 — HTML & Link Integrity:** Validates root-relative navigation links, valid OpenGraph tags, and JSON-LD schema syntax across all pages.
+4. **L3 — Design Token Adherence:** Checks `:root` token presence in `css/main.css`.
+5. **L4 — AI Discovery & GEO:** Validates `<link rel="alternate" href="/llms.txt">` in all `<head>` tags and AI crawler permissions in `robots.txt`.
+6. **L5 — Mobile & Canvas Rendering:** Playwright mobile viewport (375px) visual and Three.js canvas initialization.
 
 ---
 
-## 10. Standard Development Workflow
+## 9. Replication Blueprint for Future Websites
 
-```bash
-# Step 1: Pull latest changes
-git pull --rebase origin main
+To replicate this exact architecture on a new project or client site:
 
-# Step 2: Make edits to HTML / CSS / JS / Markdown
-
-# Step 3: Run local verification script
-python scripts/verify_site.py
-
-# Step 4: Verify JS syntax
-node --check js/i18n.js
-node --check js/three-bg.js
-
-# Step 5: Deploy (only when all checks pass)
-git add -A
-git commit -m "feat: [describe change]"
-git push origin main
-
-# Step 6: Verify production deployment on https://marianstancik.dev
-```
+1. **Step 1: Copy CSS Token Architecture**
+   - Import `css/main.css` tokens (`--color-bg`, `--color-primary`, `--space-*`, `--radius-*`).
+2. **Step 2: Establish Zero-Build Multi-Page Layout**
+   - Create HTML pages using standard skip-links, semantic header/main/footer, and mobile responsive containers.
+3. **Step 3: Setup Dual-Language i18n (`js/i18n.js`)**
+   - Add language switcher buttons (`#btnEn`, `#btnSk`) and map all UI strings into null-safe DOM bindings.
+4. **Step 4: Configure GEO & AI Discovery Protocol**
+   - Create `llms.txt` and `llms-full.txt` with clear identity, stack, and Q&A FAQ sections.
+   - Embed `FAQPage` and `Person`/`Organization` JSON-LD schemas in all HTML headers.
+   - Configure `robots.txt` allowing all 14+ AI crawlers.
+5. **Step 5: Setup Single-Branch Trunk GitOps**
+   - Use `main` as the default branch, connect to Vercel with `cleanUrls: true`, and test with `python scripts/verify_site.py`.
