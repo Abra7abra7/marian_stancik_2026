@@ -10,7 +10,7 @@
 
 ## 1. Executive Overview & Mission
 
-This repository represents the official personal brand website, technical knowledge graph, and autonomous agent hub for **Marian Stancik** — AI Engineer, UAV Builder, Law Scholar (3rd year at Faculty of Law, Comenius University in Bratislava — PF UK), and CEO @ ASCENTIA.
+This repository represents the official personal brand website, technical knowledge graph, and autonomous agent hub for **Marian Stancik** — AI Engineer, UAV Builder, Law Student, and CEO @ ASCENTIA. Deploys Hermes Agent (Nous Research) on VPS.
 
 The platform is engineered at the convergence of three foundational pillars:
 1. **AI Engineering & Autonomous Multi-Agent Systems:** 24/7 Hermes Agent orchestration, custom Model Context Protocol (MCP) servers, OpenRouter multi-LLM dynamic routing, and an Obsidian persistent memory layer running on dedicated European Hetzner Cloud infrastructure.
