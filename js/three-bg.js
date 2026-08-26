@@ -3,7 +3,7 @@
  * Non-blocking, mobile-optimized, adaptive WebGL neural network visualizer
  */
 
-function initThreeBackground() {
+async function initThreeBackground() {
   const canvas = document.getElementById('three-canvas');
   if (!canvas) return;
 
@@ -11,7 +11,10 @@ function initThreeBackground() {
   const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
   if (!gl) return;
 
-  import('three').then((THREE) => {
+  try {
+    // Dynamic import — no importmap in HTML, avoid early pre-fetch of 250KB
+    const THREE = await import('https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js');
+
     const isMobile = window.innerWidth < 768;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -181,10 +184,10 @@ function initThreeBackground() {
     } else {
       animate();
     }
-  }).catch((err) => {
+  } catch (err) {
     // Graceful fallback if WebGL or Three.js fails to load
     console.warn('Three.js background initialization skipped:', err);
-  });
+  }
 }
 
 // User-interaction or deferred idle initialization (0ms TBT during critical load)

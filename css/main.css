@@ -1340,10 +1340,14 @@ transition: transform 0.25s ease;
 transform: scale(1.03);
 }
 @media (max-width: 700px) {
-.drone-photo-grid { grid-template-columns: repeat(2, 1fr); }
+.drone-photo-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
 .drone-photo-card img { height: 120px; }
+.drone-photo-card { padding: 8px; }
 }
-@media (max-width: 400px) {
-.drone-photo-grid { grid-template-columns: 1fr; }
-.drone-photo-card img { height: 160px; }
+/* Mobile: keep 2 columns with compact thumbnails — no full-width single column */
+@media (max-width: 480px) {
+.drone-photo-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+.drone-photo-card img { height: 90px; }
+.drone-photo-card { padding: 6px; }
+.drone-photo-card h4 { font-size: 0.75rem; }
 }
