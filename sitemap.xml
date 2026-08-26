@@ -25,6 +25,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://marianstancik.dev/blog/posts/sk/2026-08-26-agent-driven-company</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://marianstancik.dev/blog/posts/2026-08-25-web-performance-optimization</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>

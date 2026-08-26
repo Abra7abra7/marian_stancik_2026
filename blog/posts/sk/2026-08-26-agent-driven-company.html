@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Od sólo foundera k agent-riadeniu spoločnosti: ASCENTIA s 19 autonómnymi cron jobmi — Marian Stancik</title>
+<meta name="description" content="Ako som postavil 19 autonómnych AI cron jobov na VPS za €3,79/mesiac na riadenie ASCENTIE — obsah, CRM, právny monitoring a systémový health — všetko agent-driven.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://www.marianstancik.dev/blog/posts/sk/2026-08-26-agent-driven-company">
+<link rel="alternate" hreflang="en" href="https://www.marianstancik.dev/blog/posts/2026-08-26-agent-driven-company">
+<link rel="alternate" hreflang="sk" href="https://www.marianstancik.dev/blog/posts/sk/2026-08-26-agent-driven-company">
+<link rel="alternate" hreflang="x-default" href="https://www.marianstancik.dev/blog/posts/2026-08-26-agent-driven-company">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Knowledge Graph">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#08080F">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Od sólo foundera k agent-riadeniu spoločnosti — Marian Stancik">
+<meta property="og:description" content="Riadenie spoločnosti s 19 autonómnymi AI cron jobmi na VPS za €3,79/mesiac — obsah, CRM, právny monitoring a zdravie systému.">
+<meta property="og:url" content="https://www.marianstancik.dev/blog/posts/sk/2026-08-26-agent-driven-company">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://www.marianstancik.dev/profile.webp">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Agent-riadená spoločnosť — Marian Stancik">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Marian Stancik">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@marian_s_ai">
+<meta name="twitter:creator" content="@marian_s_ai">
+<meta name="twitter:image" content="https://www.marianstancik.dev/profile.webp">
+
+<!-- JSON-LD Structured Data with BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Od sólo foundera k agent-riadeniu spoločnosti: Prevádzka ASCENTIE s 19 autonómnymi cron jobmi",
+      "description": "Ako som postavil 19 autonómnych AI cron jobov na VPS za €3,79/mesiac na riadenie ASCENTIE — obsah, CRM, právny monitoring a systém — agent-driven s 99,7% uptime.",
+      "datePublished": "2026-08-26",
+      "dateModified": "2026-08-26",
+      "author": {
+        "@type": "Person",
+        "name": "Marian Stancik",
+        "url": "https://www.marianstancik.dev"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Marian Stancik"
+      },
+      "mainEntityOfPage": "https://www.marianstancik.dev/blog/posts/sk/2026-08-26-agent-driven-company",
+      "keywords": ["AI Agenti", "Hermes Agent", "Autonómne systémy", "Cron Joby", "Sólo Founder", "VPS infraštruktúra"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Domov",
+          "item": "https://www.marianstancik.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.marianstancik.dev/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Od sólo foundera k agent-riadeniu spoločnosti",
+          "item": "https://www.marianstancik.dev/blog/posts/sk/2026-08-26-agent-driven-company"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:#08080F;color:#E8E8F0;line-height:1.8;-webkit-font-smoothing:antialiased}
+.container{max-width:740px;margin:0 auto;padding:0 24px}
+nav{padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(8,8,15,0.85);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:740px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.nav-inner a{color:#8888A0;text-decoration:none;font-size:0.85rem;transition:color 0.3s}
+.nav-inner a:hover{color:#CD7F32}
+.post-header{padding:60px 0 24px}
+.badge{display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#CD7F32;background:rgba(205,127,50,0.1);border:1px solid rgba(205,127,50,0.25);padding:4px 12px;border-radius:100px;margin-bottom:16px}
+.post-header h1{font-size:clamp(1.7rem,3.8vw,2.4rem);font-weight:700;color:#F0F0F5;line-height:1.3;margin-bottom:14px;letter-spacing:-0.02em}
+.post-meta{font-size:0.8rem;color:#666680;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post-content{padding-bottom:60px;font-size:1.02rem;color:#C8C8D4}
+.post-content h2{font-size:1.35rem;font-weight:600;color:#F0F0F5;margin:40px 0 14px}
+.post-content h3{font-size:1.1rem;font-weight:600;color:#E8B86D;margin:26px 0 10px}
+.post-content p{margin-bottom:18px}
+.post-content ul, .post-content ol{margin:0 0 20px 24px}
+.post-content li{margin-bottom:8px}
+.post-content strong{color:#F0F0F5}
+.post-content code{background:rgba(255,255,255,0.05);padding:2px 6px;border-radius:4px;font-size:0.88rem}
+.post-content pre{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:20px;overflow-x:auto;margin:20px 0}
+.post-content pre code{font-family:monospace;font-size:0.82rem;color:#E8B86D}
+.callout{background:rgba(205,127,50,0.06);border-left:3px solid #CD7F32;border-radius:0 8px 8px 0;padding:16px 20px;margin:24px 0;color:#E8E8F0}
+footer{text-align:center;padding:36px 24px;color:#9090A8;font-size:0.75rem;border-top:1px solid rgba(255,255,255,0.04)}
+footer a{color:#8888A0;text-decoration:none}
+footer a:hover{color:#CD7F32}
+</style>
+</head>
+
+<body>
+<nav aria-label="Navigácia blogu">
+  <div class="nav-inner">
+    <a href="/" aria-label="Domov Marian Stancik"><span style="font-size:1.1rem">←</span> Domov</a>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <a href="/blog">Blog</a>
+      <div style="display:flex;gap:4px;background:rgba(255,255,255,0.06);padding:2px 4px;border-radius:100px;font-size:0.72rem;font-weight:600;">
+        <a href="/blog/posts/sk/2026-08-26-agent-driven-company" style="padding:2px 8px;border-radius:100px;color:#CD7F32;background:rgba(205,127,50,0.15);text-decoration:none;">SK</a>
+        <a href="/blog/posts/2026-08-26-agent-driven-company" style="padding:2px 8px;border-radius:100px;color:#8888A0;text-decoration:none;">EN</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container">
+<article class="post-header">
+<div class="badge">AI Agenti & Autonómia</div>
+<h1>Od sólo foundera k agent-riadeniu spoločnosti: Prevádzka ASCENTIE s 19 autonómnymi cron jobmi</h1>
+<div class="post-meta">
+<span>26. august 2026</span>
+<span>·</span>
+<span>6 min čítania</span>
+<span>·</span>
+<span>Marian Stancik</span>
+</div>
+</article>
+<div class="post-content">
+
+<p><strong>Prevádzkujem spoločnosť, kde 80 % operatívnych rozhodnutí robia AI agenti. Nie naplánované príspevky. Nie chatbot wrapper-y. Skutočné autonómne cron joby, ktoré generujú obsah, riadia CRM, monitorujú právnu kompatibilitu, strážia zdravie systému a dokonca generujú faktúry. Všetko na VPS za €3,79/mesiac.</strong></p>
+
+<p>Toto je architektúra za ASCENTIOU — mojou AI vývojárskou spoločnosťou — a je to najdôležitejšie inžinierske rozhodnutie, ktoré som ako sólo founder urobil.</p>
+
+<h2>Problém s „Sólo Founderom"</h2>
+
+<p>Keď som zakladal ASCENTIU, mal som jasnú víziu: stavať autonómne AI agenty pre firmy. Bol tu však problém — bol som tím jedného človeka. Každá hodina strávená administratívou bola hodina, ktorú som nestrávil budovaním produktu.</p>
+
+<p>Typická trajektória sólo foundera:</p>
+<ul>
+  <li><strong>Mesiac 1-3:</strong> Čisté budovanie. Maximálny výkon.</li>
+  <li><strong>Mesiac 4-6:</strong> Administratívna réžia sa vkráda. Obsah, CRM, emaily, stretnutia.</li>
+  <li><strong>Mesiac 7+:</strong> 50 % času sú operácie, nie produkt.</li>
+</ul>
+
+<p>Rozhodol som sa tento vzorec zlomiť. Namiesto najímania ľudí som vložil agentov do každej operatívnej vrstvy spoločnosti.</p>
+
+<h2>Stack: Autonómna infraštruktúra za €3,79/mesiac</h2>
+
+<p>Celá autonómna operácia beží na jedinom Hetzner CX22 VPS v Norimbergu:</p>
+
+<pre><code>Hetzner CX22 — €3,79/mesiac
+├── CPU: 2 jadrá (Intel Xeon)
+├── RAM: 4 GB
+├── Diskok: 40 GB NVMe
+├── Traffic: 20 TB/mesiac
+└── OS: Ubuntu 24.04 LTS
+
+Softvérový stack:
+├── Hermes Agent (Nous Research) — centrálny orchestrátor
+├── SQLite — úložisko session a leadov
+├── Caddy — reverzný proxy + automatický TLS
+├── OpenRouter — multi-LLM routing
+├── Syncthing — sync vaultu so zariadeniami
+└── systemd + cron — správa plánovača
+</code></pre>
+
+<div class="callout">
+<strong>Kľúčový insight:</strong> Nepotrebujete GPU, dedikovaný AI server ani cloudovú infraštruktúru na prevádzku autonómnych agentov. VPS za €3,79 zvládne 19 cron jobov, 3 domény a 24/7 runtime agenta s voľnou RAM (typicky 1,8 GB využitých / 4 GB k dispozícii).
+</div>
+
+<h2>Čo Agenti Skutočne Robia</h2>
+
+<p>Svoje agentné operácie kategorizujem do piatich funkčných domén:</p>
+
+<h3>1. Obsah & Digitálne Dvojča (6 cron jobov)</h3>
+<p>Moje digitálne dvojča generuje a publikuje obsah na X, LinkedIn a blog. Robí redakčné rozhodnutia — čo napísať, aký uhol zvoliť, či téma stojí za thread alebo jednoduchý post a ako repurpose obsah naprieč platformami. Má vlastný pamäťový systém, takže nikdy nepublikuje rovnaký názor dvakrát. <a href="/blog/posts/sk/2026-08-22-building-digital-twin" style="color:#E8B86D">Tento systém som detailne popísal tu.</a></p>
+
+<h3>2. CRM & Lead Management (4 cron joby)</h3>
+<p>Keď príde lead cez AgentMail capture na webe alebo priamy email, cron job spracuje správu, extrahuje kontaktné údaje a požiadavky, vytvorí záznam vo vault a posunie ho pipeline: new → contacted → meeting → proposal → negotiation → won. Agent rozhoduje kedy eskalovať mne na základe lead skóre.</p>
+
+<h3>3. Právny & Compliance Monitoring (3 cron joby)</h3>
+<p>Ako AI × Law študent som postavil špecializovaných agentov, ktorí monitorujú slovenské právne registre (ORSR, slov-lex, FinStat), EÚ regulačné feedy (EUR-Lex) a rozhodnutia ústavného súdu. Keď je publikovaná nová legislatíva alebo rozhodnutie relevantné pre AI alebo drony, agent vygeneruje brief a uloží ho do vaultu. Takto zostávam v obraze bez hodín strávených čítaním právnych vestníkov.</p>
+
+<h3>4. Systém Health & Watchdog (3 cron joby)</h3>
+<p>Watchdog agent kontroluje heartbeat každého iného agenta každých 15 minút. Ak cron job zlyhá, watchdog:</p>
+<ol>
+  <li>Detekuje anomáliu cez exit kód procesu alebo output delta</li>
+  <li>Analyzuje koreňovú príčinu (plný disk? API rate limit? chyba v kóde?)</li>
+  <li>Pokúsi sa o automatické obnovenie s až 3 retry</li>
+  <li>Ak obnovenie zlyhá, vygeneruje štruktúrovaný report do môjho inboxu</li>
+</ol>
+<p>Tento watchdog loop je dôvod, prečo systém udržuje 99,7 % uptime — nie preto, že agenti nikdy nezlyhajú, ale preto, že zlyhania sú zachytené a vyriešené do 15 minút.</p>
+
+<h3>5. Biznis Operácie (3 cron joby)</h3>
+<p>Fakturácia, grant monitoring a generovanie proposalov. Fakturačný agent generuje právne kompatibilné PDF faktúry podľa Zákona 222/2004 Z.z., sleduje platby a posiela pripomienky. Grant monitor kontroluje EÚ a slovenské grantové portály na AI a drone-related granty.</p>
+
+<h2>Agentná Architektúra: Watchdog Pattern</h2>
+
+<p>Najdôležitejší architektonický pattern, ktorý som vyvinul, je <strong>watchdog loop</strong>. V pseudokóde vyzerá takto:</p>
+
+<pre><code># Každých 15 minút — watchdog_all.py
+for job in all_cron_jobs:
+    previous_state = load_checkpoint(job.id)
+    current_state = get_current_state(job)
+
+    if previous_state != current_state:
+        if state_changed_expected(current_state):
+            save_checkpoint(job.id, current_state)
+            continue  # Normálna prevádzka
+        else:
+            alert_level = analyze_anomaly(job, current_state)
+            if alert_level >= WARNING:
+                attempt_recovery(job)
+                notify_owner(job.id, alert_level, diagnosis)
+</code></pre>
+
+<p>Tento pattern je generický. Môžete ho aplikovať na akýkoľvek autonómny systém — content pipeline, drone operácie, trading boty alebo IoT monitoring. Trik je v tom, že watchdog samotný je monitorovaný vyššou úrovňou agenta (Hermes runtime), čo vytvára self-healing hierarchiu.</p>
+
+<h3>Mechanizmy Obnovenia</h3>
+<ul>
+  <li><strong>API zlyhania:</strong> Exponenciálny backoff (1s, 3s, 9s) s max 3 pokusmi</li>
+  <li><strong>Disk pressure:</strong> Automatické čistenie starých logov a checkpointov</li>
+  <li><strong>Pád procesu:</strong> systemd auto-restart s 5s oneskorením</li>
+  <li><strong>Memory leak:</strong> Memory cap na 80 % celkovej RAM, graceful OOM handling</li>
+  <li><strong>Korupcia stavu:</strong> Checkpoint rollback na posledný známy dobrý stav</li>
+</ul>
+
+<h2>Reálne Čísla: 90 Dní Autonómnej Prevádzky</h2>
+
+<p>Odkedy som v júni 2026 prepol na plnú autonómiu:</p>
+
+<p>📊 <strong>19 aktívnych cron jobov</strong> naprieč 3 profilmi a 2 VPS inštanciami<br>
+⏱ <strong>99,7 % uptime</strong> naprieč všetkými agentmi (sledované Hermes heartbeat beaconom)<br>
+📝 <strong>90+ blog postov, X threadov a LinkedIn článkov</strong> — publikovaných autonómne<br>
+📈 <strong>€0 navyše</strong> na infraštruktúru nad rámec základného VPS<br>
+👁 <strong>&lt;15 minút/deň</strong> ľudského dohľadu — ranný dashboard review<br>
+🔧 <strong>3 závažné incidenty</strong> — všetky obnovené autonómne v rámci 15-minútového check cyklu</p>
+
+<h2>Ponaučenia</h2>
+
+<h3>Začni s Jedným Agentom</h3>
+<p>Najväčšia chyba, ktorú vidím, je že ľudia sa snažia postaviť 10 agentov naraz. Ja som začal s jedným — denný content post — a nechal som ho bežať dva týždne pred pridaním druhého. Každý agent musí preukázať spoľahlivosť, kým dostane súrodenca.</p>
+
+<h3>Testuj Obnovenie Skôr Než Funkcionalitu</h3>
+<p>Keď staviaš autonómneho agenta, testuj čo sa stane keď zlyhá skôr, než testuješ čo robí keď funguje. Pracujúci agent ktorý potichu spadne je horší ako žiadny agent. Watchdog pattern funguje len preto, že som počas vývoja zámerne rozbil každého agenta, aby som overil recovery cesty.</p>
+
+<h3>Nechaj Človeka v Slučke — Najskôr</h3>
+<p>Každý nový agent začína v „supervised mode" — generuje výstup, ale nepublikuje/nevykonáva ho, kým ho neskontrolujem. Keď dôverujem rozhodovacej logike (typicky 2-3 týždne konzistentnej kvality), povýšim ho na plnú autonómiu.</p>
+
+<h3>Neostavaj to, čo Môžeš Automatizovať</h3>
+<p>Toto je meta-lekcia. Predtým než automatizujem proces, spýtam sa: „Je to niečo, čo ma baví robiť?" Ak áno, nechám to ľudské. Ak je to repetitívne, administratívne alebo čisto analytické, automatizujem to. Výsledok je, že svoj čas trávim na architektúre, vzťahoch s klientmi a drone inžinierstve — na veciach, ktoré skutočne vyžadujú ľudský úsudok.</p>
+
+<h2>Záver</h2>
+
+<p>Sólo founder s dobrou autonómnou infraštruktúrou dokáže outperformovať tím piatich ľudí. Nehovorím to, aby som obhajoval nahrádzanie ľudí — hovorím to preto, že <strong>agent-driven operácie umožňujú founderom sústrediť sa na prácu, na ktorej záleží</strong>.</p>
+
+<p>Moja spoločnosť beží na výpočtovom výkone za €3,79/mesiac. Moji agenti nikdy nespia, nikdy nie sú chorí a nikdy nestrácajú kontext medzi sessionami. A ak sa niečo pokazí — watchdog to zachytí do 15 minút a opraví sa.</p>
+
+<p>To je model agent-riadenej spoločnosti. A funguje.</p>
+
+<p style="margin-top:30px;">—</p>
+<p style="color:#666680;font-size:0.85rem;">
+  <em>Máte záujem postaviť si vlastné autonómne operácie? Pozrite sa na <a href="https://hermes-agent.nousresearch.com" style="color:#E8B86D">Hermes Agent</a> — open-source framework, ktorý poháňa celý tento stack. Alebo <a href="mailto:marian_stancik@agentmail.to" style="color:#E8B86D">mi napíšte priamo</a>, ak chcete production-grade autonómnych agentov pre vašu firmu.</em>
+</p>
+
+</div>
+</div>
+<footer>
+<p>© 2026 <a href="https://ascentia.sk" target="_blank">ASCENTIA s.r.o.</a> — <a href="../../index.html">marianstancik.dev</a></p>
+</footer>
+</body>
+</html>
