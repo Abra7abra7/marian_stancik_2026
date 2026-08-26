@@ -1330,7 +1330,8 @@ overflow: hidden;
 }
 .drone-photo-card img {
 width: 100%;
-height: 140px;
+height: auto;
+aspect-ratio: 4 / 3;
 object-fit: cover;
 display: block;
 border-radius: 6px;
@@ -1340,15 +1341,15 @@ transition: transform 0.25s ease;
 transform: scale(1.03);
 }
 @media (max-width: 700px) {
-.drone-photo-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
-.drone-photo-card img { height: 80px; }
-.drone-photo-card { padding: 6px; }
-.drone-photo-card h4 { font-size: 0.7rem; margin-bottom: 4px; padding-bottom: 4px; }
+.drone-photo-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.drone-photo-card img { aspect-ratio: 4 / 3; }
+.drone-photo-card { padding: 8px; }
+.drone-photo-card h4 { font-size: 0.8rem; margin-bottom: 6px; padding-bottom: 4px; }
 }
-/* Mobile: compact 3-column thumbnail grid like spec cards */
+/* Mobile: compact 2-column card grid */
 @media (max-width: 480px) {
-.drone-photo-grid { grid-template-columns: repeat(3, 1fr); gap: 5px; }
-.drone-photo-card img { height: 60px; }
-.drone-photo-card { padding: 4px; border-radius: 8px; }
-.drone-photo-card h4 { font-size: 0.6rem; margin-bottom: 3px; padding-bottom: 3px; border-bottom-width: 0; }
+.drone-photo-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.drone-photo-card img { aspect-ratio: 4 / 3; }
+.drone-photo-card { padding: 6px; border-radius: 8px; }
+.drone-photo-card h4 { font-size: 0.7rem; margin-bottom: 4px; padding-bottom: 4px; border-bottom-width: 1px; }
 }
