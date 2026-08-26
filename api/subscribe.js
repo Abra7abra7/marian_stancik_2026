@@ -1,7 +1,6 @@
-// Vercel serverless — Lead capture → jednoduchý email na marian_stancik@agentmail.to
+// Vercel serverless — Lead capture → AgentMail via MCP endpoint
 export default async function handler(req, res) {
   try {
-    res.setHeader('Access-Control-Allow-Origin', 'https://www.marianstancik.dev');
     res.setHeader('Access-Control-Allow-Origin', 'https://www.marianstancik.dev');
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -15,6 +14,7 @@ export default async function handler(req, res) {
     const email = (body.email || '').trim().toLowerCase();
     const name = body.name || '';
     const source = body.source || 'web';
+    const message = body.message || '';
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
       return res.status(400).json({ error: 'Invalid email' });
@@ -22,27 +22,52 @@ export default async function handler(req, res) {
     const now = new Date().toISOString().split('T')[0];
     const subject = `[LEAD] ${name || email} — ${source}`;
     const sep = '─'.repeat(40);
-    const text = `${sep}\n📥 NEW LEAD — marianstancik.dev\n${sep}\n\nDate:   ${now}\nSource: ${source}\nEmail:  ${email}\n${name ? `Name:   ${name}\n` : ''}Status: new\n${sep}`;
+    const text = `${sep}\n📥 NEW LEAD — marianstancik.dev\n${sep}\n\nDate:   ${now}\nSource: ${source}\nEmail:  ${email}\n${name ? `Name:   ${name}\n` : ''}${message ? `Message: ${message}\n` : ''}Status: new\n${sep}`;
 
-    // Send via AgentMail MCP
     const url = 'https://mcp.agentmail.to/mcp';
-    const headers = { 'Content-Type': 'application/json', 'Accept': 'application/json, text/event-stream', 'User-Agent': 'Mozilla/5.0' };
+    const headers = { 'Content-Type': 'application/json', 'Accept': 'application/json, text/event-stream', 'x-api-key': apiKey };
 
-    const initRes = await fetch(url, { method: 'POST', headers: { ...headers, 'x-api-key': apiKey }, body: JSON.stringify({ jsonrpc: '2.0', id: '1', method: 'initialize', params: { protocolVersion: '2025-11-25', capabilities: {}, clientInfo: { name: 'hermes-crm-lead', version: '1.0' } } }) });
+    // Step 1: Initialize MCP session
+    const initBody = JSON.stringify({
+      jsonrpc: '2.0', id: '1', method: 'initialize',
+      params: { protocolVersion: '2025-11-25', capabilities: {}, clientInfo: { name: 'hermes-crm', version: '1.0' } }
+    });
+    const initRes = await fetch(url, { method: 'POST', headers, body: initBody });
     const initText = await initRes.text();
-    const sid = initText.match(/"sessionId"\s*:\s*"([^"]+)"/)?.[1] || null;
+    const sessionMatch = initText.match(/"sessionId"\s*:\s*"([^"]+)"/);
+    const sessionId = sessionMatch ? sessionMatch[1] : null;
 
-    const msgHeaders = { ...headers, 'x-api-key': apiKey };
-    if (sid) msgHeaders['Mcp-Session-Id'] = sid;
+    // Step 2: Send initialized notification (required)
+    const notifBody = JSON.stringify({ jsonrpc: '2.0', method: 'notifications/initialized' });
+    await fetch(url, { method: 'POST', headers: sessionId ? { ...headers, 'Mcp-Session-Id': sessionId } : headers, body: notifBody });
 
-    const msgRes = await fetch(url, { method: 'POST', headers: msgHeaders, body: JSON.stringify({ jsonrpc: '2.0', id: '2', method: 'tools/call', params: { name: 'send_message', arguments: { inboxId: 'marian_stancik@agentmail.to', to: ['marian_stancik@agentmail.to'], subject, text } } }) });
+    // Step 3: Send the message
+    const msgHeaders = { ...headers };
+    if (sessionId) msgHeaders['Mcp-Session-Id'] = sessionId;
+
+    const sendBody = JSON.stringify({
+      jsonrpc: '2.0', id: '2', method: 'tools/call',
+      params: {
+        name: 'send_message',
+        arguments: {
+          inboxId: 'marian_stancik@agentmail.to',
+          to: ['marian_stancik@agentmail.to'],
+          subject,
+          text
+        }
+      }
+    });
+    const msgRes = await fetch(url, { method: 'POST', headers: msgHeaders, body: sendBody });
     const msgText = await msgRes.text();
 
-    if (msgText.includes('"isError":true')) throw new Error('AgentMail send failed');
+    if (msgText.includes('"isError":true')) {
+      const errMsg = msgText.match(/"message"\s*:\s*"([^"]+)"/)?.[1] || 'Unknown error';
+      throw new Error(`AgentMail: ${errMsg}`);
+    }
 
     return res.status(200).json({ status: 'ok', email });
   } catch (e) {
-    console.error('Error:', e.message);
+    console.error('Subscribe error:', e.message);
     return res.status(500).json({ error: e.message });
   }
 }
