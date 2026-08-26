@@ -1,43 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
   <channel>
-    <title>Marian Stancik — AI Engineering, Drones &amp; Law Blog</title>
-    <link>https://www.marianstancik.dev</link>
-    <description>AI agents, autonomous systems, UAV builds, law &amp; tech — Marian Stancik builds in public.</description>
-    <language>en</language>
-    <atom:link href="https://www.marianstancik.dev/rss.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Tue, 25 Aug 2026 08:00:00 +0200</lastBuildDate>
-
+    <title>Marian Stancik — Blog</title>
+    <link>https://marianstancik.dev/blog/</link>
+    <description>AI agents, autonomous systems, law & tech, and building in public.</description>
+    <lastBuildDate>2026-08-26</lastBuildDate>
     <item>
-      <title>Web Performance Optimization: How I Cut Page Size by 61%</title>
-      <link>https://www.marianstancik.dev/blog/posts/2026-08-25-web-performance-optimization</link>
-      <description>A technical walkthrough of reducing HTML page weight from 86KB to 34KB by externalizing CSS, JS, and images.</description>
-      <pubDate>Tue, 25 Aug 2026 08:00:00 +0200</pubDate>
-      <guid>https://www.marianstancik.dev/blog/posts/2026-08-25-web-performance-optimization</guid>
+      <title>From Solo Founder to Agent-Driven Company — Marian Stancik</title>
+      <link>https://marianstancik.dev/blog/posts/2026-08-26-agent-driven-company</link>
+      <guid isPermaLink="true">https://marianstancik.dev/blog/posts/2026-08-26-agent-driven-company</guid>
+      <pubDate>2026-08-26</pubDate>
+      <description>How I built 19 autonomous AI cron jobs on a €3.79/mo VPS to run ASCENTIA — content, CRM, legal monitoring, and system health — all agent-driven.</description>
     </item>
-
     <item>
-      <title>Building a Digital Twin That Posts 9x Daily</title>
-      <link>https://www.marianstancik.dev/blog/posts/2026-08-22-building-digital-twin</link>
-      <description>How I built an autonomous AI agent with Hermes that creates and publishes content across platforms without human intervention.</description>
-      <pubDate>Sat, 22 Aug 2026 08:00:00 +0200</pubDate>
-      <guid>https://www.marianstancik.dev/blog/posts/2026-08-22-building-digital-twin</guid>
+      <title>Web Performance Optimization: How I Cut Page Size by 61% — Marian Stancik</title>
+      <link>https://marianstancik.dev/blog/posts/2026-08-25-web-performance-optimization</link>
+      <guid isPermaLink="true">https://marianstancik.dev/blog/posts/2026-08-25-web-performance-optimization</guid>
+      <pubDate>2026-08-25</pubDate>
+      <description>A technical walkthrough of reducing HTML page weight from 86KB to 34KB and improving Lighthouse scores by externalizing CSS, JS, and images.</description>
     </item>
-
     <item>
-      <title>AI Act Compliance for Small AI Companies</title>
-      <link>https://www.marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance</link>
-      <description>Practical legal-by-design framework for startups building AI products in the EU.</description>
-      <pubDate>Thu, 20 Aug 2026 08:00:00 +0200</pubDate>
-      <guid>https://www.marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance</guid>
+      <title>Building a Digital Twin That Posts 9x Daily — Marian Stancik</title>
+      <link>https://marianstancik.dev/blog/posts/2026-08-22-building-digital-twin</link>
+      <guid isPermaLink="true">https://marianstancik.dev/blog/posts/2026-08-22-building-digital-twin</guid>
+      <pubDate>2026-08-22</pubDate>
+      <description>How I automated my personal brand across 6 platforms using Python, cron, and LLM orchestration without sacrificing authenticity.</description>
     </item>
-
     <item>
-      <title>Autonomous Drone Missions with ArduPilot</title>
-      <link>https://www.marianstancik.dev/blog/posts/2026-08-17-autonomous-drone-missions</link>
-      <description>Building a production-grade UAV system with Pixhawk, ArduPilot, and Python-based mission planning.</description>
-      <pubDate>Mon, 17 Aug 2026 08:00:00 +0200</pubDate>
-      <guid>https://www.marianstancik.dev/blog/posts/2026-08-17-autonomous-drone-missions</guid>
+      <title>AI Act Compliance for Small AI Companies — Marian Stancik</title>
+      <link>https://marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance</link>
+      <guid isPermaLink="true">https://marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance</guid>
+      <pubDate>2026-08-20</pubDate>
+      <description>Practical legal-by-design framework for startups building AI products in the EU. Risk classification, technical documentation, and GDPR compliance.</description>
+    </item>
+    <item>
+      <title>Autonomous Drone Missions with ArduPilot & Python — Marian Stancik</title>
+      <link>https://marianstancik.dev/blog/posts/2026-08-17-autonomous-drone-missions</link>
+      <guid isPermaLink="true">https://marianstancik.dev/blog/posts/2026-08-17-autonomous-drone-missions</guid>
+      <pubDate>2026-08-17</pubDate>
+      <description>Building a production-grade UAV system with Pixhawk, ArduPilot, and Python-based mission planning for automated multi-waypoint flights.</description>
     </item>
   </channel>
 </rss>
