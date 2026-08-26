@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>OAuth Callback</title></head>
+<body>
+<p>Authorization in progress...</p>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get('code');
+  if (code) {
+    document.body.innerHTML = '<h1>✅ OAuth Code získaný</h1><p>Skopíruj celú túto URL (alebo code='+code+') a pošli ju Hermes agentovi.</p><p><strong>code: </strong><code>'+code+'</code></p>';
+  } else {
+    document.body.innerHTML = '<h1>❌ Žiadny autorizačný kód</h1>';
+  }
+</script>
+</body>
+</html>
