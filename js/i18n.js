@@ -65,13 +65,13 @@ dCap2: "Hand-built 1500g carbon quad — maiden flight & telemetry verification"
 dCap3: "ArduPilot mission planning — automated multi-waypoint guidance",
 scrollText: "Scroll",
 aboutLabel: "✦ About",
-aboutHeading: "Autonomous Agent Systems. UAV Builder. Law. Agent Architect.",
+aboutHeading: "Autonomous Agent Systems. UAV Builder. Regulatory Knowledge.",
 aboutBody: `
-<p>I build <strong>production AI agents and autonomous hardware systems</strong> at the convergence of artificial intelligence, physical robotics, and law. My core infrastructure runs 24/7 on an enterprise <strong>Hetzner Cloud VPS</strong> in Germany/Finland (ensuring EU regulatory alignment and full data sovereignty), orchestrating advanced models via the <strong>OpenRouter API</strong>, with <strong>Obsidian</strong> acting as a persistent memory layer and structured second brain for multi-agent workflows.</p>
+<p>I build <strong>autonomous AI agents</strong> using the <strong>Hermes Agent</strong> framework (by Nous Research). My core infrastructure runs 24/7 on an enterprise <strong>Hetzner Cloud VPS</strong> in Germany/Finland, orchestrating advanced models via the <strong>OpenRouter API</strong>, with <strong>Obsidian</strong> acting as a persistent memory layer for multi-agent workflows. <em>This website and all its content is built and maintained by my autonomous Hermes Agent.</em></p>
 
 <p>I build web applications with zero-build <strong>HTML5, Vanilla JS, and modern CSS</strong> — engineered for instant loading (Lighthouse 100), zero layout shifts, and deep discoverability by autonomous AI search crawlers (GEO / LLMO).</p>
 
-<p><strong>I focus on the legal and business impacts of AI.</strong> I architect practical legal-by-design compliance frameworks navigating critical European legislation: the <strong>EU AI Act</strong> (risk classification, GPAI governance & prohibited systems), <strong>GDPR</strong> (training data privacy & automated profiling), <strong>NIS2 Directive</strong> (cybersecurity resilience of digital infrastructure), <strong>DORA</strong> (digital operational resilience for financial entities), the <strong>EU Data Act & Data Governance Act</strong> (EU data access & sovereignty), and the <strong>DSM Copyright Directive</strong> (Text & Data Mining exceptions for AI model training).</p>
+<p>I study the legal and business impacts of AI — primarily the <strong>EU AI Act</strong>, <strong>GDPR</strong>, <strong>NIS2 Directive</strong>, <strong>DORA</strong>, the <strong>EU Data Act</strong>, and the <strong>DSM Copyright Directive</strong>. I share practical regulatory knowledge and compliance insights for educational purposes.</p>
 
 <p>On the hardware front, I personally <strong>designed, hand-soldered, and assembled a custom 1500g carbon tactical quadcopter</strong> from bare components into a fully operational flying UAV. Initially flight-tested on <strong>Betaflight</strong>, it now operates on <strong>ArduPilot</strong> for advanced autonomous mission execution. I am actively integrating an onboard <strong>Raspberry Pi 5 with edge computer vision models</strong> for real-time target detection and tracking.</p>
 `,
@@ -83,13 +83,13 @@ stat5: "Open Source Repos",
 stat6: "24/7 Agent Runtime",
 expLabel: "✦ Expertise",
 expHeading: "Three pillars. One mission.",
-expIntro: "Most people specialize in one thing. I combine three — because the future is built at the intersection of AI, hardware, and legal frameworks.",
+expIntro: "I combine three domains because the future of autonomous systems is built at the intersection of AI software, physical hardware, and regulatory knowledge.",
 exp1Title: "Autonomous Agent Systems",
-exp1Desc: "Hermes Agent, MCP servers, Python, and custom skill suites. 24/7 autonomous agents running on Hetzner VPS with Telegram & WhatsApp C2 interfaces, OpenRouter LLM orchestration, and Obsidian memory integration.",
-exp2Title: "AI Compliance & Legal-by-Design",
-exp2Desc: "Practical legal-by-design architectures for the EU AI Act, GDPR, NIS2, DORA, and EU Data Act to make AI products auditable, legally resilient, and enterprise-ready.",
+exp1Desc: "I build AI agents using the Hermes Agent framework. 24/7 autonomous systems running on Hetzner VPS with Telegram & WhatsApp C2 interfaces, OpenRouter multi-model routing, and persistent memory.",
+exp2Title: "AI Compliance & Regulatory Knowledge",
+exp2Desc: "I study EU AI regulation and share practical compliance insights. Not legal advice — educational regulatory knowledge for building auditable AI systems.",
 exp3Title: "UAV Systems & Edge AI",
-exp3Desc: "Hand-soldered 1500g carbon quads, Pixhawk, ArduPilot, QGroundControl, and Mission Planner. Deploying Raspberry Pi 5 companion computers for onboard AI computer vision and target tracking. EASA A1/A3 certified, €2.6M insured.",
+exp3Desc: "I build drones — from design to flight, with onboard AI. Custom 1500g carbon quadcopters hand-soldered from bare electronics, ArduPilot autonomous missions, Raspberry Pi 5 edge vision. EASA A1/A3 certified.",
 projLabel: "✦ Projects",
 projHeading: "What I'm building.",
 projIntro: "Production systems, open-source tools, and ambitious experiments.",
@@ -123,7 +123,7 @@ connLabel: "✦ Connect",
 connHeading: "Let's build something.",
 connIntro: "Follow the build, read the blog, or reach out directly.",
 connBlogText: "Blog",
-footerTagline: "Building autonomous agent systems, UAV platforms, and legal AI compliance.",
+footerTagline: "Building autonomous agent systems, UAV platforms, and AI compliance research.",
 fCol1Title: "Navigate",
 fCol2Title: "Projects",
 fCol3Title: "Contact",
@@ -199,15 +199,15 @@ dCap2: "Ručne postavený 1500g carbon quad — zálet a telemetria",
 dCap3: "ArduPilot plánovanie misií — automatické navádzanie",
 scrollText: "Posunúť",
 aboutLabel: "✦ O mne",
-aboutHeading: "AI Inžinier. Staviteľ UAV. Právo & Compliance. Architektúra agentov.",
+aboutHeading: "AI Inžinier. Staviteľ UAV. Regulačné znalosti. Agentová architektúra.",
 aboutBody: `
-<p>Vyvíjam <strong>produkčné AI agenty a autonómne hardvérové systémy</strong> na rozhraní umelej inteligencie, fyzickej robotiky a práva. Moja infraštruktúra beží 24/7 na <strong>Hetzner Cloud VPS</strong> v Nemecku/Fínsku (zaručujúca súlad s prísnymi EÚ reguláciami a dátovú suverenitu), modely orchestrujem cez <strong>OpenRouter API</strong> a <strong>Obsidian</strong> slúži ako perzistentná pamäťová vrstva (memory layer) a štruktúrovaný druhý mozog pre agentov.</p>
+<p>Staviam <strong>autonómne AI agenty</strong> pomocou frameworku <strong>Hermes Agent</strong> (Nous Research). Moja infraštruktúra beží 24/7 na <strong>Hetzner Cloud VPS</strong> v Nemecku/Fínsku, modely orchestrujem cez <strong>OpenRouter API</strong> a <strong>Obsidian</strong> slúži ako pamäťová vrstva pre multi-agentové workflowy. <em>Táto webstránka a všetok jej obsah je vytvorený a udržiavaný mojím autonómnym Hermes Agentom.</em></p>
 
-<p>Webové prezentácie staviam na čistom <strong>HTML5, Vanilla JS a CSS</strong> bez ťažkých frameworkov — s bleskovým načítaním (Lighthouse 100), nulovým layout shiftom a 100% optimalizáciou pre indexovanie AI vyhľadávacími agentmi (GEO / LLMO).</p>
+<p>Webové prezentácie staviam na čistom <strong>HTML5, Vanilla JS a CSS</strong> bez ťažkých frameworkov — s bleskovým načítaním (Lighthouse 100), nulovým layout shiftom a optimalizáciou pre AI vyhľadávacie agenty (GEO / LLMO).</p>
 
-<p><strong>Zameriavam sa na právne a biznisové dopady AI na firmy a podnikateľské prostredie.</strong> Navrhujem praktické riešenia v súlade s kľúčovou európskou legislatívou: <strong>EU AI Act</strong> (kategorizácia rizík, GPAI governance a zakázané praktiky), <strong>GDPR</strong> (ochrana osobných a tréningových údajov), <strong>NIS2 smernica</strong> (kybernetická bezpečnosť sietí a kritickej infraštruktúry), <strong>DORA</strong> (digitálna prevádzková odolnosť finančného sektora), <strong>EU Data Act & Data Governance Act</strong> (prístup k dátam a dátová suverenita) a <strong>DSM autorskoprávna smernica</strong> (TDM výnimky pre ťažbu dát a AI tréning).</p>
+<p>Študujem právne a biznisové dopady AI — predovšetkým <strong>EU AI Act</strong>, <strong>GDPR</strong>, <strong>NIS2</strong>, <strong>DORA</strong>, <strong>EU Data Act</strong> a <strong>DSM Copyright Directive</strong>. Zdieľam praktické regulačné znalosti a compliance poznatky na vzdelávacie účely.</p>
 
-<p>V oblasti hardvéru som vlastnoručne <strong>poskladal, pospájal a zapojil všetky komponenty do plne funkčného lietajúceho 1500g karbónového dronu</strong>. Stroj bol pôvodne zalietnutý na platforme <strong>Betaflight</strong>, v súčasnosti beží na pokročilom autopilotovi <strong>ArduPilot</strong> (prvé autonómne lety úspešne absolvované) a pracujem na implementácii palubného <strong>Raspberry Pi 5 s vision AI modelmi</strong> na detekciu a trasovanie objektov v reálnom čase.</p>
+<p>V oblasti hardvéru som vlastnoručne <strong>poskladal, pospájal a zapojil všetky komponenty do plne funkčného lietajúceho 1500g karbónového dronu</strong>. Stroj bol pôvodne zalietnutý na <strong>Betaflight</strong>, v súčasnosti beží na <strong>ArduPilot</strong> pre autonómne misie a pracujem na implementácii palubného <strong>Raspberry Pi 5 s vision AI modelmi</strong> na detekciu objektov.</p>
 `,
 stat1: "Aktívne Cron Agenty",
 stat2: "Domény (AI · Právo · UAV)",
@@ -219,11 +219,11 @@ expLabel: "✦ Odbornosť",
 expHeading: "Tri piliere. Jedna misia.",
 expIntro: "Väčšina ľudí sa špecializuje na jednu vec. Ja spájam AI inžinierstvo, právo a UAV systémy do reálnych produkčných riešení.",
 exp1Title: "AI Inžinierstvo a Autonómne Agenty",
-exp1Desc: "Hermes Agent, MCP servery, Python a vlastné skill sady. 24/7 autonómne agenty na Hetzner VPS s Telegram & WhatsApp C2 rozhraním, OpenRouter orchestráciou a Obsidian pamäťovou vrstvou.",
-exp2Title: "AI Compliance a Legal-by-Design",
-exp2Desc: "Praktický legal-by-design podľa AI Act, GDPR, NIS2, DORA a Data Act pre bezpečné nasadenie AI produktov do firiem.",
+exp1Desc: "Staviam AI agentov pomocou frameworku Hermes Agent. 24/7 autonómne systémy na Hetzner VPS s Telegram & WhatsApp C2 rozhraním, OpenRouter orchestráciou a Obsidian pamäťovou vrstvou.",
+exp2Title: "AI Compliance a Regulačné Znalosti",
+exp2Desc: "Študujem EÚ AI regulácie a zdieľam praktické compliance poznatky. Nie právna rada — vzdelávacie informácie pre budovanie auditovateľných AI systémov.",
 exp3Title: "UAV Systémy a Edge AI",
-exp3Desc: "Vlastnoručne stavané 1500g karbónové drony, Pixhawk, ArduPilot, QGroundControl a Mission Planner. Integrácia Raspberry Pi 5 s vision AI modelmi pre palubnú detekciu objektov. EASA A1/A3, €2.6M poistenie.",
+exp3Desc: "Staviam drony — od návrhu po let s palubnou AI. Vlastnoručne stavané 1500g karbónové drony, ArduPilot autonómne misie, Raspberry Pi 5 edge vision. EASA A1/A3 certifikácia.",
 projLabel: "✦ Projekty",
 projHeading: "Na čom práve pracujem.",
 projIntro: "Produkčné systémy, open-source nástroje a ambiciózne experimenty.",
@@ -257,7 +257,7 @@ connLabel: "✦ Spojenie",
 connHeading: "Poďme niečo postaviť.",
 connIntro: "Sledujte build, čítajte blog, alebo mi rovno napíšte.",
 connBlogText: "Blog",
-footerTagline: "Staviame autonómne agentové systémy, UAV platformy a legálnu AI compliance.",
+footerTagline: "Staviame autonómne agentové systémy, UAV platformy a compliance výskum.",
 fCol1Title: "Navigácia",
 fCol2Title: "Projekty",
 fCol3Title: "Kontakt",
@@ -395,7 +395,7 @@ container.innerHTML = posts.slice(0, 3).map(p => {
 const title = (isSk && p.titleSk) ? p.titleSk : p.title;
 const excerpt = (isSk && p.excerptSk) ? p.excerptSk : p.excerpt;
 const date = (isSk && p.displayDateSk) ? p.displayDateSk : p.displayDate;
-const targetUrl = p.url;
+const targetUrl = (isSk && p.urlSk) ? p.urlSk : p.url;
 return `
 <a href="${targetUrl}" class="blog-card fade-in visible">
   <div class="blog-card-date">${date}</div>

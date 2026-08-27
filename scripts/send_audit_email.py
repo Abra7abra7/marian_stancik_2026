@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Send Web Quality & SEO Audit Report to Marian Stancik (marian_stancik@agentmail.to)
+Send Web Quality & SEO Audit Report to Marian Stancik (marianstancik@agentmail.to)
 """
 
 import os
@@ -11,7 +11,7 @@ from email.mime.multipart import MIMEMultipart
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AUDIT_FILE = os.path.join(BASE_DIR, 'AUDIT.md')
-RECIPIENT = "marian_stancik@agentmail.to"
+RECIPIENT = "marianstancik@agentmail.to"
 
 def main():
     if not os.path.exists(AUDIT_FILE):
