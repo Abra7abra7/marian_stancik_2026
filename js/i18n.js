@@ -19,10 +19,8 @@ heroTagline: "Exploring the convergence of <span>AI agents</span>, <span>autonom
 roleAi: "AI Engineer",
 roleUav: "UAV Systems",
 roleDrone: "Drone Pilot (EASA A1/A3)",
-roleAscentia: "ASCENTIA (Agent-Native)",
 rolePm: "AI Engineer",
 roleLaw: "Law & AI Compliance",
-roleCeo: "ASCENTIA (Agent-Native)",
 heroEmail: "Email",
 skillsLabel: "✦ AI Engineering Skills",
 skillsHeading: "Skills & Capabilities",
@@ -43,7 +41,7 @@ sk2List: `
   <li><strong>Linux VPS Administration:</strong> Ubuntu Server on Hetzner Cloud (DE/FI), Caddy reverse proxy & SSL</li>
   <li><strong>Production Operations:</strong> 19+ 24/7 cron orchestrations, SQLite persistence & watchdog monitoring</li>
 `,
-sk3Title: "Law & AI Compliance (3rd Year Law, PF UK)",
+sk3Title: "Law & AI Compliance",
 sk3List: `
   <li><strong>EU AI Act:</strong> Risk classification, GPAI governance, and technical documentation files</li>
   <li><strong>GDPR & Privacy:</strong> Training data compliance, automated profiling safeguards</li>
@@ -73,11 +71,9 @@ aboutBody: `
 
 <p>I build web applications with zero-build <strong>HTML5, Vanilla JS, and modern CSS</strong> — engineered for instant loading (Lighthouse 100), zero layout shifts, and deep discoverability by autonomous AI search crawlers (GEO / LLMO).</p>
 
-<p>Currently in my <strong>3rd year at the Faculty of Law, Comenius University in Bratislava (PF UK)</strong>, I focus on the legal and business impacts of AI. I architect practical legal-by-design compliance frameworks navigating critical European legislation: the <strong>EU AI Act</strong> (risk classification, GPAI governance & prohibited systems), <strong>GDPR</strong> (training data privacy & automated profiling), <strong>NIS2 Directive</strong> (cybersecurity resilience of digital infrastructure), <strong>DORA</strong> (digital operational resilience for financial entities), the <strong>EU Data Act & Data Governance Act</strong> (EU data access & sovereignty), and the <strong>DSM Copyright Directive</strong> (Text & Data Mining exceptions for AI model training).</p>
+<p><strong>I focus on the legal and business impacts of AI.</strong> I architect practical legal-by-design compliance frameworks navigating critical European legislation: the <strong>EU AI Act</strong> (risk classification, GPAI governance & prohibited systems), <strong>GDPR</strong> (training data privacy & automated profiling), <strong>NIS2 Directive</strong> (cybersecurity resilience of digital infrastructure), <strong>DORA</strong> (digital operational resilience for financial entities), the <strong>EU Data Act & Data Governance Act</strong> (EU data access & sovereignty), and the <strong>DSM Copyright Directive</strong> (Text & Data Mining exceptions for AI model training).</p>
 
 <p>On the hardware front, I personally <strong>designed, hand-soldered, and assembled a custom 1500g carbon tactical quadcopter</strong> from bare components into a fully operational flying UAV. Initially flight-tested on <strong>Betaflight</strong>, it now operates on <strong>ArduPilot</strong> for advanced autonomous mission execution. I am actively integrating an onboard <strong>Raspberry Pi 5 with edge computer vision models</strong> for real-time target detection and tracking.</p>
-
-<p><strong>Hobby Project — ASCENTIA:</strong> A proof-of-concept company model designed to run 100% autonomously powered by AI agents, MCP tools, and 24/7 scheduled workflows.</p>
 `,
 stat1: "Active Cron Agents",
 stat2: "Domains (AI · Law · UAV)",
@@ -91,7 +87,7 @@ expIntro: "Most people specialize in one thing. I combine three — because the 
 exp1Title: "Autonomous Agent Systems",
 exp1Desc: "Hermes Agent, MCP servers, Python, and custom skill suites. 24/7 autonomous agents running on Hetzner VPS with Telegram & WhatsApp C2 interfaces, OpenRouter LLM orchestration, and Obsidian memory integration.",
 exp2Title: "AI Compliance & Legal-by-Design",
-exp2Desc: "3rd-year law student at Comenius University (PF UK). Practical legal-by-design architectures for the EU AI Act, GDPR, NIS2, DORA, and EU Data Act to make AI products auditable, legally resilient, and enterprise-ready.",
+exp2Desc: "Practical legal-by-design architectures for the EU AI Act, GDPR, NIS2, DORA, and EU Data Act to make AI products auditable, legally resilient, and enterprise-ready.",
 exp3Title: "UAV Systems & Edge AI",
 exp3Desc: "Hand-soldered 1500g carbon quads, Pixhawk, ArduPilot, QGroundControl, and Mission Planner. Deploying Raspberry Pi 5 companion computers for onboard AI computer vision and target tracking. EASA A1/A3 certified, €2.6M insured.",
 projLabel: "✦ Projects",
@@ -99,8 +95,8 @@ projHeading: "What I'm building.",
 projIntro: "Production systems, open-source tools, and ambitious experiments.",
 p1Title: "Prime Agent Masterclass",
 p1Desc: "8-module video course teaching autonomous AI agents. Stripe-powered, EN/SK, Vercel-hosted.",
-p2Title: "ASCENTIA Corporate Web",
-p2Desc: "Proof-of-concept autonomous company web — AI agent workflows, compliance frameworks, and UAV research.",
+p2Title: "Autonomous Agent Playground",
+p2Desc: "Experimental autonomous workflows: AI agent pipelines, compliance frameworks, and UAV research on a Hetzner VPS.",
 p3Title: "Polymarket Trading Bot",
 p3Desc: "Production-ready Markov chain trading bot for prediction markets. Docker-deployable.",
 p4Title: "Hermes Digital Twin",
@@ -157,10 +153,8 @@ heroTagline: "Hľadám prepojenie medzi <span>AI agentmi</span>, <span>UAV syst�
 roleAi: "AI Engineer",
 roleUav: "UAV Systémy",
 roleDrone: "Pilot dronov (EASA A1/A3)",
-roleAscentia: "ASCENTIA (Agent-Native)",
 rolePm: "AI Engineer",
 roleLaw: "Právo & AI Compliance",
-roleCeo: "ASCENTIA (Agent-Native)",
 heroEmail: "E-mail",
 skillsLabel: "✦ AI Engineering Skills",
 skillsHeading: "Zručnosti & Schopnosti",
@@ -181,7 +175,7 @@ sk2List: `
   <li><strong>Správa Linux VPS:</strong> Ubuntu Server na Hetzner Cloud (DE/FI), reverzná proxy Caddy & SSL</li>
   <li><strong>Produkčná prevádzka:</strong> 19+ 24/7 cron orchestrácií, SQLite perzistencia & watchdog monitoring</li>
 `,
-sk3Title: "Právo & AI Compliance (3. ročník PraF UK)",
+sk3Title: "Právo & AI Compliance",
 sk3List: `
   <li><strong>EU AI Act:</strong> Kategorizácia rizík, GPAI governance a technická dokumentácia</li>
   <li><strong>GDPR & Ochrana dát:</strong> Súlad tréningových dát, garancie pri automatizovanom profilovaní</li>
@@ -211,11 +205,9 @@ aboutBody: `
 
 <p>Webové prezentácie staviam na čistom <strong>HTML5, Vanilla JS a CSS</strong> bez ťažkých frameworkov — s bleskovým načítaním (Lighthouse 100), nulovým layout shiftom a 100% optimalizáciou pre indexovanie AI vyhľadávacími agentmi (GEO / LLMO).</p>
 
-<p>Študujem v <strong>3. ročníku na Právnickej fakulte Univerzity Komenského v Bratislave (PF UK)</strong>, kde sa špecializujem na právne a biznisové dopady AI na firmy a podnikateľské prostredie. Navrhujem praktické riešenia v súlade s kľúčovou európskou legislatívou: <strong>EU AI Act</strong> (kategorizácia rizík, GPAI governance a zakázané praktiky), <strong>GDPR</strong> (ochrana osobných a tréningových údajov), <strong>NIS2 smernica</strong> (kybernetická bezpečnosť sietí a kritickej infraštruktúry), <strong>DORA</strong> (digitálna prevádzková odolnosť finančného sektora), <strong>EU Data Act & Data Governance Act</strong> (prístup k dátam a dátová suverenita) a <strong>DSM autorskoprávna smernica</strong> (TDM výnimky pre ťažbu dát a AI tréning).</p>
+<p><strong>Zameriavam sa na právne a biznisové dopady AI na firmy a podnikateľské prostredie.</strong> Navrhujem praktické riešenia v súlade s kľúčovou európskou legislatívou: <strong>EU AI Act</strong> (kategorizácia rizík, GPAI governance a zakázané praktiky), <strong>GDPR</strong> (ochrana osobných a tréningových údajov), <strong>NIS2 smernica</strong> (kybernetická bezpečnosť sietí a kritickej infraštruktúry), <strong>DORA</strong> (digitálna prevádzková odolnosť finančného sektora), <strong>EU Data Act & Data Governance Act</strong> (prístup k dátam a dátová suverenita) a <strong>DSM autorskoprávna smernica</strong> (TDM výnimky pre ťažbu dát a AI tréning).</p>
 
 <p>V oblasti hardvéru som vlastnoručne <strong>poskladal, pospájal a zapojil všetky komponenty do plne funkčného lietajúceho 1500g karbónového dronu</strong>. Stroj bol pôvodne zalietnutý na platforme <strong>Betaflight</strong>, v súčasnosti beží na pokročilom autopilotovi <strong>ArduPilot</strong> (prvé autonómne lety úspešne absolvované) a pracujem na implementácii palubného <strong>Raspberry Pi 5 s vision AI modelmi</strong> na detekciu a trasovanie objektov v reálnom čase.</p>
-
-<p><strong>Hobby projekt — ASCENTIA:</strong> Koncept autonómnej firmy, ktorú od základov poháňajú výhradne AI agenti s MCP nástrojmi a 24/7 orchestráciou.</p>
 `,
 stat1: "Aktívne Cron Agenty",
 stat2: "Domény (AI · Právo · UAV)",
@@ -229,7 +221,7 @@ expIntro: "Väčšina ľudí sa špecializuje na jednu vec. Ja spájam AI inžin
 exp1Title: "AI Inžinierstvo a Autonómne Agenty",
 exp1Desc: "Hermes Agent, MCP servery, Python a vlastné skill sady. 24/7 autonómne agenty na Hetzner VPS s Telegram & WhatsApp C2 rozhraním, OpenRouter orchestráciou a Obsidian pamäťovou vrstvou.",
 exp2Title: "AI Compliance a Legal-by-Design",
-exp2Desc: "3. ročník práva na Univerzite Komenského (PF UK). Praktický legal-by-design podľa AI Act, GDPR, NIS2, DORA a Data Act pre bezpečné nasadenie AI produktov do firiem.",
+exp2Desc: "Praktický legal-by-design podľa AI Act, GDPR, NIS2, DORA a Data Act pre bezpečné nasadenie AI produktov do firiem.",
 exp3Title: "UAV Systémy a Edge AI",
 exp3Desc: "Vlastnoručne stavané 1500g karbónové drony, Pixhawk, ArduPilot, QGroundControl a Mission Planner. Integrácia Raspberry Pi 5 s vision AI modelmi pre palubnú detekciu objektov. EASA A1/A3, €2.6M poistenie.",
 projLabel: "✦ Projekty",
@@ -237,8 +229,8 @@ projHeading: "Na čom práve pracujem.",
 projIntro: "Produkčné systémy, open-source nástroje a ambiciózne experimenty.",
 p1Title: "Prime Agent Masterclass",
 p1Desc: "8-modulový video kurz o tvorbe autonómnych AI agentov s Hermes Agentom.",
-p2Title: "ASCENTIA Corporate Web",
-p2Desc: "Koncept autonómnej firemnej platformy — AI agenti, legal-by-design frameworky a UAV výskum.",
+p2Title: "Autonómne Agentové Hrište",
+p2Desc: "Experimentálne autonómne workflowy: AI agent pipeline-y, compliance frameworky a UAV výskum na Hetzner VPS.",
 p3Title: "Polymarket Trading Bot",
 p3Desc: "Produkčný Markov chain trading bot pre predikčné trhy s real-time API integráciou.",
 p4Title: "Hermes Digital Twin",
@@ -308,10 +300,8 @@ var el = document.getElementById('heroTagline'); if(el) el.innerHTML = d.heroTag
 var el = document.getElementById('roleAi'); if(el) el.textContent = d.roleAi;
 var el = document.getElementById('roleUav'); if(el) el.textContent = d.roleUav;
 var el = document.getElementById('roleDrone'); if(el) el.textContent = d.roleDrone;
-var el = document.getElementById('roleAscentia'); if(el) el.textContent = d.roleAscentia;
 var el = document.getElementById('rolePm'); if(el) el.textContent = d.rolePm;
 var el = document.getElementById('roleLaw'); if(el) el.textContent = d.roleLaw;
-var el = document.getElementById('roleCeo'); if(el) el.textContent = d.roleCeo;
 var el = document.getElementById('heroEmailLink'); if(el) el.textContent = d.heroEmail;
 var el = document.getElementById('scrollText'); if(el) el.textContent = d.scrollText;
 var el = document.getElementById('aboutLabel'); if(el) el.textContent = d.aboutLabel;

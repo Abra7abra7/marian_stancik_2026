@@ -50,8 +50,8 @@ export default async function handler(req, res) {
       params: {
         name: 'send_message',
         arguments: {
-          inboxId: 'marian_stancik@agentmail.to',
-          to: ['marian_stancik@agentmail.to'],
+          inboxId: 'marianstancik@agentmail.to',
+          to: ['marianstancik@agentmail.to'],
           subject,
           text
         }

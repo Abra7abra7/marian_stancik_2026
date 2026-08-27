@@ -5,7 +5,7 @@ Marian Stancik is an AI Engineer, UAV Builder, and Law Scholar exploring the con
 ## Core Pillars
 
 1. **AI Engineering & Autonomous Agents:** 24/7 Hermes Agent orchestration, custom Model Context Protocol (MCP) servers, OpenRouter multi-LLM dynamic routing, and Obsidian persistent memory running on European Hetzner Cloud infrastructure.
-2. **Law, EU AI Act & Regulatory Governance:** Practical legal-by-design compliance frameworks covering the EU AI Act (risk tiering, GPAI governance, technical files), GDPR, NIS2 Directive, DORA, EU Data Act, and DSM Copyright Directive (TDM exemptions). 3rd year law student at Faculty of Law, Comenius University in Bratislava (PF UK).
+2. **Law, EU AI Act & Regulatory Governance:** Practical legal-by-design compliance frameworks covering the EU AI Act (risk tiering, GPAI governance, technical files), GDPR, NIS2 Directive, DORA, EU Data Act, and DSM Copyright Directive (TDM exemptions).
 3. **Tactical UAV Systems & Edge Robotics:** Hand-soldered 1500g carbon quadcopter, ArduPilot Copter autopilot, Raspberry Pi 5 onboard companion computer with real-time edge vision AI, certified EASA A1/A3 with €2.6M insurance.
 
 ## Key Navigation Links

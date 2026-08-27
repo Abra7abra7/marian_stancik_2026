@@ -36,8 +36,7 @@
 - **Structured Data (Schema.org JSON-LD):**
   - `Person` schema with rich professional affiliations:
     - **Defence Industry (confidential)** (Product Manager)
-    - **Právnická fakulta Univerzity Komenského v Bratislave (PF UK)** (`https://flaw.uniba.sk`)
-    - **ASCENTIA s.r.o.** (CEO & Founder)
+    - **Independent** (Freelance AI Consultant & Agent Developer)
   - **GEO Localization:** Coordinates (`48.1486° N, 17.1077° E`), Bratislava, Slovakia, European Union.
 - **AI Agent Discovery (`llms.txt`):** Structured machine-readable knowledge graph for automated citation in Perplexity, Claude, ChatGPT, and Gemini.
 - **Social Media Cards:** Validated Open Graph tags and Twitter Cards (`@marian_s_ai`).

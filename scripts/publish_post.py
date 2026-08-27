@@ -184,7 +184,7 @@ footer a:hover{{color:#CD7F32}}
 </div>
 
 <footer>
-  <p>© {year} <a href="https://ascentia.sk" target="_blank">ASCENTIA s.r.o.</a> — <a href="/">www.marianstancik.dev</a></p>
+  <p>© {year} <a href="/">Marian Stancik</a> — <a href="/">www.marianstancik.dev</a></p>
 </footer>
 </body>
 </html>
@@ -339,7 +339,7 @@ footer a:hover{{color:#CD7F32}}
 </div>
 
 <footer>
-  <p>© {year} <a href="https://ascentia.sk" target="_blank">ASCENTIA s.r.o.</a> — <a href="/">www.marianstancik.dev</a></p>
+  <p>© {year} <a href="/">Marian Stancik</a> — <a href="/">www.marianstancik.dev</a></p>
 </footer>
 </body>
 </html>
