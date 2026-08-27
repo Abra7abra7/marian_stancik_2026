@@ -3,6 +3,8 @@ import os
 import re
 import subprocess
 import sys
+import urllib.request
+import json
 
 if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
@@ -96,6 +98,29 @@ def main():
         print("✅ robots.txt: AI bots explicitly allowed & indexed")
     else:
         print("❌ robots.txt: Missing AI bot directives")
+
+    print("\n========================================")
+    print(" 6. API HEALTH CHECK (L8)")
+    print("========================================")
+    api_ok = True
+    for endpoint, payload in [
+        ("/api/subscribe", '{"email":"test@pre-commit-check.local","source":"pre-commit"}'),
+    ]:
+        url = f"https://www.marianstancik.dev{endpoint}"
+        try:
+            req = urllib.request.Request(url, data=payload.encode(), headers={"Content-Type": "application/json"}, method="POST")
+            resp = urllib.request.urlopen(req, timeout=10)
+            body = json.loads(resp.read().decode())
+            if body.get("status") == "ok":
+                print(f"✅ {endpoint}: returns status=ok")
+            else:
+                print(f"❌ {endpoint}: unexpected response: {body}")
+                api_ok = False
+        except Exception as e:
+            print(f"❌ {endpoint}: {e}")
+            api_ok = False
+    if api_ok:
+        print("✅ API health check passed")
 
 if __name__ == '__main__':
     main()

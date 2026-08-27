@@ -18,6 +18,7 @@ Usage:
   python3 test_visual.py --json             # JSON output
   python3 test_visual.py --layer L0         # single layer
   python3 test_visual.py --skip L6          # skip link checking (slow)
+  python3 test_visual.py --skip L6,L8       # skip link checker + API check
 """
 
 import sys, os, json, argparse, re, subprocess
@@ -280,42 +281,81 @@ def run_l7(context):
     all_pass = True
     results = {}
     print("  ── L7: Mobile (375px) ──")
-    
+
     for path in PAGES:
         url = BASE_URL + path
         try:
             mobile_page.set_viewport_size({"width": 375, "height": 812})
             resp = mobile_page.goto(url, wait_until="networkidle", timeout=15000)
             mobile_page.wait_for_timeout(1000)
-            
+
             dom = page_dom_info(mobile_page)
-            
+
             # Mobile checks: body must have content
             has_mobile_toggle = mobile_page.evaluate("!!document.querySelector('.mobile-toggle, .hamburger, .menu-toggle, button[aria-label*=\"menu\"], button[aria-label*=\"Menu\"]')")
-            
+
             body_ok = dom["bodyHeight"] >= 400
             sections_ok = dom["sectionCount"] >= 1  # even 1 section with content is OK
             toggle_ok = has_mobile_toggle
-            
+
             # Blog page doesn't have mobile toggle - that's OK
             if path == "/blog":
                 toggle_ok = True
-            
+
             page_pass = body_ok
             if not page_pass:
                 all_pass = False
-            
+
             status = "✅" if page_pass else "❌"
             print(f"    {status} {path} h={dom['bodyHeight']}px sec={dom['sectionCount']} toggle={'✅' if toggle_ok else '❌'}")
-            
+
             results[path] = {"passed": page_pass, "bodyHeight": dom["bodyHeight"],
                              "sectionCount": dom["sectionCount"], "hasToggle": toggle_ok}
         except Exception as e:
             all_pass = False
             results[path] = {"passed": False, "error": str(e)[:80]}
             print(f"    ❌ {path}: {str(e)[:60]}")
-    
+
     mobile_page.close()
+    return all_pass, results
+
+
+# ============================================================
+# L8 — API Health Check
+# ============================================================
+def run_l8():
+    """Test API endpoints (subscribe, etc.)."""
+    all_pass = True
+    results = {}
+    print("  ── L8: API Health Check ──")
+
+    endpoints = [
+        ("POST /api/subscribe", "https://www.marianstancik.dev/api/subscribe",
+         '{"email":"test@api-check.local","source":"test"}'),
+    ]
+
+    import urllib.request
+    import json
+
+    for name, url, payload in endpoints:
+        try:
+            req = urllib.request.Request(url, data=payload.encode(),
+                                         headers={"Content-Type": "application/json"},
+                                         method="POST")
+            resp = urllib.request.urlopen(req, timeout=10)
+            body = json.loads(resp.read().decode())
+            ok = body.get("status") == "ok"
+            if ok:
+                print(f"    ✅ {name}: status=ok")
+            else:
+                print(f"    ❌ {name}: unexpected: {body}")
+                all_pass = False
+            results[name] = {"passed": ok, "response": body}
+        except Exception as e:
+            print(f"    ❌ {name}: {e}")
+            all_pass = False
+            results[name] = {"passed": False, "error": str(e)[:120]}
+
     return all_pass, results
 
 
@@ -328,9 +368,10 @@ def print_matrix(results):
     l4 = results.get("L4", {}).get("passed", False)
     l6 = results.get("L6", {}).get("passed", False)
     l7 = results.get("L7", {}).get("passed", False)
+    l8 = results.get("L8", {}).get("passed", False)
     l235 = results.get("L235", {})
-    
-    all_pass = l0 and l4 and l6 and l7 and all(r.get("passed", False) for r in l235.values())
+
+    all_pass = l0 and l4 and l6 and l7 and l8 and all(r.get("passed", False) for r in l235.values())
     
     print(f"\n{'='*70}")
     print(f"  🌐 marianstancik.dev — FULL TEST MATRIX")
@@ -343,6 +384,7 @@ def print_matrix(results):
     print(f"  {'L4 Security':<20} {'✅' if l4 else '❌'}")
     print(f"  {'L6 Links':<20} {'✅' if l6 else '❌'}")
     print(f"  {'L7 Mobile':<20} {'✅' if l7 else '❌'}")
+    print(f"  {'L8 API Health':<20} {'✅' if l8 else '❌'}")
     print()
     
     # Per-page (L235)
@@ -363,7 +405,7 @@ def print_matrix(results):
         print(f"  {path:<10} {status:<8} {str(sec):<8} {str(bh):<8} {canvas:<8} {i18n:<8} {str(http):<6}")
     
     # Failures detail
-    failures = {f"L0": not l0, "L4": not l4, "L6": not l6, "L7": not l7}
+    failures = {f"L0": not l0, "L4": not l4, "L6": not l6, "L7": not l7, "L8": not l8}
     for path, r in l235.items():
         if not r.get("passed"):
             fails = [n for n, t in r.get("tests", {}).items() if not t.get("passed", True)]
@@ -389,8 +431,8 @@ def main():
     parser = argparse.ArgumentParser(description="Full test matrix for marianstancik.dev")
     parser.add_argument("--screenshots", action="store_true", help="Save screenshots on failure")
     parser.add_argument("--json", action="store_true", help="Output JSON only")
-    parser.add_argument("--layer", choices=["L0", "L4", "L6", "L7", "L235"], help="Run single layer")
-    parser.add_argument("--skip", nargs="+", default=[], help="Skip layers (L6)")
+    parser.add_argument("--layer", choices=["L0", "L4", "L6", "L7", "L8", "L235"], help="Run single layer")
+    parser.add_argument("--skip", nargs="+", default=[], help="Skip layers (L6 L8)")
     args = parser.parse_args()
     
     results = {}
@@ -455,7 +497,16 @@ def main():
                     all_pass = False
             else:
                 results["L7"] = {"passed": True}
-            
+
+            # L8 — API Health Check (no browser needed, run inside)
+            if (not args.layer or args.layer == "L8") and "L8" not in args.skip:
+                l8_pass, l8_res = run_l8()
+                results["L8"] = {"passed": l8_pass, "details": l8_res}
+                if not l8_pass:
+                    all_pass = False
+            else:
+                results["L8"] = {"passed": True}
+
             browser.close()
     
     results["L235"] = l235_results

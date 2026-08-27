@@ -1,0 +1,48 @@
+#!/bin/bash
+# Pre-commit hook for marianstancik.dev
+# Runs fast layers (L0, L4, L8) before every commit.
+# Full matrix (L0-L8) runs before push.
+#
+# Setup: git config core.hooksPath .githooks
+
+echo ""
+echo "═══════════════════════════════════════════"
+echo "  🔍 PRE-COMMIT: marianstancik.dev tests"
+echo "═══════════════════════════════════════════"
+echo "  Layers: L0 (JS syntax), L4 (security), L8 (API health)"
+echo ""
+
+# L0 — JS syntax
+echo "  ── L0: JS Syntax ──"
+for f in js/i18n.js js/three-bg.js; do
+    if [ -f "$f" ]; then
+        node --check "$f" 2>/dev/null && echo "    ✅ $f" || { echo "    ❌ $f"; exit 1; }
+    fi
+done
+
+# L4 — Security sweep (Delta Defence)
+echo "  ── L4: Security ──"
+FOUND=$(grep -rl "Delta[[:space:]]*Defence" --include="*.html" --include="*.js" --include="*.md" --include="*.txt" --include="*.json" --include="*.xml" . 2>/dev/null | grep -v ".git/" | grep -v "node_modules/" | grep -v "AGENTS.md" | grep -v "test_visual.py" | grep -v "verify_site.py" | head -5)
+if [ -z "$FOUND" ]; then
+    echo "    ✅ Security sweep passed"
+else
+    echo "    ❌ Found in: $FOUND"
+    exit 1
+fi
+
+# L8 — API health check
+echo "  ── L8: API Health ──"
+API_RESULT=$(curl -s --max-time 8 -X POST "https://www.marianstancik.dev/api/subscribe" \
+    -H "Content-Type: application/json" \
+    -d '{"email":"test@pre-commit.local","source":"pre-commit"}' 2>&1)
+if echo "$API_RESULT" | grep -q '"status":"ok"'; then
+    echo "    ✅ POST /api/subscribe: status=ok"
+else
+    echo "    ❌ POST /api/subscribe: $API_RESULT"
+    exit 1
+fi
+
+echo ""
+echo "✅ PRE-COMMIT PASSED"
+echo ""
+exit 0
