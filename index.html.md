@@ -1,4 +1,4 @@
-# Marian Stancik — AI Engineer | CEO @ ASCENTIA | UAV Builder
+# Marian Stancik — Autonomous Agent Systems | UAV | Law
 
 Marian Stancik is an AI Engineer, UAV Builder, and Law Scholar exploring the convergence of artificial intelligence, autonomous physical hardware, and regulatory compliance.
 

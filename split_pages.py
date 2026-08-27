@@ -129,36 +129,36 @@ home_body += extract('<!-- === CONNECT === -->', '<!-- Footer -->')
 
 P = {}
 P['index.html'] = make_page(
-    'Marian Stancik — AI Engineer | Defence Product Manager | Law | Drones',
-    'Marian Stancik is an AI Engineer building autonomous agent systems and production AI infrastructure. Defence Product Manager, PF UK law student, UAV systems builder.',
-    'AI Engineer building autonomous agent systems. Defence Product Manager. PF UK law. UAV builder.',
+    'Marian Stancik — Autonomous Agent Systems | UAV | Law',
+    'Marian Stancik builds autonomous agent systems, UAV platforms with companion computers, and studies EU AI Act compliance. Helping creative people build without code.',
+    'Building autonomous agent systems, UAV platforms, and legal AI compliance.',
     home_body, ''
 )
 
 # ABOUT
 about_body = extract('<!-- === ABOUT === -->', '<!-- === EXPERTISE === -->')
 P['about.html'] = make_page(
-    'Marian Stancik — About | AI Engineer, Defence PM, PF UK Law, UAV',
-    'About Marian Stancik — AI Engineer, Defence Product Manager, PF UK law student (3rd year), UAV builder.',
-    'About — AI Engineer, Defence PM, PF UK law, UAV builder.',
+    'Marian Stancik — About | Autonomous Agent Systems | UAV | Law',
+    'About Marian Stancik — building autonomous agent systems, UAV platforms with companion computers, and EU AI Act compliance.',
+    'About — Autonomous Agent Systems, UAV, Law.',
     about_body, '/about'
 )
 
 # EXPERTISE
 exp_body = extract('<!-- === EXPERTISE === -->', '<!-- === AI ENGINEERING SKILLS === -->')
 P['expertise.html'] = make_page(
-    'Marian Stancik — Expertise | AI Engineering, Law, Drones',
-    'Three pillars: AI Engineering & Autonomous Agents, Law & AI Compliance (PF UK), UAV Systems & Drone Programming.',
-    'Three pillars of expertise — AI Engineering, Law & AI Compliance, UAV Systems.',
+    'Marian Stancik — Expertise | Autonomous Agent | UAV | Law',
+    'Three pillars: Autonomous Agent Systems, Law & AI Compliance, UAV Platforms with companion computers.',
+    'Three pillars — Autonomous Agent Systems, Law & AI Compliance, UAV Platforms.',
     exp_body, '/expertise'
 )
 
 # SKILLS
 skills_body = extract('<!-- === AI ENGINEERING SKILLS === -->', '<!-- === DRONE SHOWCASE === -->')
 P['skills.html'] = make_page(
-    'Marian Stancik — AI Engineering Skills | Agent Systems, MCP, Production',
+    'Marian Stancik — Skills | Agent Systems, UAV, Law',
     'Full-stack AI engineering: autonomous multi-agent systems, MCP, LLM & agentive systems, production operations.',
-    'AI Engineering Skills Map — Build, Deploy, Operate autonomous agent systems.',
+    'Skills for building autonomous agent systems, UAV platforms, and legal AI compliance.',
     skills_body, '/skills'
 )
 
@@ -175,7 +175,7 @@ P['drones.html'] = make_page(
 contact_body = extract('<!-- === CONNECT === -->', '<!-- Footer -->')
 P['contact.html'] = make_page(
     'Marian Stancik — Contact | Connect, Email, Social',
-    'Connect with Marian Stancik — AI Engineer, Defence PM, PF UK law, UAV builder. X/Twitter, LinkedIn, GitHub.',
+    'Connect with Marian Stancik — building autonomous agent systems, UAV platforms, and legal AI compliance.',
     'Contact — follow the build, read the blog, reach out.',
     contact_body, '/contact'
 )
