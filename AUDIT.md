@@ -68,7 +68,7 @@
 - **Official 𝕏:** https://x.com/marian_s_ai
 - **Official YouTube:** https://www.youtube.com/@marian_ai
 - **Official Facebook:** https://www.facebook.com/profile.php?id=100089785398619
-- **Official Threads:** https://www.threads.net/@marian_s_ai
+- **Official Threads:** https://www.threads.net/@marian_stancik
 - **Official LinkedIn:** https://www.linkedin.com/in/marian-stancik-924b41298/
 - **Official GitHub:** https://github.com/Abra7abra7
 - **Official Contact Inbox:** `marianstancik@agentmail.to`
