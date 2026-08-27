@@ -1,5 +1,27 @@
 [
   {
+    "slug": "2026-08-27-nvidia-avo-autonomous-agents",
+    "url": "blog/posts/2026-08-27-nvidia-avo-autonomous-agents",
+    "urlSk": "blog/posts/sk/2026-08-27-nvidia-avo-autonomous-agents",
+    "blogUrl": "posts/2026-08-27-nvidia-avo-autonomous-agents",
+    "blogUrlSk": "posts/sk/2026-08-27-nvidia-avo-autonomous-agents",
+    "date": "2026-08-27",
+    "displayDate": "August 27, 2026",
+    "displayDateSk": "27. august 2026",
+    "title": "NVIDIA AVO: When Autonomous Agents Run for 7 Days and Beat Expert Engineers",
+    "titleSk": "NVIDIA AVO: Keď autonómne agenty bežia 7 dní a prekonajú expertov",
+    "excerpt": "NVIDIA's AVO architecture ran autonomously for 7 days, optimized GPU kernels beyond FlashAttention-4, and scored 100% on ARC-AGI-3. System design > model choice.",
+    "excerptSk": "Architektúra AVO od NVIDIA bežala autonómne 7 dní, optimalizovala GPU jadrá a dosiahla 100% na ARC-AGI-3. Systémový dizajn > výber modelu.",
+    "tags": [
+      "AI Agents",
+      "Autonomous Systems",
+      "NVIDIA",
+      "Hermes Agent"
+    ],
+    "readTime": "6 min read",
+    "readTimeSk": "6 min čítania"
+  },
+  {
     "slug": "2026-08-26-agent-driven-company",
     "url": "blog/posts/2026-08-26-agent-driven-company",
     "urlSk": "blog/posts/sk/2026-08-26-agent-driven-company",
