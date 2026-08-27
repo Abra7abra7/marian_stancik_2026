@@ -1,2 +1,3 @@
 test_screenshots/
 *.png
+!images/ig/*.jpg
