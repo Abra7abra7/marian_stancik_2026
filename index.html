@@ -524,7 +524,7 @@
     <p class="section-intro fade-in" id="leadIntro" style="margin-bottom: 0;">
       AI agent insights, drone builds, law & tech notes — directly to your inbox.
     </p>
-    <form class="lead-form fade-in" id="leadForm" action="/api/subscribe" method="POST" target="hidden-frame">
+    <form class="lead-form fade-in" id="leadForm">
       <input type="email" name="email" id="leadEmail" placeholder="your@email.com" required aria-label="Email address">
       <input type="hidden" name="source" value="marianstancik.dev">
       <input type="hidden" name="gdpr_consent" value="1">
@@ -534,7 +534,6 @@
       </label>
       <button type="submit" id="subscribeBtn">Subscribe</button>
     </form>
-    <iframe name="hidden-frame" style="display:none"></iframe>
     <div id="leadStatus" class="lead-status" role="alert"></div>
     <p class="lead-note" id="leadNote">No spam. Unsubscribe anytime. See <a href="/privacy" style="color:#CD7F32;text-decoration:underline;">Privacy Policy</a>. Built with AgentMail.</p>
   </div>

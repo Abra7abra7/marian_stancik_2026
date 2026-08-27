@@ -452,3 +452,37 @@ if ('requestIdleCallback' in window) {
   setTimeout(loadDynamicPostsHome, 300);
 }
 
+// Lead form — fetch submission (no iframe, works with X-Frame-Options:DENY)
+document.getElementById('leadForm')?.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('subscribeBtn');
+  const status = document.getElementById('leadStatus');
+  const email = document.getElementById('leadEmail')?.value.trim();
+  if (!email) return;
+  btn.disabled = true;
+  btn.textContent = 'Subscribing...';
+  status.textContent = '';
+  status.className = 'lead-status';
+  try {
+    const res = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, source: 'marianstancik.dev' })
+    });
+    const data = await res.json();
+    if (res.ok && data.status === 'ok') {
+      status.textContent = '✅ Subscribed! Check your inbox.';
+      status.className = 'lead-status lead-success';
+      document.getElementById('leadEmail').value = '';
+    } else {
+      status.textContent = '❌ ' + (data.error || 'Something went wrong. Try again.');
+      status.className = 'lead-status lead-error';
+    }
+  } catch (err) {
+    status.textContent = '❌ Network error. Please try again.';
+    status.className = 'lead-status lead-error';
+  }
+  btn.disabled = false;
+  btn.textContent = currentLang === 'sk' ? 'Odoberať' : 'Subscribe';
+});
+

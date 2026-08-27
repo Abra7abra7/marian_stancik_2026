@@ -726,6 +726,8 @@ font-family: inherit;
 }
 .lead-form button:hover { opacity: 0.9; transform: scale(1.02); }
 .lead-status { font-size: 0.82rem; color: #E8B86D; margin-top: 10px; min-height: 24px; }
+.lead-success { color: #4ADE80; }
+.lead-error { color: #FB7185; }
 .lead-note { font-size: 0.72rem; color: #9090A8; margin-top: 8px; }
 #connect { min-height: auto; padding: 100px 24px 80px; text-align: center; }
 .connect-grid {
