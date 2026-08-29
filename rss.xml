@@ -4,13 +4,20 @@
     <title>Marian Stancik — Blog</title>
     <link>https://marianstancik.dev/blog/</link>
     <description>AI agents, autonomous systems, law & tech, and building in public.</description>
-    <lastBuildDate>2026-08-26</lastBuildDate>
+    <lastBuildDate>2026-08-29</lastBuildDate>
+    <item>
+      <title>NVIDIA AVO: When Autonomous Agents Run for 7 Days and Beat Expert Engineers — Marian Stancik</title>
+      <link>https://marianstancik.dev/blog/posts/2026-08-27-nvidia-avo-autonomous-agents</link>
+      <guid isPermaLink="true">https://marianstancik.dev/blog/posts/2026-08-27-nvidia-avo-autonomous-agents</guid>
+      <pubDate>2026-08-27</pubDate>
+      <description>NVIDIA's AVO architecture ran autonomously for 7 days, optimized GPU kernels beyond FlashAttention-4, and scored 100% on ARC-AGI-3. What this means for the future of autonomous agents.</description>
+    </item>
     <item>
       <title>From Solo Founder to Agent-Driven Company — Marian Stancik</title>
       <link>https://marianstancik.dev/blog/posts/2026-08-26-agent-driven-company</link>
       <guid isPermaLink="true">https://marianstancik.dev/blog/posts/2026-08-26-agent-driven-company</guid>
       <pubDate>2026-08-26</pubDate>
-      <description>How I built 19 autonomous AI cron jobs on a €3.79/mo VPS for autonomous content, CRM, legal monitoring, and system health — all agent-driven.</description>
+      <description>How I deployed 19 autonomous AI cron jobs on a €3.79/mo VPS for content, CRM, legal monitoring, and system health — all agent-driven.</description>
     </item>
     <item>
       <title>Web Performance Optimization: How I Cut Page Size by 61% — Marian Stancik</title>
