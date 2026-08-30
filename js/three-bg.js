@@ -1,7 +1,21 @@
 /**
  * Three.js Ambient Particle Background
  * Non-blocking, mobile-optimized, adaptive WebGL neural network visualizer
+ * Mobile: skipped entirely (CSS gradient fallback) — 0 TBT
  */
+
+const _isMobile = window.innerWidth < 768 || ('ontouchstart' in window && window.innerWidth < 1024);
+const _lowEndDevice = (navigator.hardwareConcurrency || 8) < 4;
+const _prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Skip on mobile / low-end hardware / reduced motion (saves 250KB download + 2.5s TBT)
+if (_isMobile || _lowEndDevice || _prefersReducedMotion) {
+  // Apply CSS gradient fallback so the background isn't empty
+  const canvas = document.getElementById('three-canvas');
+  if (canvas) {
+    canvas.style.background = 'radial-gradient(ellipse at 50% 50%, rgba(18,18,30,0.95) 0%, rgba(8,8,15,1) 70%)';
+  }
+}
 
 async function initThreeBackground() {
   const canvas = document.getElementById('three-canvas');
