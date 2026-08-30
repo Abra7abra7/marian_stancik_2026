@@ -61,6 +61,24 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://www.marianstancik.dev/privacy-sk</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.marianstancik.dev/terms</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.marianstancik.dev/terms-sk</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.marianstancik.dev/blog/posts/2026-08-27-nvidia-avo-autonomous-agents</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>

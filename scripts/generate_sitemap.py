@@ -32,6 +32,9 @@ pages.append(page("/contact", get_lastmod(f"{ROOT}/contact.html"), "monthly", 0.
 pages.append(page("/privacy", get_lastmod(f"{ROOT}/privacy.html"), "yearly", 0.3))
 pages.append(page("/disclaimer", get_lastmod(f"{ROOT}/disclaimer.html"), "yearly", 0.3))
 pages.append(page("/disclaimer-sk", get_lastmod(f"{ROOT}/disclaimer-sk.html"), "yearly", 0.3))
+pages.append(page("/privacy-sk", get_lastmod(f"{ROOT}/privacy-sk.html"), "yearly", 0.3))
+pages.append(page("/terms", get_lastmod(f"{ROOT}/terms.html"), "yearly", 0.5))
+pages.append(page("/terms-sk", get_lastmod(f"{ROOT}/terms-sk.html"), "yearly", 0.5))
 
 # Blog posts EN
 posts_dir = f"{ROOT}/blog/posts"
