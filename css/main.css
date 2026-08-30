@@ -1355,3 +1355,47 @@ transform: scale(1.03);
 .drone-photo-card { padding: 6px; border-radius: 8px; }
 .drone-photo-card h4 { font-size: 0.7rem; margin-bottom: 4px; padding-bottom: 4px; border-bottom-width: 1px; }
 }
+/* === SERVICES & BOOKING CARDS === */
+.service-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 24px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.service-card:hover { border-color: var(--color-border-hover); transform: translateY(-2px); }
+.service-icon { font-size: 2.5rem; margin-bottom: 12px; }
+.service-card h2 { font-size: 1.5rem; color: var(--color-primary); margin: 0 0 8px; }
+.service-subtitle { font-size: 1rem; color: var(--color-text-muted); margin-bottom: 24px; }
+.service-details { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.service-offering h3 { font-size: 0.95rem; color: var(--color-accent); margin: 0 0 6px; }
+.service-offering p { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6; margin: 0; }
+.service-tech { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.service-tech span { font-size: 0.75rem; padding: 4px 12px; background: rgba(205,127,50,0.1); color: var(--color-accent); border-radius: 20px; border: 1px solid rgba(205,127,50,0.2); }
+.service-cta { padding-top: 20px; border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.service-cta p { margin: 0; font-size: 0.85rem; color: var(--color-text-muted); }
+.service-cta strong { color: var(--color-primary); }
+.btn-primary { display: inline-block; padding: 10px 24px; background: var(--color-primary); color: #08080F; font-weight: 600; font-size: 0.85rem; border-radius: var(--radius-sm); text-decoration: none; transition: background 0.3s; }
+.btn-primary:hover { background: var(--color-accent); }
+.btn-large { padding: 14px 32px; font-size: 1rem; }
+.cta-box { text-align: center; padding: 48px 32px; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); }
+.cta-box h2 { font-size: 1.5rem; color: var(--color-primary); margin: 0 0 12px; }
+.cta-box p { color: var(--color-text-muted); margin-bottom: 24px; }
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 32px 0; }
+.process-step { text-align: center; padding: 24px; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+.step-number { width: 40px; height: 40px; line-height: 40px; text-align: center; background: var(--color-primary); color: #08080F; font-weight: 700; font-size: 1.1rem; border-radius: 50%; margin: 0 auto 12px; }
+.process-step h3 { font-size: 1rem; color: var(--color-accent); margin: 0 0 8px; }
+.process-step p { font-size: 0.85rem; color: var(--color-text-muted); margin: 0; line-height: 1.5; }
+.booking-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 32px 0; }
+.booking-card { text-align: center; padding: 28px 20px; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: border-color 0.3s; }
+.booking-card:hover { border-color: var(--color-border-hover); }
+.booking-icon { font-size: 2rem; margin-bottom: 12px; }
+.booking-card h3 { font-size: 1.1rem; color: var(--color-accent); margin: 0 0 8px; }
+.booking-card p { font-size: 0.85rem; color: var(--color-text-muted); margin: 0 0 16px; }
+@media (max-width: 768px) {
+  .service-details { grid-template-columns: 1fr; }
+  .service-cta { flex-direction: column; text-align: center; }
+  .process-steps { grid-template-columns: 1fr 1fr; }
+  .booking-grid { grid-template-columns: 1fr; }
+}
