@@ -306,24 +306,121 @@
 <!-- === ABOUT === -->
 <section id="about" aria-label="About Marian Stancik">
   <div class="container">
-    <div class="section-label fade-in" id="aboutLabel">✦ About</div>
+    <div class="section-label fade-in" id="aboutLabel">✦ Core Pillars &amp; Architecture</div>
     <h2 class="fade-in" id="aboutHeading">AI Agent Developer. Law Student. UAV Builder.</h2>
+    <p class="section-intro fade-in" id="aboutIntro">
+      Building autonomous 24/7 multi-agent systems, practical EU AI Act compliance architectures, and edge computer vision hardware.
+    </p>
+
     <div class="about-grid">
-      <div class="about-text fade-in" id="aboutBody">
-        <p>I build <strong>autonomous AI agents</strong> using the <strong>Hermes Agent</strong> framework. My infrastructure runs 24/7 on a Hetzner VPS, orchestrating multi-LLM agents for content, CRM, monitoring, and automation. <em>This website and all its content is built and maintained by my autonomous Hermes Agent.</em></p>
-        <p>I'm a <strong>3rd-year law student at PF UK</strong> — I study EU AI Act, GDPR, and tech regulation. This means I understand the legal landscape and can build AI agents that are technically ready for regulated environments. <strong>I am not a lawyer, I do not provide legal advice.</strong></p>
-        <p>I build drones as a <strong>hobby</strong> — hand-soldered 1500g carbon quad with ArduPilot and Raspberry Pi 5 edge AI. EASA A1/A3 certified pilot. It's a showcase of my hardware and edge AI skills, not a product.</p>
-        <div class="highlight" style="background:rgba(205,127,50,0.08);padding:1rem;border-left:3px solid #CD7F32;margin:1.5rem 0;border-radius:4px;font-size:0.85rem;">
-          <p><strong>⚠️ Disclaimer:</strong> This is not legal advice. I share regulatory knowledge for educational purposes only. For specific legal questions, consult a qualified attorney.</p>
+      <!-- LEFT: 3 CORE PILLARS -->
+      <div class="about-pillars fade-in">
+        
+        <!-- PILLAR 1: AI AGENTS -->
+        <div class="about-pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-icon">🤖</div>
+            <h3 id="pillar1Title">Autonomous Multi-Agent Systems</h3>
+          </div>
+          <p class="pillar-desc" id="pillar1Desc">
+            I orchestrate 24/7 autonomous agents powered by the <strong>Hermes Agent</strong> runtime on dedicated <strong>Hetzner Cloud VPS</strong> infrastructure. Utilizing <strong>OpenRouter</strong> for dynamic multi-LLM routing with persistent <strong>Obsidian</strong> second-brain memory.
+          </p>
+          <div class="pillar-tags">
+            <span class="p-tag">✦ Hermes Agent 24/7</span>
+            <span class="p-tag">✦ Custom MCP Servers</span>
+            <span class="p-tag">✦ Multi-LLM Routing</span>
+            <span class="p-tag">✦ Obsidian Memory</span>
+          </div>
         </div>
+
+        <!-- PILLAR 2: LAW & COMPLIANCE -->
+        <div class="about-pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-icon">⚖️</div>
+            <h3 id="pillar2Title">Law &amp; EU AI Act (Legal-by-Design)</h3>
+          </div>
+          <p class="pillar-desc" id="pillar2Desc">
+            3rd-year law student at <strong>PF UK</strong> specializing in the <strong>EU AI Act, GDPR, NIS2</strong>, and <strong>Article 50 AI transparency</strong>. I engineer AI agents that are technically verified and ready for strictly regulated enterprise workflows.
+          </p>
+          <div class="pillar-tags">
+            <span class="p-tag">✦ EU AI Act Risk Tiering</span>
+            <span class="p-tag">✦ Art. 50 Disclosure</span>
+            <span class="p-tag">✦ GDPR by Design</span>
+            <span class="p-tag">✦ Technical File Audits</span>
+          </div>
+        </div>
+
+        <!-- PILLAR 3: UAV ROBOTICS -->
+        <div class="about-pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-icon">🚁</div>
+            <h3 id="pillar3Title">Tactical UAV &amp; Edge Vision (Hobby)</h3>
+          </div>
+          <p class="pillar-desc" id="pillar3Desc">
+            Hand-built 1500g carbon quadcopter with <strong>ArduPilot autonomous autopilot</strong> and <strong>Raspberry Pi 5 edge vision AI</strong>. Certified <strong>EASA A1/A3 pilot</strong> with €2.6M Coverdrone insurance. Built to master real-world edge AI telemetry.
+          </p>
+          <div class="pillar-tags">
+            <span class="p-tag">✦ ArduPilot Autopilot</span>
+            <span class="p-tag">✦ RPi 5 Computer Vision</span>
+            <span class="p-tag">✦ EASA A1/A3 Certified</span>
+            <span class="p-tag">✦ Hardware &amp; Telemetry</span>
+          </div>
+        </div>
+
+        <!-- DISCLAIMER -->
+        <div class="about-disclaimer" id="aboutDisclaimer">
+          <span>⚠️</span>
+          <span><strong>Notice:</strong> Legal and regulatory insights are shared for educational and technical compliance purposes only. Not legal advice.</span>
+        </div>
+
       </div>
-      <div class="stats fade-in">
-        <div class="stat-card"><div class="stat-number">19+</div><div class="stat-label" id="stat1Label">Active Cron Agents</div></div>
-        <div class="stat-card"><div class="stat-number">3</div><div class="stat-label" id="stat2Label">Domains (AI · Law · UAV)</div></div>
-        <div class="stat-card"><div class="stat-number">3+</div><div class="stat-label" id="stat3Label">Years Building</div></div>
-        <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label" id="stat6Label">VPS Agent Runtime</div></div>
-        <div class="stat-card"><div class="stat-number">6</div><div class="stat-label" id="stat5Label">Open Source Repos</div></div>
-        <div class="stat-card"><div class="stat-number">€2.6M</div><div class="stat-label" id="stat4Label">Drone Insurance</div></div>
+
+      <!-- RIGHT: LIVE COCKPIT WIDGET -->
+      <div class="home-cockpit fade-in">
+        <div class="home-cockpit-header">
+          <div class="home-cockpit-status">
+            <span class="pulse"></span>
+            <span id="hCockpitStatus">HERMES C2 // 24/7 RUNTIME</span>
+          </div>
+          <span class="home-cockpit-chip" id="hCockpitChip">HETZNER VPS · EU</span>
+        </div>
+
+        <div class="home-metrics-grid">
+          <div class="home-metric-card">
+            <div class="home-metric-val">19+</div>
+            <div class="home-metric-lbl" id="hMetric1Lbl">Cron Loops</div>
+            <div class="home-metric-sub" id="hMetric1Sub">24/7 background tasks</div>
+          </div>
+          <div class="home-metric-card">
+            <div class="home-metric-val">24/7</div>
+            <div class="home-metric-lbl" id="hMetric2Lbl">Autonomous</div>
+            <div class="home-metric-sub" id="hMetric2Sub">Zero human babysitting</div>
+          </div>
+          <div class="home-metric-card">
+            <div class="home-metric-val">Multi-LLM</div>
+            <div class="home-metric-lbl" id="hMetric3Lbl">Dynamic Routing</div>
+            <div class="home-metric-sub" id="hMetric3Sub">DeepSeek · Claude · GPT</div>
+          </div>
+          <div class="home-metric-card">
+            <div class="home-metric-val">100/100</div>
+            <div class="home-metric-lbl" id="hMetric4Lbl">Lighthouse</div>
+            <div class="home-metric-sub" id="hMetric4Sub">0ms TBT · Zero CLS</div>
+          </div>
+        </div>
+
+        <div class="home-terminal-box">
+          <div class="term-row"><span class="prompt">&gt;</span> <span>agent: hermes_runtime</span> <span class="val-ok">[ACTIVE]</span></div>
+          <div class="term-row"><span class="prompt">&gt;</span> <span>memory: obsidian_vault</span> <span class="val-ok">[SYNCED]</span></div>
+          <div class="term-row"><span class="prompt">&gt;</span> <span>routing: openrouter_mesh</span> <span class="val-gold">[AUTO]</span></div>
+          <div class="term-row"><span class="prompt">&gt;</span> <span>governance: eu_ai_act_art50</span> <span class="val-ok">[PASS]</span></div>
+        </div>
+
+        <div class="home-cockpit-cta">
+          <a href="/about" class="home-cockpit-link" id="hCockpitLink">
+            <span>Explore full story &amp; timeline</span>
+            <span>→</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>

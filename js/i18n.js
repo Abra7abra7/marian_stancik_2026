@@ -193,6 +193,27 @@ trustLaw: "⚖️ <strong>Law student</strong> — I understand regulation, I bu
 trustUav: "🚁 <strong>UAV hobby</strong> — Hand-built drone, EASA certified, edge AI",
 trustPfuk: "🎓 <strong>PF UK</strong> — 3rd year, EU AI Act, GDPR, NIS2",
 fNavProducts: "Products",
+aboutLabel: "✦ Core Pillars & Architecture",
+aboutHeading: "AI Agent Developer. Law Student. UAV Builder.",
+aboutIntro: "Building autonomous 24/7 multi-agent systems, practical EU AI Act compliance architectures, and edge computer vision hardware.",
+pillar1Title: "Autonomous Multi-Agent Systems",
+pillar1Desc: "I orchestrate 24/7 autonomous agents powered by the <strong>Hermes Agent</strong> runtime on dedicated <strong>Hetzner Cloud VPS</strong> infrastructure. Utilizing <strong>OpenRouter</strong> for dynamic multi-LLM routing with persistent <strong>Obsidian</strong> second-brain memory.",
+pillar2Title: "Law & EU AI Act (Legal-by-Design)",
+pillar2Desc: "3rd-year law student at <strong>PF UK</strong> specializing in the <strong>EU AI Act, GDPR, NIS2</strong>, and <strong>Article 50 AI transparency</strong>. I engineer AI agents that are technically verified and ready for strictly regulated enterprise workflows.",
+pillar3Title: "Tactical UAV & Edge Vision (Hobby)",
+pillar3Desc: "Hand-built 1500g carbon quadcopter with <strong>ArduPilot autonomous autopilot</strong> and <strong>Raspberry Pi 5 edge vision AI</strong>. Certified <strong>EASA A1/A3 pilot</strong> with €2.6M Coverdrone insurance. Built to master real-world edge AI telemetry.",
+aboutDisclaimer: "<span>⚠️</span> <span><strong>Notice:</strong> Legal and regulatory insights are shared for educational and technical compliance purposes only. Not legal advice.</span>",
+hCockpitStatus: "HERMES C2 // 24/7 RUNTIME",
+hCockpitChip: "HETZNER VPS · EU",
+hMetric1Lbl: "Cron Loops",
+hMetric1Sub: "24/7 background tasks",
+hMetric2Lbl: "Autonomous",
+hMetric2Sub: "Zero human babysitting",
+hMetric3Lbl: "Dynamic Routing",
+hMetric3Sub: "DeepSeek · Claude · GPT",
+hMetric4Lbl: "Lighthouse",
+hMetric4Sub: "0ms TBT · Zero CLS",
+hCockpitLink: "Explore full story & timeline →",
 exp4Title: "Product Manager (Defence)",
 exp4Desc: "Defence industry background — managing classified hardware and software projects at scale.",
 },
@@ -389,6 +410,27 @@ trustLaw: "⚖️ <strong>Študent práva</strong> — rozumiem reguláciám, st
 trustUav: "🚁 <strong>UAV hobby</strong> — Ručne postavený dron, EASA certifikát, edge AI",
 trustPfuk: "🎓 <strong>PF UK</strong> — 3. ročník, EU AI Act, GDPR, NIS2",
 fNavProducts: "Produkty",
+aboutLabel: "✦ Hlavné Piliere & Architektúra",
+aboutHeading: "AI Agent Developer. Študent Práva. Staviteľ UAV.",
+aboutIntro: "Vývoj autonómnych multi-agentových systémov v režime 24/7, praktická architektúra compliance pre EU AI Act a edge počítačové videnie.",
+pillar1Title: "Autonómne Multi-Agentové Systémy",
+pillar1Desc: "Navrhujem a prevádzkujem autonómnych agentov v režime 24/7 na báze frameworku <strong>Hermes Agent</strong> na dedikovanom <strong>Hetzner Cloud VPS</strong>. Dynamický multi-LLM routing cez <strong>OpenRouter</strong> s perzistentnou pamäťou v <strong>Obsidian</strong> knowledge vault.",
+pillar2Title: "Právo & EU AI Act (Legal-by-Design)",
+pillar2Desc: "Študent 3. ročníka práva na <strong>PF UK</strong> so špecializáciou na <strong>EU AI Act, GDPR, NIS2</strong> a <strong>transparentnosť podľa Čl. 50</strong>. Staviam AI agentov, ktorí sú technicky pripravení na nasadenie v regulovaných prostrediach.",
+pillar3Title: "Taktické UAV & Edge Vision (Hobby)",
+pillar3Desc: "Ručne postavený 1500g karbónový quadcopter s <strong>autonómnym autopilotom ArduPilot</strong> a <strong>Raspberry Pi 5 edge vision AI</strong>. Certifikovaný <strong>pilot EASA A1/A3</strong> s poistením Coverdrone na €2.6M. Postavené na testovanie edge AI v reálnom svete.",
+aboutDisclaimer: "<span>⚠️</span> <span><strong>Upozornenie:</strong> Právne a regulačné poznatky slúžia na vzdelávacie účely a technické zosúladenie. Nejde o právne poradenstvo.</span>",
+hCockpitStatus: "HERMES C2 // 24/7 RUNTIME",
+hCockpitChip: "HETZNER VPS · EU",
+hMetric1Lbl: "Cron Slučiek",
+hMetric1Sub: "24/7 úlohy na pozadí",
+hMetric2Lbl: "Autonómny",
+hMetric2Sub: "Úplne bez babysittingu",
+hMetric3Lbl: "Dynamický Routing",
+hMetric3Sub: "DeepSeek · Claude · GPT",
+hMetric4Lbl: "Lighthouse",
+hMetric4Sub: "0ms TBT · Nulový CLS",
+hCockpitLink: "Zobraziť celý príbeh a časovú os →",
 exp4Title: "Product Manager (Obrana)",
 exp4Desc: "Skúsenosti z obranného priemyslu — riadenie klasifikovaných hardvérových a softvérových projektov vo veľkom meradle.",
 },
@@ -526,6 +568,29 @@ var el = document.getElementById('prodCustomPrice'); if(el) el.textContent = d.p
 var el = document.getElementById('trustLaw'); if(el) el.innerHTML = d.trustLaw;
 var el = document.getElementById('trustUav'); if(el) el.innerHTML = d.trustUav;
 var el = document.getElementById('trustPfuk'); if(el) el.innerHTML = d.trustPfuk;
+
+
+var el = document.getElementById('aboutLabel'); if(el) el.textContent = d.aboutLabel;
+var el = document.getElementById('aboutHeading'); if(el) el.textContent = d.aboutHeading;
+var el = document.getElementById('aboutIntro'); if(el) el.textContent = d.aboutIntro;
+var el = document.getElementById('pillar1Title'); if(el) el.textContent = d.pillar1Title;
+var el = document.getElementById('pillar1Desc'); if(el) el.innerHTML = d.pillar1Desc;
+var el = document.getElementById('pillar2Title'); if(el) el.textContent = d.pillar2Title;
+var el = document.getElementById('pillar2Desc'); if(el) el.innerHTML = d.pillar2Desc;
+var el = document.getElementById('pillar3Title'); if(el) el.textContent = d.pillar3Title;
+var el = document.getElementById('pillar3Desc'); if(el) el.innerHTML = d.pillar3Desc;
+var el = document.getElementById('aboutDisclaimer'); if(el) el.innerHTML = d.aboutDisclaimer;
+var el = document.getElementById('hCockpitStatus'); if(el) el.textContent = d.hCockpitStatus;
+var el = document.getElementById('hCockpitChip'); if(el) el.textContent = d.hCockpitChip;
+var el = document.getElementById('hMetric1Lbl'); if(el) el.textContent = d.hMetric1Lbl;
+var el = document.getElementById('hMetric1Sub'); if(el) el.textContent = d.hMetric1Sub;
+var el = document.getElementById('hMetric2Lbl'); if(el) el.textContent = d.hMetric2Lbl;
+var el = document.getElementById('hMetric2Sub'); if(el) el.textContent = d.hMetric2Sub;
+var el = document.getElementById('hMetric3Lbl'); if(el) el.textContent = d.hMetric3Lbl;
+var el = document.getElementById('hMetric3Sub'); if(el) el.textContent = d.hMetric3Sub;
+var el = document.getElementById('hMetric4Lbl'); if(el) el.textContent = d.hMetric4Lbl;
+var el = document.getElementById('hMetric4Sub'); if(el) el.textContent = d.hMetric4Sub;
+var el = document.getElementById('hCockpitLink'); if(el) el.innerHTML = `<span>${d.hCockpitLink}</span>`;
 
 var el = document.getElementById('cockpitStatus'); if(el) el.textContent = d.cockpitStatus;
 var el = document.getElementById('cockpitChip'); if(el) el.textContent = d.cockpitChip;
