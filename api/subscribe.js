@@ -1,4 +1,4 @@
-// Vercel serverless — Lead capture → AgentMail (welcome email + notification)
+// Vercel serverless — Lead & Order capture → AgentMail (dedicated email templates + admin alerts)
 export default async function handler(req, res) {
   try {
     res.setHeader('Access-Control-Allow-Origin', 'https://www.marianstancik.dev');
@@ -15,6 +15,10 @@ export default async function handler(req, res) {
     const name = body.name || '';
     const source = body.source || 'web';
     const message = body.message || '';
+    const product = body.product || '';
+    const price = body.price || '';
+    const website = body.website || '';
+    const notes = body.notes || '';
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
       return res.status(400).json({ error: 'Invalid email' });
@@ -60,52 +64,150 @@ export default async function handler(req, res) {
       }
     }
 
-    const sep = '─'.repeat(40);
+    const sep = '─'.repeat(44);
+    const isOrder = Boolean(product) || source === 'product_order' || source === 'stripe_checkout_intent';
+    const isContact = Boolean(message) || source === 'contact_form';
 
-    // 1. Welcome email to subscriber
-    const welcomeText = `Vitaj v newslettri Mariana Stancika! 👋
+    // ─────────────────────────────────────────────────────────────
+    // TEMPLATE 1: PRODUCT / AUDIT ORDER
+    // ─────────────────────────────────────────────────────────────
+    if (isOrder) {
+      const prodName = product || 'AI GEO / Web Readiness Audit';
+      const userSubject = `✦ Potvrdenie objednávky: ${prodName} — Marian Stancik`;
+      const userText = `✦ MARIAN STANCIK — AI AGENTS & ENGINEERING
+https://www.marianstancik.dev
 ${sep}
 
-Ďakujem za prihlásenie k odberu noviniek z oblasti AI agentov, UAV dronov a právnej regulácie.
+Ahoj,
 
-Každý pondelok ráno ti pošlem prehľad najzaujímavejšieho, čo sa udialo.
+ďakujem za tvoju objednávku: ${prodName}.
 
-Čo môžeš očakávať:
-• AI Agent Systems — novinky z Hermes Agent, MCP, multi-LLM
-• UAV & Edge AI — technické buildy, ArduPilot, computer vision
-• EU AI Act & Compliance — praktické právne poznatky
-• Biznis a automatizácia — Ako budovať agent-driven spoločnosť
+📋 ZHRNUTIE OBJEDNÁVKY:
+• Služba / Produkt: ${prodName}
+• Suma: ${price ? '€' + price : 'Na mieru'}
+• Webstránka na audit / automatizáciu: ${website || 'Zadaj prosím v odpovedi'}
+• E-mail pre doručenie: ${email}
+${notes ? `• Poznámka: ${notes}\n` : ''}
+⚡ ČO SA BUDE DIAŤ ĎALEJ:
+1. Tvoju objednávku a zadanú doménu som zaevidoval v systéme.
+2. Hermes Agent a ja spúšťame technickú analýzu / prípravu do 24 hodín.
+3. Kompletný výsledný report s konkrétnymi kódovými odporúčaniami ti doručím priamo na tento e-mail do 48 hodín.
+4. Ak potrebuješ vystaviť faktúru na firmu (IČO / DIČ / IČ DPH), stačí odpovedať na tento e-mail s fakturačnými údajmi.
+
+V prípade akýchkoľvek otázok stačí priamo odpovedať na túto správu.
+
+S pozdravom,
+
+Marian Stancik
+AI Engineer & Autonomous Systems Builder
+marianstancik@agentmail.to · https://www.marianstancik.dev
+`;
+
+      await sendEmail(email, userSubject, userText).catch(e => console.error('Order user email failed:', e.message));
+
+      const adminNotif = `🛒 NOVÁ OBJEDNÁVKA PRODUKTU — marianstancik.dev
+${sep}
+Dátum:   ${dateStr} ${timeStr}
+Produkt: ${prodName} (${price ? '€' + price : 'N/A'})
+Email:   ${email}
+Web:     ${website || 'N/A'}
+Poznámka: ${notes || 'Žiadna'}
+Zdroj:   ${source}
+Status:  Potvrdenie odoslané klientovi ✅
+${sep}`;
+
+      await sendEmail('marianstancik@agentmail.to', `[OBJEDNÁVKA] ${prodName} — ${email}`, adminNotif).catch(e => console.error('Order admin notif failed:', e.message));
+
+      return res.status(200).json({ status: 'ok', type: 'order', email, product: prodName });
+    }
+
+    // ─────────────────────────────────────────────────────────────
+    // TEMPLATE 2: CONTACT FORM MESSAGE
+    // ─────────────────────────────────────────────────────────────
+    if (isContact) {
+      const userSubject = `✦ Potvrdenie prijatia správy — Marian Stancik`;
+      const userText = `✦ MARIAN STANCIK — AI AGENTS & ENGINEERING
+https://www.marianstancik.dev
+${sep}
+
+Ahoj ${name ? name : ''},
+
+ďakujem za tvoju správu a záujem o spoluprácu!
+
+Správu som bezpečne prijal. Zvyčajne odpovedám do 24 hodín.
+
+📋 PREHĽAD ODOSLANEJ SPRÁVY:
+${message ? `„${message}“\n` : ''}
+Ak ide o urgentný projekt alebo máš doplňujúce podklady, môžeš odpovedať priamo na tento e-mail.
+
+S pozdravom,
+
+Marian Stancik
+AI Engineer & Autonomous Systems Builder
+marianstancik@agentmail.to · https://www.marianstancik.dev
+`;
+
+      await sendEmail(email, userSubject, userText).catch(e => console.error('Contact user email failed:', e.message));
+
+      const adminNotif = `💬 NOVÁ SPRÁVA Z WEBU — marianstancik.dev
+${sep}
+Dátum:   ${dateStr} ${timeStr}
+Od:      ${name || 'Nezadané'} <${email}>
+Správa:  ${message || 'Prázdna'}
+Zdroj:   ${source}
+${sep}`;
+
+      await sendEmail('marianstancik@agentmail.to', `[SPRÁVA] ${name || email}`, adminNotif).catch(e => console.error('Contact admin notif failed:', e.message));
+
+      return res.status(200).json({ status: 'ok', type: 'contact', email });
+    }
+
+    // ─────────────────────────────────────────────────────────────
+    // TEMPLATE 3: NEWSLETTER WELCOME
+    // ─────────────────────────────────────────────────────────────
+    const userSubject = `✦ Vitaj v newslettri Mariana Stancika!`;
+    const userText = `✦ MARIAN STANCIK — AI AGENTS & ENGINEERING
+https://www.marianstancik.dev
+${sep}
+
+Vitaj v mojom newslettri! 👋
+
+Ďakujem za prihlásenie k odberu noviniek zo sveta autonómnych AI agentov, edge robotiky a legal-by-design compliance.
+
+ČO MÔŽEŠ OČAKÁVAŤ:
+• AI Agent Systems — reálne poznatky z prevádzky Hermes Agent, MCP serverov a multi-LLM orchestrácie
+• UAV & Edge AI — hardvérové stavby, ArduPilot, Raspberry Pi 5 a computer vision
+• EU AI Act & Compliance — praktické zhrnutia regulácií a audity pripravenosti
+• Building in Public — konkrétne čísla, kódové ukážky a architektúry
 
 Môj web: https://www.marianstancik.dev
 X (Twitter): https://x.com/marian_s_ai
+GitHub: https://github.com/Abra7abra7
 
-Odhlásiť sa môžeš kedykoľvek odpoveďou na tento email.
+Odhlásiť sa môžeš kedykoľvek odpoveďou na tento e-mail.
 
 S pozdravom,
+
 Marian Stancik
-AI Engineer · UAV Builder · Law Scholar`;
+AI Engineer & UAV Builder
+marianstancik@agentmail.to · https://www.marianstancik.dev
+`;
 
-    const welcomeSubject = `👋 Vitaj v newslettri, ${name || 'priateľ'}!`;
-    await sendEmail(email, welcomeSubject, welcomeText).catch(e => {
-      console.error('Welcome email failed:', e.message);
-    });
+    await sendEmail(email, userSubject, userText).catch(e => console.error('Newsletter user email failed:', e.message));
 
-    // 2. Notification to Marian
-    const notifText = `📥 NEW LEAD — marianstancik.dev
+    const adminNotif = `📰 NOVÝ ODBERATEĽ NEWSLETTRU — marianstancik.dev
 ${sep}
-Date:   ${dateStr} ${timeStr}
-Source: ${source}
-Email:  ${email}
-${name ? `Name:   ${name}` : ''}
-${message ? `Message: ${message}` : ''}
-Status: welcome sent ✅
+Dátum:   ${dateStr} ${timeStr}
+Email:   ${email}
+Zdroj:   ${source}
 ${sep}`;
 
-    await sendEmail('marianstancik@agentmail.to', `[LEAD] ${name || email} — ${source}`, notifText);
+    await sendEmail('marianstancik@agentmail.to', `[NEWSLETTER] ${email}`, adminNotif).catch(e => console.error('Newsletter admin notif failed:', e.message));
 
-    return res.status(200).json({ status: 'ok', email, welcome_sent: true });
+    return res.status(200).json({ status: 'ok', type: 'newsletter', email, welcome_sent: true });
+
   } catch (e) {
-    console.error('Subscribe error:', e.message);
+    console.error('API error:', e.message);
     return res.status(500).json({ error: e.message });
   }
 }
