@@ -14,13 +14,14 @@ navExpertise: "Expertise",
 navProjects: "Projects",
 navBlog: "Blog",
 navContact: "✦ Contact",
+navProducts: "Products",
 heroBadge: "✦ I build AI agents that run your processes",
 heroTagline: "I build <strong>AI agents</strong> that run your processes. Autonomous systems, web audits, and custom AI agents for creative founders.",
 roleAi: "AI Agent Developer",
-roleUav: "UAV Hobby",
+roleUav: "UAV Builder (Hobby)",
 roleDrone: "Drone Pilot (EASA A1/A3)",
 rolePm: "AI Agent Developer",
-roleLaw: "Law & AI Compliance",
+roleLaw: "Law Student (PF UK)",
 heroEmail: "Email",
 skillsLabel: "✦ AI Engineering Skills",
 skillsHeading: "Skills & Capabilities",
@@ -173,6 +174,27 @@ t2024Desc: "Adopting modern agentic coding workflows in IDE Antigravity. Designi
 t2023Title: "Inception of AI Chatbots & GPT Experiments",
 t2023Desc: "First deep dive into LLMs, GPT prompt engineering, and conversational AI bots. Experimenting with API integrations, Python scripting, and discovering the transformative potential of 24/7 autonomous execution.",
 
+homeProductsLabel: "✦ Products",
+homeProductsHeading: "What I Build",
+homeProductsIntro: "AI agents that audit your web presence and custom autonomous agents for your business.",
+prodGeoTitle: "AI GEO Audit",
+prodGeoDesc: "Is your website ready for AI search? Agent checks llms.txt, JSON-LD, robots.txt, and AI visibility.",
+prodGeoPrice: "€150 →",
+prodReadinessTitle: "AI Web Readiness Scan",
+prodReadinessDesc: "Technical check of your website's legal documents. Agent verifies Privacy Policy, GDPR consent, Terms.",
+prodReadinessPrice: "€200 →",
+prodFullTitle: "Full Web Audit",
+prodFullDesc: "Both audits combined. GEO + technical readiness in one comprehensive report with priority matrix.",
+prodFullPrice: "€300 →",
+prodCustomTitle: "Custom AI Agent",
+prodCustomDesc: "A production-grade autonomous agent built for your specific business need. 24/7 operation.",
+prodCustomPrice: "From €500 →",
+trustLaw: "⚖️ <strong>Law student</strong> — I understand regulation, I build for regulated environments",
+trustUav: "🚁 <strong>UAV hobby</strong> — Hand-built drone, EASA certified, edge AI",
+trustPfuk: "🎓 <strong>PF UK</strong> — 3rd year, EU AI Act, GDPR, NIS2",
+fNavProducts: "Products",
+exp4Title: "Product Manager (Defence)",
+exp4Desc: "Defence industry background — managing classified hardware and software projects at scale.",
 },
 sk: {
 docTitle: "Marian Stancik — AI Agent Developer | Autonómne Agenty",
@@ -188,13 +210,14 @@ navExpertise: "Odbornosť",
 navProjects: "Projekty",
 navBlog: "Blog",
 navContact: "✦ Kontakt",
+navProducts: "Produkty",
 heroBadge: "✦ Staviam AI agentov, ktorí riadia tvoje procesy",
 heroTagline: "Staviam <strong>AI agentov</strong>, ktorí riadia tvoje procesy. Autonómne systémy, web audity a vlastní AI agenti pre kreatívnych founderov.",
 roleAi: "AI Agent Developer",
-roleUav: "UAV Hobby",
+roleUav: "Staviteľ UAV (Hobby)",
 roleDrone: "Pilot dronov (EASA A1/A3)",
 rolePm: "AI Agent Developer",
-roleLaw: "Právo & AI Compliance",
+roleLaw: "Študent práva (PF UK)",
 heroEmail: "E-mail",
 skillsLabel: "✦ AI Engineering Skills",
 skillsHeading: "Zručnosti & Schopnosti",
@@ -347,6 +370,27 @@ t2024Desc: "Moderné agentické vývojové prostredie IDE Antigravity a AI-augme
 t2023Title: "Začiatok AI & LLM Chatbotov",
 t2023Desc: "Prvé experimenty s generatívnou AI, GPT prompt engineeringom a konverzačnými chatbotmi. Integrácia LLM API cez Python a objavenie obrovského potenciálu 24/7 automatizácie.",
 
+homeProductsLabel: "✦ Produkty",
+homeProductsHeading: "Čo staviam",
+homeProductsIntro: "AI agenti na kontrolu webovej prítomnosti a vlastné autonómne agenty pre tvoju firmu.",
+prodGeoTitle: "AI GEO Audit",
+prodGeoDesc: "Je tvoj web pripravený na AI vyhľadávanie? Agent skontroluje llms.txt, JSON-LD, robots.txt a AI viditeľnosť.",
+prodGeoPrice: "€150 →",
+prodReadinessTitle: "AI Web Readiness Scan",
+prodReadinessDesc: "Technická kontrola právnych dokumentov tvojho webu. Agent overí Privacy Policy, GDPR súhlas a Terms.",
+prodReadinessPrice: "€200 →",
+prodFullTitle: "Full Web Audit",
+prodFullDesc: "Oba audity v jednom. GEO + technická pripravenosť v jednom reporte s prioritnou maticou.",
+prodFullPrice: "€300 →",
+prodCustomTitle: "Custom AI Agent",
+prodCustomDesc: "Produkčný autonómny agent postavený pre tvoju konkrétnu biznis potrebu. Prevádzka 24/7.",
+prodCustomPrice: "Od €500 →",
+trustLaw: "⚖️ <strong>Študent práva</strong> — rozumiem reguláciám, staviam pre regulované prostredia",
+trustUav: "🚁 <strong>UAV hobby</strong> — Ručne postavený dron, EASA certifikát, edge AI",
+trustPfuk: "🎓 <strong>PF UK</strong> — 3. ročník, EU AI Act, GDPR, NIS2",
+fNavProducts: "Produkty",
+exp4Title: "Product Manager (Obrana)",
+exp4Desc: "Skúsenosti z obranného priemyslu — riadenie klasifikovaných hardvérových a softvérových projektov vo veľkom meradle.",
 },
 };
 let currentLang = localStorage.getItem('ms_lang') || 'en';
@@ -375,6 +419,7 @@ var el = document.getElementById('navExpertise'); if(el) el.textContent = d.navE
 var el = document.getElementById('navProjects'); if(el) el.textContent = d.navProjects;
 var el = document.getElementById('navBlog'); if(el) el.textContent = d.navBlog;
 var el = document.getElementById('navContact'); if(el) el.textContent = d.navContact;
+var el = document.getElementById('navProducts'); if(el) el.textContent = d.navProducts;
 var el = document.getElementById('heroBadge'); if(el) el.textContent = d.heroBadge;
 var el = document.getElementById('heroTagline'); if(el) el.innerHTML = d.heroTagline;
 var el = document.getElementById('roleAi'); if(el) el.textContent = d.roleAi;
@@ -462,6 +507,25 @@ var el = document.getElementById('fNavProj'); if(el) el.textContent = d.fNavProj
 var el = document.getElementById('fNavConn'); if(el) el.textContent = d.fNavConn;
 var el = document.getElementById('fNavBlog'); if(el) el.textContent = d.fNavBlog;
 var el = document.getElementById('fMotto'); if(el) el.textContent = d.fMotto;
+var el = document.getElementById('fNavProducts'); if(el) el.textContent = d.fNavProducts;
+var el = document.getElementById('homeProductsLabel'); if(el) el.textContent = d.homeProductsLabel;
+var el = document.getElementById('homeProductsHeading'); if(el) el.textContent = d.homeProductsHeading;
+var el = document.getElementById('homeProductsIntro'); if(el) el.textContent = d.homeProductsIntro;
+var el = document.getElementById('prodGeoTitle'); if(el) el.textContent = d.prodGeoTitle;
+var el = document.getElementById('prodGeoDesc'); if(el) el.textContent = d.prodGeoDesc;
+var el = document.getElementById('prodGeoPrice'); if(el) el.textContent = d.prodGeoPrice;
+var el = document.getElementById('prodReadinessTitle'); if(el) el.textContent = d.prodReadinessTitle;
+var el = document.getElementById('prodReadinessDesc'); if(el) el.textContent = d.prodReadinessDesc;
+var el = document.getElementById('prodReadinessPrice'); if(el) el.textContent = d.prodReadinessPrice;
+var el = document.getElementById('prodFullTitle'); if(el) el.textContent = d.prodFullTitle;
+var el = document.getElementById('prodFullDesc'); if(el) el.textContent = d.prodFullDesc;
+var el = document.getElementById('prodFullPrice'); if(el) el.textContent = d.prodFullPrice;
+var el = document.getElementById('prodCustomTitle'); if(el) el.textContent = d.prodCustomTitle;
+var el = document.getElementById('prodCustomDesc'); if(el) el.textContent = d.prodCustomDesc;
+var el = document.getElementById('prodCustomPrice'); if(el) el.textContent = d.prodCustomPrice;
+var el = document.getElementById('trustLaw'); if(el) el.innerHTML = d.trustLaw;
+var el = document.getElementById('trustUav'); if(el) el.innerHTML = d.trustUav;
+var el = document.getElementById('trustPfuk'); if(el) el.innerHTML = d.trustPfuk;
 
 var el = document.getElementById('cockpitStatus'); if(el) el.textContent = d.cockpitStatus;
 var el = document.getElementById('cockpitChip'); if(el) el.textContent = d.cockpitChip;

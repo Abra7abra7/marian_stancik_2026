@@ -209,11 +209,11 @@
       </div>
       <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
       <div class="nav-links">
-        <a href="/" class="nav-link active">Home</a>
-        <a href="/about" class="nav-link">About</a>
-        <a href="/services" class="nav-link">Products</a>
-        <a href="/blog" class="nav-link">Blog</a>
-        <a href="/contact" class="nav-link nav-cta">✦ Contact</a>
+        <a href="/" class="nav-link active" id="navHome">Home</a>
+        <a href="/about" class="nav-link" id="navAbout">About</a>
+        <a href="/services" class="nav-link" id="navProducts">Products</a>
+        <a href="/blog" class="nav-link" id="navBlog">Blog</a>
+        <a href="/contact" class="nav-link nav-cta" id="navContact">✦ Contact</a>
       </div>
     </div>
   </div>
@@ -222,7 +222,7 @@
 <!-- === HERO === -->
 <section id="hero">
   <div class="container hero-inner">
-    <div class="badge">✦ I build AI agents that run your processes</div>
+    <div class="badge" id="heroBadge" data-i18n="heroBadge">✦ I build AI agents that run your processes</div>
     <div class="profile-frame">
       <picture>
         <source srcset="/profile.webp" type="image/webp">
@@ -230,21 +230,21 @@
       </picture>
     </div>
     <h1>Marian <span class="highlight">Stancik</span></h1>
-    <p class="tagline" style="max-width: 640px;">
+    <p class="tagline" id="heroTagline" style="max-width: 640px;">
       <strong>AI Agent Developer</strong> — I build AI agents that automate your business processes. Custom autonomous agents, web audits, and technical scans for creative founders who want their business to run without them.
     </p>
     <div class="hero-roles">
       <span class="role-badge">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
-        <span>AI Agent Developer</span>
+        <span id="roleAi">AI Agent Developer</span>
       </span>
       <span class="role-badge">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-8 4v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V7l-8-4Z"/><path d="M9 12h6"/><path d="M12 9v6"/></svg>
-        <span>Law Student (PF UK)</span>
-      </span>
-      <span class="role-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/><path d="m4.9 4.9 4.2 4.2"/><path d="m14.9 14.9 4.2 4.2"/><path d="m19.1 4.9-4.2 4.2"/><path d="m9.1 14.9-4.2 4.2"/><circle cx="4" cy="4" r="2.5"/><circle cx="20" cy="4" r="2.5"/><circle cx="4" cy="20" r="2.5"/><circle cx="20" cy="20" r="2.5"/></svg>
-        <span>UAV Builder (Hobby)</span>
+        <span id="roleLaw">Law Student (PF UK)</span>
+              </span>
+              <span class="role-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/><path d="m4.9 4.9 4.2 4.2"/><path d="m14.9 14.9 4.2 4.2"/><path d="m19.1 4.9-4.2 4.2"/><path d="m9.1 14.9-4.2 4.2"/><circle cx="4" cy="4" r="2.5"/><circle cx="20" cy="4" r="2.5"/><circle cx="4" cy="20" r="2.5"/><circle cx="20" cy="20" r="2.5"/></svg>
+                <span id="roleUav">UAV Builder (Hobby)</span>
       </span>
     </div>
     <div class="hero-links">
@@ -253,7 +253,7 @@
     </div>
     <div class="glow-line"></div>
     <div class="scroll-indicator">
-      <span>Scroll</span>
+      <span id="scrollText">Scroll</span>
       <div class="arrow"></div>
     </div>
   </div>
@@ -262,43 +262,43 @@
 <!-- === PRODUCTS === -->
 <section id="about" aria-label="What I build">
   <div class="container">
-    <div class="section-label fade-in">✦ Products</div>
-    <h2 class="fade-in">What I Build</h2>
-    <p class="section-intro fade-in">
+    <div class="section-label fade-in" id="homeProductsLabel">✦ Products</div>
+    <h2 class="fade-in" id="homeProductsHeading">What I Build</h2>
+    <p class="section-intro fade-in" id="homeProductsIntro">
       AI agents that audit your web presence and custom autonomous agents for your business.
     </p>
 
     <div class="home-products fade-in">
       <a href="/services" class="home-prod-card">
         <div class="icon">🔍</div>
-        <h3>AI GEO Audit</h3>
-        <p>Is your website ready for AI search? Agent checks llms.txt, JSON-LD, robots.txt, and AI visibility.</p>
-        <span class="price">€150 →</span>
+        <h3 id="prodGeoTitle">AI GEO Audit</h3>
+        <p id="prodGeoDesc">Is your website ready for AI search? Agent checks llms.txt, JSON-LD, robots.txt, and AI visibility.</p>
+        <span class="price" id="prodGeoPrice">€150 →</span>
       </a>
       <a href="/services" class="home-prod-card">
         <div class="icon">🛡️</div>
-        <h3>AI Web Readiness Scan</h3>
-        <p>Technical check of your website's legal documents. Agent verifies Privacy Policy, GDPR consent, Terms.</p>
-        <span class="price">€200 →</span>
+        <h3 id="prodReadinessTitle">AI Web Readiness Scan</h3>
+        <p id="prodReadinessDesc">Technical check of your website's legal documents. Agent verifies Privacy Policy, GDPR consent, Terms.</p>
+        <span class="price" id="prodReadinessPrice">€200 →</span>
       </a>
       <a href="/services" class="home-prod-card">
         <div class="icon">🎯</div>
-        <h3>Full Web Audit</h3>
-        <p>Both audits combined. GEO + technical readiness in one comprehensive report with priority matrix.</p>
-        <span class="price">€300 →</span>
+        <h3 id="prodFullTitle">Full Web Audit</h3>
+        <p id="prodFullDesc">Both audits combined. GEO + technical readiness in one comprehensive report with priority matrix.</p>
+        <span class="price" id="prodFullPrice">€300 →</span>
       </a>
       <a href="/services" class="home-prod-card">
         <div class="icon">🤖</div>
-        <h3>Custom AI Agent</h3>
-        <p>A production-grade autonomous agent built for your specific business need. 24/7 operation.</p>
-        <span class="price">From €500 →</span>
+        <h3 id="prodCustomTitle">Custom AI Agent</h3>
+        <p id="prodCustomDesc">A production-grade autonomous agent built for your specific business need. 24/7 operation.</p>
+        <span class="price" id="prodCustomPrice">From €500 →</span>
       </a>
     </div>
 
     <div class="trust-bar fade-in">
-      <span class="trust-item">⚖️ <strong>Law student</strong> — I understand regulation, I build for regulated environments</span>
-      <span class="trust-item">🚁 <strong>UAV hobby</strong> — Hand-built drone, EASA certified, edge AI</span>
-      <span class="trust-item">🎓 <strong>PF UK</strong> — 3rd year, EU AI Act, GDPR, NIS2</span>
+      <span class="trust-item" id="trustLaw">⚖️ <strong>Law student</strong> — I understand regulation, I build for regulated environments</span>
+      <span class="trust-item" id="trustUav">🚁 <strong>UAV hobby</strong> — Hand-built drone, EASA certified, edge AI</span>
+      <span class="trust-item" id="trustPfuk">🎓 <strong>PF UK</strong> — 3rd year, EU AI Act, GDPR, NIS2</span>
     </div>
   </div>
 </section>
@@ -306,10 +306,10 @@
 <!-- === ABOUT === -->
 <section id="about" aria-label="About Marian Stancik">
   <div class="container">
-    <div class="section-label fade-in">✦ About</div>
-    <h2 class="fade-in">AI Agent Developer. Law Student. UAV Builder.</h2>
+    <div class="section-label fade-in" id="aboutLabel">✦ About</div>
+    <h2 class="fade-in" id="aboutHeading">AI Agent Developer. Law Student. UAV Builder.</h2>
     <div class="about-grid">
-      <div class="about-text fade-in">
+      <div class="about-text fade-in" id="aboutBody">
         <p>I build <strong>autonomous AI agents</strong> using the <strong>Hermes Agent</strong> framework. My infrastructure runs 24/7 on a Hetzner VPS, orchestrating multi-LLM agents for content, CRM, monitoring, and automation. <em>This website and all its content is built and maintained by my autonomous Hermes Agent.</em></p>
         <p>I'm a <strong>3rd-year law student at PF UK</strong> — I study EU AI Act, GDPR, and tech regulation. This means I understand the legal landscape and can build AI agents that are technically ready for regulated environments. <strong>I am not a lawyer, I do not provide legal advice.</strong></p>
         <p>I build drones as a <strong>hobby</strong> — hand-soldered 1500g carbon quad with ArduPilot and Raspberry Pi 5 edge AI. EASA A1/A3 certified pilot. It's a showcase of my hardware and edge AI skills, not a product.</p>
@@ -318,12 +318,12 @@
         </div>
       </div>
       <div class="stats fade-in">
-        <div class="stat-card"><div class="stat-number">19+</div><div class="stat-label">Active Cron Agents</div></div>
-        <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Domains (AI · Law · UAV)</div></div>
-        <div class="stat-card"><div class="stat-number">3+</div><div class="stat-label">Years Building</div></div>
-        <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label">VPS Agent Runtime</div></div>
-        <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">Open Source Repos</div></div>
-        <div class="stat-card"><div class="stat-number">€2.6M</div><div class="stat-label">Drone Insurance</div></div>
+        <div class="stat-card"><div class="stat-number">19+</div><div class="stat-label" id="stat1Label">Active Cron Agents</div></div>
+        <div class="stat-card"><div class="stat-number">3</div><div class="stat-label" id="stat2Label">Domains (AI · Law · UAV)</div></div>
+        <div class="stat-card"><div class="stat-number">3+</div><div class="stat-label" id="stat3Label">Years Building</div></div>
+        <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label" id="stat6Label">VPS Agent Runtime</div></div>
+        <div class="stat-card"><div class="stat-number">6</div><div class="stat-label" id="stat5Label">Open Source Repos</div></div>
+        <div class="stat-card"><div class="stat-number">€2.6M</div><div class="stat-label" id="stat4Label">Drone Insurance</div></div>
       </div>
     </div>
   </div>
@@ -332,9 +332,9 @@
 <!-- === BLOG PREVIEW === -->
 <section id="blog-preview" aria-label="Latest blog posts">
   <div class="container">
-    <div class="section-label fade-in">✦ Blog</div>
-    <h2 class="fade-in">Latest thoughts.</h2>
-    <p class="section-intro fade-in">AI agents, autonomous systems, law & tech, and building in public.</p>
+    <div class="section-label fade-in" id="blogSecLabel">✦ Blog</div>
+    <h2 class="fade-in" id="blogSecHeading">Latest thoughts.</h2>
+    <p class="section-intro fade-in" id="blogSecIntro">AI agents, autonomous systems, law & tech, and building in public.</p>
     <div class="blog-preview-grid" id="homeBlogGrid">
       <a href="/blog/posts/2026-08-22-building-digital-twin" class="blog-card fade-in" hreflang="en">
         <div class="blog-date">August 22, 2026</div>
@@ -353,7 +353,7 @@
       </a>
     </div>
     <div class="blog-all">
-      <a href="/blog">Read all posts →</a>
+      <a href="/blog" id="blogAllBtn">Read all posts →</a>
     </div>
   </div>
 </section>
@@ -396,9 +396,9 @@
 <!-- === LEAD CAPTURE === -->
 <section id="lead-capture" aria-label="Stay updated">
   <div class="container">
-    <div class="section-label fade-in">✦ Stay in touch</div>
-    <h2 class="fade-in">Get updates from the build.</h2>
-    <p class="section-intro fade-in" style="margin-bottom: 0;">
+    <div class="section-label fade-in" id="leadLabel">✦ Stay in touch</div>
+    <h2 class="fade-in" id="leadHeading">Get updates from the build.</h2>
+    <p class="section-intro fade-in" id="leadIntro" style="margin-bottom: 0;">
       AI agent insights, drone builds, law & tech notes — directly to your inbox.
     </p>
     <form class="lead-form fade-in" id="leadForm">
@@ -412,16 +412,16 @@
       <button type="submit" id="subscribeBtn">Subscribe</button>
     </form>
     <div id="leadStatus" class="lead-status" role="alert"></div>
-    <p class="lead-note">No spam. Unsubscribe anytime. See <a href="/privacy" style="color:#CD7F32;text-decoration:underline;">Privacy Policy</a>. Built with AgentMail.</p>
+    <p class="lead-note" id="leadNote">No spam. Unsubscribe anytime. See <a href="/privacy" style="color:#CD7F32;text-decoration:underline;">Privacy Policy</a>. Built with AgentMail.</p>
   </div>
 </section>
 
 <!-- === CONNECT === -->
 <section id="connect" aria-label="Connect with Marian Stancik">
   <div class="container">
-    <div class="section-label fade-in">✦ Connect</div>
-    <h2 class="fade-in">Let's build something.</h2>
-    <p class="section-intro fade-in" style="margin-bottom: 28px;">
+    <div class="section-label fade-in" id="connLabel">✦ Connect</div>
+    <h2 class="fade-in" id="connHeading">Let's build something.</h2>
+    <p class="section-intro fade-in" id="connIntro" style="margin-bottom: 28px;">
       Follow the build, read the blog, or reach out directly.
     </p>
     <div class="connect-grid fade-in">
@@ -472,7 +472,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo"><div class="brand-mark" aria-hidden="true"><img src="/profile.webp" alt="Marian Stancik" width="28" height="28" class="brand-avatar"></div><span>marian<span class="highlight">stancik</span><span class="tld">.dev</span></span></div>
-        <p class="footer-tagline">I build AI agents that run your processes.</p>
+        <p class="footer-tagline" id="footerTagline">I build AI agents that run your processes.</p>
         <div class="footer-social">
           <a href="https://x.com/marian_s_ai" target="_blank" rel="noopener" aria-label="X/Twitter" class="social-circle"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://www.youtube.com/@marian_ai" target="_blank" rel="noopener" aria-label="YouTube" class="social-circle"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
@@ -483,27 +483,27 @@
         </div>
       </div>
       <div class="footer-col">
-        <h4>Navigate</h4>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/services">Products</a>
-        <a href="/blog">Blog</a>
-        <a href="/contact">Contact</a>
+        <h4 id="fCol1Title">Navigate</h4>
+        <a href="/" id="fNavHome">Home</a>
+        <a href="/about" id="fNavAbout">About</a>
+        <a href="/services" id="fNavProducts">Products</a>
+        <a href="/blog" id="fNavBlog">Blog</a>
+        <a href="/contact" id="fNavConn">Contact</a>
       </div>
       <div class="footer-col">
-        <h4>More</h4>
+        <h4 id="fCol2Title">More</h4>
         <a href="/drones">Drones (Hobby)</a>
         <a href="https://github.com/Abra7abra7" target="_blank" rel="noopener">Open Source</a>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4 id="fCol3Title">Contact</h4>
         <a href="mailto:marianstancik@agentmail.to">marianstancik@agentmail.to</a>
         <a href="https://github.com/Abra7abra7/marian_stancik_2026" target="_blank" rel="noopener">Website Source</a>
       </div>
     </div>
     <div class="footer-divider"></div>
     <div class="footer-bottom">
-      <p>© 2026 Marian Stancik — <span>Build better. Stay legal.</span></p>
+      <p>© 2026 Marian Stancik — <span id="fMotto">Build better. Stay legal.</span></p>
       <p class="footer-tag">Built with <span class="bronze">✦</span> by Hermes Agent</p>
     </div>
     <div class="footer-legal" style="margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.06); font-size:0.65rem; color:#6666AA; line-height:1.6; text-align:center;">
