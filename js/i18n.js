@@ -65,7 +65,7 @@ dCap2: "Hand-built 1500g carbon quad — maiden flight & telemetry verification"
 dCap3: "ArduPilot mission planning — automated multi-waypoint guidance",
 scrollText: "Scroll",
 aboutLabel: "✦ About",
-aboutHeading: "Autonomous Agent Systems. UAV Builder. Regulatory Knowledge.",
+aboutHeading: "AI Agent Developer. Law Student. UAV Builder.",
 aboutBody: `
 <p>I build <strong>autonomous AI agents</strong> using the <strong>Hermes Agent</strong> framework (by Nous Research). My core infrastructure runs 24/7 on an enterprise <strong>Hetzner Cloud VPS</strong> in Germany/Finland, orchestrating advanced models via the <strong>OpenRouter API</strong>, with <strong>Obsidian</strong> acting as a persistent memory layer for multi-agent workflows. <em>This website and all its content is built and maintained by my autonomous Hermes Agent.</em></p>
 
@@ -199,7 +199,7 @@ dCap2: "Ručne postavený 1500g carbon quad — zálet a telemetria",
 dCap3: "ArduPilot plánovanie misií — automatické navádzanie",
 scrollText: "Posunúť",
 aboutLabel: "✦ O mne",
-aboutHeading: "AI Inžinier. Staviteľ UAV. Regulačné znalosti. Agentová architektúra.",
+aboutHeading: "AI Agent Developer. Študent práva. Staviteľ UAV.",
 aboutBody: `
 <p>Staviam <strong>autonómne AI agenty</strong> pomocou frameworku <strong>Hermes Agent</strong> (Nous Research). Moja infraštruktúra beží 24/7 na <strong>Hetzner Cloud VPS</strong> v Nemecku/Fínsku, modely orchestrujem cez <strong>OpenRouter API</strong> a <strong>Obsidian</strong> slúži ako pamäťová vrstva pre multi-agentové workflowy. <em>Táto webstránka a všetok jej obsah je vytvorený a udržiavaný mojím autonómnym Hermes Agentom.</em></p>
 

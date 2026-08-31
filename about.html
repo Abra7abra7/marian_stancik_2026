@@ -9,8 +9,6 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Marian Stancik">
 <link rel="canonical" href="https://www.marianstancik.dev/about">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -41,7 +39,7 @@
       "@type": "Person",
       "@id": "https://www.marianstancik.dev/#person",
       "name": "Marian Stancik",
-      "alternateName": ["Marian Stančík", "marian_s_ai", "marian_ai"],
+      "alternateName": ["Marian Stancik", "marian_s_ai", "marian_ai"],
       "givenName": "Marian",
       "familyName": "Stancik",
       "url": "https://www.marianstancik.dev",
@@ -54,7 +52,7 @@
         "https://www.threads.net/@marian_stancik"
       ],
       "jobTitle": ["AI Agent Developer"],
-      "knowsAbout": ["Artificial Intelligence", "Autonomous Agents", "Hermes Agent", "Model Context Protocol", "Drone Programming", "ArduPilot", "EU AI Act", "GDPR", "NIS2", "UAV Systems"],
+      "knowsAbout": ["Artificial Intelligence", "Autonomous Agents", "Hermes Agent", "Model Context Protocol", "EU AI Act", "GDPR", "NIS2", "Drone Programming", "ArduPilot"],
       "nationality": {"@type": "Country", "name": "Slovak Republic"}
     },
     {
@@ -82,39 +80,15 @@
           "name": "Who is Marian Stancik?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Marian Stancik is an AI Engineer and UAV Builder. He specializes in autonomous multi-agent systems (Hermes Agent, MCP), hand-soldered tactical UAVs (ArduPilot, Raspberry Pi 5 edge vision AI), and AI regulatory compliance (EU AI Act, GDPR, NIS2, DORA)."
+            "text": "Marian Stancik is an AI Agent Developer. He builds autonomous AI agents that run business processes — content, CRM, monitoring, and automation. He is also a 3rd-year law student at Comenius University (PF UK) and builds drones as a hobby."
           }
         },
         {
           "@type": "Question",
-          "name": "What is Hermes Agent and how does Marian Stancik use it?",
+          "name": "Does Marian provide legal advice?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Hermes Agent is an autonomous agent framework. Marian deploys Hermes Agent on an enterprise Hetzner Cloud VPS running 24/7 background cron loops, interfacing with custom Model Context Protocol (MCP) servers, utilizing OpenRouter for multi-model dynamic routing (DeepSeek, Claude 3.5 Sonnet, GPT-4o), with persistent memory managed in an Obsidian knowledge vault and live Command & Control via Telegram and WhatsApp."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What infrastructure powers Marian Stancik's 24/7 autonomous agents?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Autonomous agents run on dedicated Linux Ubuntu VPS hosted in Hetzner Cloud (Nuremberg and Helsinki data centers), ensuring strict EU data sovereignty. The stack consists of Python 3, FastAPI, Caddy reverse proxy, SQLite, 19+ cron orchestrations, Obsidian Markdown memory layer, and zero-build vanilla web interfaces."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is Marian Stancik's regulatory knowledge in AI compliance?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Marian studies regulatory compliance frameworks covering the EU AI Act (risk tiering, GPAI governance), GDPR (training data privacy), NIS2 Directive (cyber resilience), DORA (financial operational stability), EU Data Act, and the DSM Copyright Directive. Shared for educational purposes, not legal advice."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What are the technical specifications of Marian's hand-built drone?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A custom 1500g carbon tactical quadcopter built on an 8-inch GEPRC Mark4 frame with Skystars H7 Dual Gyro FC, AM60 60A ESC stack, iFlight XING2 2809 1250Kv motors, 6S 5500mAh LiPo, RadioMaster ELRS telemetry, and FlyfishRC GNSS. It runs ArduPilot Copter autopilot with an onboard Raspberry Pi 5 (8GB) companion computer and Camera Module 3 for real-time edge vision AI target detection. Licensed EASA A1/A3 with €2.6M insurance."
+            "text": "No. Marian is a law student, not a lawyer. He does not provide legal advice, legal services, or compliance consulting. He shares regulatory knowledge for educational purposes only."
           }
         }
       ]
@@ -126,6 +100,41 @@
 <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Knowledge Graph">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <script defer src="https://api.marianstancik.dev/script.js" data-website-id="ec1c0df8-e51f-4236-9ad0-e3992f0b1637"></script>
+<style>
+/* About page specific styles */
+.about-hero-badge { display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #CD7F32; background: rgba(205,127,50,0.1); border: 1px solid rgba(205,127,50,0.25); padding: 6px 16px; border-radius: 100px; margin-bottom: 16px; }
+.about-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0; }
+.about-card {
+  background: var(--color-bg-card, rgba(18,18,30,0.65));
+  border: 1px solid var(--color-border, rgba(255,255,255,0.06));
+  border-radius: var(--radius-md, 12px);
+  padding: 28px 24px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative; overflow: hidden;
+}
+.about-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #CD7F32, #E8B86D); opacity: 0; transition: opacity 0.3s; }
+.about-card:hover { border-color: var(--color-border-hover, rgba(205,127,50,0.35)); transform: translateY(-4px); background: var(--color-bg-card-hover, rgba(26,26,42,0.85)); }
+.about-card:hover::before { opacity: 1; }
+.about-card .card-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+.about-card h3 { font-size: 1.1rem; color: #CD7F32; margin: 0 0 8px; }
+.about-card p { font-size: 0.88rem; color: var(--color-text-muted, #8888A0); line-height: 1.6; margin: 0; }
+.about-card .card-tag { display: inline-block; font-size: 0.65rem; padding: 3px 10px; border-radius: 100px; background: rgba(205,127,50,0.08); color: #E8B86D; border: 1px solid rgba(205,127,50,0.15); margin-top: 12px; }
+.about-card.bad { opacity: 1; }
+.about-card.bad .card-tag { background: rgba(255,80,80,0.08); color: #ff8080; border-color: rgba(255,80,80,0.2); }
+.timeline-section { margin-top: 48px; }
+.timeline-track { position: relative; margin: 24px 0; padding-left: 32px; }
+.timeline-track::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, rgba(205,127,50,0.4), rgba(232,184,109,0.1)); }
+.timeline-item { position: relative; margin-bottom: 32px; }
+.timeline-dot { position: absolute; left: -32px; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: #08080F; border: 2px solid #CD7F32; box-shadow: 0 0 0 4px rgba(205,127,50,0.1); }
+.timeline-year { font-size: 0.72rem; color: #CD7F32; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.timeline-title { font-size: 1.15rem; font-weight: 600; color: #F0F0F5; margin-bottom: 6px; }
+.timeline-desc { font-size: 0.9rem; color: #8888A0; line-height: 1.6; }
+.focus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+.focus-item { background: rgba(205,127,50,0.05); border-left: 3px solid #CD7F32; padding: 16px 20px; border-radius: 0 8px 8px 0; }
+.focus-item h4 { margin: 0 0 6px; font-size: 0.95rem; color: #E8B86D; }
+.focus-item p { margin: 0; font-size: 0.85rem; color: #8888A0; line-height: 1.5; }
+@media (max-width: 860px) { .about-cards { grid-template-columns: 1fr; } .focus-grid { grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -162,122 +171,138 @@
     </div>
   </div>
 </nav>
-<!-- === ABOUT === -->
+
+<!-- === ABOUT HERO === -->
 <section id="about" aria-label="About Marian Stancik">
-  <div class="container">
-    <div class="section-label fade-in" id="aboutLabel">✦ About</div>
-    <h2 class="fade-in" id="aboutHeading">AI Agent Developer. Law Student. UAV Builder.</h2>
-    
+  <div class="container" style="max-width: 920px;">
+    <div class="about-hero-badge fade-in">✦ About</div>
+    <h2 class="fade-in">AI Agent Developer. <span style="color:#CD7F32;">Law Student.</span> UAV Builder.</h2>
+    <p class="section-intro fade-in" style="max-width: 700px;">
+      I build autonomous AI agents that run business processes — content, CRM, monitoring, and automation.
+      24/7, on my own infrastructure, without babysitting.
+    </p>
+
     <div class="about-grid fade-in">
-      <div class="about-text" id="aboutBody">
-        <p>I build <strong>autonomous AI agents</strong> using the <strong>Hermes Agent</strong> framework. My core infrastructure runs 24/7 on a Hetzner VPS, orchestrating multi-LLM agents for content, CRM, monitoring, and automation. <em>This website and all its content is built and maintained by my autonomous Hermes Agent.</em></p>
-        <p>I'm a <strong>3rd-year law student at PF UK</strong>. I focus on EU AI Act, GDPR, NIS2, DORA, and tech regulation. I share practical regulatory knowledge for educational purposes. <strong>I am not a lawyer, I do not provide legal advice.</strong></p>
-        <p>I build drones as a <strong>hobby</strong> — hand-soldered 1500g carbon quad with ArduPilot and Raspberry Pi 5 edge AI. EASA A1/A3 certified. This is a showcase of my hardware skills, not a product.</p>
+      <div class="about-text">
+        <p>I build <strong>autonomous AI agents</strong> using the <strong>Hermes Agent</strong> framework. My infrastructure runs 24/7 on a Hetzner VPS, orchestrating multi-LLM agents for content, CRM, monitoring, and automation. <em>This website and all its content is built and maintained by my autonomous Hermes Agent.</em></p>
+        <p>I'm a <strong>3rd-year law student at PF UK</strong> (Comenius University, Bratislava). I focus on EU AI Act, GDPR, NIS2, and tech regulation. This means I understand the legal landscape and can build AI agents that are <strong>technically ready for regulated environments</strong>. <strong>I am not a lawyer, I do not provide legal advice.</strong></p>
+        <p>I build drones as a <strong>hobby</strong> — hand-soldered 1500g carbon quad with ArduPilot and Raspberry Pi 5 edge AI, EASA A1/A3 certified. It's a showcase of my hardware and edge AI skills, not a product.</p>
         <div class="highlight" style="background:rgba(205,127,50,0.08);padding:1rem;border-left:3px solid #CD7F32;margin:1.5rem 0;border-radius:4px;font-size:0.85rem;">
-          <p><strong>⚠️ Disclaimer:</strong> This is not legal advice. I share regulatory knowledge and compliance information for educational purposes only. For specific legal questions, consult a qualified attorney.</p>
+          <p><strong>⚠️ Disclaimer:</strong> This is not legal advice. I share regulatory knowledge for educational purposes only. For specific legal questions, consult a qualified attorney.</p>
         </div>
       </div>
 
       <div class="stats">
-        <div class="stat-card">
-          <div class="stat-number">19+</div>
-          <div class="stat-label" id="stat1Label">Active Cron Agents</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">3</div>
-          <div class="stat-label" id="stat2Label">Domains (AI · Law · UAV)</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">3+</div>
-          <div class="stat-label" id="stat3Label">Years Building</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">€2.6M</div>
-          <div class="stat-label" id="stat4Label">Drone Insurance</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">6</div>
-          <div class="stat-label" id="stat5Label">Open Source Repos</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">24/7</div>
-          <div class="stat-label" id="stat6Label">VPS Agent Runtime</div>
-        </div>
+        <div class="stat-card"><div class="stat-number">19+</div><div class="stat-label">Active Cron Agents</div></div>
+        <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Domains (AI · Law · UAV)</div></div>
+        <div class="stat-card"><div class="stat-number">3+</div><div class="stat-label">Years Building</div></div>
+        <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label">VPS Agent Runtime</div></div>
+        <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">Open Source Repos</div></div>
+        <div class="stat-card"><div class="stat-number">€2.6M</div><div class="stat-label">Drone Insurance</div></div>
       </div>
     </div>
 
-    <!-- Infrastructure & Tech Stack Bento Grid -->
-    <div style="margin-top: 56px;">
-      <h3 style="font-size: 1.35rem; font-weight: 700; color: #F0F0F5; margin-bottom: 8px;">Engineering Stack &amp; Operating Philosophy</h3>
-      <p style="color: #8888A0; font-size: 0.92rem; margin-bottom: 24px;">The four architectural pillars powering every autonomous system, web interface, and hardware project.</p>
-      
-      <div class="bento-grid fade-in">
-        <div class="bento-card">
-          <div class="bento-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-          </div>
-          <h3>Enterprise VPS &amp; EU Sovereignty</h3>
-          <p>Dedicated Hetzner Cloud infrastructure in Germany and Finland. 24/7 cron orchestration running autonomous Hermes agents, custom MCP endpoints, and Telegram/WhatsApp command channels with strict European data sovereignty.</p>
-        </div>
+    <!-- WHAT I DO / DON'T DO CARDS -->
+    <h3 style="font-size: 1.35rem; font-weight: 700; color: #F0F0F5; margin: 48px 0 8px;">What I do</h3>
+    <p style="color: #8888A0; font-size: 0.92rem; margin-bottom: 24px;">Three things — and they don't overlap.</p>
 
-        <div class="bento-card">
-          <div class="bento-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"/></svg>
-          </div>
-          <h3>Model Orchestration via OpenRouter</h3>
-          <p>Dynamic multi-LLM routing balancing reasoning capability, context window, and latency across DeepSeek V3/R1, Claude 3.5 Sonnet, GPT-4o, and Llama 3.3 for resilient autonomous task execution.</p>
-        </div>
-
-        <div class="bento-card">
-          <div class="bento-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          </div>
-          <h3>Obsidian Memory Layer (Second Brain)</h3>
-          <p>A bidirectional knowledge vault functioning as the persistent memory layer for autonomous agents. Enables structured long-term retrieval, context checkpoints, and autonomous knowledge distillation.</p>
-        </div>
-
-        <div class="bento-card">
-          <div class="bento-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          </div>
-          <h3>Zero-Build High Performance Web</h3>
-          <p>Ultra-fast HTML5, Vanilla JS, and modern CSS design tokens. No heavy frameworks, no hydration penalties, instant page load (Lighthouse 100), and optimized discoverability for AI agents (GEO / LLMO).</p>
-        </div>
+    <div class="about-cards fade-in">
+      <div class="about-card">
+        <span class="card-icon">🤖</span>
+        <h3>AI Agent Developer (Job)</h3>
+        <p>I design, build, deploy, and operate autonomous AI agents on client infrastructure or managed VPS. Custom MCP servers, multi-LLM orchestration, 24/7 cron automation, and persistent memory.</p>
+        <span class="card-tag">Hermes Agent · MCP · OpenRouter · Python</span>
+      </div>
+      <div class="about-card">
+        <span class="card-icon">⚖️</span>
+        <h3>Law Student (Context)</h3>
+        <p>3rd year at PF UK. I study EU AI Act, GDPR, NIS2 and use that knowledge to build agents that are technically ready for regulated environments. Educational sharing only.</p>
+        <span class="card-tag">EU AI Act · GDPR · NIS2 · DORA</span>
+      </div>
+      <div class="about-card">
+        <span class="card-icon">🚁</span>
+        <h3>UAV Builder (Hobby)</h3>
+        <p>Hand-soldered 1500g carbon quad with ArduPilot and Raspberry Pi 5 edge AI. EASA A1/A3 certified, €2.6M insured. Proof of my hardware and embedded engineering skills.</p>
+        <span class="card-tag">ArduPilot · Raspberry Pi 5 · Edge AI</span>
       </div>
     </div>
 
-    <!-- Timeline & Milestone Progression -->
+    <h3 style="font-size: 1.35rem; font-weight: 700; color: #F0F0F5; margin: 40px 0 8px;">What I don't do</h3>
+    <p style="color: #8888A0; font-size: 0.92rem; margin-bottom: 24px;">Clear boundaries — so you know exactly who you're hiring.</p>
+
+    <div class="about-cards fade-in">
+      <div class="about-card bad">
+        <span class="card-icon">⛔</span>
+        <h3>No legal advice</h3>
+        <p>I'm a student, not an attorney. I don't provide legal opinions, compliance consulting, or legal services. My agents run technical checks — legal sign-off is for your lawyer.</p>
+        <span class="card-tag">Not a lawyer</span>
+      </div>
+      <div class="about-card bad">
+        <span class="card-icon">⛔</span>
+        <h3>No drone services</h3>
+        <p>I don't sell drones, do aerial work commercially, or provide drone services. The drone is a hobby that demonstrates my edge-AI and systems-engineering skills.</p>
+        <span class="card-tag">Hobby only</span>
+      </div>
+      <div class="about-card bad">
+        <span class="card-icon">⛔</span>
+        <h3>No agencies / middlemen</h3>
+        <p>I build directly with clients. No outsourcing, no white-label, no account management layers. You talk to the engineer who builds your system.</p>
+        <span class="card-tag">Direct only</span>
+      </div>
+    </div>
+
+    <!-- FOCUS AREAS -->
+    <div class="focus-grid fade-in">
+      <div class="focus-item">
+        <h4>🔄 Process Automation</h4>
+        <p>Lead capture, CRM follow-ups, content pipelines, reporting — agents handle workflows that used to eat your team's time.</p>
+      </div>
+      <div class="focus-item">
+        <h4>🔍 AI Web Audits</h4>
+        <p>GEO audit (AI-search visibility) and Web Readiness Scan (technical document check) — an agent reviews your web presence.</p>
+      </div>
+      <div class="focus-item">
+        <h4>⚙️ Custom AI Agents</h4>
+        <p>Your workflow, your data, your infrastructure. An agent built for one job — your job — run 24/7.</p>
+      </div>
+      <div class="focus-item">
+        <h4>🛡️ Regulation-Aware Builds</h4>
+        <p>Law background means agents are engineered with GDPR/AI-Act awareness from day one — not retrofitted after a problem.</p>
+      </div>
+    </div>
+
+    <!-- TIMELINE -->
     <div class="timeline-section fade-in">
-      <h3 style="font-size: 1.35rem; font-weight: 700; color: #F0F0F5; margin-bottom: 8px;">Journey &amp; Key Milestones</h3>
-      <p style="color: #8888A0; font-size: 0.92rem; margin-bottom: 24px;">The continuous progression of engineering autonomous software, robotic hardware, and legal frameworks.</p>
-      
+      <h3 style="font-size: 1.35rem; font-weight: 700; color: #F0F0F5; margin-bottom: 8px;">How I got here</h3>
+      <p style="color: #8888A0; font-size: 0.92rem; margin-bottom: 24px;">The actual path — from first agent to autonomous systems operator.</p>
+
       <div class="timeline-track">
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-year">2026 — Present</div>
-          <div class="timeline-title">Autonomous Agent-Native Pipelines &amp; Edge Vision AI</div>
-          <div class="timeline-desc">Scaling 24/7 autonomous agent pipelines on Hetzner VPS and deploying onboard computer vision models on Raspberry Pi 5 companion computers for UAV real-time tracking.</div>
+          <div class="timeline-title">Autonomous Systems Operator</div>
+          <div class="timeline-desc">Scaling 19+ autonomous cron agents on Hetzner VPS. Running multi-agent pipelines for content, CRM, monitoring, and this very website. Building AI web audit products (GEO + Readiness).</div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-year">2025</div>
-          <div class="timeline-title">ArduPilot Autopilot &amp; EU AI Act Compliance Frameworks</div>
-          <div class="timeline-desc">Migrated 1500g tactical drone build to ArduPilot for automated multi-waypoint navigation. Authored enterprise compliance architectures for EU AI Act, GDPR, and NIS2.</div>
+          <div class="timeline-title">ASCENTIA s.r.o. &amp; Production Systems</div>
+          <div class="timeline-desc">Founded ASCENTIA s.r.o. Built production-grade agent systems: email automation, CRM follow-up, lead capture with AgentMail, social syndication. Started law studies at PF UK (EU AI Act, GDPR focus).</div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-year">2024</div>
-          <div class="timeline-title">Hand-Built 1500g Tactical Quadcopter &amp; Betaflight Tuning</div>
-          <div class="timeline-desc">Hand-soldered and assembled full 8-inch carbon frame UAV from raw electronics, motors, ESCs, and FPV systems. Completed first flight tests and EASA A1/A3 certification.</div>
+          <div class="timeline-title">Drone Build &amp; Hardware Engineering</div>
+          <div class="timeline-desc">Hand-soldered 1500g carbon quad from raw components. Migrated from Betaflight to ArduPilot. EASA A1/A3 certification. Integrated Raspberry Pi 5 edge AI companion computer.</div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-year">2023</div>
-          <div class="timeline-title">Autonomous AI Engineering &amp; Hermes Agent Ecosystem</div>
-          <div class="timeline-desc">Began architecting autonomous AI agent loops, custom MCP tools, and continuous background cron automation on European cloud infrastructure.</div>
+          <div class="timeline-title">First Autonomous Agents</div>
+          <div class="timeline-desc">Started building AI agent loops with new agent frameworks. Learned the stack: Python, VPS admin, cron orchestration, LLM APIs, persistent memory. Discovered the power of 24/7 automation.</div>
         </div>
       </div>
     </div>
@@ -294,13 +319,10 @@
           <div class="brand-mark" aria-hidden="true">✦</div>
           <span>marian<span class="highlight">stancik</span><span class="tld">.dev</span></span>
         </div>
-        <p class="footer-tagline" id="footerTagline">Building autonomous agent systems, UAV platforms, and AI compliance research.</p>
+        <p class="footer-tagline">I build AI agents that run your processes.</p>
         <div class="footer-social">
           <a href="https://x.com/marian_s_ai" target="_blank" rel="noopener" aria-label="X/Twitter" class="social-circle">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://www.threads.net/@marian_stancik" target="_blank" rel="noopener" aria-label="Threads" class="social-circle">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12.186 24h-.007C5.46 23.972 0 18.528 0 11.83 0 5.166 5.46-.245 12.18.003c6.64.244 11.815 5.58 11.82 12.18 0 4.29-2.128 8.082-5.492 10.125-1.42.862-2.92 1.34-4.52 1.442-.424.027-.797-.285-.823-.71-.027-.424.285-.797.71-.823 1.38-.088 2.67-.502 3.89-1.242 2.94-1.785 4.8-5.093 4.8-8.847-.005-5.75-4.52-10.4-10.33-10.615C5.975 1.298 1.455 5.99 1.455 11.83c0 5.86 4.79 10.685 10.724 10.71h.007c2.167-.007 4.195-.658 5.864-1.882.35-.256.84-.176 1.096.173.256.35.176.84-.173 1.096-1.92 1.408-4.256 2.066-6.787 2.073zm.884-15.75c-2.42 0-3.9 1.49-3.9 3.92 0 2.45 1.54 3.94 3.98 3.94 1.57 0 2.92-.66 3.65-1.78.36-.55.45-1.18.25-1.78-.3-.92-1.22-1.55-2.28-1.55-.42 0-.82.1-1.17.29-.15.08-.34.02-.42-.13-.08-.15-.02-.34.13-.42.45-.25.96-.38 1.49-.38 1.47 0 2.76.87 3.19 2.18.28.84.15 1.73-.35 2.5-.96 1.47-2.73 2.34-4.78 2.34-3.19 0-5.26-1.98-5.26-5.19 0-3.19 2.01-5.18 5.17-5.18 2.5 0 4.39 1.25 5.18 3.42.14.39-.06.82-.45.96-.39.14-.82-.06-.96-.45-.63-1.74-2.14-2.73-4.14-2.73z"/></svg>
           </a>
           <a href="https://www.youtube.com/@marian_ai" target="_blank" rel="noopener" aria-label="YouTube" class="social-circle">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -320,7 +342,7 @@
         </div>
       </div>
       <div class="footer-col">
-        <h4 id="fCol1Title">Navigate</h4>
+        <h4>Navigate</h4>
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/services">Products</a>
@@ -328,13 +350,12 @@
         <a href="/contact">Contact</a>
       </div>
       <div class="footer-col">
-        <h4 id="fCol2Title">More</h4>
+        <h4>More</h4>
         <a href="/drones">Drones (Hobby)</a>
         <a href="https://github.com/Abra7abra7" target="_blank" rel="noopener">Open Source</a>
-        <a href="/blog" id="fNavBlog">Blog</a>
       </div>
       <div class="footer-col">
-        <h4 id="fCol3Title">Contact</h4>
+        <h4>Contact</h4>
         <a href="mailto:marianstancik@agentmail.to">marianstancik@agentmail.to</a>
         <a href="https://github.com/Abra7abra7/marian_stancik_2026" target="_blank" rel="noopener">Website Source</a>
         <a href="https://www.marianstancik.dev" target="_blank" rel="noopener">marianstancik.dev</a>
@@ -342,7 +363,7 @@
     </div>
     <div class="footer-divider"></div>
     <div class="footer-bottom">
-      <p>© 2026 Marian Stancik — <span id="fMotto">Build better. Stay legal.</span></p>
+      <p>© 2026 Marian Stancik — <span>Build better. Stay legal.</span></p>
       <p class="footer-tag">Built with <span class="bronze">✦</span> by Hermes Agent</p>
     </div>
     <div class="footer-legal" style="margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.06); font-size:0.65rem; color:#6666AA; line-height:1.6; text-align:center;">
@@ -353,12 +374,9 @@
 
 </div>
 
-
 </div>
 
 <script type="module" src="/js/three-bg.js"></script>
-
-
 <script src="/js/i18n.js"></script>
 
 </body></html>

@@ -8,7 +8,7 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Marian Stancik">
 <link rel="canonical" href="https://www.marianstancik.dev">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="shortcut icon" href="/favicon.ico">
@@ -40,7 +40,7 @@
       "@type": "Person",
       "@id": "https://www.marianstancik.dev/#person",
       "name": "Marian Stancik",
-      "alternateName": ["Marian Stančík", "marian_s_ai", "Marian Stancik Dev"],
+      "alternateName": ["Marian Stancik", "marian_s_ai", "Marian Stancik Dev"],
       "givenName": "Marian",
       "familyName": "Stancik",
       "url": "https://www.marianstancik.dev",
@@ -134,6 +134,51 @@
 .trust-bar { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 24px; }
 .trust-item { font-size: 0.7rem; color: var(--color-text-muted, #8888A0); padding: 6px 14px; border-radius: 100px; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border, rgba(255,255,255,0.06)); }
 .trust-item strong { color: var(--color-accent, #E8B86D); }
+/* Hero CTA button - visible, not ghost */
+.hero-links a.hero-cta, .hero-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--color-primary, #CD7F32) !important;
+  color: #08080F !important; font-weight: 700 !important;
+  font-size: 0.85rem; padding: 10px 24px;
+  border: 1px solid var(--color-primary, #CD7F32) !important;
+  border-radius: var(--radius-sm, 6px);
+  text-decoration: none; transition: all 0.3s;
+}
+.hero-links a.hero-cta:hover {
+  background: var(--color-accent, #E8B86D) !important;
+  border-color: var(--color-accent, #E8B86D) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(205,127,50,0.4);
+}
+/* Product cards - enhanced */
+.home-prod-card {
+  background: var(--color-bg-card); border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); padding: 24px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); text-decoration: none;
+  position: relative; overflow: hidden;
+}
+.home-prod-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--color-primary, #CD7F32), var(--color-accent, #E8B86D));
+  opacity: 0; transition: opacity 0.3s;
+}
+.home-prod-card:hover {
+  border-color: var(--color-border-hover, rgba(205,127,50,0.35));
+  transform: translateY(-4px);
+  background: var(--color-bg-card-hover, rgba(26,26,42,0.85));
+  box-shadow: 0 8px 30px -4px rgba(205,127,50,0.15);
+}
+.home-prod-card:hover::before { opacity: 1; }
+.home-prod-card .icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+.home-prod-card h3 { font-size: 1.05rem; color: var(--color-primary, #CD7F32); margin: 0 0 6px; transition: color 0.3s; }
+.home-prod-card:hover h3 { color: var(--color-accent, #E8B86D); }
+.home-prod-card p { font-size: 0.82rem; color: var(--color-text-muted, #8888A0); margin: 0 0 12px; line-height: 1.5; }
+.home-prod-card .price {
+  font-size: 0.9rem; color: var(--color-accent, #E8B86D); font-weight: 700;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+.home-prod-card .price::after { content: '→'; transition: transform 0.3s; }
+.home-prod-card:hover .price::after { transform: translateX(4px); }
 @media (max-width: 640px) { .home-products { grid-template-columns: 1fr; } }
 </style>
 </head>
@@ -203,7 +248,7 @@
       </span>
     </div>
     <div class="hero-links">
-      <a href="/services" class="btn-primary" style="color:#08080F;font-weight:700;">✦ See Products</a>
+      <a href="/services" class="btn-primary hero-cta">✦ See Products</a>
       <a href="/contact">Start a Conversation →</a>
     </div>
     <div class="glow-line"></div>
