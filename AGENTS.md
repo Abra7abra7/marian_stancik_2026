@@ -36,19 +36,28 @@ The platform is engineered at the convergence of three foundational pillars:
 
 ## 3. Site Architecture & Page Topology
 
+**Updated 2026-08-31** — Navigation simplified to: Home | About | Products | Blog | Contact.
+Expertise and Skills pages still exist (not deleted) but are removed from main nav — accessible via footer/About.
+Drones marked as hobby project with disclaimer.
+
 The website uses a clean zero-build multi-page structure with root-relative routing (`cleanUrls: true` in Vercel):
 
 | Page | URL | Purpose & Core Content |
 |:-----|:----|:-----------------------|
-| **Home** | `/` (`index.html`) | High-impact hero + live stats (19+ cron, 3 domains, 3+ yrs, €2.6M, 6 repos, 24/7) + 4-pillar skills + dynamic blog preview + FAQ accordion + lead capture + connect |
-| **About** | `/about` (`about.html`) | Full technical bio + 4-layer engineering stack Bento Grid (VPS, OpenRouter, Obsidian, Zero-build Web) + 2023–2026 milestone timeline + stats |
-| **Expertise** | `/expertise` (`expertise.html`) | Deep-dive technical cards for all 3 pillars (AI Agents, Law & Compliance, UAV Edge AI) with 3-column hardware/software/legal spec matrices |
-| **Skills** | `/skills` (`skills.html`) | Full-stack AI Engineering Skills Map (4 categories × 5 items) + interactive FAQ Accordion for GEO/LLMO indexing |
-| **Drones** | `/drones` (`drones.html`) | Cinematic 16:9 drone compilation video + 5 hardware build spec cards (Frame, Electronics, Edge AI, FPV, Ground Control) |
-| **Contact** | `/contact` (`contact.html`) | Connect channels (X, Threads, YouTube, GitHub, LinkedIn, Facebook) + direct `marian_stancik@agentmail.to` lead capture |
-| **Blog Listing** | `/blog` (`blog/index.html`) | Static blog archive + dynamic JSON client fetching (`blog/posts.json`) + language switcher |
-| **Blog Posts (EN)** | `/blog/posts/*` | Standalone technical articles with deep code snippets, legal frameworks, and drone logs |
-| **Blog Posts (SK)** | `/blog/posts/sk/*` | Synchronized Slovak technical articles with bidirectional `hreflang` pre-rendering and breadcrumbs |
+| **Home** | `/` (`index.html`) | Hero: "I build AI agents that run your processes" + 4 products + dynamic blog preview + lead capture |
+| **About** | `/about` (`about.html`) | Bio: AI agent developer + what shapes him (law student, UAV hobby, defence PM) |
+| **Products** | `/services` (`services.html`) | 4 products with prices (GEO Audit €150, Web Readiness Scan €200, Full €300, Custom Agent from €500). UAV removed. |
+| **Products SK** | `/services-sk` (`services-sk.html`) | Slovak version as separate HTML file |
+| **Blog** | `/blog` (`blog/index.html`) | Static blog archive + dynamic JSON client fetching + language switcher |
+| **Blog Posts (EN)** | `/blog/posts/*` | Standalone technical articles |
+| **Blog Posts (SK)** | `/blog/posts/sk/*` | Synchronized Slovak translations |
+| **Drones** | `/drones` (`drones.html`) | Hobby project — build specs + hobby disclaimer. Not a product. |
+| **Contact** | `/contact` (`contact.html`) | Lead capture + social links |
+| **Expertise** | `/expertise` (`expertise.html`) | Archived — accessible via footer only |
+| **Skills** | `/skills` (`skills.html`) | Archived — accessible via footer only |
+| **Privacy** | `/privacy`, `/privacy-sk` | GDPR documentation |
+| **Terms** | `/terms`, `/terms-sk` | Terms of Service |
+| **Disclaimer** | `/disclaimer`, `/disclaimer-sk` | Legal disclaimer |
 
 ---
 
