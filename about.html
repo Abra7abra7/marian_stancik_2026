@@ -102,38 +102,198 @@
 <script defer src="https://api.marianstancik.dev/script.js" data-website-id="ec1c0df8-e51f-4236-9ad0-e3992f0b1637"></script>
 <style>
 /* About page specific styles */
-.about-hero-badge { display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #CD7F32; background: rgba(205,127,50,0.1); border: 1px solid rgba(205,127,50,0.25); padding: 6px 16px; border-radius: 100px; margin-bottom: 16px; }
-.about-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0; }
+.about-hero-badge { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #CD7F32; background: rgba(205,127,50,0.1); border: 1px solid rgba(205,127,50,0.25); padding: 6px 16px; border-radius: 100px; margin-bottom: 16px; }
+
+/* === COCKPIT / AGENT RUNTIME BOX === */
+.agent-cockpit {
+  background: linear-gradient(145deg, rgba(18,18,30,0.85) 0%, rgba(10,10,20,0.95) 100%);
+  border: 1px solid rgba(205,127,50,0.35);
+  border-radius: var(--radius-lg, 16px);
+  padding: 24px;
+  margin: 32px 0 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5), 0 0 25px rgba(205,127,50,0.1);
+}
+.agent-cockpit::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, #CD7F32, #E8B86D, #CD7F32);
+}
+.cockpit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 20px;
+}
+.cockpit-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.status-pulse {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 12px #10B981;
+  display: inline-block;
+  animation: pulse-green 2s infinite ease-in-out;
+}
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+.status-text {
+  font-family: 'JetBrains Mono', monospace, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #10B981;
+  letter-spacing: 0.08em;
+}
+.cockpit-chip {
+  font-family: 'JetBrains Mono', monospace, sans-serif;
+  font-size: 0.68rem;
+  padding: 4px 10px;
+  background: rgba(205,127,50,0.12);
+  border: 1px solid rgba(205,127,50,0.3);
+  color: #E8B86D;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.cockpit-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.cockpit-stat-item {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 16px 18px;
+  transition: all 0.3s;
+}
+.cockpit-stat-item:hover {
+  background: rgba(205,127,50,0.05);
+  border-color: rgba(205,127,50,0.3);
+  transform: translateY(-2px);
+}
+.stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.stat-icon-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(205,127,50,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E8B86D;
+}
+.stat-val {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #F0F0F5;
+  font-family: 'JetBrains Mono', sans-serif;
+}
+.stat-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #E8B86D;
+  margin-bottom: 4px;
+}
+.stat-sub {
+  font-size: 0.8rem;
+  color: #8888A0;
+  line-height: 1.45;
+}
+.cockpit-footer {
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.cockpit-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.c-tag {
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 100px;
+  color: #A0A0B8;
+}
+
+/* === ABOUT CARDS === */
+.about-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 32px 0 44px; }
 .about-card {
   background: var(--color-bg-card, rgba(18,18,30,0.65));
   border: 1px solid var(--color-border, rgba(255,255,255,0.06));
-  border-radius: var(--radius-md, 12px);
-  padding: 28px 24px;
+  border-radius: var(--radius-md, 14px);
+  padding: 26px 22px;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative; overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .about-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #CD7F32, #E8B86D); opacity: 0; transition: opacity 0.3s; }
 .about-card:hover { border-color: var(--color-border-hover, rgba(205,127,50,0.35)); transform: translateY(-4px); background: var(--color-bg-card-hover, rgba(26,26,42,0.85)); }
 .about-card:hover::before { opacity: 1; }
-.about-card .card-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
-.about-card h3 { font-size: 1.1rem; color: #CD7F32; margin: 0 0 8px; }
-.about-card p { font-size: 0.88rem; color: var(--color-text-muted, #8888A0); line-height: 1.6; margin: 0; }
-.about-card .card-tag { display: inline-block; font-size: 0.65rem; padding: 3px 10px; border-radius: 100px; background: rgba(205,127,50,0.08); color: #E8B86D; border: 1px solid rgba(205,127,50,0.15); margin-top: 12px; }
-.about-card.bad { opacity: 1; }
-.about-card.bad .card-tag { background: rgba(255,80,80,0.08); color: #ff8080; border-color: rgba(255,80,80,0.2); }
-.timeline-section { margin-top: 48px; }
-.timeline-track { position: relative; margin: 24px 0; padding-left: 32px; }
-.timeline-track::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, rgba(205,127,50,0.4), rgba(232,184,109,0.1)); }
-.timeline-item { position: relative; margin-bottom: 32px; }
-.timeline-dot { position: absolute; left: -32px; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: #08080F; border: 2px solid #CD7F32; box-shadow: 0 0 0 4px rgba(205,127,50,0.1); }
-.timeline-year { font-size: 0.72rem; color: #CD7F32; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
-.timeline-title { font-size: 1.15rem; font-weight: 600; color: #F0F0F5; margin-bottom: 6px; }
-.timeline-desc { font-size: 0.9rem; color: #8888A0; line-height: 1.6; }
+.about-card .card-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(205,127,50,0.1);
+  border: 1px solid rgba(205,127,50,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E8B86D;
+  margin-bottom: 16px;
+}
+.about-card.bad .card-icon-box {
+  background: rgba(239,68,68,0.08);
+  border-color: rgba(239,68,68,0.2);
+  color: #F87171;
+}
+.about-card h3 { font-size: 1.08rem; color: #F0F0F5; margin: 0 0 8px; font-weight: 600; }
+.about-card p { font-size: 0.88rem; color: var(--color-text-muted, #8888A0); line-height: 1.6; margin: 0 0 16px; flex: 1; }
+.about-card .card-tag { display: inline-block; font-size: 0.68rem; padding: 3px 10px; border-radius: 100px; background: rgba(205,127,50,0.08); color: #E8B86D; border: 1px solid rgba(205,127,50,0.15); width: fit-content; }
+.about-card.bad .card-tag { background: rgba(239,68,68,0.08); color: #F87171; border-color: rgba(239,68,68,0.2); }
+
+/* === TIMELINE === */
+.timeline-section { margin-top: 56px; }
+.timeline-track { position: relative; margin: 28px 0; padding-left: 36px; }
+.timeline-track::before { content: ''; position: absolute; left: 10px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(180deg, #CD7F32 0%, #E8B86D 50%, rgba(205,127,50,0.2) 100%); }
+.timeline-item { position: relative; margin-bottom: 36px; }
+.timeline-dot { position: absolute; left: -36px; top: 2px; width: 22px; height: 22px; border-radius: 50%; background: #08080F; border: 2px solid #CD7F32; box-shadow: 0 0 12px rgba(205,127,50,0.4); display: flex; align-items: center; justify-content: center; }
+.timeline-dot::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #E8B86D; }
+.timeline-year { font-size: 0.75rem; color: #CD7F32; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; font-family: 'JetBrains Mono', monospace; }
+.timeline-title { font-size: 1.18rem; font-weight: 600; color: #F0F0F5; margin-bottom: 6px; }
+.timeline-desc { font-size: 0.92rem; color: #9090A8; line-height: 1.65; }
+
+/* === FOCUS GRID === */
 .focus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
-.focus-item { background: rgba(205,127,50,0.05); border-left: 3px solid #CD7F32; padding: 16px 20px; border-radius: 0 8px 8px 0; }
-.focus-item h4 { margin: 0 0 6px; font-size: 0.95rem; color: #E8B86D; }
-.focus-item p { margin: 0; font-size: 0.85rem; color: #8888A0; line-height: 1.5; }
-@media (max-width: 860px) { .about-cards { grid-template-columns: 1fr; } .focus-grid { grid-template-columns: 1fr; } }
+.focus-item { background: rgba(205,127,50,0.04); border-left: 3px solid #CD7F32; padding: 18px 20px; border-radius: 0 10px 10px 0; border-top: 1px solid rgba(205,127,50,0.1); border-right: 1px solid rgba(205,127,50,0.1); border-bottom: 1px solid rgba(205,127,50,0.1); }
+.focus-item h4 { margin: 0 0 6px; font-size: 0.98rem; color: #E8B86D; display: flex; align-items: center; gap: 8px; }
+.focus-item p { margin: 0; font-size: 0.86rem; color: #8888A0; line-height: 1.55; }
+
+@media (max-width: 860px) {
+  .cockpit-stats-grid { grid-template-columns: 1fr; }
+  .about-cards { grid-template-columns: 1fr; }
+  .focus-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -174,79 +334,154 @@
 
 <!-- === ABOUT HERO === -->
 <section id="about" aria-label="About Marian Stancik">
-  <div class="container" style="max-width: 920px;">
-    <div class="about-hero-badge fade-in">✦ About</div>
-    <h2 class="fade-in">AI Agent Developer. <span style="color:#CD7F32;">Law Student.</span> UAV Builder.</h2>
-    <p class="section-intro fade-in" style="max-width: 700px;">
+  <div class="container" style="max-width: 940px;">
+    <div class="about-hero-badge fade-in" id="aboutLabel">✦ About</div>
+    <h1 class="fade-in" id="aboutHeading">AI Agent Developer. <span style="color:#CD7F32;">Law Student.</span> UAV Builder.</h1>
+    <p class="section-intro fade-in" id="aboutIntro" style="max-width: 760px; margin-bottom: 28px;">
       I build autonomous AI agents that run business processes — content, CRM, monitoring, and automation.
       24/7, on my own infrastructure, without babysitting.
     </p>
 
-    <div class="about-grid fade-in">
-      <div class="about-text">
-        <p>I build <strong>autonomous AI agents</strong> using the <strong>Hermes Agent</strong> framework. My infrastructure runs 24/7 on a Hetzner VPS, orchestrating multi-LLM agents for content, CRM, monitoring, and automation. <em>This website and all its content is built and maintained by my autonomous Hermes Agent.</em></p>
-        <p>I'm a <strong>3rd-year law student at PF UK</strong> (Comenius University, Bratislava). I focus on EU AI Act, GDPR, NIS2, and tech regulation. This means I understand the legal landscape and can build AI agents that are <strong>technically ready for regulated environments</strong>. <strong>I am not a lawyer, I do not provide legal advice.</strong></p>
-        <p>I build drones as a <strong>hobby</strong> — hand-soldered 1500g carbon quad with ArduPilot and Raspberry Pi 5 edge AI, EASA A1/A3 certified. It's a showcase of my hardware and edge AI skills, not a product.</p>
-        <div class="highlight" style="background:rgba(205,127,50,0.08);padding:1rem;border-left:3px solid #CD7F32;margin:1.5rem 0;border-radius:4px;font-size:0.85rem;">
-          <p><strong>⚠️ Disclaimer:</strong> This is not legal advice. I share regulatory knowledge for educational purposes only. For specific legal questions, consult a qualified attorney.</p>
+    <!-- === COCKPIT / AGENT RUNTIME STATUS === -->
+    <div class="agent-cockpit fade-in">
+      <div class="cockpit-header">
+        <div class="cockpit-status">
+          <span class="status-pulse"></span>
+          <span class="status-text" id="cockpitStatus">HERMES C2 // 24/7 AUTONOMOUS RUNTIME ONLINE</span>
+        </div>
+        <div class="cockpit-chip" id="cockpitChip">HETZNER VPS · EU DATA SOVEREIGNTY</div>
+      </div>
+      
+      <div class="cockpit-stats-grid">
+        <div class="cockpit-stat-item">
+          <div class="stat-top">
+            <div class="stat-icon-wrap">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <span class="stat-val">19+</span>
+          </div>
+          <div class="stat-title" id="cockpitStat1Title">Autonomous Cron Loops</div>
+          <div class="stat-sub" id="cockpitStat1Sub">24/7 background orchestrations for Content, CRM, Sentinel &amp; Health</div>
+        </div>
+        
+        <div class="cockpit-stat-item">
+          <div class="stat-top">
+            <div class="stat-icon-wrap">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M15 9h.01M9 15h6"/></svg>
+            </div>
+            <span class="stat-val">Multi-LLM</span>
+          </div>
+          <div class="stat-title" id="cockpitStat2Title">Dynamic OpenRouter Routing</div>
+          <div class="stat-sub" id="cockpitStat2Sub">DeepSeek R1/V3 · Claude 3.5 Sonnet · GPT-4o synthesis</div>
+        </div>
+        
+        <div class="cockpit-stat-item">
+          <div class="stat-top">
+            <div class="stat-icon-wrap">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <span class="stat-val">Obsidian</span>
+          </div>
+          <div class="stat-title" id="cockpitStat3Title">Persistent Vault Memory</div>
+          <div class="stat-sub" id="cockpitStat3Sub">SQLite state + bidirectional Markdown knowledge graph</div>
+        </div>
+        
+        <div class="cockpit-stat-item">
+          <div class="stat-top">
+            <div class="stat-icon-wrap">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <span class="stat-val">Legal-Ready</span>
+          </div>
+          <div class="stat-title" id="cockpitStat4Title">EU AI Act &amp; GDPR Compliant</div>
+          <div class="stat-sub" id="cockpitStat4Sub">Art. 50 AI labeling &amp; audit-ready technical files</div>
         </div>
       </div>
 
-      <div class="stats">
-        <div class="stat-card"><div class="stat-number">19+</div><div class="stat-label">Active Cron Agents</div></div>
-        <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Domains (AI · Law · UAV)</div></div>
-        <div class="stat-card"><div class="stat-number">3+</div><div class="stat-label">Years Building</div></div>
-        <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label">VPS Agent Runtime</div></div>
-        <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">Open Source Repos</div></div>
-        <div class="stat-card"><div class="stat-number">€2.6M</div><div class="stat-label">Drone Insurance</div></div>
+      <div class="cockpit-footer">
+        <div class="cockpit-tags">
+          <span class="c-tag">✦ Hermes Agent</span>
+          <span class="c-tag">✦ Model Context Protocol (MCP)</span>
+          <span class="c-tag">✦ Python 3 / FastAPI</span>
+          <span class="c-tag">✦ Telegram &amp; WhatsApp C2</span>
+          <span class="c-tag">✦ ArduPilot Vision AI</span>
+          <span class="c-tag">✦ 100% Zero-Babysitting</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NARRATIVE TEXT -->
+    <div class="about-narrative fade-in" id="aboutBodyText" style="line-height: 1.8; color: #D0D0E0; font-size: 1.02rem; margin-bottom: 32px;">
+      <p>I build <strong>autonomous AI agents</strong> using the <strong>Hermes Agent</strong> framework. My infrastructure runs 24/7 on an enterprise Hetzner VPS, orchestrating multi-LLM agents for content, CRM, monitoring, and automation. <em>This website and all its content is built and maintained by my autonomous Hermes Agent.</em></p>
+      <p>I'm a <strong>3rd-year law student at PF UK</strong> (Comenius University, Bratislava). I focus on EU AI Act, GDPR, NIS2, and tech regulation. This means I understand the legal landscape and can build AI agents that are <strong>technically ready for regulated environments</strong>. <strong>I am not a lawyer, I do not provide legal advice.</strong></p>
+      <p>I build drones as a <strong>hobby</strong> — hand-soldered 1500g carbon quad with ArduPilot and Raspberry Pi 5 edge AI, EASA A1/A3 certified. It's a showcase of my hardware and edge AI skills, not a product.</p>
+      <div class="highlight" style="background:rgba(205,127,50,0.08);padding:1.2rem;border-left:3px solid #CD7F32;margin:1.5rem 0;border-radius:6px;font-size:0.88rem;">
+        <p style="margin:0;"><strong style="color:#E8B86D;">⚠️ Disclaimer:</strong> This is not legal advice. I share regulatory knowledge for educational purposes only. For specific legal questions, consult a qualified attorney.</p>
       </div>
     </div>
 
     <!-- WHAT I DO / DON'T DO CARDS -->
-    <h3 style="font-size: 1.35rem; font-weight: 700; color: #F0F0F5; margin: 48px 0 8px;">What I do</h3>
-    <p style="color: #8888A0; font-size: 0.92rem; margin-bottom: 24px;">Three things — and they don't overlap.</p>
+    <h3 style="font-size: 1.4rem; font-weight: 700; color: #F0F0F5; margin: 48px 0 8px;" id="whatIDoTitle">What I do</h3>
+    <p style="color: #8888A0; font-size: 0.94rem; margin-bottom: 24px;" id="whatIDoSubtitle">Three pillars — engineered with precision and clear separation.</p>
 
     <div class="about-cards fade-in">
       <div class="about-card">
-        <span class="card-icon">🤖</span>
-        <h3>AI Agent Developer (Job)</h3>
-        <p>I design, build, deploy, and operate autonomous AI agents on client infrastructure or managed VPS. Custom MCP servers, multi-LLM orchestration, 24/7 cron automation, and persistent memory.</p>
+        <div class="card-icon-box">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 16h.01M16 16h.01"/></svg>
+        </div>
+        <h3 id="card1Title">AI Agent Developer (Job)</h3>
+        <p id="card1Desc">I design, build, deploy, and operate autonomous AI agents on client infrastructure or managed VPS. Custom MCP servers, multi-LLM orchestration, 24/7 cron automation, and persistent memory.</p>
         <span class="card-tag">Hermes Agent · MCP · OpenRouter · Python</span>
       </div>
+      
       <div class="about-card">
-        <span class="card-icon">⚖️</span>
-        <h3>Law Student (Context)</h3>
-        <p>3rd year at PF UK. I study EU AI Act, GDPR, NIS2 and use that knowledge to build agents that are technically ready for regulated environments. Educational sharing only.</p>
+        <div class="card-icon-box">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 8l9-5 9 5M6 13l-3 6h6l-3-6zm12 0l-3 6h6l-3-6z"/></svg>
+        </div>
+        <h3 id="card2Title">Law Student (Context)</h3>
+        <p id="card2Desc">3rd year at PF UK. I study EU AI Act, GDPR, NIS2 and use that knowledge to build agents that are technically ready for regulated environments. Educational sharing only.</p>
         <span class="card-tag">EU AI Act · GDPR · NIS2 · DORA</span>
       </div>
+      
       <div class="about-card">
-        <span class="card-icon">🚁</span>
-        <h3>UAV Builder (Hobby)</h3>
-        <p>Hand-soldered 1500g carbon quad with ArduPilot and Raspberry Pi 5 edge AI. EASA A1/A3 certified, €2.6M insured. Proof of my hardware and embedded engineering skills.</p>
+        <div class="card-icon-box">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0M4 7l4 3M20 7l-4 3M4 17l4-3M20 17l-4-3"/></svg>
+        </div>
+        <h3 id="card3Title">UAV Builder (Hobby)</h3>
+        <p id="card3Desc">Hand-soldered 1500g carbon quad with ArduPilot and Raspberry Pi 5 edge AI. EASA A1/A3 certified, €2.6M insured. Proof of hardware and embedded engineering skills.</p>
         <span class="card-tag">ArduPilot · Raspberry Pi 5 · Edge AI</span>
       </div>
     </div>
 
-    <h3 style="font-size: 1.35rem; font-weight: 700; color: #F0F0F5; margin: 40px 0 8px;">What I don't do</h3>
-    <p style="color: #8888A0; font-size: 0.92rem; margin-bottom: 24px;">Clear boundaries — so you know exactly who you're hiring.</p>
+    <!-- WHAT I DON'T DO -->
+    <h3 style="font-size: 1.4rem; font-weight: 700; color: #F0F0F5; margin: 40px 0 8px;" id="whatIDontDoTitle">What I don't do</h3>
+    <p style="color: #8888A0; font-size: 0.94rem; margin-bottom: 24px;" id="whatIDontDoSubtitle">Clear boundaries — so you know exactly who you're working with.</p>
 
     <div class="about-cards fade-in">
       <div class="about-card bad">
-        <span class="card-icon">⛔</span>
-        <h3>No legal advice</h3>
-        <p>I'm a student, not an attorney. I don't provide legal opinions, compliance consulting, or legal services. My agents run technical checks — legal sign-off is for your lawyer.</p>
+        <div class="card-icon-box">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+        </div>
+        <h3 id="dont1Title">No legal advice</h3>
+        <p id="dont1Desc">I'm a student, not an attorney. I don't provide legal opinions, compliance consulting, or legal services. My agents run technical checks — legal sign-off is for your lawyer.</p>
         <span class="card-tag">Not a lawyer</span>
       </div>
+      
       <div class="about-card bad">
-        <span class="card-icon">⛔</span>
-        <h3>No drone services</h3>
-        <p>I don't sell drones, do aerial work commercially, or provide drone services. The drone is a hobby that demonstrates my edge-AI and systems-engineering skills.</p>
+        <div class="card-icon-box">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+        </div>
+        <h3 id="dont2Title">No drone services</h3>
+        <p id="dont2Desc">I don't sell drones, do aerial work commercially, or provide drone services. The drone is a hobby that demonstrates edge-AI and systems-engineering skills.</p>
         <span class="card-tag">Hobby only</span>
       </div>
+      
       <div class="about-card bad">
-        <span class="card-icon">⛔</span>
-        <h3>No agencies / middlemen</h3>
-        <p>I build directly with clients. No outsourcing, no white-label, no account management layers. You talk to the engineer who builds your system.</p>
+        <div class="card-icon-box">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+        </div>
+        <h3 id="dont3Title">No agencies / middlemen</h3>
+        <p id="dont3Desc">I build directly with clients. No outsourcing, no white-label, no account management layers. You talk to the engineer who builds your system.</p>
         <span class="card-tag">Direct only</span>
       </div>
     </div>
@@ -254,55 +489,55 @@
     <!-- FOCUS AREAS -->
     <div class="focus-grid fade-in">
       <div class="focus-item">
-        <h4>🔄 Process Automation</h4>
-        <p>Lead capture, CRM follow-ups, content pipelines, reporting — agents handle workflows that used to eat your team's time.</p>
+        <h4 id="focus1Title"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19"/></svg> Process Automation</h4>
+        <p id="focus1Desc">Lead capture, CRM follow-ups, content pipelines, reporting — agents handle workflows that used to eat your team's time.</p>
       </div>
       <div class="focus-item">
-        <h4>🔍 AI Web Audits</h4>
-        <p>GEO audit (AI-search visibility) and Web Readiness Scan (technical document check) — an agent reviews your web presence.</p>
+        <h4 id="focus2Title"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> AI Web Audits</h4>
+        <p id="focus2Desc">GEO audit (AI-search visibility) and Web Readiness Scan (technical document check) — an agent reviews your web presence.</p>
       </div>
       <div class="focus-item">
-        <h4>⚙️ Custom AI Agents</h4>
-        <p>Your workflow, your data, your infrastructure. An agent built for one job — your job — run 24/7.</p>
+        <h4 id="focus3Title"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Custom AI Agents</h4>
+        <p id="focus3Desc">Your workflow, your data, your infrastructure. An agent built for one job — your job — run 24/7.</p>
       </div>
       <div class="focus-item">
-        <h4>🛡️ Regulation-Aware Builds</h4>
-        <p>Law background means agents are engineered with GDPR/AI-Act awareness from day one — not retrofitted after a problem.</p>
+        <h4 id="focus4Title"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Regulation-Aware Builds</h4>
+        <p id="focus4Desc">Law background means agents are engineered with GDPR/AI-Act awareness from day one — not retrofitted after a problem.</p>
       </div>
     </div>
 
     <!-- TIMELINE -->
     <div class="timeline-section fade-in">
-      <h3 style="font-size: 1.35rem; font-weight: 700; color: #F0F0F5; margin-bottom: 8px;">How I got here</h3>
-      <p style="color: #8888A0; font-size: 0.92rem; margin-bottom: 24px;">The actual path — from first agent to autonomous systems operator.</p>
+      <h3 style="font-size: 1.4rem; font-weight: 700; color: #F0F0F5; margin-bottom: 8px;" id="timelineTitle">How I got here</h3>
+      <p style="color: #8888A0; font-size: 0.94rem; margin-bottom: 28px;" id="timelineSubtitle">The engineering evolution — from prompt engineering to fully autonomous systems.</p>
 
       <div class="timeline-track">
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-year">2026 — Present</div>
-          <div class="timeline-title">Autonomous Systems Operator</div>
-          <div class="timeline-desc">Scaling 19+ autonomous cron agents on Hetzner VPS. Running multi-agent pipelines for content, CRM, monitoring, and this very website. Building AI web audit products (GEO + Readiness).</div>
+          <div class="timeline-title" id="t2026Title">Hermes Agent &amp; Autonomous System (My AI Assistant)</div>
+          <div class="timeline-desc" id="t2026Desc">Operating a 24/7 autonomous multi-agent infrastructure on Hetzner VPS. 19+ cron orchestrations for content, CRM, and system health. Digital twin automating publishing across platforms, and autonomous Hermes Agent running this website.</div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-year">2025</div>
-          <div class="timeline-title">ASCENTIA s.r.o. &amp; Production Systems</div>
-          <div class="timeline-desc">Founded ASCENTIA s.r.o. Built production-grade agent systems: email automation, CRM follow-up, lead capture with AgentMail, social syndication. Started law studies at PF UK (EU AI Act, GDPR focus).</div>
+          <div class="timeline-title" id="t2025Title">First Autonomous Agents &amp; Model Context Protocol (MCP)</div>
+          <div class="timeline-desc" id="t2025Desc">Transitioning from passive chatbots to active, tool-using autonomous agents. Implementing custom MCP servers, multi-tool loops, and persistent Obsidian memory architecture. Starting law studies at PF UK (EU AI Act &amp; GDPR focus).</div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-year">2024</div>
-          <div class="timeline-title">Drone Build &amp; Hardware Engineering</div>
-          <div class="timeline-desc">Hand-soldered 1500g carbon quad from raw components. Migrated from Betaflight to ArduPilot. EASA A1/A3 certification. Integrated Raspberry Pi 5 edge AI companion computer.</div>
+          <div class="timeline-title" id="t2024Title">IDE Antigravity &amp; AI-Augmented Engineering</div>
+          <div class="timeline-desc" id="t2024Desc">Adopting modern agentic coding workflows in IDE Antigravity. Designing and hand-soldering a 1500g tactical carbon quadcopter with ArduPilot and onboard Raspberry Pi 5 edge vision AI (EASA A1/A3 licensed).</div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-year">2023</div>
-          <div class="timeline-title">First Autonomous Agents</div>
-          <div class="timeline-desc">Started building AI agent loops with new agent frameworks. Learned the stack: Python, VPS admin, cron orchestration, LLM APIs, persistent memory. Discovered the power of 24/7 automation.</div>
+          <div class="timeline-title" id="t2023Title">Inception of AI Chatbots &amp; GPT Experiments</div>
+          <div class="timeline-desc" id="t2023Desc">First deep dive into LLMs, GPT prompt engineering, and conversational AI bots. Experimenting with API integrations, Python scripting, and discovering the transformative potential of 24/7 autonomous execution.</div>
         </div>
       </div>
     </div>

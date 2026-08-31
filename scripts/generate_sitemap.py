@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 """Regenerate sitemap.xml — www domain, all pages, SK variants"""
 import os
+import sys
 from datetime import datetime, timezone
 
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+
 DOMAIN = "https://www.marianstancik.dev"
-ROOT = "/root/marian-stancik-web"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def page(url, lastmod, changefreq="monthly", priority=0.7):
     return f"""  <url>

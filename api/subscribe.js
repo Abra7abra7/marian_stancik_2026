@@ -63,7 +63,7 @@ export default async function handler(req, res) {
     const sep = '─'.repeat(40);
 
     // 1. Welcome email to subscriber
-    const welcomeText = `Vitaj v newslettri Mariána Stančíka! 👋
+    const welcomeText = `Vitaj v newslettri Mariana Stancika! 👋
 ${sep}
 
 Ďakujem za prihlásenie k odberu noviniek z oblasti AI agentov, UAV dronov a právnej regulácie.

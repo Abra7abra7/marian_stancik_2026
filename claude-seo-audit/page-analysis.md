@@ -39,7 +39,7 @@
       "@type": "Person",
       "@id": "https://www.marianstancik.dev/#person",
       "name": "Marian Stancik",
-      "alternateName": ["Marian Stančík", "marian_s_ai", "marian_ai"],
+      "alternateName": ["Marian Stancik", "marian_s_ai", "marian_ai"],
       "givenName": "Marian",
       "familyName": "Stancik",
       "url": "https://www.marianstancik.dev",

@@ -19,7 +19,7 @@ The platform is engineered at the convergence of three foundational pillars:
 
 ---
 
-## 2. ANONYMIZATION RULE (CRITICAL — ZERO TOLERANCE)
+## 2. IDENTITY & ANONYMIZATION RULES (CRITICAL — ZERO TOLERANCE)
 
 > [!CAUTION]
 > **Delta Defence is NEVER mentioned by name anywhere on the web, code, blog, schema, or LLM graphs.**  
@@ -31,6 +31,10 @@ The platform is engineered at the convergence of three foundational pillars:
 - ✅ Slovak: `"Defence Product Manager"`
 - ✅ `llms.txt`, `llms-full.txt`, blog articles, AUDIT.md, and all HTML files: **ZERO occurrences** of the company name.
 - 🛡️ Verified automatically via **L1 Security Sweep** in `scripts/verify_site.py`.
+
+### Name & Visual Identity Standards
+- **Name Standard:** Always **Marian Stancik** (strictly without diacritics) in both English and Slovak texts, schemas, metadata, and code.
+- **Social / OG Image Standard:** All pages and articles must use Marian's photo (`https://www.marianstancik.dev/profile-big.webp` or `profile.webp`) as `og:image` and `twitter:image` with `width="800" height="800"` and `alt="Marian Stancik"`.
 
 ---
 
@@ -45,14 +49,14 @@ The website uses a clean zero-build multi-page structure with root-relative rout
 | Page | URL | Purpose & Core Content |
 |:-----|:----|:-----------------------|
 | **Home** | `/` (`index.html`) | Hero: "I build AI agents that run your processes" + 4 products + dynamic blog preview + lead capture |
-| **About** | `/about` (`about.html`) | Bio: AI agent developer + what shapes him (law student, UAV hobby, defence PM) |
-| **Products** | `/services` (`services.html`) | 4 products with prices (GEO Audit €150, Web Readiness Scan €200, Full €300, Custom Agent from €500). UAV removed. |
-| **Products SK** | `/services-sk` (`services-sk.html`) | Slovak version as separate HTML file |
-| **Blog** | `/blog` (`blog/index.html`) | Static blog archive + dynamic JSON client fetching + language switcher |
-| **Blog Posts (EN)** | `/blog/posts/*` | Standalone technical articles |
-| **Blog Posts (SK)** | `/blog/posts/sk/*` | Synchronized Slovak translations |
-| **Drones** | `/drones` (`drones.html`) | Hobby project — build specs + hobby disclaimer. Not a product. |
-| **Contact** | `/contact` (`contact.html`) | Lead capture + social links |
+| **About** | `/about` (`about.html`) | Bio: AI agent developer + Hermes Autonomous Agent Runtime Cockpit widget + 2023-2026 engineering timeline |
+| **Products** | `/services` (`services.html`) | 4 products with instant Stripe checkout (GEO Audit €150, Web Readiness Scan €200, Full Combo €300, Custom Agent from €500) |
+| **Products SK** | `/services-sk` (`services-sk.html`) | Slovak version with Stripe checkout modal and direct invoice ordering |
+| **Blog** | `/blog` (`blog/index.html`) | Static blog archive + dynamic JSON client fetching + real-time language switcher |
+| **Blog Posts (EN)** | `/blog/posts/*` | 6 standalone technical articles with full header, breadcrumbs, JSON-LD BlogPosting |
+| **Blog Posts (SK)** | `/blog/posts/sk/*` | 6 synchronized Slovak translations with bidirectional hreflang links |
+| **Drones** | `/drones` (`drones.html`) | Hobby project — build specs + hobby disclaimer. Not a commercial product. |
+| **Contact** | `/contact` (`contact.html`) | Lead capture + social links + order inquiry handoff |
 | **Expertise** | `/expertise` (`expertise.html`) | Archived — accessible via footer only |
 | **Skills** | `/skills` (`skills.html`) | Archived — accessible via footer only |
 | **Privacy** | `/privacy`, `/privacy-sk` | GDPR documentation |

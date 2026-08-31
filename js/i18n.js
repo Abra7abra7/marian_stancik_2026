@@ -132,7 +132,47 @@ fNavExp: "Expertise",
 fNavProj: "Projects",
 fNavConn: "Connect",
 fNavBlog: "Blog",
-fMotto: "Build better. Stay legal."
+fMotto: "Build better. Stay legal.",
+
+// Cockpit & About modern additions
+cockpitStatus: "HERMES C2 // 24/7 AUTONOMOUS RUNTIME ONLINE",
+cockpitChip: "HETZNER VPS · EU DATA SOVEREIGNTY",
+cockpitStat1Title: "Autonomous Cron Loops",
+cockpitStat1Sub: "24/7 background orchestrations for Content, CRM, Sentinel & Health",
+cockpitStat2Title: "Dynamic OpenRouter Routing",
+cockpitStat2Sub: "DeepSeek R1/V3 · Claude 3.5 Sonnet · GPT-4o synthesis",
+cockpitStat3Title: "Persistent Vault Memory",
+cockpitStat3Sub: "SQLite state + bidirectional Markdown knowledge graph",
+cockpitStat4Title: "EU AI Act & GDPR Compliant",
+cockpitStat4Sub: "Art. 50 AI labeling & audit-ready technical files",
+aboutIntro: "I build autonomous AI agents that run business processes — content, CRM, monitoring, and automation. 24/7, on my own infrastructure, without babysitting.",
+whatIDoTitle: "What I do",
+whatIDoSubtitle: "Three pillars — engineered with precision and clear separation.",
+card1Title: "AI Agent Developer (Job)",
+card1Desc: "I design, build, deploy, and operate autonomous AI agents on client infrastructure or managed VPS. Custom MCP servers, multi-LLM orchestration, 24/7 cron automation, and persistent memory.",
+card2Title: "Law Student (Context)",
+card2Desc: "3rd year at PF UK. I study EU AI Act, GDPR, NIS2 and use that knowledge to build agents that are technically ready for regulated environments. Educational sharing only.",
+card3Title: "UAV Builder (Hobby)",
+card3Desc: "Hand-soldered 1500g carbon quad with ArduPilot and Raspberry Pi 5 edge AI. EASA A1/A3 certified, €2.6M insured. Proof of hardware and embedded engineering skills.",
+whatIDontDoTitle: "What I don't do",
+whatIDontDoSubtitle: "Clear boundaries — so you know exactly who you're working with.",
+dont1Title: "No legal advice",
+dont1Desc: "I'm a student, not an attorney. I don't provide legal opinions, compliance consulting, or legal services. My agents run technical checks — legal sign-off is for your lawyer.",
+dont2Title: "No drone services",
+dont2Desc: "I don't sell drones, do aerial work commercially, or provide drone services. The drone is a hobby that demonstrates edge-AI and systems-engineering skills.",
+dont3Title: "No agencies / middlemen",
+dont3Desc: "I build directly with clients. No outsourcing, no white-label, no account management layers. You talk to the engineer who builds your system.",
+timelineTitle: "How I got here",
+timelineSubtitle: "The engineering evolution — from prompt engineering to fully autonomous systems.",
+t2026Title: "Hermes Agent & Autonomous System (My AI Assistant)",
+t2026Desc: "Operating a 24/7 autonomous multi-agent infrastructure on Hetzner VPS. 19+ cron orchestrations for content, CRM, and system health. Digital twin automating publishing across platforms, and autonomous Hermes Agent running this website.",
+t2025Title: "First Autonomous Agents & Model Context Protocol (MCP)",
+t2025Desc: "Transitioning from passive chatbots to active, tool-using autonomous agents. Implementing custom MCP servers, multi-tool loops, and persistent Obsidian memory architecture. Starting law studies at PF UK (EU AI Act & GDPR focus).",
+t2024Title: "IDE Antigravity & AI-Augmented Engineering",
+t2024Desc: "Adopting modern agentic coding workflows in IDE Antigravity. Designing and hand-soldering a 1500g tactical carbon quadcopter with ArduPilot and onboard Raspberry Pi 5 edge vision AI (EASA A1/A3 licensed).",
+t2023Title: "Inception of AI Chatbots & GPT Experiments",
+t2023Desc: "First deep dive into LLMs, GPT prompt engineering, and conversational AI bots. Experimenting with API integrations, Python scripting, and discovering the transformative potential of 24/7 autonomous execution.",
+
 },
 sk: {
 docTitle: "Marian Stancik — AI Agent Developer | Autonómne Agenty",
@@ -266,7 +306,47 @@ fNavExp: "Odbornosť",
 fNavProj: "Projekty",
 fNavConn: "Spojenie",
 fNavBlog: "Blog",
-fMotto: "Stavaj lepšie. Buď v súlade."
+fMotto: "Stavaj lepšie. Buď v súlade.",
+
+// Cockpit & About modern additions
+cockpitStatus: "HERMES C2 // 24/7 AUTONÓMNY RUNTIME ONLINE",
+cockpitChip: "HETZNER VPS · EURÓPSKA DÁTOVÁ SUVERENITA",
+cockpitStat1Title: "Autonómne Cron Slučky",
+cockpitStat1Sub: "24/7 orchestrácia na pozadí pre obsah, CRM, monitoring a stabilitu",
+cockpitStat2Title: "Dynamické OpenRouter Smerovanie",
+cockpitStat2Sub: "Syntéza modelov DeepSeek R1/V3 · Claude 3.5 Sonnet · GPT-4o",
+cockpitStat3Title: "Perzistentná Obsidian Pamäť",
+cockpitStat3Sub: "SQLite stav + obojsmerný znalostný graf v Markdown súboroch",
+cockpitStat4Title: "EU AI Act & GDPR Súlad",
+cockpitStat4Sub: "Označenie AI obsahu (Čl. 50) & auditovateľná technická dokumentácia",
+aboutIntro: "Staviam autonómnych AI agentov, ktorí riadia firemné procesy — obsah, CRM, monitoring a automatizáciu. 24/7, na vlastnej infraštruktúre, bez nutnosti ľudského dohľadu.",
+whatIDoTitle: "Čo robím",
+whatIDoSubtitle: "Tri piliere — navrhnuté s precíznosťou a jasným oddelením.",
+card1Title: "AI Agent Developer (Práca)",
+card1Desc: "Navrhujem, staviam, nasadzujem a prevádzkujem autonómnych AI agentov na klientskej infraštruktúre alebo spravovanom VPS. Vlastné MCP servery, multi-LLM orchestrácia, 24/7 automatizácia a perzistentná pamäť.",
+card2Title: "Študent práva (Kontext)",
+card2Desc: "3. ročník na PF UK. Študujem EU AI Act, GDPR, NIS2 a využívam tieto znalosti na stavbu agentov pripravených pre regulované prostredia. Výlučne vzdelávacie zdieľanie.",
+card3Title: "Staviteľ UAV (Hobby)",
+card3Desc: "Vlastnoručne spájkovaný 1500g karbónový dron s ArduPilotom a Raspberry Pi 5 edge AI. EASA A1/A3 certifikácia, €2,6M poistenie. Dôkaz hardvérových a embedded zručností.",
+whatIDontDoTitle: "Čo nerobím",
+whatIDontDoSubtitle: "Jasné hranice — aby si presne vedel, s kým spolupracuješ.",
+dont1Title: "Žiadne právne poradenstvo",
+dont1Desc: "Som študent, nie advokát. Neposkytujem právne stanoviská, compliance audit ani právne služby. Moji agenti vykonávajú technické kontroly — právne posúdenie patrí tvojmu právnikovi.",
+dont2Title: "Žiadne komerčné služby s dronmi",
+dont2Desc: "Nepredávam drony, nevykonávam letecké práce ani neposkytujem komerčné služby. Dron je hobby projekt demonštrujúci edge-AI a systémové inžinierstvo.",
+dont3Title: "Žiadne agentúry / sprostredkovatelia",
+dont3Desc: "Staviam priamo s klientmi. Žiadny outsourcing, white-label ani account manažéri. Komunikuješ priamo s inžinierom, ktorý tvoj systém stavia.",
+timelineTitle: "Ako som sa sem dostal",
+timelineSubtitle: "Inžinierska evolúcia — od promptovania k plne autonómnym systémom.",
+t2026Title: "Hermes Agent & Autonómny systém (Môj AI asistent)",
+t2026Desc: "24/7 multi-agentová infraštruktúra na Hetzner VPS. 19+ cron jobov pre obsah, CRM a systém. Digitálne dvojča publikujúce naprieč sieťami a autonómny Hermes Agent spravujúci tento web.",
+t2025Title: "Prvé autonómne agenty & Model Context Protocol (MCP)",
+t2025Desc: "Prechod od pasívnych chatbotov k aktívnym autonómnym agentom s nástrojmi. Vlastné MCP servery, multi-tool slučky a perzistentná Obsidian pamäť. Štúdium práva na PF UK (AI Act & GDPR).",
+t2024Title: "IDE Antigravity & AI Kódovanie",
+t2024Desc: "Moderné agentické vývojové prostredie IDE Antigravity a AI-augmented programovanie. Stavba vlastnoručne spájkovaného 1500g karbónového taktického dronu s ArduPilotom a Raspberry Pi 5 AI (EASA A1/A3).",
+t2023Title: "Začiatok AI & LLM Chatbotov",
+t2023Desc: "Prvé experimenty s generatívnou AI, GPT prompt engineeringom a konverzačnými chatbotmi. Integrácia LLM API cez Python a objavenie obrovského potenciálu 24/7 automatizácie.",
+
 },
 };
 let currentLang = localStorage.getItem('ms_lang') || 'en';
@@ -382,6 +462,45 @@ var el = document.getElementById('fNavProj'); if(el) el.textContent = d.fNavProj
 var el = document.getElementById('fNavConn'); if(el) el.textContent = d.fNavConn;
 var el = document.getElementById('fNavBlog'); if(el) el.textContent = d.fNavBlog;
 var el = document.getElementById('fMotto'); if(el) el.textContent = d.fMotto;
+
+var el = document.getElementById('cockpitStatus'); if(el) el.textContent = d.cockpitStatus;
+var el = document.getElementById('cockpitChip'); if(el) el.textContent = d.cockpitChip;
+var el = document.getElementById('cockpitStat1Title'); if(el) el.textContent = d.cockpitStat1Title;
+var el = document.getElementById('cockpitStat1Sub'); if(el) el.textContent = d.cockpitStat1Sub;
+var el = document.getElementById('cockpitStat2Title'); if(el) el.textContent = d.cockpitStat2Title;
+var el = document.getElementById('cockpitStat2Sub'); if(el) el.textContent = d.cockpitStat2Sub;
+var el = document.getElementById('cockpitStat3Title'); if(el) el.textContent = d.cockpitStat3Title;
+var el = document.getElementById('cockpitStat3Sub'); if(el) el.textContent = d.cockpitStat3Sub;
+var el = document.getElementById('cockpitStat4Title'); if(el) el.textContent = d.cockpitStat4Title;
+var el = document.getElementById('cockpitStat4Sub'); if(el) el.textContent = d.cockpitStat4Sub;
+var el = document.getElementById('aboutIntro'); if(el) el.textContent = d.aboutIntro;
+var el = document.getElementById('whatIDoTitle'); if(el) el.textContent = d.whatIDoTitle;
+var el = document.getElementById('whatIDoSubtitle'); if(el) el.textContent = d.whatIDoSubtitle;
+var el = document.getElementById('card1Title'); if(el) el.textContent = d.card1Title;
+var el = document.getElementById('card1Desc'); if(el) el.textContent = d.card1Desc;
+var el = document.getElementById('card2Title'); if(el) el.textContent = d.card2Title;
+var el = document.getElementById('card2Desc'); if(el) el.textContent = d.card2Desc;
+var el = document.getElementById('card3Title'); if(el) el.textContent = d.card3Title;
+var el = document.getElementById('card3Desc'); if(el) el.textContent = d.card3Desc;
+var el = document.getElementById('whatIDontDoTitle'); if(el) el.textContent = d.whatIDontDoTitle;
+var el = document.getElementById('whatIDontDoSubtitle'); if(el) el.textContent = d.whatIDontDoSubtitle;
+var el = document.getElementById('dont1Title'); if(el) el.textContent = d.dont1Title;
+var el = document.getElementById('dont1Desc'); if(el) el.textContent = d.dont1Desc;
+var el = document.getElementById('dont2Title'); if(el) el.textContent = d.dont2Title;
+var el = document.getElementById('dont2Desc'); if(el) el.textContent = d.dont2Desc;
+var el = document.getElementById('dont3Title'); if(el) el.textContent = d.dont3Title;
+var el = document.getElementById('dont3Desc'); if(el) el.textContent = d.dont3Desc;
+var el = document.getElementById('timelineTitle'); if(el) el.textContent = d.timelineTitle;
+var el = document.getElementById('timelineSubtitle'); if(el) el.textContent = d.timelineSubtitle;
+var el = document.getElementById('t2026Title'); if(el) el.textContent = d.t2026Title;
+var el = document.getElementById('t2026Desc'); if(el) el.textContent = d.t2026Desc;
+var el = document.getElementById('t2025Title'); if(el) el.textContent = d.t2025Title;
+var el = document.getElementById('t2025Desc'); if(el) el.textContent = d.t2025Desc;
+var el = document.getElementById('t2024Title'); if(el) el.textContent = d.t2024Title;
+var el = document.getElementById('t2024Desc'); if(el) el.textContent = d.t2024Desc;
+var el = document.getElementById('t2023Title'); if(el) el.textContent = d.t2023Title;
+var el = document.getElementById('t2023Desc'); if(el) el.textContent = d.t2023Desc;
+
 }
 async function loadDynamicPostsHome() {
 try {

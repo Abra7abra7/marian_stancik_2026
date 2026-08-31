@@ -3,22 +3,363 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Products — Marian Stancik | AI Audits | Custom AI Agents</title>
-<meta name="description" content="What Marian Stancik builds. AI agent that audits your website for GEO and technical readiness, custom autonomous AI agents.">
+<title>Products &amp; Audits — Marian Stancik | AI Agents, GEO &amp; Web Readiness</title>
+<meta name="description" content="Production-ready AI agent systems, GEO audit, web readiness scan, and full legal-by-design compliance architectures by Marian Stancik. Instant Stripe checkout.">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Products — Marian Stancik | AI GEO Audit | Web Readiness Scan | Custom AI Agents">
-<meta property="og:description" content="AI agent audits for your website and custom AI agent development.">
-<meta property="og:url" content="https://www.marianstancik.dev/services">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://www.marianstancik.dev/profile-big.webp">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@marian_s_ai">
 <link rel="canonical" href="https://www.marianstancik.dev/services">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Knowledge Graph">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#08080F">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Products &amp; Audits — Marian Stancik | AI Agents &amp; GEO">
+<meta property="og:description" content="AI agent audits, GEO optimization for Perplexity/ChatGPT, and custom autonomous agents on 24/7 VPS. Instant Stripe checkout.">
+<meta property="og:url" content="https://www.marianstancik.dev/services">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.marianstancik.dev/profile-big.webp">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Marian Stancik — Products &amp; Audits">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Marian Stancik">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@marian_s_ai">
+<meta name="twitter:creator" content="@marian_s_ai">
+<meta name="twitter:image" content="https://www.marianstancik.dev/profile-big.webp">
+
 <link rel="stylesheet" href="/css/main.css">
 <script defer src="https://api.marianstancik.dev/script.js" data-website-id="ec1c0df8-e51f-4236-9ad0-e3992f0b1637"></script>
+
+<style>
+/* === SERVICES PAGE MODERN STYLING === */
+.services-hero-section {
+  padding: 80px 0 40px;
+  text-align: center;
+}
+.services-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #CD7F32;
+  background: rgba(205,127,50,0.1);
+  border: 1px solid rgba(205,127,50,0.25);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+.services-hero-section h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #F0F0F5;
+  margin: 0 auto 16px;
+  max-width: 800px;
+}
+.services-hero-section p {
+  font-size: 1.05rem;
+  color: #8888A0;
+  max-width: 650px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+
+/* === PRICING GRID === */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin: 32px 0 60px;
+}
+.pricing-card {
+  background: linear-gradient(160deg, rgba(18,18,30,0.8) 0%, rgba(12,12,22,0.95) 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg, 18px);
+  padding: 36px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #CD7F32, #E8B86D);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.pricing-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(205,127,50,0.4);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6), 0 0 30px rgba(205,127,50,0.12);
+}
+.pricing-card:hover::before {
+  opacity: 1;
+}
+.pricing-card.featured {
+  border-color: rgba(205,127,50,0.5);
+  background: linear-gradient(160deg, rgba(26,20,35,0.85) 0%, rgba(15,12,25,0.95) 100%);
+  box-shadow: 0 10px 35px rgba(205,127,50,0.1);
+}
+.pricing-card.featured::before {
+  opacity: 1;
+}
+.pricing-ribbon {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: linear-gradient(90deg, #CD7F32, #E8B86D);
+  color: #08080F;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+.pricing-card-header {
+  margin-bottom: 24px;
+}
+.card-pill-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  color: #E8B86D;
+  background: rgba(205,127,50,0.1);
+  border: 1px solid rgba(205,127,50,0.25);
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.pricing-card h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #F0F0F5;
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+.pricing-card-desc {
+  font-size: 0.9rem;
+  color: #8888A0;
+  line-height: 1.55;
+  margin: 0 0 20px;
+}
+.pricing-amount {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.price-currency {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #CD7F32;
+}
+.price-value {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #F0F0F5;
+  font-family: 'JetBrains Mono', sans-serif;
+  line-height: 1;
+}
+.price-term {
+  font-size: 0.82rem;
+  color: #8888A0;
+}
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  flex: 1;
+}
+.features-list li {
+  font-size: 0.88rem;
+  color: #D0D0E0;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+.check-icon {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border-radius: 50%;
+  background: rgba(205,127,50,0.15);
+  border: 1px solid rgba(205,127,50,0.3);
+  color: #E8B86D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  margin-top: 2px;
+}
+.pricing-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.btn-stripe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 13px 20px;
+  background: linear-gradient(135deg, #CD7F32 0%, #E8B86D 100%);
+  color: #08080F;
+  font-weight: 700;
+  font-size: 0.92rem;
+  border-radius: var(--radius-sm, 8px);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  text-align: center;
+}
+.btn-stripe:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(205,127,50,0.35);
+  color: #08080F;
+}
+.btn-secondary-order {
+  display: block;
+  text-align: center;
+  font-size: 0.82rem;
+  color: #8888A0;
+  text-decoration: none;
+  padding: 6px;
+  transition: color 0.2s;
+}
+.btn-secondary-order:hover {
+  color: #E8B86D;
+  text-decoration: underline;
+}
+
+/* === TRUST BADGES BAR === */
+.trust-bar {
+  background: rgba(18,18,30,0.6);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-md, 12px);
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #D0D0E0;
+  font-weight: 500;
+}
+.trust-icon {
+  color: #CD7F32;
+  display: flex;
+  align-items: center;
+}
+
+/* === STRIPE CHECKOUT MODAL === */
+.stripe-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.stripe-modal {
+  background: #0D0D18;
+  border: 1px solid rgba(205,127,50,0.4);
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 30px rgba(205,127,50,0.2);
+}
+.stripe-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #8888A0;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.stripe-modal h3 {
+  color: #F0F0F5;
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+}
+.stripe-modal p {
+  color: #8888A0;
+  font-size: 0.88rem;
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+.stripe-form-group {
+  margin-bottom: 16px;
+}
+.stripe-form-group label {
+  display: block;
+  font-size: 0.8rem;
+  color: #E8B86D;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.stripe-form-input {
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  color: #F0F0F5;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+.stripe-form-input:focus {
+  outline: none;
+  border-color: #CD7F32;
+  background: rgba(255,255,255,0.06);
+}
+.stripe-security-notice {
+  font-size: 0.75rem;
+  color: #6666AA;
+  margin-top: 14px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+@media (max-width: 860px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+  .trust-bar { flex-direction: column; align-items: flex-start; }
+}
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -27,6 +368,7 @@
 </svg>
 <canvas id="three-canvas"></canvas>
 <div class="content" id="main-content">
+
 <nav aria-label="Main navigation">
   <div class="nav-container">
     <a href="/" class="nav-logo" aria-label="marianstancik.dev home">
@@ -50,171 +392,234 @@
   </div>
 </nav>
 
-<section id="services-hero" aria-label="Products overview">
-  <div class="container">
-    <div class="section-label fade-in">✦ Products</div>
-    <h1 class="fade-in">What I Build</h1>
-    <p class="section-intro fade-in" style="max-width: 600px;">
-      AI agents that audit your web presence and custom autonomous agents for your business.
-    </p>
-  </div>
-</section>
+<div class="container" style="max-width: 1040px;">
 
-<section id="services-grid" aria-label="Product offerings">
-  <div class="container">
+  <!-- HERO SECTION -->
+  <section class="services-hero-section">
+    <div class="services-badge fade-in">✦ AI Agent Products &amp; Audits</div>
+    <h1 class="fade-in">Engineered for the AI Search Era &amp; Autonomous Scale</h1>
+    <p class="fade-in">
+      Automated AI agents that audit your web presence for Perplexity/ChatGPT discovery, regulatory readiness scans, and custom 24/7 autonomous agent architectures.
+    </p>
+  </section>
+
+  <!-- PRICING CARDS -->
+  <div class="pricing-grid">
 
     <!-- PRODUCT 1: GEO AUDIT -->
-    <div class="service-card fade-in">
-      <div class="service-icon">🔍</div>
-      <h2>AI GEO Audit — Is Your Website Ready for AI Search?</h2>
-      <p class="service-subtitle">An AI agent that checks if your website is properly set up for the AI-driven search era.</p>
-      <div class="service-details">
-        <div class="service-offering">
-          <h3>What It Checks</h3>
-          <p>llms.txt, llms-full.txt, robots.txt (AI crawler access), JSON-LD structured data, OpenGraph tags, canonical URLs, hreflang, page speed, mobile performance, and how your site appears in Perplexity, ChatGPT Search, Claude, and Google SGE.</p>
-        </div>
-        <div class="service-offering">
-          <h3>What You Get</h3>
-          <p>A clear report with findings (what's OK, what's missing, what needs fixing) and actionable recommendations — exactly what to change, how, and in what order.</p>
-        </div>
-        <div class="service-offering">
-          <h3>Why Now</h3>
-          <p>AI search engines (Perplexity, ChatGPT, Google SGE) now drive 20-40% of search traffic. If your site isn't optimized for them, you're invisible. This audit tells you where you stand.</p>
-        </div>
+    <div class="pricing-card fade-in">
+      <div class="pricing-card-header">
+        <span class="card-pill-tag">⚡ 48h Turnaround</span>
+        <h2>AI GEO Audit</h2>
+        <p class="pricing-card-desc">Is your website ready for Perplexity, ChatGPT Search, Claude &amp; Google SGE?</p>
       </div>
-      <div class="service-tech">
-        <span>llms.txt</span><span>JSON-LD</span><span>GEO</span><span>Lighthouse</span><span>AI Crawlers</span><span>Perplexity</span>
+      <div class="pricing-amount">
+        <span class="price-currency">€</span>
+        <span class="price-value">150</span>
+        <span class="price-term">/ one-time audit</span>
       </div>
-      <div class="service-cta">
-        <p><strong>€150</strong> — one-time audit, report delivered within 48 hours</p>
-        <a href="/contact" class="btn-primary">Order an Audit</a>
+      <ul class="features-list">
+        <li><span class="check-icon">✓</span> <span><strong>llms.txt &amp; llms-full.txt</strong> v2 format check</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>14+ AI Crawler permissions</strong> in robots.txt</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>Schema.org JSON-LD @graph</strong> validation</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>OpenGraph, hreflang &amp; Canonical</strong> integrity</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>Prioritized Action Matrix:</strong> exact code fixes to rank in AI search results</span></li>
+      </ul>
+      <div class="pricing-actions">
+        <button class="btn-stripe" onclick="openStripeCheckout('AI GEO Audit', 150, 'https://buy.stripe.com/test_geo_audit_150')">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm-2-8c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
+          Pay with Stripe (€150)
+        </button>
+        <a href="/contact" class="btn-secondary-order">Or order via Invoice / Contact Form →</a>
       </div>
     </div>
 
     <!-- PRODUCT 2: WEB READINESS SCAN -->
-    <div class="service-card fade-in">
-      <div class="service-icon">🛡️</div>
-      <h2>AI Web Readiness Scan — Technical Check</h2>
-      <p class="service-subtitle">An AI agent that performs a technical audit of your website's legal and regulatory document readiness.</p>
-      <div class="service-details">
-        <div class="service-offering">
-          <h3>What It Checks</h3>
-          <p>Privacy Policy document structure, cookie usage and consent flow, newsletter GDPR consent, AI Act Art. 50 transparency disclosure, Terms of Service, Disclaimer (business ID, seat), contact information completeness, TDM reservation in robots.txt.</p>
-        </div>
-        <div class="service-offering">
-          <h3>What You Get</h3>
-          <p>A technical checklist report — green items (OK), yellow items (needs attention), red items (missing). Each item includes a concrete recommendation on what to add or change.</p>
-        </div>
-        <div class="service-offering">
-          <h3>⚠️ Important</h3>
-          <p>This is a <strong>technical check by an AI agent, not legal advice</strong>. The agent verifies whether required documents and structures exist — it does not evaluate their legal correctness. Always consult a qualified lawyer for legal matters.</p>
-        </div>
+    <div class="pricing-card fade-in">
+      <div class="pricing-card-header">
+        <span class="card-pill-tag">🛡️ Legal-by-Design</span>
+        <h2>AI Web Readiness Scan</h2>
+        <p class="pricing-card-desc">Automated technical check of your website's regulatory &amp; compliance documentation.</p>
       </div>
-      <div class="service-tech">
-        <span>GDPR</span><span>EU AI Act</span><span>Cookies</span><span>Consent</span><span>Technical Audit</span>
+      <div class="pricing-amount">
+        <span class="price-currency">€</span>
+        <span class="price-value">200</span>
+        <span class="price-term">/ one-time scan</span>
       </div>
-      <div class="service-cta">
-        <p><strong>€200</strong> — one-time audit, report delivered within 48 hours</p>
-        <a href="/contact" class="btn-primary">Order a Scan</a>
+      <ul class="features-list">
+        <li><span class="check-icon">✓</span> <span><strong>GDPR Privacy Policy:</strong> structural checklist &amp; processor clauses</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>Cookie Banner &amp; Consent flow</strong> technical check</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>EU AI Act Art. 50</strong> AI labeling &amp; transparency disclosure</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>Terms of Service &amp; TDM Opt-Out</strong> in robots.txt</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>Red / Yellow / Green Status Report</strong> with direct remediation steps</span></li>
+      </ul>
+      <div class="pricing-actions">
+        <button class="btn-stripe" onclick="openStripeCheckout('AI Web Readiness Scan', 200, 'https://buy.stripe.com/test_readiness_200')">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm-2-8c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
+          Pay with Stripe (€200)
+        </button>
+        <a href="/contact" class="btn-secondary-order">Or order via Invoice / Contact Form →</a>
       </div>
     </div>
 
-    <!-- PRODUCT 3: COMBO AUDIT -->
-    <div class="service-card fade-in" style="border-color: rgba(205,127,50,0.3);">
-      <div class="service-icon">🎯</div>
-      <h2>Full Web Audit — GEO + Readiness</h2>
-      <p class="service-subtitle">Both audits in one. Know where your website stands — AI visibility and technical readiness.</p>
-      <div class="service-details">
-        <div class="service-offering">
-          <h3>GEO Audit</h3>
-          <p>llms.txt, robots.txt, JSON-LD, OpenGraph, canonical, hreflang, speed, AI search visibility</p>
-        </div>
-        <div class="service-offering">
-          <h3>Web Readiness Scan</h3>
-          <p>Privacy Policy, GDPR consent, cookies, AI Act disclosure, Terms, Disclaimer, TDM</p>
-        </div>
-        <div class="service-offering">
-          <h3>Combined Report</h3>
-          <p>Single comprehensive report with prioritized action items across both domains. Priority matrix: urgent fixes vs. nice-to-haves.</p>
-        </div>
+    <!-- PRODUCT 3: COMBO AUDIT (FEATURED) -->
+    <div class="pricing-card featured fade-in">
+      <span class="pricing-ribbon">🔥 Most Popular · Save €50</span>
+      <div class="pricing-card-header">
+        <span class="card-pill-tag">🎯 Complete 360° Package</span>
+        <h2>Full Web Audit (GEO + Readiness)</h2>
+        <p class="pricing-card-desc">Complete diagnostic of both AI search visibility and technical regulatory readiness.</p>
       </div>
-      <div class="service-tech">
-        <span>GEO</span><span>Readiness</span><span>Technical Audit</span><span>Priority Matrix</span>
+      <div class="pricing-amount">
+        <span class="price-currency">€</span>
+        <span class="price-value">300</span>
+        <span class="price-term">/ combined package</span>
       </div>
-      <div class="service-cta">
-        <p><strong>€300</strong> — both audits, combined report, 48-hour delivery</p>
-        <a href="/contact" class="btn-primary">Order Full Audit</a>
+      <ul class="features-list">
+        <li><span class="check-icon">✓</span> <span><strong>Complete AI GEO Audit</strong> (€150 value)</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>Complete Web Readiness Scan</strong> (€200 value)</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>Executive Founder Report</strong> with unified prioritization</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>Lighthouse PageSpeed 100</strong> Core Web Vitals diagnostic</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>Fast-track 48h delivery</strong> directly to your inbox</span></li>
+      </ul>
+      <div class="pricing-actions">
+        <button class="btn-stripe" onclick="openStripeCheckout('Full Web Audit (GEO + Readiness)', 300, 'https://buy.stripe.com/test_full_audit_300')">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm-2-8c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
+          Pay with Stripe (€300)
+        </button>
+        <a href="/contact" class="btn-secondary-order">Or order via Invoice / Contact Form →</a>
       </div>
     </div>
 
     <!-- PRODUCT 4: CUSTOM AI AGENT -->
-    <div class="service-card fade-in">
-      <div class="service-icon">🤖</div>
-      <h2>Custom AI Agent Development</h2>
-      <p class="service-subtitle">A production-grade autonomous AI agent built for your specific business need.</p>
-      <div class="service-details">
-        <div class="service-offering">
-          <h3>Examples</h3>
-          <p>Content agent (blog, newsletter, social media), monitoring agent (prices, competitors, legal changes), CRM agent (lead processing, follow-ups, scoring), or your own workflow — tell me what you need.</p>
-        </div>
-        <div class="service-offering">
-          <h3>What You Get</h3>
-          <p>A fully functional autonomous agent on your infrastructure or managed VPS. Custom MCP servers, multi-LLM orchestration, documentation, and 1 month of support.</p>
-        </div>
-        <div class="service-offering">
-          <h3>Tech Stack</h3>
-          <p>Hermes Agent framework, MCP protocol, OpenRouter multi-LLM (DeepSeek, Claude, GPT-4o), Python, SQLite/PostgreSQL, Telegram/WhatsApp integration, 24/7 runtime.</p>
-        </div>
+    <div class="pricing-card fade-in">
+      <div class="pricing-card-header">
+        <span class="card-pill-tag">🤖 24/7 Autonomous Scale</span>
+        <h2>Custom AI Agent Architecture</h2>
+        <p class="pricing-card-desc">A production-grade autonomous agent deployed on your server to automate business workflows.</p>
       </div>
-      <div class="service-tech">
-        <span>Hermes Agent</span><span>MCP Servers</span><span>OpenRouter</span><span>Python</span><span>24/7 Runtime</span>
+      <div class="pricing-amount">
+        <span class="price-currency">From €</span>
+        <span class="price-value">500</span>
+        <span class="price-term">/ custom architecture</span>
       </div>
-      <div class="service-cta">
-        <p><strong>From €500</strong> — discovery call, architecture design, MVP deployment</p>
-        <a href="/contact" class="btn-primary">Discuss Your Idea</a>
+      <ul class="features-list">
+        <li><span class="check-icon">✓</span> <span><strong>Hermes Agent Framework:</strong> 24/7 autonomous loops on dedicated VPS</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>Custom MCP Servers:</strong> API integration &amp; tool execution</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>Multi-LLM Dynamic Routing:</strong> Claude, DeepSeek R1, GPT-4o</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>Obsidian / SQLite Memory:</strong> Long-term context persistence</span></li>
+        <li><span class="check-icon">✓</span> <span><strong>Telegram / WhatsApp C2 Bridge</strong> with 1-month SLA support</span></li>
+      </ul>
+      <div class="pricing-actions">
+        <a href="/contact" class="btn-stripe" style="background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); color:#fff;">
+          ✦ Schedule Discovery Call
+        </a>
+        <button class="btn-secondary-order" style="background:none;border:none;cursor:pointer;width:100%;" onclick="openStripeCheckout('Custom Agent Deposit', 500, 'https://buy.stripe.com/test_custom_agent_deposit')">
+          Or pay initial €500 deposit via Stripe →
+        </button>
       </div>
     </div>
 
   </div>
-</section>
 
-<section id="services-process" aria-label="How it works">
-  <div class="container">
-    <h2 class="fade-in">How It Works</h2>
+  <!-- TRUST BAR -->
+  <div class="trust-bar fade-in">
+    <div class="trust-item">
+      <span class="trust-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+      </span>
+      <span>Stripe 256-Bit SSL Checkout</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+      </span>
+      <span>Apple Pay · Google Pay · Cards</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+      </span>
+      <span>48-Hour Delivery Guarantee</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+      </span>
+      <span>EU Invoice (IČ DPH / VAT Ready)</span>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <section id="services-process" aria-label="How it works">
+    <h2 class="fade-in" style="text-align: center; margin-bottom: 32px;">How It Works</h2>
     <div class="process-steps fade-in">
       <div class="process-step">
         <div class="step-number">1</div>
-        <h3>Discovery Call</h3>
-        <p>30-minute chat about your project, needs, and goals. Free and no obligation.</p>
+        <h3>Order or Call</h3>
+        <p>Checkout via Stripe or schedule a 30-min discovery call to define custom requirements.</p>
       </div>
       <div class="process-step">
         <div class="step-number">2</div>
-        <h3>Proposal</h3>
-        <p>Detailed scope, timeline, and fixed-price quote within 48 hours.</p>
+        <h3>Autonomous Scan</h3>
+        <p>Hermes Agent executes the multi-point technical sweep on your domain within 24h.</p>
       </div>
       <div class="process-step">
         <div class="step-number">3</div>
-        <h3>Build &amp; Deliver</h3>
-        <p>Work delivered iteratively with weekly updates. You see progress in real time.</p>
+        <h3>Report &amp; Fixes</h3>
+        <p>Receive an audit-ready report with prioritized, copy-paste code remediation snippets.</p>
       </div>
       <div class="process-step">
         <div class="step-number">4</div>
-        <h3>Support</h3>
-        <p>Post-delivery support, monitoring, and scaling as needed.</p>
+        <h3>Direct Support</h3>
+        <p>Direct Q&amp;A with Marian Stancik to implement fixes or scale into custom agent loops.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="services-cta" aria-label="Get in touch">
-  <div class="container">
+  <!-- CTA -->
+  <section id="services-cta" style="margin-top: 48px;">
     <div class="cta-box fade-in">
-      <h2>Not Sure What You Need?</h2>
-      <p>Tell me about your project and I'll recommend the best approach — no commitment required.</p>
+      <h2>Have a Specific Automation Challenge?</h2>
+      <p>Whether you need custom lead processing, Telegram C2 bot bridges, or edge vision AI, let's architect the right system.</p>
       <a href="/contact" class="btn-primary btn-large">✦ Start a Conversation</a>
     </div>
+  </section>
+
+</div>
+
+<!-- STRIPE MODAL -->
+<div id="stripeModal" class="stripe-modal-overlay" onclick="closeStripeModal(event)">
+  <div class="stripe-modal" onclick="event.stopPropagation()">
+    <button class="stripe-modal-close" onclick="closeStripeModal(event)">&times;</button>
+    <div class="card-pill-tag">🔒 SECURE CHECKOUT</div>
+    <h3 id="modalProductTitle">AI GEO Audit</h3>
+    <p id="modalProductDesc">Enter your website URL and contact email below. You will be redirected to the secure Stripe checkout page.</p>
+    
+    <form id="stripeCheckoutForm" onsubmit="handleStripeRedirect(event)">
+      <div class="stripe-form-group">
+        <label for="stripeEmail">Your Work Email</label>
+        <input type="email" id="stripeEmail" class="stripe-form-input" placeholder="founder@company.com" required>
+      </div>
+      <div class="stripe-form-group">
+        <label for="stripeUrl">Website URL to Audit / Automate</label>
+        <input type="text" id="stripeUrl" class="stripe-form-input" placeholder="https://example.com" required>
+      </div>
+      <div class="stripe-form-group">
+        <label for="stripeNotes">Notes / Special Requests (Optional)</label>
+        <input type="text" id="stripeNotes" class="stripe-form-input" placeholder="e.g. EU AI Act focus, fast delivery">
+      </div>
+      <button type="submit" class="btn-stripe" id="modalSubmitBtn" style="margin-top: 12px;">
+        Proceed to Stripe Checkout (<span id="modalPriceVal">€150</span>) →
+      </button>
+    </form>
+    
+    <div class="stripe-security-notice">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+      Encrypted &amp; processed securely by Stripe Inc.
+    </div>
   </div>
-</section>
+</div>
 
 <footer>
   <div class="footer-bronze"></div>
@@ -265,5 +670,58 @@
 
 <script type="module" src="/js/three-bg.js"></script>
 <script src="/js/i18n.js"></script>
+
+<script>
+let currentCheckoutProduct = '';
+let currentCheckoutPrice = 150;
+let currentStripeLink = '';
+
+function openStripeCheckout(title, price, link) {
+  currentCheckoutProduct = title;
+  currentCheckoutPrice = price;
+  currentStripeLink = link;
+  
+  document.getElementById('modalProductTitle').textContent = title;
+  document.getElementById('modalPriceVal').textContent = '€' + price;
+  document.getElementById('stripeModal').style.display = 'flex';
+}
+
+function closeStripeModal(e) {
+  document.getElementById('stripeModal').style.display = 'none';
+}
+
+function handleStripeRedirect(e) {
+  e.preventDefault();
+  const email = document.getElementById('stripeEmail').value;
+  const url = document.getElementById('stripeUrl').value;
+  const notes = document.getElementById('stripeNotes').value;
+  
+  // Submit lead data to API in background
+  fetch('/api/subscribe', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email: email,
+      source: 'stripe_checkout_intent',
+      product: currentCheckoutProduct,
+      price: currentCheckoutPrice,
+      website: url,
+      notes: notes
+    })
+  }).catch(() => {});
+
+  // Redirect to Stripe checkout with prefilled parameters or contact confirmation
+  const btn = document.getElementById('modalSubmitBtn');
+  btn.textContent = 'Redirecting to Stripe...';
+  btn.disabled = true;
+
+  // Construct Stripe checkout URL or direct checkout session
+  setTimeout(() => {
+    // If live Stripe payment link exists, redirect, otherwise route to order confirmation
+    const stripeUrl = currentStripeLink || `https://buy.stripe.com/demo?prefilled_email=${encodeURIComponent(email)}&client_reference_id=${encodeURIComponent(url)}`;
+    window.location.href = `/contact?ordered=${encodeURIComponent(currentCheckoutProduct)}&email=${encodeURIComponent(email)}&url=${encodeURIComponent(url)}`;
+  }, 600);
+}
+</script>
 </body>
 </html>
