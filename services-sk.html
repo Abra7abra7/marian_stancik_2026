@@ -592,32 +592,62 @@
 <div id="stripeModal" class="stripe-modal-overlay" onclick="closeStripeModal(event)">
   <div class="stripe-modal" onclick="event.stopPropagation()">
     <button class="stripe-modal-close" onclick="closeStripeModal(event)">&times;</button>
-    <div class="card-pill-tag">🔒 ZABEZPEČENÁ PLATBA</div>
-    <h3 id="modalProductTitle">AI GEO Audit</h3>
-    <p id="modalProductDesc">Zadaj svoju webstránku a e-mail pre doručenie reportu. Následne ťa presmerujeme na zabezpečenú Stripe platobnú bránu.</p>
     
-    <form id="stripeCheckoutForm" onsubmit="handleStripeRedirect(event)">
-      <div class="stripe-form-group">
-        <label for="stripeEmail">Tvoj firemný e-mail</label>
-        <input type="email" id="stripeEmail" class="stripe-form-input" placeholder="founder@firma.sk" required>
+    <!-- KROK 1: FORMULÁR -->
+    <div id="modalStepForm">
+      <div class="card-pill-tag">🔒 ZABEZPEČENÁ OBJEDNÁVKA</div>
+      <h3 id="modalProductTitle">AI GEO Audit</h3>
+      <p id="modalProductDesc">Zadaj svoju webstránku a e-mail pre vytvorenie objednávky a doručenie reportu.</p>
+      
+      <form id="stripeCheckoutForm" onsubmit="handleStripeRedirect(event)">
+        <div class="stripe-form-group">
+          <label for="stripeEmail">Tvoj firemný e-mail</label>
+          <input type="email" id="stripeEmail" class="stripe-form-input" placeholder="founder@firma.sk" required>
+        </div>
+        <div class="stripe-form-group">
+          <label for="stripeUrl">URL adresa webu na audit / automatizáciu</label>
+          <input type="text" id="stripeUrl" class="stripe-form-input" placeholder="https://tvojweb.sk" required>
+        </div>
+        <div class="stripe-form-group">
+          <label for="stripeNotes">Poznámka / Špecifické požiadavky (voliteľné)</label>
+          <input type="text" id="stripeNotes" class="stripe-form-input" placeholder="napr. zameranie na EU AI Act, expresné dodanie">
+        </div>
+        <button type="submit" class="btn-stripe" id="modalSubmitBtn" style="margin-top: 12px;">
+          Odoslať objednávku (<span id="modalPriceVal">€150</span>) →
+        </button>
+      </form>
+      
+      <div class="stripe-security-notice">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+        Šifrované a bezpečne spracované.
       </div>
-      <div class="stripe-form-group">
-        <label for="stripeUrl">URL adresa webu na audit / automatizáciu</label>
-        <input type="text" id="stripeUrl" class="stripe-form-input" placeholder="https://tvojweb.sk" required>
-      </div>
-      <div class="stripe-form-group">
-        <label for="stripeNotes">Poznámka / Špecifické požiadavky (voliteľné)</label>
-        <input type="text" id="stripeNotes" class="stripe-form-input" placeholder="napr. zameranie na EU AI Act, expresné dodanie">
-      </div>
-      <button type="submit" class="btn-stripe" id="modalSubmitBtn" style="margin-top: 12px;">
-        Pokračovať na Stripe (<span id="modalPriceVal">€150</span>) →
-      </button>
-    </form>
-    
-    <div class="stripe-security-notice">
-      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
-      Šifrované a bezpečne spracované cez Stripe Inc.
     </div>
+
+    <!-- KROK 2: POTVRDENIE A PLATBA -->
+    <div id="modalStepSuccess" style="display:none; text-align:center;">
+      <div style="font-size: 2.4rem; margin-bottom: 12px;">✅</div>
+      <h3 style="color:#F0F0F5; margin:0 0 8px;">Objednávka úspešne zaznamenaná!</h3>
+      <p style="color:#8888A0; font-size:0.9rem; line-height:1.5; margin:0 0 18px;">
+        Podrobnosti objednávky boli prijaté. Marian Stancik začína spracovávať audit do 24 hodín.
+      </p>
+
+      <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:16px; text-align:left; font-size:0.88rem; color:#D0D0E0; line-height:1.6; margin-bottom:20px;">
+        <div><strong>Objednaná služba:</strong> <span id="confProduct" style="color:#CD7F32; font-weight:700;"></span></div>
+        <div><strong>Suma:</strong> <span id="confPrice" style="color:#E8B86D; font-weight:700;"></span></div>
+        <div><strong>E-mail:</strong> <span id="confEmail" style="color:#F0F0F5;"></span></div>
+        <div><strong>Webstránka:</strong> <span id="confUrl" style="color:#F0F0F5;"></span></div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a id="confStripeBtn" href="https://buy.stripe.com/" target="_blank" rel="noopener" class="btn-stripe" style="background:linear-gradient(135deg, #635BFF 0%, #4B44DB 100%); color:#fff;">
+          💳 Zaplatiť online cez Stripe Checkout →
+        </a>
+        <button onclick="closeStripeModal(event)" class="btn-secondary-order" style="background:none; border:none; cursor:pointer;">
+          Zavrieť okno / Platba na faktúru
+        </button>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -679,8 +709,10 @@ let currentStripeLink = '';
 function openStripeCheckout(title, price, link) {
   currentCheckoutProduct = title;
   currentCheckoutPrice = price;
-  currentStripeLink = link;
+  currentStripeLink = link || 'https://buy.stripe.com/';
   
+  document.getElementById('modalStepForm').style.display = 'block';
+  document.getElementById('modalStepSuccess').style.display = 'none';
   document.getElementById('modalProductTitle').textContent = title;
   document.getElementById('modalPriceVal').textContent = '€' + price;
   document.getElementById('stripeModal').style.display = 'flex';
@@ -692,10 +724,14 @@ function closeStripeModal(e) {
 
 function handleStripeRedirect(e) {
   e.preventDefault();
-  const email = document.getElementById('stripeEmail').value;
-  const url = document.getElementById('stripeUrl').value;
-  const notes = document.getElementById('stripeNotes').value;
+  const email = document.getElementById('stripeEmail').value.trim();
+  const url = document.getElementById('stripeUrl').value.trim();
+  const notes = document.getElementById('stripeNotes').value.trim();
   
+  const btn = document.getElementById('modalSubmitBtn');
+  btn.textContent = 'Zaznamenávam objednávku...';
+  btn.disabled = true;
+
   // Submit lead data to API in background
   fetch('/api/subscribe', {
     method: 'POST',
@@ -708,16 +744,20 @@ function handleStripeRedirect(e) {
       website: url,
       notes: notes
     })
-  }).catch(() => {});
-
-  // Redirect to Stripe checkout with prefilled parameters or contact confirmation
-  const btn = document.getElementById('modalSubmitBtn');
-  btn.textContent = 'Presmerovávam na Stripe...';
-  btn.disabled = true;
-
-  setTimeout(() => {
-    window.location.href = `/contact?ordered=${encodeURIComponent(currentCheckoutProduct)}&email=${encodeURIComponent(email)}&url=${encodeURIComponent(url)}`;
-  }, 600);
+  }).catch(() => {}).finally(() => {
+    document.getElementById('modalStepForm').style.display = 'none';
+    document.getElementById('modalStepSuccess').style.display = 'block';
+    
+    document.getElementById('confProduct').textContent = currentCheckoutProduct;
+    document.getElementById('confPrice').textContent = '€' + currentCheckoutPrice;
+    document.getElementById('confEmail').textContent = email;
+    document.getElementById('confUrl').textContent = url;
+    
+    const stripeBtn = document.getElementById('confStripeBtn');
+    if (stripeBtn) {
+      stripeBtn.href = currentStripeLink;
+    }
+  });
 }
 </script>
 </body>

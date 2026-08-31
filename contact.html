@@ -118,6 +118,26 @@
 <!-- === CONNECT === -->
 <section id="connect" aria-label="Connect with Marian Stancik">
   <div class="container">
+    
+    <!-- DYNAMIC ORDER CONFIRMATION BANNER -->
+    <div id="orderConfirmationBox" class="fade-in visible" style="display:none; background:linear-gradient(145deg, rgba(26,20,35,0.95), rgba(12,12,22,0.98)); border:1px solid #CD7F32; border-radius:14px; padding:24px 28px; margin-bottom:36px; box-shadow:0 12px 35px rgba(205,127,50,0.25);">
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+        <span style="font-size:1.8rem;">✅</span>
+        <div>
+          <h3 style="margin:0; font-size:1.25rem; color:#F0F0F5;" id="orderBoxTitle">Objednávka bola úspešne prijatá! / Order Received!</h3>
+          <p style="margin:0; font-size:0.86rem; color:#E8B86D;" id="orderBoxSub">Podrobnosti a potvrdenie sme zaznamenali v systéme.</p>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:14px 18px; margin:16px 0; font-size:0.9rem; color:#D0D0E0; line-height:1.7;">
+        <div><strong>Objednaný audit / služba:</strong> <span id="orderBoxProduct" style="color:#CD7F32; font-weight:700;"></span></div>
+        <div><strong>E-mail pre doručenie:</strong> <span id="orderBoxEmail" style="color:#F0F0F5;"></span></div>
+        <div><strong>Zadaná webstránka:</strong> <span id="orderBoxUrl" style="color:#F0F0F5;"></span></div>
+      </div>
+      <p style="margin:0; font-size:0.86rem; color:#8888A0; line-height:1.6;">
+        Ďakujem za prejavenú dôveru. Váš audit alebo požiadavku začínam spracovávať do 24 hodín. V prípade otázok ma môžete kontaktovať priamo na <a href="mailto:marianstancik@agentmail.to" style="color:#CD7F32; text-decoration:underline;">marianstancik@agentmail.to</a>.
+      </p>
+    </div>
+
     <div class="section-label fade-in" id="connLabel">✦ Connect</div>
     <h1 class="fade-in" id="connHeading">Let's build something.</h1>
     <p class="section-intro fade-in" id="connIntro" style="margin-bottom: 28px;">
@@ -294,4 +314,23 @@
 
 <script src="/js/i18n.js"></script>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const ordered = params.get('ordered');
+  const email = params.get('email');
+  const url = params.get('url');
+
+  if (ordered || email || url) {
+    const box = document.getElementById('orderConfirmationBox');
+    if (box) {
+      box.style.display = 'block';
+      if (document.getElementById('orderBoxProduct')) document.getElementById('orderBoxProduct').textContent = ordered || 'AI Audit / Agent Service';
+      if (document.getElementById('orderBoxEmail')) document.getElementById('orderBoxEmail').textContent = email || 'Zadaný e-mail';
+      if (document.getElementById('orderBoxUrl')) document.getElementById('orderBoxUrl').textContent = url || 'Zadaná doména';
+      box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+});
+</script>
 </body></html>
