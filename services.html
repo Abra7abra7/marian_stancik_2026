@@ -426,7 +426,7 @@
         <li><span class="check-icon">✓</span> <span><strong>Prioritized Action Matrix:</strong> exact code fixes to rank in AI search results</span></li>
       </ul>
       <div class="pricing-actions">
-        <button class="btn-stripe" onclick="openStripeCheckout('AI GEO Audit', 150, 'https://buy.stripe.com/test_geo_audit_150')">
+        <button class="btn-stripe" onclick="openStripeCheckout('AI GEO Audit', 150, 'AI GEO Audit')">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm-2-8c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
           Pay with Stripe (€150)
         </button>
@@ -454,7 +454,7 @@
         <li><span class="check-icon">✓</span> <span><strong>Red / Yellow / Green Status Report</strong> with direct remediation steps</span></li>
       </ul>
       <div class="pricing-actions">
-        <button class="btn-stripe" onclick="openStripeCheckout('AI Web Readiness Scan', 200, 'https://buy.stripe.com/test_readiness_200')">
+        <button class="btn-stripe" onclick="openStripeCheckout('AI Web Readiness Scan', 200, 'AI Web Readiness Scan')">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm-2-8c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
           Pay with Stripe (€200)
         </button>
@@ -483,7 +483,7 @@
         <li><span class="check-icon">✓</span> <span><strong>Fast-track 48h delivery</strong> directly to your inbox</span></li>
       </ul>
       <div class="pricing-actions">
-        <button class="btn-stripe" onclick="openStripeCheckout('Full Web Audit (GEO + Readiness)', 300, 'https://buy.stripe.com/test_full_audit_300')">
+        <button class="btn-stripe" onclick="openStripeCheckout('Full Web Audit (GEO + Readiness)', 300, 'Full Web Audit (GEO + Readiness)')">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm-2-8c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
           Pay with Stripe (€300)
         </button>
@@ -514,7 +514,7 @@
         <a href="/contact" class="btn-stripe" style="background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); color:#fff;">
           ✦ Schedule Discovery Call
         </a>
-        <button class="btn-secondary-order" style="background:none;border:none;cursor:pointer;width:100%;" onclick="openStripeCheckout('Custom Agent Deposit', 500, 'https://buy.stripe.com/test_custom_agent_deposit')">
+        <button class="btn-secondary-order" style="background:none;border:none;cursor:pointer;width:100%;" onclick="openStripeCheckout('Custom Agent Deposit', 500, 'Custom Agent Deposit')">
           Or pay initial €500 deposit via Stripe →
         </button>
       </div>
@@ -597,7 +597,7 @@
     <div id="modalStepForm">
       <div class="card-pill-tag">🔒 SECURE CHECKOUT</div>
       <h3 id="modalProductTitle">AI GEO Audit</h3>
-      <p id="modalProductDesc">Enter your website URL and contact email below to initiate your audit order.</p>
+      <p id="modalProductDesc">Enter your website URL and contact email below to order your audit.</p>
       
       <form id="stripeCheckoutForm" onsubmit="handleStripeRedirect(event)">
         <div class="stripe-form-group">
@@ -610,10 +610,10 @@
         </div>
         <div class="stripe-form-group">
           <label for="stripeNotes">Notes / Special Requests (Optional)</label>
-          <input type="text" id="stripeNotes" class="stripe-form-input" placeholder="e.g. EU AI Act focus, fast delivery">
+          <input type="text" id="stripeNotes" class="stripe-form-input" placeholder="e.g. EU AI Act focus, fast turnaround">
         </div>
         <button type="submit" class="btn-stripe" id="modalSubmitBtn" style="margin-top: 12px;">
-          Submit Order Request (<span id="modalPriceVal">€150</span>) →
+          Confirm Order (<span id="modalPriceVal">€150</span>) →
         </button>
       </form>
       
@@ -625,25 +625,25 @@
 
     <!-- STEP 2: ORDER CONFIRMATION & PAYMENT STATE -->
     <div id="modalStepSuccess" style="display:none; text-align:center;">
-      <div style="font-size: 2.4rem; margin-bottom: 12px;">✅</div>
-      <h3 style="color:#F0F0F5; margin:0 0 8px;">Order Successfully Received!</h3>
-      <p style="color:#8888A0; font-size:0.9rem; line-height:1.5; margin:0 0 18px;">
-        Your order details have been registered. Marian Stancik will begin your audit within 24 hours.
+      <div style="font-size: 2.5rem; margin-bottom: 10px;">✅</div>
+      <h3 style="color:#F0F0F5; margin:0 0 8px; font-size:1.3rem;">Order Received Successfully!</h3>
+      <p style="color:#E8B86D; font-size:0.88rem; line-height:1.5; margin:0 0 16px;">
+        Confirmation &amp; invoice details have been sent to your email.
       </p>
 
       <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:16px; text-align:left; font-size:0.88rem; color:#D0D0E0; line-height:1.6; margin-bottom:20px;">
         <div><strong>Product:</strong> <span id="confProduct" style="color:#CD7F32; font-weight:700;"></span></div>
-        <div><strong>Total Amount:</strong> <span id="confPrice" style="color:#E8B86D; font-weight:700;"></span></div>
+        <div><strong>Amount:</strong> <span id="confPrice" style="color:#E8B86D; font-weight:700;"></span></div>
         <div><strong>Email:</strong> <span id="confEmail" style="color:#F0F0F5;"></span></div>
         <div><strong>Website:</strong> <span id="confUrl" style="color:#F0F0F5;"></span></div>
       </div>
 
       <div style="display:flex; flex-direction:column; gap:10px;">
-        <a id="confStripeBtn" href="https://buy.stripe.com/" target="_blank" rel="noopener" class="btn-stripe" style="background:linear-gradient(135deg, #635BFF 0%, #4B44DB 100%); color:#fff;">
-          💳 Pay Now via Stripe Checkout →
+        <a id="confStripeBtn" href="#" target="_blank" rel="noopener" class="btn-stripe" style="display:none; background:linear-gradient(135deg, #635BFF 0%, #4B44DB 100%); color:#fff;">
+          💳 Pay Now with Stripe Checkout →
         </a>
-        <button onclick="closeStripeModal(event)" class="btn-secondary-order" style="background:none; border:none; cursor:pointer;">
-          Close Window / Pay Later on Invoice
+        <button onclick="closeStripeModal(event)" class="btn-stripe" style="background:linear-gradient(135deg, #CD7F32 0%, #E8B86D 100%); color:#08080F;">
+          Done / Close Window
         </button>
       </div>
     </div>
@@ -702,14 +702,20 @@
 <script src="/js/i18n.js"></script>
 
 <script>
+// Configure live Stripe Payment Links here when created in Stripe Dashboard
+const STRIPE_LINKS = {
+  'AI GEO Audit': '',
+  'AI Web Readiness Scan': '',
+  'Full Web Audit (GEO + Readiness)': '',
+  'Custom Agent Deposit': ''
+};
+
 let currentCheckoutProduct = '';
 let currentCheckoutPrice = 150;
-let currentStripeLink = '';
 
-function openStripeCheckout(title, price, link) {
+function openStripeCheckout(title, price, linkKey) {
   currentCheckoutProduct = title;
   currentCheckoutPrice = price;
-  currentStripeLink = link || 'https://buy.stripe.com/';
   
   document.getElementById('modalStepForm').style.display = 'block';
   document.getElementById('modalStepSuccess').style.display = 'none';
@@ -738,14 +744,14 @@ function handleStripeRedirect(e) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       email: email,
-      source: 'stripe_checkout_intent',
+      source: 'product_order',
       product: currentCheckoutProduct,
       price: currentCheckoutPrice,
       website: url,
       notes: notes
     })
   }).catch(() => {}).finally(() => {
-    // Show confirmation UI inside modal
+    // Transition to success confirmation
     document.getElementById('modalStepForm').style.display = 'none';
     document.getElementById('modalStepSuccess').style.display = 'block';
     
@@ -754,10 +760,13 @@ function handleStripeRedirect(e) {
     document.getElementById('confEmail').textContent = email;
     document.getElementById('confUrl').textContent = url;
     
-    // Set Stripe checkout button URL
+    const liveLink = STRIPE_LINKS[currentCheckoutProduct];
     const stripeBtn = document.getElementById('confStripeBtn');
-    if (stripeBtn) {
-      stripeBtn.href = currentStripeLink;
+    if (liveLink && liveLink.startsWith('https://buy.stripe.com/')) {
+      stripeBtn.href = liveLink;
+      stripeBtn.style.display = 'flex';
+    } else {
+      stripeBtn.style.display = 'none';
     }
   });
 }

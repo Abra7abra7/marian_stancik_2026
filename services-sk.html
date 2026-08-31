@@ -426,7 +426,7 @@
         <li><span class="check-icon">✓</span> <span><strong>Prioritizovaná matica opráv:</strong> presný zoznam kódových zmien pre AI vyhľadávače</span></li>
       </ul>
       <div class="pricing-actions">
-        <button class="btn-stripe" onclick="openStripeCheckout('AI GEO Audit', 150, 'https://buy.stripe.com/test_geo_audit_150')">
+        <button class="btn-stripe" onclick="openStripeCheckout('AI GEO Audit', 150, 'AI GEO Audit')">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm-2-8c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
           Kúpiť cez Stripe (€150)
         </button>
@@ -454,7 +454,7 @@
         <li><span class="check-icon">✓</span> <span><strong>Semaforový report (Zelená/Žltá/Červená)</strong> s odporúčaniami</span></li>
       </ul>
       <div class="pricing-actions">
-        <button class="btn-stripe" onclick="openStripeCheckout('AI Web Readiness Scan', 200, 'https://buy.stripe.com/test_readiness_200')">
+        <button class="btn-stripe" onclick="openStripeCheckout('AI Web Readiness Scan', 200, 'AI Web Readiness Scan')">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm-2-8c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
           Kúpiť cez Stripe (€200)
         </button>
@@ -483,7 +483,7 @@
         <li><span class="check-icon">✓</span> <span><strong>Expresné dodanie do 48 hodín</strong> priamo do e-mailu</span></li>
       </ul>
       <div class="pricing-actions">
-        <button class="btn-stripe" onclick="openStripeCheckout('Full Web Audit (GEO + Readiness)', 300, 'https://buy.stripe.com/test_full_audit_300')">
+        <button class="btn-stripe" onclick="openStripeCheckout('Full Web Audit (GEO + Readiness)', 300, 'Full Web Audit (GEO + Readiness)')">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm-2-8c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
           Kúpiť cez Stripe (€300)
         </button>
@@ -514,7 +514,7 @@
         <a href="/contact" class="btn-stripe" style="background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); color:#fff;">
           ✦ Dohodnúť úvodný hovor
         </a>
-        <button class="btn-secondary-order" style="background:none;border:none;cursor:pointer;width:100%;" onclick="openStripeCheckout('Záloha za Vlastného Agenta', 500, 'https://buy.stripe.com/test_custom_agent_deposit')">
+        <button class="btn-secondary-order" style="background:none;border:none;cursor:pointer;width:100%;" onclick="openStripeCheckout('Záloha za Vlastného Agenta', 500, 'Custom Agent Deposit')">
           Alebo zložiť úvodnú zálohu €500 cez Stripe →
         </button>
       </div>
@@ -613,7 +613,7 @@
           <input type="text" id="stripeNotes" class="stripe-form-input" placeholder="napr. zameranie na EU AI Act, expresné dodanie">
         </div>
         <button type="submit" class="btn-stripe" id="modalSubmitBtn" style="margin-top: 12px;">
-          Odoslať objednávku (<span id="modalPriceVal">€150</span>) →
+          Potvrdiť objednávku (<span id="modalPriceVal">€150</span>) →
         </button>
       </form>
       
@@ -623,12 +623,12 @@
       </div>
     </div>
 
-    <!-- KROK 2: POTVRDENIE A PLATBA -->
+    <!-- KROK 2: POTVRDENIE -->
     <div id="modalStepSuccess" style="display:none; text-align:center;">
-      <div style="font-size: 2.4rem; margin-bottom: 12px;">✅</div>
-      <h3 style="color:#F0F0F5; margin:0 0 8px;">Objednávka úspešne zaznamenaná!</h3>
-      <p style="color:#8888A0; font-size:0.9rem; line-height:1.5; margin:0 0 18px;">
-        Podrobnosti objednávky boli prijaté. Marian Stancik začína spracovávať audit do 24 hodín.
+      <div style="font-size: 2.5rem; margin-bottom: 10px;">✅</div>
+      <h3 style="color:#F0F0F5; margin:0 0 8px; font-size:1.3rem;">Objednávka úspešne prijatá!</h3>
+      <p style="color:#E8B86D; font-size:0.88rem; line-height:1.5; margin:0 0 16px;">
+        Potvrdenie a podklady boli odoslané na váš e-mail.
       </p>
 
       <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:16px; text-align:left; font-size:0.88rem; color:#D0D0E0; line-height:1.6; margin-bottom:20px;">
@@ -639,11 +639,11 @@
       </div>
 
       <div style="display:flex; flex-direction:column; gap:10px;">
-        <a id="confStripeBtn" href="https://buy.stripe.com/" target="_blank" rel="noopener" class="btn-stripe" style="background:linear-gradient(135deg, #635BFF 0%, #4B44DB 100%); color:#fff;">
+        <a id="confStripeBtn" href="#" target="_blank" rel="noopener" class="btn-stripe" style="display:none; background:linear-gradient(135deg, #635BFF 0%, #4B44DB 100%); color:#fff;">
           💳 Zaplatiť online cez Stripe Checkout →
         </a>
-        <button onclick="closeStripeModal(event)" class="btn-secondary-order" style="background:none; border:none; cursor:pointer;">
-          Zavrieť okno / Platba na faktúru
+        <button onclick="closeStripeModal(event)" class="btn-stripe" style="background:linear-gradient(135deg, #CD7F32 0%, #E8B86D 100%); color:#08080F;">
+          Hotovo / Zavrieť okno
         </button>
       </div>
     </div>
@@ -702,14 +702,20 @@
 <script src="/js/i18n.js"></script>
 
 <script>
+// Konfigurácia živých Stripe Payment Linkov z dashboardu
+const STRIPE_LINKS = {
+  'AI GEO Audit': '',
+  'AI Web Readiness Scan': '',
+  'Full Web Audit (GEO + Readiness)': '',
+  'Custom Agent Deposit': ''
+};
+
 let currentCheckoutProduct = '';
 let currentCheckoutPrice = 150;
-let currentStripeLink = '';
 
-function openStripeCheckout(title, price, link) {
+function openStripeCheckout(title, price, linkKey) {
   currentCheckoutProduct = title;
   currentCheckoutPrice = price;
-  currentStripeLink = link || 'https://buy.stripe.com/';
   
   document.getElementById('modalStepForm').style.display = 'block';
   document.getElementById('modalStepSuccess').style.display = 'none';
@@ -738,7 +744,7 @@ function handleStripeRedirect(e) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       email: email,
-      source: 'stripe_checkout_intent',
+      source: 'product_order',
       product: currentCheckoutProduct,
       price: currentCheckoutPrice,
       website: url,
@@ -753,9 +759,13 @@ function handleStripeRedirect(e) {
     document.getElementById('confEmail').textContent = email;
     document.getElementById('confUrl').textContent = url;
     
+    const liveLink = STRIPE_LINKS[currentCheckoutProduct];
     const stripeBtn = document.getElementById('confStripeBtn');
-    if (stripeBtn) {
-      stripeBtn.href = currentStripeLink;
+    if (liveLink && liveLink.startsWith('https://buy.stripe.com/')) {
+      stripeBtn.href = liveLink;
+      stripeBtn.style.display = 'flex';
+    } else {
+      stripeBtn.style.display = 'none';
     }
   });
 }
