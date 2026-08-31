@@ -8,137 +8,44 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://www.marianstancik.dev/blog">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Knowledge Graph">
+<link rel="alternate" hreflang="en" href="https://www.marianstancik.dev/blog">
+<link rel="alternate" hreflang="sk" href="https://www.marianstancik.dev/blog">
 <meta name="theme-color" content="#08080F">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
-<!-- Open Graph -->
 <meta property="og:title" content="Blog — Marian Stancik | AI Agents, Law & Tech">
 <meta property="og:description" content="AI agents, autonomous systems, law & AI compliance, drone engineering.">
 <meta property="og:url" content="https://www.marianstancik.dev/blog">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://www.marianstancik.dev/profile.webp">
-<meta property="og:image:width" content="800">
-<meta property="og:image:height" content="800">
-<meta property="og:image:alt" content="Marian Stancik — Blog">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="sk_SK">
-<meta property="og:site_name" content="Marian Stancik">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@marian_s_ai">
-<meta name="twitter:creator" content="@marian_s_ai">
-<meta name="twitter:image" content="https://www.marianstancik.dev/profile.webp">
 
-<!-- JSON-LD Blog -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "Person",
-      "@id": "https://www.marianstancik.dev/#person",
-      "name": "Marian Stancik",
-      "url": "https://www.marianstancik.dev"
-    },
-    {
-      "@type": "Blog",
-      "@id": "https://www.marianstancik.dev/blog#blog",
-      "url": "https://www.marianstancik.dev/blog",
-      "name": "Marian Stancik Blog",
-      "description": "AI agents, autonomous systems, law & AI compliance, drone engineering",
-      "publisher": {"@id": "https://www.marianstancik.dev/#person"}
-    }
+    {"@type":"Person","@id":"https://www.marianstancik.dev/#person","name":"Marian Stancik","url":"https://www.marianstancik.dev"},
+    {"@type":"Blog","@id":"https://www.marianstancik.dev/blog#blog","url":"https://www.marianstancik.dev/blog","name":"Marian Stancik Blog","description":"AI agents, autonomous systems, law & AI compliance, drone engineering","publisher":{"@id":"https://www.marianstancik.dev/#person"}}
   ]
 }
 </script>
 
+<link rel="stylesheet" href="/css/main.css">
+<script defer src="https://api.marianstancik.dev/script.js" data-website-id="ec1c0df8-e51f-4236-9ad0-e3992f0b1637"></script>
 <style>
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  background: #08080F;
-  color: #E8E8F0;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-.container { max-width: 860px; margin: 0 auto; padding: 0 24px; width: 100%; }
-nav {
-  padding: 16px 24px;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  background: rgba(8,8,15,0.85);
-  backdrop-filter: blur(12px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.nav-inner { max-width: 860px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-.nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: #F0F0F5;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-.ms-logo {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #CD7F32, #E8B86D);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Georgia', serif;
-  font-weight: 700;
-  font-size: 0.8rem;
-  color: #08080F;
-}
-.nav-links { display: flex; gap: 18px; align-items: center; }
-.nav-links a { color: #8888A0; text-decoration: none; font-size: 0.82rem; transition: color 0.3s; }
-.nav-links a:hover { color: #CD7F32; }
-.lang-btn {
-  background: rgba(205,127,50,0.1);
-  border: 1px solid rgba(205,127,50,0.25);
-  color: #E8B86D;
-  padding: 4px 10px;
-  border-radius: 100px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.lang-btn:hover { background: rgba(205,127,50,0.2); }
-
-.blog-hero { padding: 64px 0 32px; text-align: left; }
-.badge {
-  display: inline-block;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #CD7F32;
-  background: rgba(205,127,50,0.08);
-  border: 1px solid rgba(205,127,50,0.2);
-  padding: 4px 14px;
-  border-radius: 100px;
-  margin-bottom: 14px;
-}
-h1 { font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 700; color: #F0F0F5; line-height: 1.2; letter-spacing: -0.02em; }
-h1 span { color: #CD7F32; }
-.subtitle { color: #8888A0; font-size: 1rem; margin-top: 10px; max-width: 600px; }
-
+.blog-page { min-height: 100vh; display: flex; flex-direction: column; }
+.blog-hero { padding: 64px 0 32px; }
 .post-list { display: flex; flex-direction: column; gap: 20px; padding: 24px 0 80px; flex: 1; }
 .post-item {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
+  background: var(--color-bg-card, rgba(18,18,30,0.65));
+  border: 1px solid var(--color-border, rgba(255,255,255,0.06));
+  border-radius: var(--radius-md, 12px);
   padding: 28px;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
@@ -149,59 +56,41 @@ h1 span { color: #CD7F32; }
 .post-item::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 3px;
-  height: 100%;
-  background: linear-gradient(180deg, #CD7F32, #E8B86D);
-  opacity: 0;
-  transition: opacity 0.3s;
+  top: 0; left: 0; width: 3px; height: 100%;
+  background: linear-gradient(180deg, var(--color-primary, #CD7F32), var(--color-accent, #E8B86D));
+  opacity: 0; transition: opacity 0.3s;
 }
-.post-item:hover {
-  background: rgba(255,255,255,0.04);
-  border-color: rgba(205,127,50,0.3);
-  transform: translateY(-3px);
-}
+.post-item:hover { background: var(--color-bg-card-hover, rgba(26,26,42,0.85)); border-color: var(--color-border-hover, rgba(205,127,50,0.35)); transform: translateY(-3px); }
 .post-item:hover::before { opacity: 1; }
+.post-item:hover h2 { color: var(--color-accent, #E8B86D); }
 .post-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
-.post-date { font-size: 0.72rem; color: #9090A8; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
-.post-read { font-size: 0.72rem; color: #CD7F32; }
-.post-item h2 { font-size: 1.25rem; font-weight: 600; color: #F0F0F5; margin-bottom: 8px; line-height: 1.35; transition: color 0.3s; }
-.post-item:hover h2 { color: #E8B86D; }
-.post-item p { font-size: 0.9rem; color: #8888A0; line-height: 1.6; }
+.post-date { font-size: 0.72rem; color: var(--color-text-muted, #8888A0); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+.post-read { font-size: 0.72rem; color: var(--color-primary, #CD7F32); }
+.post-item h2 { font-size: 1.25rem; font-weight: 600; color: var(--color-text, #F0F0F5); margin-bottom: 8px; line-height: 1.35; transition: color 0.3s; }
+.post-item p { font-size: 0.9rem; color: var(--color-text-muted, #8888A0); line-height: 1.6; }
 .post-tags { display: flex; gap: 6px; margin-top: 16px; flex-wrap: wrap; }
 .post-tags span {
-  font-size: 0.65rem;
-  padding: 3px 10px;
-  border-radius: 100px;
-  background: rgba(205,127,50,0.08);
-  color: #E8B86D;
+  font-size: 0.65rem; padding: 3px 10px; border-radius: 100px;
+  background: rgba(205,127,50,0.08); color: var(--color-accent, #E8B86D);
   border: 1px solid rgba(205,127,50,0.15);
 }
-footer {
-  text-align: center;
-  padding: 36px 24px;
-  color: #9090A8;
-  font-size: 0.75rem;
-  border-top: 1px solid rgba(255,255,255,0.04);
-  margin-top: auto;
-}
-footer a { color: #8888A0; text-decoration: none; transition: color 0.3s; }
-footer a:hover { color: #CD7F32; }
+.posts-sk { display: none; }
 </style>
-<script defer src="https://api.marianstancik.dev/script.js" data-website-id="ec1c0df8-e51f-4236-9ad0-e3992f0b1637"></script>
 </head>
-<body>
+<body class="blog-page">
 
 <nav aria-label="Blog navigation">
-  <div class="nav-inner">
-    <a href="/" class="nav-brand" aria-label="marianstancik.dev home">
-      <div class="brand-mark" aria-hidden="true" style="width:28px;height:28px;border-radius:8px;background:rgba(205,127,50,0.12);border:1px solid rgba(205,127,50,0.35);color:#E8B86D;display:flex;align-items:center;justify-content:center;font-size:0.85rem;">✦</div>
-      <span>marian<span style="color:#CD7F32">stancik</span><span style="color:#8888A0;font-size:0.85rem;font-weight:400">.dev</span></span>
+  <div class="nav-container">
+    <a href="/" class="nav-logo" aria-label="marianstancik.dev home">
+      <div class="brand-mark" aria-hidden="true">✦</div>
+      <span class="nav-logo-text">marian<span class="highlight">stancik</span><span class="tld">.dev</span></span>
     </a>
-    <div class="nav-links">
-      <a href="/" id="homeLink">← Home</a>
-      <button class="lang-btn" id="blogLangBtn" onclick="toggleBlogLang()" aria-label="Toggle language">SK / EN</button>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" id="blogBtnEn" onclick="setBlogLang('en')">EN</button>
+        <button class="lang-btn" id="blogBtnSk" onclick="setBlogLang('sk')">SK</button>
+      </div>
+      <a href="/" class="nav-link" id="blogHomeLink">← Home</a>
     </div>
   </div>
 </nav>
@@ -210,139 +99,123 @@ footer a:hover { color: #CD7F32; }
   <header class="blog-hero">
     <div class="badge" id="blogBadge">✦ Engineering & Thought Log</div>
     <h1 id="blogTitle">Articles & <span>Insights</span></h1>
-    <p class="subtitle" id="blogSubtitle">Autonomous AI agents, legal-by-design frameworks (AI Act & GDPR), and UAV engineering.</p>
+    <p class="section-intro" id="blogSubtitle">Autonomous AI agents, legal-by-design frameworks (AI Act & GDPR), and UAV engineering.</p>
   </header>
 
   <main class="post-list" id="postContainer">
-    <!-- Static Instant-Render Fallback (Hydrated/Updated dynamically via posts.json) -->
-    <a href="posts/2026-08-26-agent-driven-company.html" class="post-item">
-      <div class="post-top">
-        <span class="post-date">August 26, 2026</span>
-        <span class="post-read">6 min read</span>
-      </div>
-      <h2>From Solo Founder to Agent-Driven Company with 19 Autonomous Cron Jobs</h2>
-      <p>How I built 19 autonomous AI cron jobs on a €3.79/mo VPS for content, CRM, legal monitoring, and system health — all agent-driven with 99.7% uptime.</p>
-      <div class="post-tags"><span>AI Agents</span><span>Hermes Agent</span><span>Autonomous Systems</span><span>Cron Jobs</span><span>VPS Infrastructure</span></div>
-    </a>
 
-    <a href="posts/2026-08-25-web-performance-optimization.html" class="post-item">
-      <div class="post-top">
-        <span class="post-date">August 25, 2026</span>
-        <span class="post-read">5 min read</span>
-      </div>
-      <h2>Web Performance Optimization: How I Cut Page Size by 61%</h2>
-      <p>A technical walkthrough of reducing HTML page weight from 86KB to 34KB by externalizing CSS, JS, and images for better Lighthouse scores.</p>
-      <div class="post-tags"><span>Web Performance</span><span>Lighthouse</span><span>Core Web Vitals</span></div>
-    </a>
+    <!-- ===== EN POSTS ===== -->
+    <div class="posts-en" id="postsEn">
+      <a href="posts/2026-08-27-nvidia-avo-autonomous-agents" class="post-item">
+        <div class="post-top"><span class="post-date">August 27, 2026</span><span class="post-read">6 min read</span></div>
+        <h2>NVIDIA AVO: When Autonomous Agents Run for 7 Days and Beat Expert Engineers</h2>
+        <p>NVIDIA's AVO architecture ran autonomously for 7 days, optimized GPU kernels beyond FlashAttention-4, and scored 100% on ARC-AGI-3. System design > model choice.</p>
+        <div class="post-tags"><span>AI Agents</span><span>Autonomous Systems</span><span>NVIDIA</span><span>Hermes Agent</span></div>
+      </a>
+      <a href="posts/2026-08-26-agent-driven-company" class="post-item">
+        <div class="post-top"><span class="post-date">August 26, 2026</span><span class="post-read">6 min read</span></div>
+        <h2>From Solo Founder to Agent-Driven Company with 19 Autonomous Cron Jobs</h2>
+        <p>How I built 19 autonomous AI cron jobs on a €3.79/mo VPS for content, CRM, legal monitoring, and system health — all agent-driven with 99.7% uptime.</p>
+        <div class="post-tags"><span>AI Agents</span><span>Hermes Agent</span><span>Autonomous Systems</span><span>Cron Jobs</span></div>
+      </a>
+      <a href="posts/2026-08-25-web-performance-optimization" class="post-item">
+        <div class="post-top"><span class="post-date">August 25, 2026</span><span class="post-read">5 min read</span></div>
+        <h2>Web Performance Optimization: How I Cut Page Size by 61%</h2>
+        <p>A technical walkthrough of reducing HTML page weight from 86KB to 34KB by externalizing CSS, JS, and images for better Lighthouse scores.</p>
+        <div class="post-tags"><span>Web Performance</span><span>Lighthouse</span><span>Core Web Vitals</span></div>
+      </a>
+      <a href="posts/2026-08-22-building-digital-twin" class="post-item">
+        <div class="post-top"><span class="post-date">August 22, 2026</span><span class="post-read">4 min read</span></div>
+        <h2>Building a Digital Twin That Posts 9x Daily</h2>
+        <p>How I deploy an autonomous AI agent on Hermes Agent that creates and publishes content across X, LinkedIn, and blog without human intervention.</p>
+        <div class="post-tags"><span>AI Agents</span><span>Hermes</span><span>Automation</span></div>
+      </a>
+      <a href="posts/2026-08-20-ai-act-compliance" class="post-item">
+        <div class="post-top"><span class="post-date">August 20, 2026</span><span class="post-read">6 min read</span></div>
+        <h2>AI Act Compliance for Small AI Companies</h2>
+        <p>Practical legal-by-design framework for startups building AI products in the EU. From risk assessment to automated audit-ready documentation.</p>
+        <div class="post-tags"><span>AI Act</span><span>GDPR</span><span>Compliance</span><span>Law</span></div>
+      </a>
+      <a href="posts/2026-08-17-autonomous-drone-missions" class="post-item">
+        <div class="post-top"><span class="post-date">August 17, 2026</span><span class="post-read">5 min read</span></div>
+        <h2>Autonomous Drone Missions with ArduPilot & Python</h2>
+        <p>Building a production-grade UAV system with Pixhawk, ArduPilot, and Python-based mission planning for automated multi-waypoint flights.</p>
+        <div class="post-tags"><span>Drones</span><span>ArduPilot</span><span>UAV</span></div>
+      </a>
+    </div>
 
-    <a href="posts/2026-08-22-building-digital-twin.html" class="post-item">
-      <div class="post-top">
-        <span class="post-date">August 22, 2026</span>
-        <span class="post-read">4 min read</span>
-      </div>
-      <h2>Building a Digital Twin That Posts 9x Daily</h2>
-      <p>How I deploy an autonomous AI agent on Hermes Agent (Nous Research) that creates and publishes content across X, LinkedIn, and blog without human intervention.</p>
-      <div class="post-tags"><span>AI Agents</span><span>Hermes</span><span>Automation</span></div>
-    </a>
+    <!-- ===== SK POSTS ===== -->
+    <div class="posts-sk" id="postsSk">
+      <a href="posts/sk/2026-08-27-nvidia-avo-autonomous-agents" class="post-item" lang="sk">
+        <div class="post-top"><span class="post-date">27. august 2026</span><span class="post-read">6 min čítania</span></div>
+        <h2>NVIDIA AVO: Keď autonómne agenty bežia 7 dní a prekonajú expertov</h2>
+        <p>Architektúra AVO od NVIDIA bežala autonómne 7 dní, optimalizovala GPU jadrá a dosiahla 100% na ARC-AGI-3. Systémový dizajn > výber modelu.</p>
+        <div class="post-tags"><span>AI Agenty</span><span>Autonómne systémy</span><span>NVIDIA</span></div>
+      </a>
+      <a href="posts/sk/2026-08-26-agent-driven-company" class="post-item" lang="sk">
+        <div class="post-top"><span class="post-date">26. august 2026</span><span class="post-read">6 min čítania</span></div>
+        <h2>Od sólo foundera k agent-riadenej spoločnosti s 19 autonómnymi cron jobmi</h2>
+        <p>Ako som postavil 19 autonómnych AI cron jobov na VPS za €3,79/mesiac na obsah, CRM, právny monitoring a systém — všetko agent-driven s 99,7% uptime.</p>
+        <div class="post-tags"><span>AI Agenty</span><span>Hermes Agent</span><span>Autonómne systémy</span></div>
+      </a>
+      <a href="posts/sk/2026-08-25-web-performance-optimization" class="post-item" lang="sk">
+        <div class="post-top"><span class="post-date">25. august 2026</span><span class="post-read">5 min čítania</span></div>
+        <h2>Optimalizácia výkonu webu: Ako som znížil veľkosť stránok o 61 %</h2>
+        <p>Technický postup zníženia veľkosti HTML z 86 KB na 34 KB a dosiahnutie PageSpeed 100 cez externé CSS, JS, WebP a neblokujúci WebGL.</p>
+        <div class="post-tags"><span>Web Performance</span><span>Lighthouse</span><span>Core Web Vitals</span></div>
+      </a>
+      <a href="posts/sk/2026-08-22-building-digital-twin" class="post-item" lang="sk">
+        <div class="post-top"><span class="post-date">22. august 2026</span><span class="post-read">4 min čítania</span></div>
+        <h2>Digitálne dvojča, ktoré publikuje 9× denne</h2>
+        <p>Ako som postavil autonómneho AI agenta cez Hermes, ktorý tvorí a publikuje obsah na X, LinkedIn a blog 24/7 bez zásahu človeka.</p>
+        <div class="post-tags"><span>AI Agenty</span><span>Hermes</span><span>Automatizácia</span></div>
+      </a>
+      <a href="posts/sk/2026-08-20-ai-act-compliance" class="post-item" lang="sk">
+        <div class="post-top"><span class="post-date">20. august 2026</span><span class="post-read">6 min čítania</span></div>
+        <h2>Súlad s EU AI Act pre malé AI firmy a startupy</h2>
+        <p>Praktický legal-by-design framework pre startupy budujúce AI v EÚ. Od klasifikácie rizík až po automatizovanú technickú dokumentáciu.</p>
+        <div class="post-tags"><span>AI Act</span><span>GDPR</span><span>Compliance</span><span>Právo</span></div>
+      </a>
+      <a href="posts/sk/2026-08-17-autonomous-drone-missions" class="post-item" lang="sk">
+        <div class="post-top"><span class="post-date">17. august 2026</span><span class="post-read">5 min čítania</span></div>
+        <h2>Autonómne misie dronov s ArduPilotom a Pythonom</h2>
+        <p>Stavba taktického UAV systému s ArduPilotom, Pixhawkom a Pythonom pre autonómne lety a palubné neurónové počítačové videnie.</p>
+        <div class="post-tags"><span>Drony</span><span>ArduPilot</span><span>UAV</span></div>
+      </a>
+    </div>
 
-    <a href="posts/2026-08-20-ai-act-compliance.html" class="post-item">
-      <div class="post-top">
-        <span class="post-date">August 20, 2026</span>
-        <span class="post-read">6 min read</span>
-      </div>
-      <h2>AI Act Compliance for Small AI Companies</h2>
-      <p>Practical legal-by-design framework for startups building AI products in the EU. From risk assessment to automated audit-ready documentation.</p>
-      <div class="post-tags"><span>AI Act</span><span>GDPR</span><span>Compliance</span><span>Law</span></div>
-    </a>
-
-    <a href="posts/2026-08-17-autonomous-drone-missions.html" class="post-item">
-      <div class="post-top">
-        <span class="post-date">August 17, 2026</span>
-        <span class="post-read">5 min read</span>
-      </div>
-      <h2>Autonomous Drone Missions with ArduPilot & Python</h2>
-      <p>Building a production-grade UAV system with Pixhawk, ArduPilot, and Python-based mission planning for automated multi-waypoint flights.</p>
-      <div class="post-tags"><span>Drones</span><span>ArduPilot</span><span>UAV</span><span>PX4</span></div>
-    </a>
   </main>
 </div>
 
 <footer>
-  <p>© 2026 <a href="/">Marian Stancik</a> — <a href="/">marianstancik.dev</a></p>
+  <div class="container">
+    <p>© 2026 <a href="/">Marian Stancik</a> — <a href="/">marianstancik.dev</a></p>
+  </div>
 </footer>
 
 <script>
+const i18n = {
+  en: { home: '← Home', badge: '✦ Engineering & Thought Log', title: 'Articles & <span>Insights</span>', subtitle: 'Autonomous AI agents, legal-by-design frameworks (AI Act & GDPR), and UAV engineering.' },
+  sk: { home: '← Domov', badge: '✦ Technický & Odborný Blog', title: 'Články & <span>Poznatky</span>', subtitle: 'Autonómni AI agenti, legal-by-design rámce (AI Act & GDPR) a inžinierstvo dronov.' }
+};
 let currentLang = localStorage.getItem('ms_lang') || 'en';
 
-const i18n = {
-  en: {
-    home: '← Home',
-    badge: '✦ Engineering & Thought Log',
-    title: 'Articles & <span>Insights</span>',
-    subtitle: 'Autonomous AI agents, legal-by-design frameworks (AI Act & GDPR), and UAV engineering.',
-    btn: '🇸🇰 Slovenčina'
-  },
-  sk: {
-    home: '← Domov',
-    badge: '✦ Technický & Odborný Blog',
-    title: 'Články & <span>Poznatky</span>',
-    subtitle: 'Autonómni AI agenti, legal-by-design rámce (AI Act & GDPR) a inžinierstvo dronov.',
-    btn: '🇬🇧 English'
-  }
-};
-
-async function loadDynamicPosts() {
-  try {
-    const res = await fetch('posts.json');
-    if (!res.ok) return;
-    const posts = await res.json();
-    if (!Array.isArray(posts) || posts.length === 0) return;
-    
-    const container = document.getElementById('postContainer');
-    container.innerHTML = posts.map(p => {
-      const isSk = currentLang === 'sk';
-      const title = (isSk && p.titleSk) ? p.titleSk : p.title;
-      const excerpt = (isSk && p.excerptSk) ? p.excerptSk : p.excerpt;
-      const date = (isSk && p.displayDateSk) ? p.displayDateSk : p.displayDate;
-      const read = (isSk && p.readTimeSk) ? p.readTimeSk : p.readTime;
-      const tags = p.tags.map(t => `<span>${t}</span>`).join('');
-      const targetUrl = isSk ? (p.blogUrlSk || `posts/sk/${p.slug}`) : (p.blogUrl || `posts/${p.slug}`);
-      return `
-        <a href="${targetUrl}" class="post-item">
-          <div class="post-top">
-            <span class="post-date">${date}</span>
-            <span class="post-read">${read}</span>
-          </div>
-          <h2>${title}</h2>
-          <p>${excerpt}</p>
-          <div class="post-tags">${tags}</div>
-        </a>
-      `;
-    }).join('');
-  } catch (e) {
-    // Keep static fallback
-  }
-}
-
-function updateBlogLang() {
-  const dict = i18n[currentLang];
-  document.getElementById('homeLink').textContent = dict.home;
+function setBlogLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('ms_lang', lang);
+  const dict = i18n[lang];
+  document.getElementById('blogHomeLink').textContent = dict.home;
   document.getElementById('blogBadge').innerHTML = dict.badge;
   document.getElementById('blogTitle').innerHTML = dict.title;
   document.getElementById('blogSubtitle').textContent = dict.subtitle;
-  document.getElementById('blogLangBtn').textContent = dict.btn;
-  loadDynamicPosts();
+  document.getElementById('blogBtnEn').classList.toggle('active', lang === 'en');
+  document.getElementById('blogBtnSk').classList.toggle('active', lang === 'sk');
+  document.getElementById('postsEn').style.display = lang === 'en' ? 'block' : 'none';
+  document.getElementById('postsSk').style.display = lang === 'sk' ? 'block' : 'none';
+  document.documentElement.lang = lang;
 }
 
-function toggleBlogLang() {
-  currentLang = currentLang === 'en' ? 'sk' : 'en';
-  localStorage.setItem('ms_lang', currentLang);
-  updateBlogLang();
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  updateBlogLang();
-});
+document.addEventListener('DOMContentLoaded', () => { setBlogLang(currentLang); });
 </script>
 </body>
 </html>
