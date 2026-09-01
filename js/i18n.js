@@ -193,8 +193,53 @@ trustLaw: "⚖️ <strong>Law student</strong> — I understand regulation, I bu
 trustUav: "🚁 <strong>UAV hobby</strong> — Hand-built drone, EASA certified, edge AI",
 trustPfuk: "🎓 <strong>PF UK</strong> — 3rd year, EU AI Act, GDPR, NIS2",
 fNavProducts: "Products",
+aboutLabel: "✦ Core Pillars & Architecture",
+aboutHeading: "AI Agent Developer. Law Student. UAV Builder.",
+aboutIntro: "Building autonomous 24/7 multi-agent systems, practical EU AI Act compliance architectures, and edge computer vision hardware.",
+pillar1Title: "Autonomous Multi-Agent Systems",
+pillar1Desc: "I orchestrate 24/7 autonomous agents powered by the <strong>Hermes Agent</strong> runtime on dedicated <strong>Hetzner Cloud VPS</strong> infrastructure. Utilizing <strong>OpenRouter</strong> for dynamic multi-LLM routing with persistent <strong>Obsidian</strong> second-brain memory.",
+pillar2Title: "Law & EU AI Act (Legal-by-Design)",
+pillar2Desc: "3rd-year law student at <strong>PF UK</strong> specializing in the <strong>EU AI Act, GDPR, NIS2</strong>, and <strong>Article 50 AI transparency</strong>. I engineer AI agents that are technically verified and ready for strictly regulated enterprise workflows.",
+pillar3Title: "Tactical UAV & Edge Vision (Hobby)",
+pillar3Desc: "Hand-built 1500g carbon quadcopter with <strong>ArduPilot autonomous autopilot</strong> and <strong>Raspberry Pi 5 edge vision AI</strong>. Certified <strong>EASA A1/A3 pilot</strong> with €2.6M Coverdrone insurance. Built to master real-world edge AI telemetry.",
+aboutDisclaimer: "<span>⚠️</span> <span><strong>Notice:</strong> Legal and regulatory insights are shared for educational and technical compliance purposes only. Not legal advice.</span>",
+hCockpitStatus: "HERMES C2 // 24/7 RUNTIME",
+hCockpitChip: "HETZNER VPS · EU",
+hMetric1Lbl: "Cron Loops",
+hMetric1Sub: "24/7 background tasks",
+hMetric2Lbl: "Autonomous",
+hMetric2Sub: "Zero human babysitting",
+hMetric3Lbl: "Dynamic Routing",
+hMetric3Sub: "DeepSeek · Claude · GPT",
+hMetric4Lbl: "Lighthouse",
+hMetric4Sub: "0ms TBT · Zero CLS",
+hCockpitLink: "Explore full story & timeline →",
 exp4Title: "Product Manager (Defence)",
 exp4Desc: "Defence industry background — managing classified hardware and software projects at scale.",
+heroCta: "✦ See Products",
+heroContact: "Start a Conversation →",
+faqLabel: "✦ FAQ",
+faqHeading: "Frequently Asked Questions",
+faq1q: "Who is Marian Stancik?",
+faq1a: "<strong>Marian Stancik</strong> builds autonomous AI agents for creative founders and businesses. He specializes in custom AI agent development, AI web audits (GEO and technical readiness), and multi-agent orchestration using the Hermes Agent framework. He also studies law at PF UK and builds drones as a hobby.",
+faq2q: "What does an AI GEO Audit check?",
+faq2a: "An AI GEO Audit checks if your website is visible to AI search engines like Perplexity, ChatGPT Search, Claude, and Google SGE. It verifies <strong>llms.txt</strong>, <strong>robots.txt</strong>, <strong>JSON-LD</strong> structured data, <strong>OpenGraph</strong> tags, <strong>hreflang</strong>, page speed, and overall AI discoverability. <strong>€150</strong> — one-time audit, report in 48 hours.",
+faq3q: "What is the AI Web Readiness Scan?",
+faq3a: "The AI Web Readiness Scan is a <strong>technical check by an AI agent</strong> that verifies whether your website has the required documents and structures — Privacy Policy, GDPR consent, Terms of Service, Disclaimer, AI Act disclosure, and cookie compliance. <strong>This is not legal advice</strong> — just a technical checklist. <strong>€200</strong> — one-time scan, report in 48 hours.",
+faq4q: "Does Marian provide legal advice?",
+faq4a: "<strong>No.</strong> Marian is a law student, not a lawyer. He does not provide legal advice, legal services, or compliance consulting. His AI agents perform <strong>technical checks only</strong> — they verify whether documents and structures exist, not whether they are legally correct. Clients must consult a qualified lawyer for legal matters.",
+leadConsentText: 'I agree to the <a href="/privacy" style="color:#CD7F32;text-decoration:underline;">Privacy Policy</a> and consent to processing my email for newsletter updates.',
+fNavHome: "Home",
+blogReadPost: "Read post",
+footerImprint: '<strong>ASCENTIA s.r.o.</strong> · Klincová 37/B, 821 08 Bratislava-Ružinov · IČO: 51858959 · DIČ: 2120816071 · konateľ: Marián Stančík<br>Obchodný register Mestského súdu Bratislava III, oddiel Sro, vložka 130384/B · <a href="mailto:marianstancik@agentmail.to" style="color:#CD7F32;">marianstancik@agentmail.to</a>',
+footerAiAct: '<strong>⚠️ Disclaimer:</strong> Content is AI-generated or AI-assisted by autonomous agents (Hermes Agent) and is for informational purposes only. It does not constitute professional advice. <strong>No warranty or liability</strong> for reliance on content. ⚖️ EU AI Act Art. 50: AI content labeled accordingly.',
+bookLabel: "✉️ Get in touch",
+bookHeading: "Let's talk about your project.",
+bookIntro: 'Write to <a href="mailto:marianstancik@agentmail.to">marianstancik@agentmail.to</a>. Calendar booking is not offered — email is the contact channel.',
+bookCard1Cta: "Email about AI agents",
+bookCard2Cta: "Email about compliance",
+bookCard3Cta: "Email about UAV / edge AI",
+bookNote: 'ASCENTIA s.r.o. — <a href="mailto:marianstancik@agentmail.to" style="color:#CD7F32;">marianstancik@agentmail.to</a>.',
 },
 sk: {
 docTitle: "Marian Stancik — AI Agent Developer | Autonómne Agenty",
@@ -389,8 +434,53 @@ trustLaw: "⚖️ <strong>Študent práva</strong> — rozumiem reguláciám, st
 trustUav: "🚁 <strong>UAV hobby</strong> — Ručne postavený dron, EASA certifikát, edge AI",
 trustPfuk: "🎓 <strong>PF UK</strong> — 3. ročník, EU AI Act, GDPR, NIS2",
 fNavProducts: "Produkty",
+aboutLabel: "✦ Hlavné Piliere & Architektúra",
+aboutHeading: "AI Agent Developer. Študent Práva. Staviteľ UAV.",
+aboutIntro: "Vývoj autonómnych multi-agentových systémov v režime 24/7, praktická architektúra compliance pre EU AI Act a edge počítačové videnie.",
+pillar1Title: "Autonómne Multi-Agentové Systémy",
+pillar1Desc: "Navrhujem a prevádzkujem autonómnych agentov v režime 24/7 na báze frameworku <strong>Hermes Agent</strong> na dedikovanom <strong>Hetzner Cloud VPS</strong>. Dynamický multi-LLM routing cez <strong>OpenRouter</strong> s perzistentnou pamäťou v <strong>Obsidian</strong> knowledge vault.",
+pillar2Title: "Právo & EU AI Act (Legal-by-Design)",
+pillar2Desc: "Študent 3. ročníka práva na <strong>PF UK</strong> so špecializáciou na <strong>EU AI Act, GDPR, NIS2</strong> a <strong>transparentnosť podľa Čl. 50</strong>. Staviam AI agentov, ktorí sú technicky pripravení na nasadenie v regulovaných prostrediach.",
+pillar3Title: "Taktické UAV & Edge Vision (Hobby)",
+pillar3Desc: "Ručne postavený 1500g karbónový quadcopter s <strong>autonómnym autopilotom ArduPilot</strong> a <strong>Raspberry Pi 5 edge vision AI</strong>. Certifikovaný <strong>pilot EASA A1/A3</strong> s poistením Coverdrone na €2.6M. Postavené na testovanie edge AI v reálnom svete.",
+aboutDisclaimer: "<span>⚠️</span> <span><strong>Upozornenie:</strong> Právne a regulačné poznatky slúžia na vzdelávacie účely a technické zosúladenie. Nejde o právne poradenstvo.</span>",
+hCockpitStatus: "HERMES C2 // 24/7 RUNTIME",
+hCockpitChip: "HETZNER VPS · EU",
+hMetric1Lbl: "Cron Slučiek",
+hMetric1Sub: "24/7 úlohy na pozadí",
+hMetric2Lbl: "Autonómny",
+hMetric2Sub: "Úplne bez babysittingu",
+hMetric3Lbl: "Dynamický Routing",
+hMetric3Sub: "DeepSeek · Claude · GPT",
+hMetric4Lbl: "Lighthouse",
+hMetric4Sub: "0ms TBT · Nulový CLS",
+hCockpitLink: "Zobraziť celý príbeh a časovú os →",
 exp4Title: "Product Manager (Obrana)",
 exp4Desc: "Skúsenosti z obranného priemyslu — riadenie klasifikovaných hardvérových a softvérových projektov vo veľkom meradle.",
+heroCta: "✦ Pozrieť produkty",
+heroContact: "Začať konverzáciu →",
+faqLabel: "✦ FAQ",
+faqHeading: "Často kladené otázky",
+faq1q: "Kto je Marian Stancik?",
+faq1a: "<strong>Marian Stancik</strong> stavia autonómnych AI agentov pre kreatívnych founderov a firmy. Špecializuje sa na vývoj vlastných AI agentov, AI audity webu (GEO a technická pripravenosť) a multi-agentovú orchestráciu vo frameworku Hermes Agent. Študuje právo na PF UK a ako hobby stavia drony.",
+faq2q: "Čo kontroluje AI GEO Audit?",
+faq2a: "AI GEO Audit overí, či je tvoj web viditeľný pre AI vyhľadávače ako Perplexity, ChatGPT Search, Claude a Google SGE. Kontroluje <strong>llms.txt</strong>, <strong>robots.txt</strong>, <strong>JSON-LD</strong>, <strong>OpenGraph</strong>, <strong>hreflang</strong>, rýchlosť stránky a AI objaviteľnosť. <strong>€150</strong> — jednorazový audit, report do 48 hodín.",
+faq3q: "Čo je AI Web Readiness Scan?",
+faq3a: "AI Web Readiness Scan je <strong>technická kontrola AI agentom</strong>, či má web požadované dokumenty a štruktúry — zásady ochrany osobných údajov, GDPR súhlas, obchodné podmienky, disclaimer, AI Act disclosure a cookie súlad. <strong>Nie je to právna rada</strong> — ide o technický checklist. <strong>€200</strong> — jednorazový scan, report do 48 hodín.",
+faq4q: "Poskytuje Marian právne poradenstvo?",
+faq4a: "<strong>Nie.</strong> Marian je študent práva, nie advokát. Neposkytuje právne rady, právne služby ani compliance konzultácie. Jeho AI agenti robia <strong>iba technické kontroly</strong> — overujú, či dokumenty a štruktúry existujú, nie či sú právne správne. Právne otázky patria kvalifikovanému právnikovi.",
+leadConsentText: 'Súhlasím so <a href="/privacy-sk" style="color:#CD7F32;text-decoration:underline;">zásadami ochrany osobných údajov</a> a so spracovaním môjho e-mailu na odosielanie noviniek.',
+fNavHome: "Domov",
+blogReadPost: "Čítať článok",
+footerImprint: '<strong>ASCENTIA s.r.o.</strong> · Klincová 37/B, 821 08 Bratislava-Ružinov · IČO: 51858959 · DIČ: 2120816071 · konateľ: Marián Stančík<br>Obchodný register Mestského súdu Bratislava III, oddiel Sro, vložka 130384/B · <a href="mailto:marianstancik@agentmail.to" style="color:#CD7F32;">marianstancik@agentmail.to</a>',
+footerAiAct: '<strong>⚠️ Zrieknutie zodpovednosti:</strong> Obsah je generovaný alebo asistovaný autonómnymi AI agentmi (Hermes Agent) na informačné účely. Nepredstavuje právne poradenstvo. ⚖️ EU AI Act Čl. 50: AI obsah je riadne označený.',
+bookLabel: "✉️ Napíšte nám",
+bookHeading: "Poďme si povedať o projekte.",
+bookIntro: 'Napíšte na <a href="mailto:marianstancik@agentmail.to">marianstancik@agentmail.to</a>. Kalendárové rezervácie sa neponúkajú — kontaktný kanál je e-mail.',
+bookCard1Cta: "E-mail o AI agentoch",
+bookCard2Cta: "E-mail o compliance",
+bookCard3Cta: "E-mail o UAV / edge AI",
+bookNote: 'ASCENTIA s.r.o. — <a href="mailto:marianstancik@agentmail.to" style="color:#CD7F32;">marianstancik@agentmail.to</a>.',
 },
 };
 let currentLang = localStorage.getItem('ms_lang') || 'en';
@@ -527,6 +617,29 @@ var el = document.getElementById('trustLaw'); if(el) el.innerHTML = d.trustLaw;
 var el = document.getElementById('trustUav'); if(el) el.innerHTML = d.trustUav;
 var el = document.getElementById('trustPfuk'); if(el) el.innerHTML = d.trustPfuk;
 
+
+var el = document.getElementById('aboutLabel'); if(el) el.textContent = d.aboutLabel;
+var el = document.getElementById('aboutHeading'); if(el) el.textContent = d.aboutHeading;
+var el = document.getElementById('aboutIntro'); if(el) el.textContent = d.aboutIntro;
+var el = document.getElementById('pillar1Title'); if(el) el.textContent = d.pillar1Title;
+var el = document.getElementById('pillar1Desc'); if(el) el.innerHTML = d.pillar1Desc;
+var el = document.getElementById('pillar2Title'); if(el) el.textContent = d.pillar2Title;
+var el = document.getElementById('pillar2Desc'); if(el) el.innerHTML = d.pillar2Desc;
+var el = document.getElementById('pillar3Title'); if(el) el.textContent = d.pillar3Title;
+var el = document.getElementById('pillar3Desc'); if(el) el.innerHTML = d.pillar3Desc;
+var el = document.getElementById('aboutDisclaimer'); if(el) el.innerHTML = d.aboutDisclaimer;
+var el = document.getElementById('hCockpitStatus'); if(el) el.textContent = d.hCockpitStatus;
+var el = document.getElementById('hCockpitChip'); if(el) el.textContent = d.hCockpitChip;
+var el = document.getElementById('hMetric1Lbl'); if(el) el.textContent = d.hMetric1Lbl;
+var el = document.getElementById('hMetric1Sub'); if(el) el.textContent = d.hMetric1Sub;
+var el = document.getElementById('hMetric2Lbl'); if(el) el.textContent = d.hMetric2Lbl;
+var el = document.getElementById('hMetric2Sub'); if(el) el.textContent = d.hMetric2Sub;
+var el = document.getElementById('hMetric3Lbl'); if(el) el.textContent = d.hMetric3Lbl;
+var el = document.getElementById('hMetric3Sub'); if(el) el.textContent = d.hMetric3Sub;
+var el = document.getElementById('hMetric4Lbl'); if(el) el.textContent = d.hMetric4Lbl;
+var el = document.getElementById('hMetric4Sub'); if(el) el.textContent = d.hMetric4Sub;
+var el = document.getElementById('hCockpitLink'); if(el) el.innerHTML = `<span>${d.hCockpitLink}</span>`;
+
 var el = document.getElementById('cockpitStatus'); if(el) el.textContent = d.cockpitStatus;
 var el = document.getElementById('cockpitChip'); if(el) el.textContent = d.cockpitChip;
 var el = document.getElementById('cockpitStat1Title'); if(el) el.textContent = d.cockpitStat1Title;
@@ -565,6 +678,31 @@ var el = document.getElementById('t2024Desc'); if(el) el.textContent = d.t2024De
 var el = document.getElementById('t2023Title'); if(el) el.textContent = d.t2023Title;
 var el = document.getElementById('t2023Desc'); if(el) el.textContent = d.t2023Desc;
 
+var el = document.getElementById('heroCta'); if(el) el.textContent = d.heroCta;
+var el = document.getElementById('heroContact'); if(el) el.textContent = d.heroContact;
+var el = document.getElementById('faqLabel'); if(el) el.textContent = d.faqLabel;
+var el = document.getElementById('faqHeading'); if(el) el.textContent = d.faqHeading;
+var el = document.getElementById('faq1q'); if(el) el.textContent = d.faq1q;
+var el = document.getElementById('faq1a'); if(el) el.innerHTML = d.faq1a;
+var el = document.getElementById('faq2q'); if(el) el.textContent = d.faq2q;
+var el = document.getElementById('faq2a'); if(el) el.innerHTML = d.faq2a;
+var el = document.getElementById('faq3q'); if(el) el.textContent = d.faq3q;
+var el = document.getElementById('faq3a'); if(el) el.innerHTML = d.faq3a;
+var el = document.getElementById('faq4q'); if(el) el.textContent = d.faq4q;
+var el = document.getElementById('faq4a'); if(el) el.innerHTML = d.faq4a;
+var el = document.getElementById('leadConsentText'); if(el) el.innerHTML = d.leadConsentText;
+var el = document.getElementById('fNavHome'); if(el) el.textContent = d.fNavHome;
+var el = document.getElementById('footerImprint'); if(el) el.innerHTML = d.footerImprint;
+var el = document.getElementById('footerAiAct'); if(el) el.innerHTML = d.footerAiAct;
+var el = document.getElementById('bookLabel'); if(el) el.textContent = d.bookLabel;
+var el = document.getElementById('bookHeading'); if(el) el.textContent = d.bookHeading;
+var el = document.getElementById('bookIntro'); if(el) el.innerHTML = d.bookIntro;
+var el = document.getElementById('bookCard1Cta'); if(el) el.textContent = d.bookCard1Cta;
+var el = document.getElementById('bookCard2Cta'); if(el) el.textContent = d.bookCard2Cta;
+var el = document.getElementById('bookCard3Cta'); if(el) el.textContent = d.bookCard3Cta;
+var el = document.getElementById('bookNote'); if(el) el.innerHTML = d.bookNote;
+
+
 }
 async function loadDynamicPostsHome() {
 try {
@@ -574,6 +712,8 @@ const posts = await res.json();
 if (!Array.isArray(posts) || posts.length === 0) return;
 const container = document.getElementById('homeBlogGrid');
 const isSk = currentLang === 'sk';
+const d = translations[currentLang] || translations.en;
+
 container.innerHTML = posts.slice(0, 3).map(p => {
 const title = (isSk && p.titleSk) ? p.titleSk : p.title;
 const excerpt = (isSk && p.excerptSk) ? p.excerptSk : p.excerpt;
@@ -584,7 +724,7 @@ return `
   <div class="blog-card-date">${date}</div>
   <h3>${title}</h3>
   <p>${excerpt}</p>
-  <div class="blog-card-arrow">Read post <span>→</span></div>
+  <div class="blog-card-arrow">${d.blogReadPost || (isSk ? 'Čítať článok' : 'Read post')} <span>→</span></div>
 </a>`;
 }).join('');
 } catch(e){}
