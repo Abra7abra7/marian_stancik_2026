@@ -2,6 +2,8 @@
 
 > Personal brand website, technical knowledge graph, and autonomous multi-agent engineering hub of Marian Stancik — AI Engineer, UAV Builder, and Law Scholar.
 
+Operator: ASCENTIA s.r.o., IČO 51858959, DIČ 2120816071, sídlo Klincová 37/B, 821 08 Bratislava-Ružinov (OR MS Bratislava III, oddiel Sro, vložka 130384/B, konateľ Marián Stančík). Contact: marianstancik@agentmail.to.
+
 Marian Stancik builds autonomous agent ecosystems (Hermes Agent, MCP), hand-soldered tactical UAV edge AI drones (ArduPilot, Raspberry Pi 5), and legal-by-design compliance architectures (EU AI Act, GDPR, NIS2, DORA).
 
 ## Core Pages

@@ -59,10 +59,24 @@
     {
       "@type": "Organization",
       "@id": "https://www.marianstancik.dev/#organization",
-      "name": "Marian Stancik",
+      "name": "ASCENTIA s.r.o.",
+      "legalName": "ASCENTIA s.r.o.",
       "url": "https://www.marianstancik.dev",
       "logo": "https://www.marianstancik.dev/profile-big.webp",
-      "image": "https://www.marianstancik.dev/profile-big.webp"
+      "email": "marianstancik@agentmail.to",
+      "taxID": "2120816071",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "IČO",
+        "value": "51858959"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Klincová 37/B",
+        "addressLocality": "Bratislava-Ružinov",
+        "postalCode": "821 08",
+        "addressCountry": "SK"
+      }
     },
     {
       "@type": "ContactPage",
@@ -202,37 +216,36 @@
   </div>
 </section>
 
-<!-- === BOOKING SECTION === -->
-<section id="booking" aria-label="Book a consultation">
+<!-- === CONTACT CTA === -->
+<section id="booking" aria-label="Contact">
   <div class="container">
-    <div class="section-label fade-in">📅 Book a Call</div>
-    <h2 class="fade-in">Let's talk about your project.</h2>
-    <p class="section-intro fade-in">
-      Pick a time that works for you. All calls are 30 minutes via Google Meet — free and no commitment.
+    <div class="section-label fade-in" id="bookLabel">✉️ Get in touch</div>
+    <h2 class="fade-in" id="bookHeading">Let's talk about your project.</h2>
+    <p class="section-intro fade-in" id="bookIntro">
+      Write to <a href="mailto:marianstancik@agentmail.to">marianstancik@agentmail.to</a>. Calendar booking is not offered — email is the contact channel. You can also use the newsletter form on the <a href="/">homepage</a>.
     </p>
     <div class="booking-grid fade-in">
       <div class="booking-card">
         <div class="booking-icon">🤖</div>
-        <h3>AI Agent Systems</h3>
-        <p>Autonomous agents, MCP servers, LLM orchestration, business automation</p>
-        <a href="https://calendar.app.google/your-link" target="_blank" rel="noopener" class="btn-primary">Book via Google Meet</a>
+        <h3 id="bookCard1Title">AI Agent Systems</h3>
+        <p id="bookCard1Desc">Autonomous agents, MCP servers, LLM orchestration, business automation</p>
+        <a href="mailto:marianstancik@agentmail.to?subject=AI%20Agent%20Systems" class="btn-primary" id="bookCard1Cta">Email about AI agents</a>
       </div>
       <div class="booking-card">
         <div class="booking-icon">⚖️</div>
-        <h3>AI Act & Compliance</h3>
-        <p>EU AI Act readiness, GDPR, NIS2, technical documentation, risk assessment</p>
-        <a href="https://calendar.app.google/your-link" target="_blank" rel="noopener" class="btn-primary">Book via Google Meet</a>
+        <h3 id="bookCard2Title">AI Act &amp; Compliance</h3>
+        <p id="bookCard2Desc">EU AI Act readiness, GDPR, NIS2, technical documentation, risk assessment</p>
+        <a href="mailto:marianstancik@agentmail.to?subject=AI%20Act%20%26%20Compliance" class="btn-primary" id="bookCard2Cta">Email about compliance</a>
       </div>
       <div class="booking-card">
         <div class="booking-icon">🚁</div>
-        <h3>UAV & Edge AI</h3>
-        <p>Drone build consulting, ArduPilot, computer vision, autonomous missions</p>
-        <a href="https://calendar.app.google/your-link" target="_blank" rel="noopener" class="btn-primary">Book via Google Meet</a>
+        <h3 id="bookCard3Title">UAV &amp; Edge AI</h3>
+        <p id="bookCard3Desc">Drone build consulting, ArduPilot, computer vision, autonomous missions</p>
+        <a href="mailto:marianstancik@agentmail.to?subject=UAV%20%26%20Edge%20AI" class="btn-primary" id="bookCard3Cta">Email about UAV / edge AI</a>
       </div>
     </div>
     <div class="booking-note" style="text-align:center;margin-top:24px;color:#8888A0;font-size:0.85rem;">
-      <p>Alternatívne mi napíš na <a href="mailto:marianstancik@agentmail.to" style="color:#CD7F32;">marianstancik@agentmail.to</a> a dohodneme sa individuálne.</p>
-      <p style="margin-top:8px;">📌 <strong>Potrebuješ Google Calendar booking link?</strong> Stačí keď povieš a ja ti vytvorím Google Calendar Appointment Schedule.</p>
+      <p id="bookNote">ASCENTIA s.r.o. — <a href="mailto:marianstancik@agentmail.to" style="color:#CD7F32;">marianstancik@agentmail.to</a>.</p>
     </div>
   </div>
 </section>
@@ -295,11 +308,13 @@
     </div>
     <div class="footer-divider"></div>
     <div class="footer-bottom">
-      <p>© 2026 Marian Stancik — <span id="fMotto">Build better. Stay legal.</span></p>
+      <p>© 2026 ASCENTIA s.r.o. — <span id="fMotto">Build better. Stay legal.</span></p>
       <p class="footer-tag">Built with <span class="bronze">✦</span> by Hermes Agent</p>
     </div>
     <div class="footer-legal" style="margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.06); font-size:0.65rem; color:#6666AA; line-height:1.6; text-align:center;">
-      <p><strong>⚠️ Disclaimer:</strong> Content is AI-generated or AI-assisted by autonomous agents (Hermes Agent) and is for informational purposes only. It does not constitute professional advice. <strong>No warranty or liability</strong> for reliance on content. See <a href="/disclaimer" style="color:#CD7F32;text-decoration:underline;">full disclaimer</a> · <a href="/privacy" style="color:#CD7F32;text-decoration:underline;">Privacy Policy</a> · <a href="/privacy-sk" style="color:#CD7F32;text-decoration:underline;">Privacy Policy (SK)</a> · <a href="/terms" style="color:#CD7F32;text-decoration:underline;">Terms of Service</a>. ⚖️ EU AI Act Art. 50: AI content labeled accordingly.</p>
+      <p id="footerImprint"><strong>ASCENTIA s.r.o.</strong> · Klincová 37/B, 821 08 Bratislava-Ružinov · IČO: 51858959 · DIČ: 2120816071 · konateľ: Marián Stančík<br>Obchodný register Mestského súdu Bratislava III, oddiel Sro, vložka 130384/B · <a href="mailto:marianstancik@agentmail.to" style="color:#CD7F32;">marianstancik@agentmail.to</a></p>
+      <p id="footerLegalLinks"><a href="/privacy" style="color:#CD7F32;text-decoration:underline;">Privacy</a> · <a href="/privacy-sk" style="color:#CD7F32;text-decoration:underline;">Súkromie</a> · <a href="/terms" style="color:#CD7F32;text-decoration:underline;">Terms</a> · <a href="/terms-sk" style="color:#CD7F32;text-decoration:underline;">Podmienky</a> · <a href="/disclaimer" style="color:#CD7F32;text-decoration:underline;">Disclaimer</a> · <a href="/disclaimer-sk" style="color:#CD7F32;text-decoration:underline;">Zrieknutie</a></p>
+      <p id="footerAiAct"><strong>⚠️ Disclaimer:</strong> Content is AI-generated or AI-assisted by autonomous agents (Hermes Agent) and is for informational purposes only. It does not constitute professional advice. <strong>No warranty or liability</strong> for reliance on content. ⚖️ EU AI Act Art. 50: AI content labeled accordingly.</p>
     </div>
   </div>
 </footer>

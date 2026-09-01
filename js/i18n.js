@@ -216,6 +216,30 @@ hMetric4Sub: "0ms TBT · Zero CLS",
 hCockpitLink: "Explore full story & timeline →",
 exp4Title: "Product Manager (Defence)",
 exp4Desc: "Defence industry background — managing classified hardware and software projects at scale.",
+heroCta: "✦ See Products",
+heroContact: "Start a Conversation →",
+faqLabel: "✦ FAQ",
+faqHeading: "Frequently Asked Questions",
+faq1q: "Who is Marian Stancik?",
+faq1a: "<strong>Marian Stancik</strong> builds autonomous AI agents for creative founders and businesses. He specializes in custom AI agent development, AI web audits (GEO and technical readiness), and multi-agent orchestration using the Hermes Agent framework. He also studies law at PF UK and builds drones as a hobby.",
+faq2q: "What does an AI GEO Audit check?",
+faq2a: "An AI GEO Audit checks if your website is visible to AI search engines like Perplexity, ChatGPT Search, Claude, and Google SGE. It verifies <strong>llms.txt</strong>, <strong>robots.txt</strong>, <strong>JSON-LD</strong> structured data, <strong>OpenGraph</strong> tags, <strong>hreflang</strong>, page speed, and overall AI discoverability. <strong>€150</strong> — one-time audit, report in 48 hours.",
+faq3q: "What is the AI Web Readiness Scan?",
+faq3a: "The AI Web Readiness Scan is a <strong>technical check by an AI agent</strong> that verifies whether your website has the required documents and structures — Privacy Policy, GDPR consent, Terms of Service, Disclaimer, AI Act disclosure, and cookie compliance. <strong>This is not legal advice</strong> — just a technical checklist. <strong>€200</strong> — one-time scan, report in 48 hours.",
+faq4q: "Does Marian provide legal advice?",
+faq4a: "<strong>No.</strong> Marian is a law student, not a lawyer. He does not provide legal advice, legal services, or compliance consulting. His AI agents perform <strong>technical checks only</strong> — they verify whether documents and structures exist, not whether they are legally correct. Clients must consult a qualified lawyer for legal matters.",
+leadConsentText: 'I agree to the <a href="/privacy" style="color:#CD7F32;text-decoration:underline;">Privacy Policy</a> and consent to processing my email for newsletter updates.',
+fNavHome: "Home",
+blogReadPost: "Read post",
+footerImprint: '<strong>ASCENTIA s.r.o.</strong> · Klincová 37/B, 821 08 Bratislava-Ružinov · IČO: 51858959 · DIČ: 2120816071 · konateľ: Marián Stančík<br>Obchodný register Mestského súdu Bratislava III, oddiel Sro, vložka 130384/B · <a href="mailto:marianstancik@agentmail.to" style="color:#CD7F32;">marianstancik@agentmail.to</a>',
+footerAiAct: '<strong>⚠️ Disclaimer:</strong> Content is AI-generated or AI-assisted by autonomous agents (Hermes Agent) and is for informational purposes only. It does not constitute professional advice. <strong>No warranty or liability</strong> for reliance on content. ⚖️ EU AI Act Art. 50: AI content labeled accordingly.',
+bookLabel: "✉️ Get in touch",
+bookHeading: "Let's talk about your project.",
+bookIntro: 'Write to <a href="mailto:marianstancik@agentmail.to">marianstancik@agentmail.to</a>. Calendar booking is not offered — email is the contact channel.',
+bookCard1Cta: "Email about AI agents",
+bookCard2Cta: "Email about compliance",
+bookCard3Cta: "Email about UAV / edge AI",
+bookNote: 'ASCENTIA s.r.o. — <a href="mailto:marianstancik@agentmail.to" style="color:#CD7F32;">marianstancik@agentmail.to</a>.',
 },
 sk: {
 docTitle: "Marian Stancik — AI Agent Developer | Autonómne Agenty",
@@ -433,6 +457,30 @@ hMetric4Sub: "0ms TBT · Nulový CLS",
 hCockpitLink: "Zobraziť celý príbeh a časovú os →",
 exp4Title: "Product Manager (Obrana)",
 exp4Desc: "Skúsenosti z obranného priemyslu — riadenie klasifikovaných hardvérových a softvérových projektov vo veľkom meradle.",
+heroCta: "✦ Pozrieť produkty",
+heroContact: "Začať konverzáciu →",
+faqLabel: "✦ FAQ",
+faqHeading: "Často kladené otázky",
+faq1q: "Kto je Marian Stancik?",
+faq1a: "<strong>Marian Stancik</strong> stavia autonómnych AI agentov pre kreatívnych founderov a firmy. Špecializuje sa na vývoj vlastných AI agentov, AI audity webu (GEO a technická pripravenosť) a multi-agentovú orchestráciu vo frameworku Hermes Agent. Študuje právo na PF UK a ako hobby stavia drony.",
+faq2q: "Čo kontroluje AI GEO Audit?",
+faq2a: "AI GEO Audit overí, či je tvoj web viditeľný pre AI vyhľadávače ako Perplexity, ChatGPT Search, Claude a Google SGE. Kontroluje <strong>llms.txt</strong>, <strong>robots.txt</strong>, <strong>JSON-LD</strong>, <strong>OpenGraph</strong>, <strong>hreflang</strong>, rýchlosť stránky a AI objaviteľnosť. <strong>€150</strong> — jednorazový audit, report do 48 hodín.",
+faq3q: "Čo je AI Web Readiness Scan?",
+faq3a: "AI Web Readiness Scan je <strong>technická kontrola AI agentom</strong>, či má web požadované dokumenty a štruktúry — zásady ochrany osobných údajov, GDPR súhlas, obchodné podmienky, disclaimer, AI Act disclosure a cookie súlad. <strong>Nie je to právna rada</strong> — ide o technický checklist. <strong>€200</strong> — jednorazový scan, report do 48 hodín.",
+faq4q: "Poskytuje Marian právne poradenstvo?",
+faq4a: "<strong>Nie.</strong> Marian je študent práva, nie advokát. Neposkytuje právne rady, právne služby ani compliance konzultácie. Jeho AI agenti robia <strong>iba technické kontroly</strong> — overujú, či dokumenty a štruktúry existujú, nie či sú právne správne. Právne otázky patria kvalifikovanému právnikovi.",
+leadConsentText: 'Súhlasím so <a href="/privacy-sk" style="color:#CD7F32;text-decoration:underline;">zásadami ochrany osobných údajov</a> a so spracovaním môjho e-mailu na odosielanie noviniek.',
+fNavHome: "Domov",
+blogReadPost: "Čítať článok",
+footerImprint: '<strong>ASCENTIA s.r.o.</strong> · Klincová 37/B, 821 08 Bratislava-Ružinov · IČO: 51858959 · DIČ: 2120816071 · konateľ: Marián Stančík<br>Obchodný register Mestského súdu Bratislava III, oddiel Sro, vložka 130384/B · <a href="mailto:marianstancik@agentmail.to" style="color:#CD7F32;">marianstancik@agentmail.to</a>',
+footerAiAct: '<strong>⚠️ Zrieknutie zodpovednosti:</strong> Obsah je generovaný alebo asistovaný autonómnymi AI agentmi (Hermes Agent) na informačné účely. Nepredstavuje právne poradenstvo. ⚖️ EU AI Act Čl. 50: AI obsah je riadne označený.',
+bookLabel: "✉️ Napíšte nám",
+bookHeading: "Poďme si povedať o projekte.",
+bookIntro: 'Napíšte na <a href="mailto:marianstancik@agentmail.to">marianstancik@agentmail.to</a>. Kalendárové rezervácie sa neponúkajú — kontaktný kanál je e-mail.',
+bookCard1Cta: "E-mail o AI agentoch",
+bookCard2Cta: "E-mail o compliance",
+bookCard3Cta: "E-mail o UAV / edge AI",
+bookNote: 'ASCENTIA s.r.o. — <a href="mailto:marianstancik@agentmail.to" style="color:#CD7F32;">marianstancik@agentmail.to</a>.',
 },
 };
 let currentLang = localStorage.getItem('ms_lang') || 'en';
@@ -630,6 +678,31 @@ var el = document.getElementById('t2024Desc'); if(el) el.textContent = d.t2024De
 var el = document.getElementById('t2023Title'); if(el) el.textContent = d.t2023Title;
 var el = document.getElementById('t2023Desc'); if(el) el.textContent = d.t2023Desc;
 
+var el = document.getElementById('heroCta'); if(el) el.textContent = d.heroCta;
+var el = document.getElementById('heroContact'); if(el) el.textContent = d.heroContact;
+var el = document.getElementById('faqLabel'); if(el) el.textContent = d.faqLabel;
+var el = document.getElementById('faqHeading'); if(el) el.textContent = d.faqHeading;
+var el = document.getElementById('faq1q'); if(el) el.textContent = d.faq1q;
+var el = document.getElementById('faq1a'); if(el) el.innerHTML = d.faq1a;
+var el = document.getElementById('faq2q'); if(el) el.textContent = d.faq2q;
+var el = document.getElementById('faq2a'); if(el) el.innerHTML = d.faq2a;
+var el = document.getElementById('faq3q'); if(el) el.textContent = d.faq3q;
+var el = document.getElementById('faq3a'); if(el) el.innerHTML = d.faq3a;
+var el = document.getElementById('faq4q'); if(el) el.textContent = d.faq4q;
+var el = document.getElementById('faq4a'); if(el) el.innerHTML = d.faq4a;
+var el = document.getElementById('leadConsentText'); if(el) el.innerHTML = d.leadConsentText;
+var el = document.getElementById('fNavHome'); if(el) el.textContent = d.fNavHome;
+var el = document.getElementById('footerImprint'); if(el) el.innerHTML = d.footerImprint;
+var el = document.getElementById('footerAiAct'); if(el) el.innerHTML = d.footerAiAct;
+var el = document.getElementById('bookLabel'); if(el) el.textContent = d.bookLabel;
+var el = document.getElementById('bookHeading'); if(el) el.textContent = d.bookHeading;
+var el = document.getElementById('bookIntro'); if(el) el.innerHTML = d.bookIntro;
+var el = document.getElementById('bookCard1Cta'); if(el) el.textContent = d.bookCard1Cta;
+var el = document.getElementById('bookCard2Cta'); if(el) el.textContent = d.bookCard2Cta;
+var el = document.getElementById('bookCard3Cta'); if(el) el.textContent = d.bookCard3Cta;
+var el = document.getElementById('bookNote'); if(el) el.innerHTML = d.bookNote;
+
+
 }
 async function loadDynamicPostsHome() {
 try {
@@ -639,6 +712,8 @@ const posts = await res.json();
 if (!Array.isArray(posts) || posts.length === 0) return;
 const container = document.getElementById('homeBlogGrid');
 const isSk = currentLang === 'sk';
+const d = translations[currentLang] || translations.en;
+
 container.innerHTML = posts.slice(0, 3).map(p => {
 const title = (isSk && p.titleSk) ? p.titleSk : p.title;
 const excerpt = (isSk && p.excerptSk) ? p.excerptSk : p.excerpt;
@@ -649,7 +724,7 @@ return `
   <div class="blog-card-date">${date}</div>
   <h3>${title}</h3>
   <p>${excerpt}</p>
-  <div class="blog-card-arrow">Read post <span>→</span></div>
+  <div class="blog-card-arrow">${d.blogReadPost || (isSk ? 'Čítať článok' : 'Read post')} <span>→</span></div>
 </a>`;
 }).join('');
 } catch(e){}
