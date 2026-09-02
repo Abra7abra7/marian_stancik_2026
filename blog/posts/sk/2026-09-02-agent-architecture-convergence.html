@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Konvergencia agentových architektúr: Prečo všetci stavajú rovnaký dvojúrovňový systém — Marian Stancik</title>
+<meta name="description" content="NVIDIA AVO, AOS referenčná architektúra a Auton framework sa nezávisle zhodli na rovnakom architektonickom vzore: oddelenie riadenia a governance od runtime pre produkčné autonómne agenty.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://www.marianstancik.dev/blog/posts/sk/2026-09-02-agent-architecture-convergence">
+<link rel="alternate" hreflang="en" href="https://www.marianstancik.dev/blog/posts/2026-09-02-agent-architecture-convergence">
+<link rel="alternate" hreflang="sk" href="https://www.marianstancik.dev/blog/posts/sk/2026-09-02-agent-architecture-convergence">
+<link rel="alternate" hreflang="x-default" href="https://www.marianstancik.dev/blog/posts/2026-09-02-agent-architecture-convergence">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Knowledge Graph">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=4">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=4">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png?v=4">
+<link rel="shortcut icon" href="/favicon.ico?v=4">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
+<meta name="theme-color" content="#08080F">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Konvergencia agentových architektúr: Prečo všetci stavajú rovnaký dvojúrovňový systém — Marian Stancik">
+<meta property="og:description" content="NVIDIA AVO, AOS referenčná architektúra a Auton framework sa nezávisle zhodli na rovnakom architektonickom vzore: oddelenie riadenia a governance od runtime pre produkčné autonómne agenty.">
+<meta property="og:url" content="https://www.marianstancik.dev/blog/posts/sk/2026-09-02-agent-architecture-convergence">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://www.marianstancik.dev/profile-big.webp">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Konvergencia agentových architektúr — Marian Stancik">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:site_name" content="Marian Stancik">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@marian_s_ai">
+<meta name="twitter:creator" content="@marian_s_ai">
+<meta name="twitter:image" content="https://www.marianstancik.dev/profile-big.webp">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Konvergencia agentových architektúr: Prečo všetci stavajú rovnaký dvojúrovňový systém",
+      "description": "NVIDIA AVO, AOS referenčná architektúra a Auton framework sa nezávisle zhodli na rovnakom architektonickom vzore: oddelenie riadenia a governance od runtime pre produkčné autonómne agenty.",
+      "datePublished": "2026-09-02",
+      "dateModified": "2026-09-02",
+      "author": {
+        "@type": "Person",
+        "name": "Marian Stancik",
+        "url": "https://www.marianstancik.dev"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Marian Stancik"
+      },
+      "mainEntityOfPage": "https://www.marianstancik.dev/blog/posts/sk/2026-09-02-agent-architecture-convergence",
+      "keywords": ["AI Agenty", "Autonómne systémy", "Agentová architektúra", "AOS", "Riadiaca vrstva", "Hermes Agent"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Domov",
+          "item": "https://www.marianstancik.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.marianstancik.dev/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Konvergencia agentových architektúr",
+          "item": "https://www.marianstancik.dev/blog/posts/sk/2026-09-02-agent-architecture-convergence"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="/css/main.css">
+<script defer src="https://api.marianstancik.dev/script.js" data-website-id="ec1c0df8-e51f-4236-9ad0-e3992f0b1637"></script>
+<style>
+.post-page { min-height: 100vh; display: flex; flex-direction: column; }
+.post-article { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; flex: 1; width: 100%; box-sizing: border-box; }
+.post-header { margin-bottom: 36px; }
+.post-back { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--color-primary, #CD7F32); text-decoration: none; margin-bottom: 20px; font-weight: 500; }
+.post-back:hover { color: var(--color-accent, #E8B86D); }
+.post-meta-top { display: flex; gap: 16px; align-items: center; font-size: 0.8rem; color: var(--color-text-muted, #8888A0); margin-bottom: 12px; }
+.post-meta-top time { text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+.post-header h1 { font-size: 2.2rem; line-height: 1.25; color: var(--color-text, #F0F0F5); margin: 0 0 16px; font-weight: 700; }
+.post-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+.post-tags span { font-size: 0.7rem; padding: 4px 12px; border-radius: 100px; background: rgba(205,127,50,0.08); color: var(--color-accent, #E8B86D); border: 1px solid rgba(205,127,50,0.15); }
+.post-content { color: var(--color-text, #F0F0F5); line-height: 1.8; font-size: 1.02rem; }
+.post-content h2 { font-size: 1.45rem; color: var(--color-text, #F0F0F5); margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.06)); }
+.post-content h3 { font-size: 1.15rem; color: var(--color-accent, #E8B86D); margin: 28px 0 12px; }
+.post-content p { margin: 0 0 20px; color: #D0D0E0; }
+.post-content strong { color: var(--color-text, #F0F0F5); }
+.post-content ul, .post-content ol { margin: 0 0 24px; padding-left: 24px; color: #D0D0E0; }
+.post-content li { margin-bottom: 8px; }
+.post-content blockquote { border-left: 3px solid var(--color-primary, #CD7F32); background: rgba(205,127,50,0.04); padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0; color: #E0E0F0; }
+.post-content code { background: rgba(255,255,255,0.06); padding: 2px 7px; border-radius: 4px; font-size: 0.88em; font-family: 'JetBrains Mono', 'Fira Code', monospace; color: var(--color-accent, #E8B86D); }
+.post-content pre { background: var(--color-bg-secondary, #0D0D18); border: 1px solid var(--color-border, rgba(255,255,255,0.06)); border-radius: 8px; padding: 20px; overflow-x: auto; margin: 24px 0; }
+.post-content pre code { background: none; padding: 0; color: #E0E0F0; }
+.post-content a { color: var(--color-primary, #CD7F32); text-decoration: underline; text-underline-offset: 3px; }
+.post-content a:hover { color: var(--color-accent, #E8B86D); }
+.post-lang-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(205,127,50,0.1); border: 1px solid rgba(205,127,50,0.25); border-radius: 100px; padding: 4px 14px; font-size: 0.78rem; color: var(--color-accent, #E8B86D); text-decoration: none; margin-bottom: 20px; }
+.post-lang-pill:hover { background: rgba(205,127,50,0.2); }
+.ai-disclaimer { margin-top: 48px; padding: 16px 20px; background: rgba(205,127,50,0.05); border: 1px solid rgba(205,127,50,0.15); border-radius: 8px; font-size: 0.82rem; color: var(--color-text-muted, #8888A0); }
+</style>
+</head>
+<body class="post-page">
+
+<nav aria-label="Hlavná navigácia">
+  <div class="nav-container">
+    <a href="/" class="nav-logo" aria-label="marianstancik.dev domov">
+      <div class="brand-mark" aria-hidden="true"><img src="/profile.webp" alt="Marian Stancik" width="28" height="28" class="brand-avatar"></div>
+      <span class="nav-logo-text">marian<span class="highlight">stancik</span><span class="tld">.dev</span></span>
+    </a>
+    <div class="nav-right">
+      <a href="/blog/posts/2026-09-02-agent-architecture-convergence" class="post-lang-pill" style="margin-bottom:0;" title="Switch to English">🇬🇧 English version</a>
+      <a href="/blog" class="nav-link">← Všetky články</a>
+    </div>
+  </div>
+</nav>
+
+<main class="post-article">
+  <header class="post-header">
+    <a href="/blog" class="post-back">← Späť na Blog</a>
+    <div class="post-meta-top">
+      <time datetime="2026-09-02">2. september 2026</time>
+      <span>·</span>
+      <span>8 min čítania</span>
+    </div>
+    <h1>Konvergencia agentových architektúr: Prečo všetci stavajú rovnaký dvojúrovňový systém</h1>
+    <div class="post-tags">
+      <span>AI Agenty</span>
+      <span>Autonómne systémy</span>
+      <span>Agentová architektúra</span>
+      <span>AOS</span>
+      <span>Riadiaca vrstva</span>
+    </div>
+  </header>
+
+  <article class="post-content">
+
+    <p>Za posledné tri mesiace tri nezávislé výskumné tímy — <strong>NVIDIA AVO</strong>, <strong>AOS referenčná architektúra</strong> (arXiv 2608.03214) a <strong>Auton Agentic AI Framework</strong> (arXiv 2602.23720) — nezávisle dospeli k rovnakému architektonickému vzoru pre produkčné autonómne agenty. Dvojúrovňový dizajn, ktorý oddeľuje <em>riadenie a governance</em> od <em>runtime a koordinácie</em>.</p>
+
+    <p>Toto nie je náhoda. Je to dozrievanie odboru.</p>
+
+    <p>Keď tímy pracujúce na optimalizácii GPU jadier, interaktívnych reasoning benchmarkoch a enterprise governance agentov nezávisle prídu na rovnaký architektonický split, pozeráte sa na vznikajúci štandard. Názvy sa líšia — AVO to volá "supervision loop + agent loop," AOS "Control & Governance Plane + Runtime & Coordination Plane," Auton "Cognitive Blueprint + Runtime Engine" — ale štrukturálne rozdelenie je identické vo všetkých troch.</p>
+
+    <p>Tu je vysvetlenie, čo dvojúrovňová architektúra je, prečo je dôležitá pre každého, kto nasadzuje agentov v produkcii, a ako si postaviť vlastnú.</p>
+
+    <h2>Vzor, pomenovaný rôzne každým tímom</h2>
+
+    <table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:0.92rem;">
+      <thead>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+          <th style="padding:8px;text-align:left;color:var(--color-accent,#E8B86D);">Framework</th>
+          <th style="padding:8px;text-align:left;color:var(--color-accent,#E8B86D);">Úroveň 1 — Riadenie</th>
+          <th style="padding:8px;text-align:left;color:var(--color-accent,#E8B86D);">Úroveň 2 — Runtime</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:8px;color:var(--color-text,#F0F0F5);"><strong>NVIDIA AVO</strong></td>
+          <td style="padding:8px;color:#D0D0E0;">Supervízna slučka + vynucovanie politík</td>
+          <td style="padding:8px;color:#D0D0E0;">Agent slučka + perzistentná pamäť + nástroje</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+          <td style="padding:8px;color:var(--color-text,#F0F0F5);"><strong>AOS Paper</strong></td>
+          <td style="padding:8px;color:#D0D0E0;">Control & Governance: zámer, politika, dôvera, audit</td>
+          <td style="padding:8px;color:#D0D0E0;">Runtime & Coordination: životný cyklus, routing, pamäť, plánovanie</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;color:var(--color-text,#F0F0F5);"><strong>Auton Framework</strong></td>
+          <td style="padding:8px;color:#D0D0E0;">Cognitive Blueprint + constraint manifold</td>
+          <td style="padding:8px;color:#D0D0E0;">Runtime Engine + MCP integrácia + paralelné vykonávanie</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Názvy sa líšia, ale sémantický split je identický: jedna úroveň odpovedá na <em>čo by sa malo stať</em>, druhá na <em>ako to spraviť</em>. Riadiaca úroveň je zdrojom pravdy pre zámer, politiky a autoritu. Runtime úroveň je vykonávací substrát, ktorý premieňa tieto rozhodnutia na koordinované akcie naprieč agentmi, nástrojmi, modelmi a pamäťovými systémami.</p>
+
+    <h2>Prečo dve úrovne?</h2>
+
+    <p>Súčasné agentové systémy zlievajú riadiacu a vykonávaciu logiku do jedného LLM volania. Model rozhoduje <em>a</em> koná v jednom kroku. To funguje pre jednoduché chatboty. Zlyháva pre viacdňové autonómne operácie, kde potrebujete auditné trail-y, vynucovanie politík, obnovu po zlyhaní a ľudský dohľad.</p>
+
+    <p>AOS paper formalizuje tento argument definovaním, čo patrí do každej úrovne.</p>
+
+    <p><strong>Control & Governance Plane vlastní:</strong></p>
+    <ul>
+      <li><strong>Zámer (intent):</strong> čo používateľ naozaj chce, nie čo model odvodil z nejednoznačného kontextu</li>
+      <li><strong>Politiky:</strong> povolené akcie, rozpočty zdrojov, bezpečnostné obmedzenia, povolené kategórie nástrojov</li>
+      <li><strong>Dôvera a autorita:</strong> delegovaný rozsah, správa credentials, revokačný reťazec</li>
+      <li><strong>Confidence:</strong> podporujú nahromadené dôkazy pokračovanie s touto akciou?</li>
+      <li><strong>Auditovateľnosť:</strong> kto autorizoval čo, kedy, s akými dôkazmi a pod akými obmedzeniami</li>
+      <li><strong>Ľudský dohľad:</strong> stop tlačidlá, schvaľovacie brány, eskalácia, override kontroly</li>
+      <li><strong>Reconcialiácia stavu:</strong> keď sa pozorovaný stav odchýli od autorizovaného, zruš alebo eskaluj</li>
+    </ul>
+
+    <p><strong>Runtime & Coordination Plane vlastní:</strong></p>
+    <ul>
+      <li><strong>Životný cyklus agenta:</strong> spawn, plánovanie, pauza, obnovenie, ukončenie sub-agentov</li>
+      <li><strong>Model routing:</strong> výber a dispečing optimálneho modelu podľa typu úlohy a rozpočtu</li>
+      <li><strong>Vykonávanie nástrojov:</strong> volania MCP serverov, validácia výstupov voči schémam, error handling a retry</li>
+      <li><strong>Koordinácia pamäte:</strong> epizodická, sémantická, procedurálna — doručenie kontextu naprieč sessionami</li>
+      <li><strong>Workflow progress:</strong> stavové automaty, retry politiky, circuit breakers, timeouty</li>
+      <li><strong>Telemetria:</strong> čo sa skutočne stalo, s akou latenciou, za akú cenu</li>
+    </ul>
+
+    <p>Oddelenie je dôležité, pretože <strong>tieto úrovne sa škálujú inak</strong>. Riadiaca úroveň je nenáročná na priepustnosť, ale kritická z hľadiska správnosti — jedno zlé rozhodnutie o politike kontaminuje všetko. Runtime úroveň je náročná na priepustnosť, ale tolerantná voči zlyhaniu — nepodarené tool volanie sa zopakuje, zle smerované modelové volanie plytvá výkonom, ale neporušuje politiku.</p>
+
+    <p>NVIDIA AVO 7-dňový autonómny beh optimalizácie GPU jadier demonštruje tento princíp v praxi. Hlavný agent (runtime) rozhoduje čo preskúmať, zmeniť, otestovať a vyhodnotiť. Supervízor (control) monitoruje stagnáciu, prekročenie rozpočtu a neproduktívne cykly. Keď sa vyhľadávanie zasekne, supervízor presmeruje. Riadiaca úroveň nemusí rozumieť optimalizácii GPU jadier — potrebuje len detegovať, že progres sa zastavil, a spustiť korektívnu akciu.</p>
+
+    <h2>Tri mechanizmy, na ktorých sa všetci zhodli</h2>
+
+    <p>Naprieč všetkými troma architektúrami sú tri mechanizmy nevyhnutné pre produkčné autonómne agenty.</p>
+
+    <h3>1. Perzistentná pamäť mimo kontextového okna</h3>
+
+    <p>Každá architektúra sa zhoduje: agent, ktorý sa resetuje na nulu na konci každého kontextového okna, nedokáže udržať dlhodobú prácu. LLM sú bezstavové naprieč sessionami — keď sa kontextové okno naplní alebo session skončí, všetky skúsenosti sú stratené, pokiaľ nie sú explicitne uchované.</p>
+
+    <p>AVO používa perzistentné úložisko pre zmeny kódu, výstupy kompilátora, profiler výsledky a nahromadené uvažovanie počas 7-dňových behov. AOS paper definuje štyri typy stavov — intended state, authorized state, observed state a resulting state — ktoré prežívajú medzi invokáciami a tvoria základ pre audit a reconciliáciu. Auton framework zavádza reflector-driven konsolidačný protokol, inšpirovaný biologickým hippocampálnym prehrávaním, ktorý počas nečinnosti komprimuje epizodické skúsenosti do sémantickej a procedurálnej pamäte.</p>
+
+    <p>Implementačný vzor: ukladajte štruktúrovaný stav do SQLite alebo vektorovej databázy. Keď sa kontextové okno blíži k kapacite, runtime úroveň zapíše checkpoint. Riadiaca úroveň validuje výsledný stav voči politikám pred začiatkom ďalšieho cyklu. Tým sa limitácia kontextového okna mení z chyby na feature — každé okno sa stáva ohraničenou atomickou jednotkou práce.</p>
+
+    <h3>2. Supervízia a constraint-based guardrails</h3>
+
+    <p>Všetky tri architektúry odmietajú predstavu, že prompt engineering sám o sebe udrží agentov v bezpečí v produkčnom meradle. Prompt-based safety je krehká, neriaditeľná a neprodukuje auditný trail.</p>
+
+    <p>NVIDIA AVO používa vyhradený supervízor, ktorý beží paralelne s hlavným agentom. Jeho jedinou úlohou je detegovať stagnáciu — opakujúce sa chybové vzory, plató metriky, neproduktívne cykly — a spúšťať presmerovanie. Supervízor nemusí rozumieť doméne. Potrebuje jasnú definíciu "zaseknutia" a eskaláčnú cestu.</p>
+
+    <p>Auton framework zavádza constraint manifold — formálne definovaný podpriestor akčného priestoru — na ktorý sa politika agenta premieta <em>pred</em> emisiou akcie. Bezpečnosť je vynútená konštrukciou, nie post-hoc filtrovaním. Eskalácia privilégií a nebezpečné operácie sú v manífoldle štrukturálne nemožné.</p>
+
+    <blockquote>"Bezpečnosť nie je delegovaná na prompt engineering alebo post-hoc output filtering. Namiesto toho sú obmedzenia vyjadrené ako špecifikácie na úrovni kódu, čo zaručuje, že eskalácia privilégií a nebezpečné operácie sú vylúčené už konštrukciou." — Auton Agentic AI Framework (arXiv 2602.23720)</blockquote>
+
+    <p>AOS paper ide ďalej a definuje reconciliačné kontroléry, ktoré kontinuálne porovnávajú pozorovaný stav s autorizovaným. Keď sa odchýlia — agent prekročil rozpočet, pristúpil k obmedzenému nástroju, operoval mimo delegovaného rozsahu — kontrolér zruší operáciu, izoluje agenta a eskaluje človeku. Toto nie je guardrail prompt. Je to deterministická riadiaca slučka.</p>
+
+    <p>To isté robím s watchdog cron jobmi a Python monitor skriptami. 50-riadkový Python skript, ktorý zabije úlohu keď prekročí svoj iteračný rozpočet, je nekonečne spoľahlivejší ako akýkoľvek prompt-based guardrail. Constraint manifold prístup naznačuje, že by sme mali ísť ďalej — definovať povolený akčný priestor v kóde, nie v promptoch.</p>
+
+    <h3>3. Typované, objaviteľné tool rozhrania</h3>
+
+    <p>Všetky tri frameworky používajú typované tool rozhrania viazané cez Model Context Protocol (MCP) alebo ekvivalent. Evolúcia od neštruktúrovaných promptov k typovaným tool registrom zrkadlí evolúciu REST bez schémy k OpenAPI — a odvetvie je v rovnakom inflexnom bode.</p>
+
+    <p>AOS paper explicitne nazýva tool registre "agentovou analógiou API gateway" — enumerujú, verzionujú a access-controlujú každý nástroj dostupný agentovi. Auton framework robí MCP integráciu svojím primárnym externým rozhraním, pričom nástroje sú typované kontrakty so vstupno-výstupnými schémami a preconditionami. AVO tool rozhranie je najviac obmedzené z troch, presne preto, že jeho doména optimalizácie GPU jadier vyžaduje striktnú validáciu schém pre kompilátorové flagy, profiler parametre a testovacie konfigurácie.</p>
+
+    <p>Praktický dôsledok: ak váš agent volá nástroje cez free-text prompty, máte integráciu, nie architektúru. Bez typovanej vrstvy rozhrania nemôžete auditovať používanie nástrojov, validovať ich výstupy ani vynucovať prístupové politiky. MCP sa stáva štandardom pre túto vrstvu — tool registre sú, ako poznamenáva AOS paper, "miestom, kde sa agent stretáva s enterprise."</p>
+
+    <h2>Od architektonického vzoru ku compliance architektúre</h2>
+
+    <p>Konvergencia nie je len technicky zaujímavá. Priamo sa mapuje na regulačné požiadavky, ktoré nadobudli účinnosť v auguste 2026.</p>
+
+    <p>EU AI Act požaduje presne tie schopnosti, ktoré dvojúrovňová architektúra poskytuje ako vstavané štrukturálne vlastnosti, nie ako dodatočné dokumentačné cvičenia:</p>
+
+    <ul>
+      <li><strong>Článok 9 — Riadenie rizík:</strong> vynucovanie politík a constraint-based guardrails v riadiacej úrovni implementujú mitigáciu rizík konštrukciou</li>
+      <li><strong>Článok 12 — Vedenie záznamov:</strong> riadiaca úroveň už loguje každé autorizačné rozhodnutie, každú delegáciu, každý override politiky — to nie sú samostatné compliance záznamy, je to natívny auditný trail systému</li>
+      <li><strong>Článok 13 — Transparentnosť:</strong> riadiaca úroveň vie rekonštruovať <em>prečo</em> bolo rozhodnutie prijaté prehratím autorizovaného stavu pred akciou, politiky, ktorá ho riadila, a výsledného stavu po vykonaní</li>
+      <li><strong>Článok 14 — Ľudský dohľad:</strong> stop tlačidlo, schvaľovacie brány a eskalácia sú natívne architektonické prvky, nie dodatočné prídavky</li>
+    </ul>
+
+    <p>Májová dohoda Digital Omnibus 2026 vyjasnila, že multi-agentové systémy sú považované za jeden regulovaný systém. To robí dvojúrovňovú architektúru ešte relevantnejšou: riadiaca úroveň spravuje celý multi-agentový cluster, nie jednotlivých agentov. Runtime úroveň vykonáva naprieč clusterom. Compliance sa vzťahuje na systém, nie na každého agenta samostatne.</p>
+
+    <p>Systémy bez samostatnej riadiacej úrovne budú mať problém preukázať čokoľvek z toho. Auditné trail-y dodatočne prichytené k monolytickej architektúre produkujú záznamy, ktoré hovoria čo sa stalo, ale nie prečo — a "prečo" je to, čo AI Act požaduje.</p>
+
+    <h2>Stavba vlastného dvojúrovňového stacku</h2>
+
+    <p>Tu je praktický deploy pattern, ktorý používam a ktorý zrkadlí vznikajúci štandard. Beží na Hetzner CX33 VPS za €8,49/mesiac a aktuálne vykonáva 19 autonómnych cron jobov s 99,7% uptime.</p>
+
+    <p><strong>Riadiaca úroveň (Hermes Agent + cron):</strong></p>
+    <ul>
+      <li><strong>Policy-as-code</strong> v AGENTS.md súboroch — deklaruje čo agent smie a nesmie, povolenú sadu nástrojov a rozpočtové limity</li>
+      <li><strong>Watchdog cron + monitor skripty</strong> — detegujú stagnáciu, prekročenie iterácií a porušenie politík; reštartujú, presmerujú alebo eskalujú</li>
+      <li><strong>Validácia checkpointov</strong> — overenie výsledného stavu voči autorizovanému stavu pred ďalším vykonávacím cyklom</li>
+      <li><strong>SQLite audit log</strong> — každá autorizácia, každá delegácia, každé zlyhanie so štruktúrovanými metadátami pre replay</li>
+    </ul>
+
+    <p><strong>Runtime úroveň (MCP servery + OpenRouter):</strong></p>
+    <ul>
+      <li><strong>MCP tool servery</strong> — typované, objaviteľné, verzované rozhrania. Každý nástroj deklaruje vstupnú schému, výstupnú schému a prístupové požiadavky vopred</li>
+      <li><strong>OpenRouter dynamický routing</strong> — výber optimálneho modelu podľa typu úlohy. Lacné modely pre rutinnú klasifikáciu, frontier modely pre komplexné uvažovanie</li>
+      <li><strong>SQLite pamäť</strong> — epizodické úložisko pre históriu session, sémantické pre znalostné triplety, procedurálne pre úspešné reťazce nástrojov</li>
+      <li><strong>Paralelné vykonávanie cez cognitive map-reduce</strong> — nezávislé tool volania súbežne, ohraničenie celkového runtime kritickou cestou namiesto súčtu všetkých krokov</li>
+    </ul>
+
+    <p>Toto nie je hypotetická architektúra. Rovnaké princípy, ktoré NVIDIA aplikovala na 7-dňovú optimalizáciu GPU jadier, fungujú aj v tomto meradle — len s menším rozpočtom a kratším horizontom.</p>
+
+    <p>Kľúčový rozdiel oproti monolytickému prístupu: keď cron job zlyhá, riadiaca úroveň vie, že zlyhal, vie ktorú politiku porušil a vie či má retry-núť, eskalovať alebo zastaviť. Runtime úroveň toto rozhodnutie nemusí robiť. Len nahlási zlyhanie. Toto oddelenie zodpovedností je to, čo robí autonómnu prevádzku udržateľnou bez 24/7 ľudského dohľadu.</p>
+
+    <h2>Vznikajúci štandard</h2>
+
+    <p>AOS paper zachytáva konvergenciu najlepšie: <em>"AOS neprehlasuje žiadnu interpretáciu za neplatnú. Poskytuje vrstvený model, v ktorom každá implementácia môže uviesť, ktoré zodpovednosti poskytuje."</em></p>
+
+    <p>Prostredie agentových architektúr sa štandardizuje okolo tohto dvojúrovňového dizajnu. Či už operujete v meradle NVIDIA — 7-dňové behy optimalizácie GPU jadier na DGX B200 clastroch — alebo v meradle jedného VPS s 19 cron jobmi, architektonický vzor je rovnaký. Perzistentná pamäť, constraint-based guardrails a typované tool rozhrania sú nevyhnutné mechanizmy. Riadenie a governance sú oddelené od runtime a koordinácie.</p>
+
+    <p>Konvergencia sa deje rýchlejšie, než si väčina staviteľov uvedomuje. Tri nezávislé tímy, tri rôzne problémové domény, jedna architektonická odpoveď. Stavajte na tomto vzore. Odvetvie konverguje — či si to jednotliví stavitelia uvedomujú alebo nie.</p>
+
+    <div class="ai-disclaimer">
+      🤖 <strong>AI-generované</strong> — Tento článok bol vytvorený s pomocou autonómneho AI agenta (Hermes Agent od Nous Research) a pred publikovaním bol skontrolovaný Marianom Stancikom. <a href="/disclaimer">Celé zrieknutie</a>.
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="container" style="max-width:780px;margin:0 auto;padding:24px;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+    <p style="margin:0;font-size:0.8rem;color:#8888A0;">© 2026 <a href="/" style="color:#CD7F32;">Marian Stancik</a> — <a href="/" style="color:#CD7F32;">marianstancik.dev</a></p>
+    <div style="font-size:0.75rem;color:#6666AA;display:flex;gap:12px;">
+      <a href="/privacy" style="color:#6666AA;">Privacy Policy</a>
+      <a href="/privacy-sk" style="color:#6666AA;">Privacy Policy (SK)</a>
+      <a href="/terms" style="color:#6666AA;">Terms of Service</a>
+      <a href="/disclaimer" style="color:#6666AA;">Disclaimer</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

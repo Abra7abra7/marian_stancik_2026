@@ -1,5 +1,28 @@
 [
   {
+    "slug": "2026-09-02-agent-architecture-convergence",
+    "url": "blog/posts/2026-09-02-agent-architecture-convergence",
+    "urlSk": "blog/posts/sk/2026-09-02-agent-architecture-convergence",
+    "blogUrl": "posts/2026-09-02-agent-architecture-convergence",
+    "blogUrlSk": "posts/sk/2026-09-02-agent-architecture-convergence",
+    "date": "2026-09-02",
+    "displayDate": "September 2, 2026",
+    "displayDateSk": "2. september 2026",
+    "title": "The Convergence of Agent Architectures: Why Everyone Is Building the Same Two-Plane System",
+    "titleSk": "Konvergencia agentových architektúr: Prečo všetci stavajú rovnaký dvojúrovňový systém",
+    "excerpt": "NVIDIA AVO, the AOS reference architecture, and the Auton framework all converged on the same pattern: a two-plane design separating governance from execution for production autonomous agents.",
+    "excerptSk": "NVIDIA AVO, AOS referenčná architektúra a Auton framework sa zhodli na rovnakom vzore: dvojúrovňový dizajn oddeľujúci riadenie od vykonávania pre produkčné autonómne agenty.",
+    "tags": [
+      "AI Agents",
+      "Autonomous Systems",
+      "Agent Architecture",
+      "AOS",
+      "Control Plane"
+    ],
+    "readTime": "8 min read",
+    "readTimeSk": "8 min čítania"
+  },
+  {
     "slug": "2026-08-27-nvidia-avo-autonomous-agents",
     "url": "blog/posts/2026-08-27-nvidia-avo-autonomous-agents",
     "urlSk": "blog/posts/sk/2026-08-27-nvidia-avo-autonomous-agents",
