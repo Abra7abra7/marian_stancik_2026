@@ -1,73 +1,74 @@
-# Marian Stancik — Full AI Agent Context & Knowledge Graph
+# llms-full.txt — Marian Stancik
 
-> Personal brand website, comprehensive technical knowledge graph, and autonomous multi-agent engineering platform of Marian Stancik.
+> AI Agent Developer building autonomous systems that run your processes.
+> marianstancik.dev · GitHub: Abra7abra7
 
-## Core Endpoints & Pages
+## Quick Links
 
-- [Home](https://www.marianstancik.dev/): High-impact hero, autonomous agent stats, live 24/7 cron orchestrations, and connect channels.
-- [About](https://www.marianstancik.dev/about): Technical bio, 4-layer engineering stack (Hetzner VPS, OpenRouter, Obsidian, Zero-build Web), and career timeline.
-- [Expertise](https://www.marianstancik.dev/expertise): Detailed spec matrices across 3 core pillars: Autonomous AI Agents, Law & AI Compliance, and UAV Edge AI Systems.
-- [AI Engineering Skills](https://www.marianstancik.dev/skills): Full-stack skills taxonomy covering Build & Deploy AI, Software Engineering, LLM & Agentive Systems, and Production Operations.
-- [Tactical UAV Systems](https://www.marianstancik.dev/drones): Hand-soldered 1500g carbon quadcopter, ArduPilot Copter autopilot, Raspberry Pi 5 edge vision AI, and flight logs.
-- [Blog Archive](https://www.marianstancik.dev/blog): Technical articles on autonomous AI workflows, legal-by-design compliance (AI Act, GDPR), and robotics.
-- [Contact & Connect](https://www.marianstancik.dev/contact): Direct lead capture, communication channels, and social profiles.
+- [Home](https://www.marianstancik.dev): I build AI agents that run your processes.
+- [About](https://www.marianstancik.dev/about): Autonomous agent systems, regulatory context, and hardware engineering.
+- [Products](https://www.marianstancik.dev/services): AI GEO Audit €150, Web Readiness Scan €200, Full Web Audit €300, Custom AI Agent from €500.
+- [Expertise](https://www.marianstancik.dev/expertise): Deep-dive into autonomous AI agent systems.
+- [Blog Archive](https://www.marianstancik.dev/blog): Technical articles on autonomous AI workflows, regulatory awareness (EU AI Act, GDPR), and robotics.
+- [Contact](https://www.marianstancik.dev/contact): Let's build your AI agent.
 
-## Blog Articles
+## About Marian Stancik
 
-- [Web Performance Optimization: Cutting Page Size by 61%](https://www.marianstancik.dev/blog/posts/2026-08-25-web-performance-optimization): Reducing page weight, optimizing Core Web Vitals, non-blocking WebGL, and achieving Lighthouse 100.
-- [Building a Digital Twin That Posts 9x Daily](https://www.marianstancik.dev/blog/posts/2026-08-22-building-digital-twin): Autonomous social content distribution across 6 platforms using Python, cron, and LLMs.
-- [AI Act Compliance for Small AI Companies](https://www.marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance): Practical legal-by-design guide for startups navigating EU AI Act risk tiers and GPAI obligations.
-- [Autonomous Drone Missions with ArduPilot & Python](https://www.marianstancik.dev/blog/posts/2026-08-17-autonomous-drone-missions): Hands-on UAV mission automation with Pixhawk, ArduPilot, and Python waypoint scripting.
+Marian Stancik is an AI Agent Developer building autonomous systems at the convergence of artificial intelligence, regulatory awareness, and hardware engineering.
 
-## Machine-Readable Endpoints
+His work spans three domains:
 
-- [LLM Summary Context](https://www.marianstancik.dev/llms.txt): Concise LLM knowledge graph standard file.
-- [Blog Posts Feed JSON](https://www.marianstancik.dev/blog/posts.json): Structured JSON archive of all published articles, dates, tags, and reading times.
-- [XML Sitemap](https://www.marianstancik.dev/sitemap.xml): Search engine indexing directory for all canonical website endpoints.
-- [RSS XML Feed](https://www.marianstancik.dev/rss.xml): Standard RSS syndication feed for autonomous web readers and crawlers.
+1. **Autonomous AI Agent Systems:** Custom agent development, MCP orchestration, multi-LLM routing via OpenRouter, persistent memory, and 24/7 production infrastructure on Hetzner VPS.
+2. **Regulatory Awareness (EU AI Act, GDPR, NIS2):** Practical understanding of AI regulation for building compliance-ready autonomous systems. Technical context only — not legal advice.
+3. **Hardware Engineering (Hobby):** Hand-built carbon fiber UAV with ArduPilot, Raspberry Pi 5 edge AI vision, EASA A1/A3 certified. Demonstrates full-stack engineering from software to physical systems.
 
-## Identity & Core Positioning
+### What He Builds
 
-Marian Stancik is an AI Engineer, UAV Systems Builder, and Law Scholar exploring the convergence of artificial intelligence, autonomous physical hardware, and regulatory compliance.
+- **Custom AI Agents:** Production-grade autonomous agents built on Hermes Agent framework, with MCP tool integration, persistent SQLite/Vault memory, and 24/7 operation on managed VPS infrastructure.
+- **AI GEO Audits:** Automated 12-point checks for AI search visibility — llms.txt, JSON-LD, OpenGraph, robots.txt, crawl readiness.
+- **Web Readiness Scans:** Technical checks for GDPR, cookie compliance, AI Act disclosure, terms, and disclaimers. Not legal advice — technical verification only.
 
-His core differentiation is the intersection of three domains:
-1. **Autonomous AI Systems:** Hermes Agent, MCP tooling, OpenRouter model orchestration, Hetzner VPS 24/7 runtime, Obsidian second brain / memory layer, zero-build web engineering.
-2. **Law & AI Compliance:** Practical legal-by-design frameworks under the EU AI Act, GDPR, NIS2, DORA, EU Data Act, and DSM Copyright Directive (TDM exceptions).
-3. **UAV Systems & Edge Robotics:** Hand-soldered 1500g carbon quad, Betaflight tested, ArduPilot Copter autopilot, Raspberry Pi 5 edge vision AI, EASA A1/A3 certified, €2.6M insured.
+## Blog Posts
 
-## Core Pillars & Detailed Technical Architecture
+- [Agent Architecture Convergence: Hermes, MCP, OpenRouter in 2026](https://www.marianstancik.dev/blog/posts/2026-09-02-agent-architecture-convergence): Six levels of agent architecture maturity, from basic scripting to self-modifying agents.
+- [Nvidia AVO: Autonomous Agent Infrastructure](https://www.marianstancik.dev/blog/posts/2026-08-27-nvidia-avo-autonomous-agents): Enterprise-grade orchestration of multi-agent systems.
+- [From Hobby to System: Building an Agent-Driven Company](https://www.marianstancik.dev/blog/posts/2026-08-26-agent-driven-company): Scaling from DIY tools to production agent architecture.
+- [Web Performance Optimization](https://www.marianstancik.dev/blog/posts/2026-08-25-web-performance-optimization): Lighthouse 100, 0ms TBT, zero-build vanilla stack.
+- [Building a Digital Twin of Yourself](https://www.marianstancik.dev/blog/posts/2026-08-22-building-digital-twin): AI agent that mirrors your expertise and decision patterns.
+- [EU AI Act: Technical Guide for AI Builders](https://www.marianstancik.dev/blog/posts/2026-08-20-ai-act-compliance): Practical regulatory awareness for startups and developers navigating AI Act risk tiers.
+- [Autonomous Drone Missions with Edge AI](https://www.marianstancik.dev/blog/posts/2026-08-17-autonomous-drone-missions): Technical breakdown of an autonomous UAV with onboard computer vision.
 
-### 1. AI Engineering & Autonomous Systems
-- **Agent Frameworks:** Hermes Agent (Nous Research), custom MCP (Model Context Protocol) servers, Python agent skills.
-- **Production Infrastructure:** Enterprise European Hetzner Cloud VPS (Nuremberg/Helsinki), running 19+ cron-orchestrated agents 24/7 with zero downtime and full EU data sovereignty.
-- **Model Orchestration:** OpenRouter API for dynamic model routing (DeepSeek V3/R1, Claude 3.5 Sonnet, GPT-4o, Llama 3.3).
-- **Memory & Second Brain:** Obsidian Markdown vault acting as a persistent memory layer and structured knowledge base for agent workflows.
-- **Command & Control (C2):** Real-time management via custom Telegram & WhatsApp bot interfaces.
-- **Web Engineering:** Zero-build HTML5, Vanilla JS, and modern CSS for instant loading (Lighthouse 100) and GEO/LLMO discovery.
+## Products
 
-### 2. Law & AI Compliance
-- Specialization in legal and business impacts of AI on companies, digital services, and enterprise governance.
-- **EU AI Act:** Risk classification (unacceptable, high, GPAI, minimal), transparency obligations, prohibited practices, and technical documentation.
-- **GDPR:** Training data privacy, legal bases for processing, automated decision-making (Art. 22), and data subject rights.
-- **NIS2 Directive:** Cybersecurity risk management, supply chain security, and incident reporting for digital providers.
-- **DORA:** Digital operational resilience for financial entities utilizing AI and cloud infrastructure.
-- **EU Data Act & Data Governance Act:** Data access, cloud switching, and European data sovereignty.
-- **DSM Copyright Directive:** Text & Data Mining (TDM) exceptions (Articles 3 & 4) for AI training.
+| Product | Price | Description |
+|---------|-------|-------------|
+| AI GEO Audit | €150 | Automated AI visibility check — llms.txt, JSON-LD, OpenGraph, crawl readiness |
+| Web Readiness Scan | €200 | Technical compliance check — GDPR, cookies, AI Act disclosure, terms |
+| Full Web Audit | €300 | GEO + Readiness combined |
+| Custom AI Agent | from €500 | Production-grade autonomous agent on your infrastructure |
 
-### 3. UAV Systems & Edge Robotics
-- **Hardware Build:** 1500g custom 8-inch carbon quadcopter, hand-soldered and assembled from bare components.
-- **Frame & Motors:** GEPRC Mark4-8 Carbon Frame, iFlight XING2 2809 1250Kv motors, HQprop 8" triblades, GNB 5500mAh 6S 70C LiPo.
-- **Electronics & Autopilot:** Skystars H7 Dual Gyro FC, AM60 AM32 60A ESC stack, RadioMaster XR1 Nano ELRS, FlyfishRC M10QMC-5883L GNSS + Compass.
-- **Flight Software:** Flight-tested initially on Betaflight, migrated to ArduPilot Copter for autonomous waypoint navigation and mission scripting.
-- **Edge AI Companion:** Raspberry Pi 5 (8GB RAM), Raspberry Pi Camera Module 3, dedicated 5V/5A BEC, running onboard computer vision models for real-time target detection and tracking.
-- **FPV Transmission:** Caddx Ratel 2 Micro, Axisflying Smurfs 1.6W 5.8GHz VTX, Foxeer Lollipop 4 Plus, Skyzone Cobra X V4 goggles.
-- **Certification & Insurance:** Certified EASA A1/A3 pilot, Coverdrone €2.6M liability insurance.
+## Social
 
-## Social & Professional Channels
+- [GitHub](https://github.com/Abra7abra7): Autonomous agent systems, MCP servers, web projects.
+- [YouTube](https://www.youtube.com/@marian_ai): Long-form video breakdowns of AI agents and autonomous systems.
+- [X / Twitter](https://x.com/marian_s_ai): Daily AI agent insights.
+- [LinkedIn](https://www.linkedin.com/in/marian-stancik): Professional network.
 
-- [X (Twitter)](https://x.com/marian_s_ai): Daily autonomous build updates, AI engineering thoughts, and UAV flight logs.
-- [YouTube](https://www.youtube.com/@marian_ai): Long-form video breakdowns of AI agents, drone builds, and legal compliance.
-- [GitHub](https://github.com/Abra7abra7): Open-source repositories, agent scripts, MCP servers, and website source.
-- [LinkedIn](https://www.linkedin.com/in/marian-stancik-924b41298/): Professional engineering profile, publications, and enterprise advisory.
-- [Threads](https://www.threads.net/@marian_stancik): Micro-updates and engineering notes.
-- [Email](mailto:marianstancik@agentmail.to): Direct asynchronous agent-routed communication endpoint.
+## Technical Stack
+
+- **Agent Framework:** Hermes Agent (Nous Research)
+- **Protocol:** Model Context Protocol (MCP)
+- **LLM Routing:** OpenRouter (multi-model: DeepSeek, Claude, GPT)
+- **Infrastructure:** Hetzner Cloud (DE/FI), Ubuntu, Caddy, Docker
+- **Memory:** SQLite + Obsidian vault bi-directional
+- **Storage:** Syncthing, Cloudflare R2
+- **Scheduling:** Systemd + cron
+- **Languages:** Python 3, JavaScript, Bash
+
+## RSS
+
+[RSS Feed](https://www.marianstancik.dev/rss.xml)
+
+---
+
+*Last updated: September 2026*
