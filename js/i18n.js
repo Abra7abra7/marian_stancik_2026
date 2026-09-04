@@ -72,7 +72,7 @@ aboutBody: `
 
 <p>I build web applications with zero-build <strong>HTML5, Vanilla JS, and modern CSS</strong> — engineered for instant loading (Lighthouse 100), zero layout shifts, and deep discoverability by autonomous AI search crawlers (GEO / LLMO).</p>
 
-<p>I study the legal and business impacts of AI — primarily the <strong>EU AI Act</strong>, <strong>GDPR</strong>, <strong>NIS2 Directive</strong>, <strong>DORA</strong>, the <strong>EU Data Act</strong>, and the <strong>DSM Copyright Directive</strong>. I share practical regulatory knowledge and compliance insights for educational purposes.</p>
+<p>I study the legal and business impacts of AI — primarily the <strong>EU AI Act</strong>, <strong>GDPR</strong>, <strong>NIS2 Directive</strong>, <strong>DORA</strong>, the <strong>EU Data Act</strong>, and the <strong>DSM Copyright Directive</strong>. This regulatory awareness helps me build AI agents that are ready for regulated environments. I share practical regulatory knowledge for educational purposes only, not legal advice.</p>
 
 <p>On the hardware front, I personally <strong>designed, hand-soldered, and assembled a custom 1500g carbon tactical quadcopter</strong> from bare components into a fully operational flying UAV. Initially flight-tested on <strong>Betaflight</strong>, it now operates on <strong>ArduPilot</strong> for advanced autonomous mission execution. I am actively integrating an onboard <strong>Raspberry Pi 5 with edge computer vision models</strong> for real-time target detection and tracking.</p>
 `,
@@ -152,7 +152,7 @@ whatIDoSubtitle: "Job · Context · Hobby — clear separation.",
 card1Title: "AI Agent Developer (Job)",
 card1Desc: "I design, build, deploy, and operate autonomous AI agents on client infrastructure or managed VPS. Custom MCP servers, multi-LLM orchestration, 24/7 cron automation, and persistent memory.",
 card2Title: "Regulatory Context (PF UK)",
-card2Desc: "3rd year at PF UK. I study EU AI Act, GDPR, NIS2 and use that knowledge to build agents that are technically ready for regulated environments. Educational sharing only.",
+card2Desc: "PF UK law studies. EU AI Act, GDPR, NIS2 awareness used to build agents ready for regulated environments. Educational sharing only, not legal advice.",
 card3Title: "Hardware Engineering (Hobby)",
 card3Desc: "Hand-soldered 1500g carbon quad with ArduPilot and Raspberry Pi 5 edge AI. EASA A1/A3 certified, €2.6M insured. Proof of hardware and embedded engineering skills.",
 whatIDontDoTitle: "What I don't do",
@@ -191,7 +191,7 @@ prodCustomDesc: "A production-grade autonomous agent built for your specific bus
 prodCustomPrice: "From €500 →",
 trustLaw: "⚖️ <strong>Regulatory awareness</strong> — I study EU AI Act, I build for regulated environments",
 trustUav: "🚁 <strong>Hardware engineering</strong> — Hand-built drone, EASA certified, edge AI",
-trustPfuk: "🎓 <strong>PF UK</strong> — 3rd year, EU AI Act, GDPR, NIS2",
+trustPfuk: "🎓 <strong>PF UK</strong> — EU AI Act, GDPR, NIS2",
 fNavProducts: "Products",
 aboutLabel: "✦ Core Pillars & Architecture",
 aboutHeading: "AI Agent Developer. Building systems that run your processes.",
@@ -227,7 +227,7 @@ faq2a: "An AI GEO Audit checks if your website is visible to AI search engines l
 faq3q: "What is the AI Web Readiness Scan?",
 faq3a: "The AI Web Readiness Scan is a <strong>technical check by an AI agent</strong> that verifies whether your website has the required documents and structures — Privacy Policy, GDPR consent, Terms of Service, Disclaimer, AI Act disclosure, and cookie compliance. <strong>This is not legal advice</strong> — just a technical checklist. <strong>€200</strong> — one-time scan, report in 48 hours.",
 faq4q: "Does Marian provide legal advice?",
-faq4a: "<strong>No.</strong> Marian is a law student, not a lawyer. He does not provide legal advice, legal services, or compliance consulting. His AI agents perform <strong>technical checks only</strong> — they verify whether documents and structures exist, not whether they are legally correct. Clients must consult a qualified lawyer for legal matters.",
+faq4a: "<strong>No.</strong> Marian studies law, he is not a lawyer. He does not provide legal advice, legal services, or compliance consulting. His AI agents perform <strong>technical checks only</strong> — they verify whether documents and structures exist, not whether they are legally correct. Clients must consult a qualified lawyer for legal matters.",
 leadConsentText: 'I agree to the <a href="/privacy" style="color:#CD7F32;text-decoration:underline;">Privacy Policy</a> and consent to processing my email for newsletter updates.',
 fNavHome: "Home",
 blogReadPost: "Read post",
@@ -393,7 +393,7 @@ whatIDoSubtitle: "Práca · Kontext · Hobby — jasné oddelenie.",
 card1Title: "AI Agent Developer (Práca)",
 card1Desc: "Navrhujem, staviam, nasadzujem a prevádzkujem autonómnych AI agentov na klientskej infraštruktúre alebo spravovanom VPS. Vlastné MCP servery, multi-LLM orchestrácia, 24/7 automatizácia a perzistentná pamäť.",
 card2Title: "Regulačný kontext (PF UK)",
-card2Desc: "3. ročník na PF UK. Študujem EU AI Act, GDPR, NIS2 a využívam tieto znalosti na stavbu agentov pripravených pre regulované prostredia. Výlučne vzdelávacie zdieľanie.",
+card2Desc: "Štúdium práva na PF UK. EU AI Act, GDPR, NIS2 využívam na stavbu agentov ready pre reguláciu. Vzdelávacie účely, nie právna rada.",
 card3Title: "Hardvérové inžinierstvo (Hobby)",
 card3Desc: "Vlastnoručne spájkovaný 1500g karbónový dron s ArduPilotom a Raspberry Pi 5 edge AI. EASA A1/A3 certifikácia, €2,6M poistenie. Dôkaz hardvérových a embedded zručností.",
 whatIDontDoTitle: "Čo nerobím",
@@ -432,7 +432,7 @@ prodCustomDesc: "Produkčný autonómny agent postavený pre tvoju konkrétnu bi
 prodCustomPrice: "Od €500 →",
 trustLaw: "⚖️ <strong>Regulačné povedomie</strong> — študujem EU AI Act, staviam pre regulované prostredia",
 trustUav: "🚁 <strong>Hardvérové inžinierstvo</strong> — Ručne postavený dron, EASA certifikát, edge AI",
-trustPfuk: "🎓 <strong>PF UK</strong> — 3. ročník, EU AI Act, GDPR, NIS2",
+trustPfuk: "🎓 <strong>PF UK</strong> — EU AI Act, GDPR, NIS2",
 fNavProducts: "Produkty",
 aboutLabel: "✦ Hlavné Piliere & Architektúra",
 aboutHeading: "AI Agent Developer. Staviam systémy, ktoré bežia bez teba.",
@@ -468,7 +468,7 @@ faq2a: "AI GEO Audit overí, či je tvoj web viditeľný pre AI vyhľadávače a
 faq3q: "Čo je AI Web Readiness Scan?",
 faq3a: "AI Web Readiness Scan je <strong>technická kontrola AI agentom</strong>, či má web požadované dokumenty a štruktúry — zásady ochrany osobných údajov, GDPR súhlas, obchodné podmienky, disclaimer, AI Act disclosure a cookie súlad. <strong>Nie je to právna rada</strong> — ide o technický checklist. <strong>€200</strong> — jednorazový scan, report do 48 hodín.",
 faq4q: "Poskytuje Marian právne poradenstvo?",
-faq4a: "<strong>Nie.</strong> Marian je študent práva, nie advokát. Neposkytuje právne rady, právne služby ani compliance konzultácie. Jeho AI agenti robia <strong>iba technické kontroly</strong> — overujú, či dokumenty a štruktúry existujú, nie či sú právne správne. Právne otázky patria kvalifikovanému právnikovi.",
+faq4a: "<strong>Nie.</strong> Marian študuje právo, nie je advokát. Neposkytuje právne rady, právne služby ani compliance konzultácie. Jeho AI agenti robia <strong>iba technické kontroly</strong> — overujú, či dokumenty a štruktúry existujú, nie či sú právne správne. Právne otázky patria kvalifikovanému právnikovi.",
 leadConsentText: 'Súhlasím so <a href="/privacy-sk" style="color:#CD7F32;text-decoration:underline;">zásadami ochrany osobných údajov</a> a so spracovaním môjho e-mailu na odosielanie noviniek.',
 fNavHome: "Domov",
 blogReadPost: "Čítať článok",
