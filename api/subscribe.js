@@ -23,6 +23,15 @@ export default async function handler(req, res) {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
       return res.status(400).json({ error: 'Invalid email' });
 
+    // ── SAFETY GUARD: Test/pre-commit requests DON'T send real emails ──
+    const isTest = source.startsWith('pre-commit') || email.endsWith('.local');
+    const isOrder = Boolean(product) || source === 'product_order' || source === 'stripe_checkout_intent';
+    const isContact = Boolean(message) || source === 'contact_form';
+
+    if (isTest && !isOrder && !isContact) {
+      return res.status(200).json({ status: 'ok', type: 'test-skip', email, note: 'Test request — email not sent' });
+    }
+
     const now = new Date();
     const dateStr = now.toISOString().split('T')[0];
     const timeStr = now.toTimeString().split(' ')[0];
@@ -65,8 +74,6 @@ export default async function handler(req, res) {
     }
 
     const sep = '─'.repeat(44);
-    const isOrder = Boolean(product) || source === 'product_order' || source === 'stripe_checkout_intent';
-    const isContact = Boolean(message) || source === 'contact_form';
 
     // ─────────────────────────────────────────────────────────────
     // TEMPLATE 1: PRODUCT / AUDIT ORDER

@@ -104,7 +104,7 @@ def main():
     print("========================================")
     api_ok = True
     for endpoint, payload in [
-        ("/api/subscribe", '{"email":"test@pre-commit-check.local","source":"pre-commit"}'),
+        ("/api/subscribe", '{"email":"test@pre-commit-check.local","source":"pre-commit-check"}'),
     ]:
         url = f"https://www.marianstancik.dev{endpoint}"
         try:
