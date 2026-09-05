@@ -4,7 +4,14 @@
     <title>Marian Stancik — Blog</title>
     <link>https://marianstancik.dev/blog/</link>
     <description>AI agents, autonomous systems, law & tech, and building in public.</description>
-    <lastBuildDate>2026-09-02</lastBuildDate>
+    <lastBuildDate>2026-09-05</lastBuildDate>
+    <item>
+      <title>Designing Your Local Agent Network for NVIDIA PAIR — Distributed Inference Across Devices — Marian Stancik</title>
+      <link>https://marianstancik.dev/blog/posts/2026-09-05-nvidia-pair-local-agent-network</link>
+      <guid isPermaLink="true">https://marianstancik.dev/blog/posts/2026-09-05-nvidia-pair-local-agent-network</guid>
+      <pubDate>2026-09-05</pubDate>
+      <description>NVIDIA PAIR turns idle home PCs into a distributed inference cluster for AI agents. How to design a local agent network that routes tasks across multiple devices.</description>
+    </item>
     <item>
       <title>The Convergence of Agent Architectures: Why Everyone Is Building the Same Two-Plane System — Marian Stancik</title>
       <link>https://marianstancik.dev/blog/posts/2026-09-02-agent-architecture-convergence</link>
