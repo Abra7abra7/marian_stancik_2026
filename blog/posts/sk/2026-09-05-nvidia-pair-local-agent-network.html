@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navrhovanie lokálnej agentovej siete pre NVIDIA PAIR — Distribuovaná inferencia naprieč zariadeniami — Marian Stancik</title>
+<meta name="description" content="NVIDIA PAIR mení nečinné domáce PC na distribuovaný inferenčný cluster pre AI agentov. Ako navrhnúť lokálnu agentovú sieť, ktorá rozdeľuje úlohy naprieč viacerými zariadeniami.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://www.marianstancik.dev/blog/posts/sk/2026-09-05-nvidia-pair-local-agent-network">
+<link rel="alternate" hreflang="en" href="https://www.marianstancik.dev/blog/posts/2026-09-05-nvidia-pair-local-agent-network">
+<link rel="alternate" hreflang="sk" href="https://www.marianstancik.dev/blog/posts/sk/2026-09-05-nvidia-pair-local-agent-network">
+<link rel="alternate" hreflang="x-default" href="https://www.marianstancik.dev/blog/posts/2026-09-05-nvidia-pair-local-agent-network">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Knowledge Graph">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=4">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=4">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png?v=4">
+<link rel="shortcut icon" href="/favicon.ico?v=4">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
+<meta name="theme-color" content="#08080F">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Navrhovanie lokálnej agentovej siete pre NVIDIA PAIR — Distribuovaná inferencia naprieč zariadeniami — Marian Stancik">
+<meta property="og:description" content="NVIDIA PAIR mení nečinné domáce PC na distribuovaný inferenčný cluster pre AI agentov. Ako navrhnúť lokálnu agentovú sieť s Hermes Agent a OpenRouter.">
+<meta property="og:url" content="https://www.marianstancik.dev/blog/posts/sk/2026-09-05-nvidia-pair-local-agent-network">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://www.marianstancik.dev/profile-big.webp">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="NVIDIA PAIR lokálna agentová sieť — Marian Stancik">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:site_name" content="Marian Stancik">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@marian_s_ai">
+<meta name="twitter:creator" content="@marian_s_ai">
+<meta name="twitter:image" content="https://www.marianstancik.dev/profile-big.webp">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Navrhovanie lokálnej agentovej siete pre NVIDIA PAIR — Distribuovaná inferencia naprieč zariadeniami",
+      "description": "NVIDIA PAIR mení nečinné domáce PC na distribuovaný inferenčný cluster pre AI agentov. Ako navrhnúť lokálnu agentovú sieť s Hermes Agent a OpenRouter.",
+      "datePublished": "2026-09-05",
+      "dateModified": "2026-09-05",
+      "author": {
+        "@type": "Person",
+        "name": "Marian Stancik",
+        "url": "https://www.marianstancik.dev"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Marian Stancik"
+      },
+      "mainEntityOfPage": "https://www.marianstancik.dev/blog/posts/sk/2026-09-05-nvidia-pair-local-agent-network",
+      "keywords": ["NVIDIA PAIR", "Lokálna AI", "AI Agenti", "Distribuovaná inferencia", "Hermes Agent", "Smerovanie modelov", "NeMo Switchyard"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Domov",
+          "item": "https://www.marianstancik.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.marianstancik.dev/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "NVIDIA PAIR lokálna agentová sieť",
+          "item": "https://www.marianstancik.dev/blog/posts/sk/2026-09-05-nvidia-pair-local-agent-network"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="/css/main.css">
+<script defer src="https://api.marianstancik.dev/script.js" data-website-id="ec1c0df8-e51f-4236-9ad0-e3992f0b1637"></script>
+<style>
+.post-page { min-height: 100vh; display: flex; flex-direction: column; }
+.post-article { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; flex: 1; width: 100%; box-sizing: border-box; }
+.post-header { margin-bottom: 36px; }
+.post-back { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--color-primary, #CD7F32); text-decoration: none; margin-bottom: 20px; font-weight: 500; }
+.post-back:hover { color: var(--color-accent, #E8B86D); }
+.post-meta-top { display: flex; gap: 16px; align-items: center; font-size: 0.8rem; color: var(--color-text-muted, #9A8A78); margin-bottom: 12px; }
+.post-meta-top time { text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+.post-header h1 { font-size: 2.2rem; line-height: 1.25; color: var(--color-text, #F0F0F5); margin: 0 0 16px; }
+.post-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+.post-tags span { font-size: 0.7rem; padding: 4px 12px; border-radius: 100px; background: rgba(205,127,50,0.08); color: var(--color-accent, #E8B86D); border: 1px solid rgba(205,127,50,0.15); }
+.post-content { color: var(--color-text, #F0F0F5); line-height: 1.8; font-size: 1.02rem; }
+.post-content h2 { font-size: 1.45rem; color: var(--color-text, #F0F0F5); margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.06)); }
+.post-content h3 { font-size: 1.15rem; color: var(--color-accent, #E8B86D); margin: 28px 0 12px; }
+.post-content p { margin: 0 0 20px; color: #D0D0E0; }
+.post-content strong { color: var(--color-text, #F0F0F5); }
+.post-content ul, .post-content ol { margin: 0 0 24px; padding-left: 24px; color: #D0D0E0; }
+.post-content li { margin-bottom: 8px; }
+.post-content blockquote { border-left: 3px solid var(--color-primary, #CD7F32); background: rgba(205,127,50,0.04); padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0; color: #E0E0F0; }
+.post-content code { background: rgba(255,255,255,0.06); padding: 2px 7px; border-radius: 4px; font-size: 0.88em; font-family: 'JetBrains Mono', 'Fira Code', monospace; color: var(--color-accent, #E8B86D); }
+.post-content pre { background: var(--color-bg-secondary, #0D0D18); border: 1px solid var(--color-border, rgba(255,255,255,0.06)); border-radius: 8px; padding: 20px; overflow-x: auto; margin: 24px 0; }
+.post-content pre code { background: none; padding: 0; color: #E0E0F0; }
+.post-content a { color: var(--color-primary, #CD7F32); text-decoration: underline; text-underline-offset: 3px; }
+.post-content a:hover { color: var(--color-accent, #E8B86D); }
+.post-content hr { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 40px 0; }
+.post-lang-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(205,127,50,0.1); border: 1px solid rgba(205,127,50,0.25); border-radius: 100px; padding: 4px 14px; font-size: 0.78rem; color: var(--color-accent, #E8B86D); text-decoration: none; margin-bottom: 20px; }
+.post-lang-pill:hover { background: rgba(205,127,50,0.2); }
+.ai-disclaimer { margin-top: 48px; padding: 16px 20px; background: rgba(205,127,50,0.05); border: 1px solid rgba(205,127,50,0.15); border-radius: 8px; font-size: 0.82rem; color: var(--color-text-muted, #9A8A78); }
+</style>
+</head>
+<body class="post-page">
+
+<nav aria-label="Hlavná navigácia">
+  <div class="nav-container">
+    <a href="/" class="nav-logo" aria-label="marianstancik.dev domov">
+      <div class="brand-mark" aria-hidden="true"><img src="/profile.webp" alt="Marian Stancik" width="28" height="28" class="brand-avatar"></div>
+      <span class="nav-logo-text">marian<span class="highlight">stancik</span><span class="tld">.dev</span></span>
+    </a>
+    <div class="nav-right">
+      <a href="/blog/posts/2026-09-05-nvidia-pair-local-agent-network" class="post-lang-pill" style="margin-bottom:0;" title="Switch to English">🇬🇧 English version</a>
+      <a href="/blog" class="nav-link">← Všetky články</a>
+    </div>
+  </div>
+</nav>
+
+<main class="post-article">
+  <header class="post-header">
+    <a href="/blog" class="post-back">← Späť na blog</a>
+    <div class="post-meta-top">
+      <time datetime="2026-09-05">5. september 2026</time>
+      <span>·</span>
+      <span>9 min čítania</span>
+    </div>
+    <h1>Navrhovanie lokálnej agentovej siete pre NVIDIA PAIR — Distribuovaná inferencia naprieč zariadeniami</h1>
+    <div class="post-tags">
+      <span>NVIDIA PAIR</span>
+      <span>Lokálna AI</span>
+      <span>AI Agenti</span>
+      <span>Distribuovaná inferencia</span>
+      <span>Hermes Agent</span>
+    </div>
+  </header>
+
+  <article class="post-content">
+
+    <p>Na veľtrhu IFA 2026 v Berlíne tento týždeň <strong>NVIDIA uviedla PAIR — Personal AI Router</strong>, bezplatný open-source nástroj, ktorý objavuje nečinné PC v lokálnej sieti a distribuuje inferenčné požiadavky naprieč nimi. Jeden agent môže spustiť päť sub-agentov, ktoré bežia paralelne na troch zariadeniach namiesto čakania v rade na jednej GPU. NVIDIA benchmarky ukazujú 2,04-násobné zrýchlenie — 18 minút na jednom zariadení oproti 8 minútam 48 sekundám pri distribúcii na tri zariadenia.</p>
+
+    <p>Toto mení spôsob, akým uvažujeme o lokálnych AI agentoch. Problém nikdy nebol výpočtový výkon — bola to nevyužitá kapacita. Viac ako polovica domácností v USA má dva alebo viac počítačov a väčšina z nich leží nečinná počas pracovného dňa. PAIR mení túto latentnú kapacitu na distribuovaný inferenčný cluster, ktorý nakonfigurujete raz a zabudnete naň.</p>
+
+    <p>Svoju agentovú infraštruktúru prevádzkujem na Hetzner VPS, ale architektonické vzory, ktoré potrebujete na návrh distribuovanej agentovej siete, sú rovnaké bez ohľadu na to, či nasadzujete lokálne alebo v cloude. Tu je vysvetlenie, čo PAIR robí, ako zapadá do vznikajúcej dvojúrovňovej agentovej architektúry a praktický návod na nastavenie vlastnej multi-zariadovej agentovej siete.</p>
+
+    <h2>Čo je NVIDIA PAIR</h2>
+
+    <p>PAIR nie je distribuovaný tréningový framework. Nie je to spôsob, ako zlúčiť GPU pamäť z viacerých zariadení na spustenie jedného veľkého modelu. Je to <strong>load balancer na úrovni požiadaviek pre lokálnu inferenciu</strong>.</p>
+
+    <p>Každé pripojené PC prevádzkuje svoj vlastný lokálny AI stack (Ollama alebo LM Studio s lokálnymi modelmi). PAIR objavuje dostupné zariadenia v lokálnej sieti, monitoruje ich zaťaženie a dostupnosť a smeruje jednotlivé inferenčné požiadavky na zariadenie, ktoré je najlepšie vybavené na ich spracovanie. Keď sa zariadenie pripojí alebo odpojí od siete — notebook príde domov, desktop ide spať — PAIR sa automaticky prispôsobí.</p>
+
+    <p>Kľúčové rozhodnutie od NVIDIA: PAIR pracuje na úrovni agentových úloh, nie na úrovni individuálnych volaní modelov. Agent, ktorý spúšťa viacero sub-agentov, môže mať inferenčné požiadavky každého sub-agenta distribuované na rôzne zariadenia. Toto je zásadne odlišné od spúšťania jedného modelu na viacerých GPU — je to <strong>paralelizmus na úrovni agentov</strong>, ktorý zrkadlí, ako multi-agentový systém funguje architektonicky.</p>
+
+    <p>PAIR podporuje GeForce RTX 20-series a novejšie GPU, RTX PRO Workstation GPU, DGX Spark a Apple M4 alebo novšie čipy — pokrýva tak veľkú väčšinu moderných osobných počítačov.</p>
+
+    <h2>Ako PAIR zapadá do dvojúrovňovej architektúry</h2>
+
+    <p>Môj predchádzajúci článok sa venoval <a href="/blog/posts/2026-09-02-agent-architecture-convergence">konvergencii k dvojúrovňovej agentovej architektúre</a> — oddeleniu riadenia/governance od behu/koordinácie. PAIR zapadá do runtime vrstvy, konkrétne do smerovania modelov a paralelného vykonávania.</p>
+
+    <p>V dvojúrovňovom modeli:</p>
+    <ul>
+      <li><strong>Riadiaca vrstva (Control Plane):</strong> Definuje úlohu, nastavuje hranice politík, prideľuje sub-agentov. Nezaujíma sa o to, kde inferencia beží, len že výsledky spĺňajú prah kvality</li>
+      <li><strong>Runtime vrstva:</strong> Rozhoduje, ktorý model, na ktorom zariadení, s akým rozpočtom. PAIR je tu — je to mechanizmus, ktorý prekladá "spusti týchto päť sub-agentov" na "sub-agent A → desktop RTX 4090, sub-agenti B a C → notebook RTX 4070, sub-agenti D a E → DGX Spark"</li>
+    </ul>
+
+    <p>Toto oddelenie je dôvod, prečo PAIRova architektúra funguje: riadiaca vrstva nemusí poznať hardvérovú topológiu. Deleguje vykonávanie na runtime vrstvu, ktorá používa PAIR na distribúciu inferencie. Abstrakcia udržiava agentovú logiku čistú, zatiaľ čo infraštruktúrna vrstva sa stará o komplexitu orchestrácie naprieč zariadeniami.</p>
+
+    <p>Rovnaký princíp platí v mojom stacku. Prevádzkujem 19 cronových agentov na Hetzner VPS s Hermes Agent. Riadiaca vrstva (AGENTS.md policy súbory + watchdog skripty) definuje, čo môže každý agent robiť a aký má rozpočet. Runtime vrstva (MCP servery + OpenRouter) rozhoduje, ktorý model zavolať pre každú úlohu. Pridanie PAIR do tohto stacku znamená, že runtime vrstva môže tiež rozhodovať, <em>kde</em> spustiť inferenciu — lokálne pre citlivé dáta, cloud pre náročné úlohy, distribuovane naprieč zariadeniami pre paralelné sub-agentové úlohy.</p>
+
+    <h2>Tri architektonické vzory pre multi-zariadovú inferenciu</h2>
+
+    <p>Na základe oznámenia NVIDIA PAIR a mojich skúseností s multi-modelovým smerovaním identifikujem tri vzory pre integráciu distribuovanej inferencie do agentového stacku. Každý rieši iný prípad použitia.</p>
+
+    <h3>Vzor 1: Paralelizmus na úrovni úloh (natívny režim PAIR)</h3>
+
+    <p>To je to, na čo je PAIR navrhnutý. Koordinujúci agent dostane komplexnú požiadavku, rozloží ju na nezávislé podúlohy a každú priradí špecifickému sub-agentovi. Inferencia každého sub-agenta beží na inom zariadení.</p>
+
+    <pre><code># Pseudokód pre paralelizmus na úrovni úloh s PAIR
+def coordinate_complex_task(user_request):
+    # Rozloženie na nezávislé podúlohy
+    sub_tasks = decompose(user_request)
+    # ["Preskúmaj ceny konkurencie",
+    #  "Vygeneruj štruktúru reportu",
+    #  "Analyzuj trhové trendy",
+    #  "Napíš exekutívne zhrnutie",
+    #  "Validuj voči historickým dátam"]
+
+    # Pridelenie každého sub-agenta — PAIR smeruje inferenciu
+    sub_agents = [spawn_sub_agent(task) for task in sub_tasks]
+
+    # PAIR distribuuje inferenciu každého sub-agenta
+    # na najmenej vyťažené dostupné zariadenie
+    # Zariadenie A (RTX 4090 desktop): sub_agents[0], sub_agents[2]
+    # Zariadenie B (RTX 4070 notebook):  sub_agents[1], sub_agents[3]
+    # Zariadenie C (DGX Spark):          sub_agents[4]
+
+    # Zber výsledkov paralelne
+    results = await gather([agent.run() for agent in sub_agents])
+    return synthesize(results)</code></pre>
+
+    <p>Kľúčový poznatok: PAIR rieši smerovanie transparentne. Koordinujúci agent nešpecifikuje cieľové zariadenia — spúšťa sub-agentov a PAIR objavuje dostupné zariadenia, kontroluje, ktoré modely sú nainštalované, a smeruje inferenciu na optimálne miesto.</p>
+
+    <h3>Vzor 2: Viacúrovňové smerovanie s NeMo Switchyard</h3>
+
+    <p>Súbežne s PAIR vydala NVIDIA aj <strong>NeMo Switchyard</strong>, open-source knižnicu pre smerovanie modelov, ktorá inteligentne presmeruje každú požiadavku na najschopnejší a nákladovo najefektívnejší model. V kombinácii s PAIR vytvára trojúrovňovú routing architektúru:</p>
+
+    <p><strong>Úroveň 1 — Lokálna (cez PAIR):</strong> Malé lokálne modely (Llama 3.2, Phi-4, Nemotron 3 Nano) pre rutinnú klasifikáciu, sumarizáciu a úlohy s nízkym rizikom. Beží na akomkoľvek RTX PC v lokálnej sieti. Nulová latencia, nulové náklady, plne súkromné.</p>
+
+    <p><strong>Úroveň 2 — Lokálna prémiová (cez PAIR):</strong> Väčšie lokálne modely (Nemotron 3.5 Lightning, DeepSeek Harness) pre komplexné uvažovanie, generovanie kódu a štruktúrovanú analýzu. Smeruje na najschopnejšie lokálne zariadenie — DGX Spark pre ťažké úlohy, RTX 5090 desktop pre stredné úlohy.</p>
+
+    <p><strong>Úroveň 3 — Cloud (cez OpenRouter):</strong> Frontier modely (Claude Opus 5, GPT-5.6 Sol, DeepSeek V4-Flash) pre najťažšie problémy: viacúrovňové uvažovanie, kreatívnu syntézu a úlohy vyžadujúce špecializované znalosti. Volajú sa len vtedy, keď lokálne modely nedosahujú požadovanú kvalitu.</p>
+
+    <h3>Vzor 3: Bezpečnostne izolované inferenčné zóny</h3>
+
+    <p>Na konferencii Fal.Con 2026 začiatkom tohto týždňa NVIDIA a CrowdStrike oznámili SafeMind — agentový kybernetický bezpečnostný systém postavený na NVIDIA Nemotron. Kľúčový architektonický princíp z tohto oznámenia: bezpečnostné kontroly by mali byť vynucované <strong>mimo</strong> agenta, v infraštruktúrnej vrstve.</p>
+
+    <p>PAIR umožňuje tento vzor prirodzene. Ak máte v sieti vyhradený počítač, ktorý sa nikdy nepripája k internetu, môžete nakonfigurovať PAIR tak, aby smeroval citlivú inferenciu — spracovanie dokumentov, správu poverení, analýzu proprietárneho kódu — výhradne na toto izolované zariadenie. Ostatná inferencia smeruje na menej obmedzené stroje.</p>
+
+    <h2>Návrh vlastného PAIR-kompatibilného agentového stacku</h2>
+
+    <p>PAIR je open source a dostupný teraz pre Windows, macOS a Linux. Tu je návrh, ako navrhnúť stack, ktorý ho plne využíva.</p>
+
+    <h3>1. Začnite s koordinujúcim agentom na stabilnom stroji</h3>
+
+    <p>Váš koordinátor by mal bežať na stroji, ktorý je zapnutý 24/7 — domáci server, vyhradený desktop alebo VPS (PAIR funguje cez siete, ale latencia lokálnej siete je nižšia). Tento stroj prevádzkuje Hermes Agent (alebo váš obľúbený agent framework) a slúži ako vstupný bod pre všetky agentové úlohy.</p>
+
+    <p>Koordinátor nemusí sám vykonávať inferenciu. Rozkladá úlohy, spúšťa sub-agentov a deleguje inferenciu na PAIR-objavené zariadenia. NVIDIA potvrdila na IFA, že Hermes Agent dostane jednoklikové nastavenie lokálneho modelu na RTX GPU, čo toto prepojenie ešte viac utuží.</p>
+
+    <h3>2. Nakonfigurujte každé zariadenie s Ollama alebo LM Studio</h3>
+
+    <pre><code># Zariadenie A (RTX 4090 — výkonný desktop)
+ollama pull nemotron-3.5-lightning
+ollama pull llama-3.2-8b
+
+# Zariadenie B (RTX 4070 — notebook)
+ollama pull llama-3.2-8b
+ollama pull phi-4
+
+# Zariadenie C (DGX Spark — dedikovaný AI box)
+ollama pull nemotron-3.5-lightning
+ollama pull nemotron-3-nano</code></pre>
+
+    <h2>Kde PAIR mení ekonomiku prevádzky agentov</h2>
+
+    <p>Najzaujímavejší dôsledok PAIR je ekonomický, nie technický. NVIDIA Nemotron 3.5 Lightning poskytuje až 4x rýchlejší výstup v porovnaní s modelmi vo svojej triede, s 30% rýchlejším dokončením agentových úloh. V kombinácii s PAIR klesajú náklady na inferenciu na existujúcom hardvéri prakticky na nulu — používate výpočtové cykly, ktoré už boli zaplatené a sedeli nevyužité.</p>
+
+    <p>Partnerstvo NVIDIA a CrowdStrike poskytuje ďalší údaj. Modely SafeMind od CrowdStrike, postavené na Nemotron, dosahujú vyššiu presnosť ako popredné frontier modely pri <strong>99% nižších nákladoch</strong>. Kombinácia Nemotron 3.5 Lightning pre rýchlosť, NeMo Switchyard pre smerovanie a PAIR pre distribúciu znamená, že môžete dosiahnuť kvalitu frontier modelov bez ich cien.</p>
+
+    <p>Pre sólo zakladateľa alebo malý tím prevádzkujúci autonómne agenty to mení matematiku. PAIR cluster na existujúcom hardvéri plus Nemotron modely pre rutinné úlohy znamená, že cloudové API volania si rezervujete len pre 10-20% úloh, ktoré skutočne potrebujú frontier modely. Všetko ostatné beží lokálne, s nulovými marginálnymi nákladmi a bez toho, aby dáta opúšťali vašu sieť.</p>
+
+    <h2>Čo PAIR zatiaľ nerieši</h2>
+
+    <p>PAIR je momentálne v beta fáze. Niekoľko medzier stojí za zmienku:</p>
+    <ul>
+      <li><strong>Bez podpory cez siete:</strong> PAIR funguje v rámci jednej lokálnej siete. VPS v Hetznerovom dátovom centre v Norimbergu sa nemôže pripojiť k PAIR clusteru s vaším domácim PC. To obmedzuje hybridné lokálne+cloud nasadenia — na to stále potrebujete OpenRouter alebo samostatnú routing vrstvu</li>
+      <li><strong>Bez piningu modelov:</strong> PAIR smeruje na akékoľvek zariadenie s požadovaným modelom. Ak potrebujete špecifické zariadenie pre špecifické úlohy, musíte implementovať tagovanie zariadení v koordinátorovi</li>
+      <li><strong>Bez perzistentného stavu naprieč zariadeniami:</strong> Ak sub-agent A beží na Zariadení 1 a sub-agent B na Zariadení 2, nezdieľajú žiadnu pamäť. Potrebujete externú pamäťovú vrstvu (SQLite, vektorová DB), ku ktorej majú prístup obe zariadenia</li>
+    </ul>
+
+    <p>Všetky tieto problémy sú riešiteľné na úrovni koordinátora. Môj Hermes Agent stack už rieši smerovanie cez siete pomocou OpenRouter a zdieľanú pamäť pomocou SQLite. Pridanie PAIR pre lokálnu distribúciu inferencie vypĺňa medzeru, ktorú som chcel zaplniť odvtedy, ako som začal prevádzkovať multi-agentové systémy: cenovo dostupnú, súkromnú a nízkolatenčnú inferenciu vo veľkom na existujúcom hardvéri.</p>
+
+    <h2>Smerom k autonómnemu desktopu</h2>
+
+    <p>Oznámenia NVIDIA z IFA — PAIR, NeMo Switchyard, Nemotron 3.5 Lightning a RTX Spark N1X prichádzajúci v októbri — predstavujú koherentnú víziu: osobný počítač sa stáva centrom vykonávania autonómnych agentov. Nie tenký klient volajúci cloud. Nie herný stroj, ktorý popri tom spúšťa inferenciu. Vyhradená platforma, kde agenti bežia nepretržite, distribuujú prácu naprieč vašimi zariadeniami a escalujú do cloudu len v prípade potreby.</p>
+
+    <p>Toto je v súlade s tým, čo budujem s Hermes Agent na mojom VPS. Rovnaké architektonické vzory — dekompozícia úloh, viacúrovňové smerovanie, perzistentná pamäť, typované nástrojové rozhrania — fungujú vo všetkých mierkach. Rozdiel je v tom, že s PAIR sa "runtime vrstva" rozširuje za hranice jedného stroja na zariadenia, ktoré už vlastníte.</p>
+
+    <div class="ai-disclaimer">
+      🤖 <strong>AI-generated</strong> — This article was generated with the assistance of an autonomous AI agent (Hermes Agent by Nous Research) and reviewed by Marian Stancik before publication. <a href="/disclaimer">Full disclaimer</a>.
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="container" style="max-width:780px;margin:0 auto;padding:24px;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+    <p style="margin:0;font-size:0.8rem;color:#9A8A78;">© 2026 <a href="/" style="color:#CD7F32;">Marian Stancik</a> — <a href="/" style="color:#CD7F32;">marianstancik.dev</a></p>
+    <div style="font-size:0.75rem;color:#8A7A6A;display:flex;gap:12px;">
+      <a href="/privacy" style="color:#8A7A6A;">Privacy Policy</a>
+      <a href="/privacy-sk" style="color:#8A7A6A;">Privacy Policy (SK)</a>
+      <a href="/terms" style="color:#8A7A6A;">Terms of Service</a>
+      <a href="/disclaimer" style="color:#8A7A6A;">Disclaimer</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

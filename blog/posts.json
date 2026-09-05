@@ -1,5 +1,28 @@
 [
   {
+    "slug": "2026-09-05-nvidia-pair-local-agent-network",
+    "url": "blog/posts/2026-09-05-nvidia-pair-local-agent-network",
+    "urlSk": "blog/posts/sk/2026-09-05-nvidia-pair-local-agent-network",
+    "blogUrl": "posts/2026-09-05-nvidia-pair-local-agent-network",
+    "blogUrlSk": "posts/sk/2026-09-05-nvidia-pair-local-agent-network",
+    "date": "2026-09-05",
+    "displayDate": "September 5, 2026",
+    "displayDateSk": "5. september 2026",
+    "title": "Designing Your Local Agent Network for NVIDIA PAIR — Distributed Inference Across Devices",
+    "titleSk": "Navrhovanie lokálnej agentovej siete pre NVIDIA PAIR — Distribuovaná inferencia naprieč zariadeniami",
+    "excerpt": "NVIDIA PAIR turns idle home PCs into a distributed inference cluster for AI agents. How to design a local agent network with tiered routing, multi-device parallelism, and Hermes Agent.",
+    "excerptSk": "NVIDIA PAIR mení nečinné domáce PC na distribuovaný inferenčný cluster pre AI agentov. Ako navrhnúť lokálnu agentovú sieť s viacúrovňovým smerovaním a Hermes Agent.",
+    "tags": [
+      "NVIDIA PAIR",
+      "Local AI",
+      "AI Agents",
+      "Distributed Inference",
+      "Hermes Agent"
+    ],
+    "readTime": "9 min read",
+    "readTimeSk": "9 min čítania"
+  },
+  {
     "slug": "2026-09-02-agent-architecture-convergence",
     "url": "blog/posts/2026-09-02-agent-architecture-convergence",
     "urlSk": "blog/posts/sk/2026-09-02-agent-architecture-convergence",
